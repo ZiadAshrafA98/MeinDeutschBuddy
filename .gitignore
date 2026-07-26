@@ -1,0 +1,11 @@
+# Dependencies
+node_modules/
+
+# Generated JavaScript (remove unless static website)
+# dist/
+
+# TypeScript incremental build cache
+*.tsbuildinfo
+
+# Editor files
+.vscode/

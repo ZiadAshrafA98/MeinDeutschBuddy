@@ -1,0 +1,10 @@
+{
+  "name": "deutsch-buddy",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  }
+}

@@ -1,11 +1,11 @@
 "use strict";
 /**
- * Deutsch A1 Handbuch — interaction layer
+ * Deutsch Buddy — interaction layer
  * Language mode, case focus, theme, section nav.
  */
 const STORE = {
-    lang: 'da1.lang',
-    theme: 'da1.theme',
+    lang: 'de.lang',
+    theme: 'de.theme',
 };
 const root = document.documentElement;
 /* -------------------------------------------------------------- language */
