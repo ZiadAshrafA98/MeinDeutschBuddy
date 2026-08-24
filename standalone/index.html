@@ -1,0 +1,3086 @@
+<!DOCTYPE html>
+<html lang="de" data-lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mein Deutsch Buddy</title>
+  <meta name="description" content="A German reference: grammar, vocabulary by theme, and exam revision.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+/* Mein Deutsch Buddy · tokens.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Mein Deutsch Buddy
+
+   Type carries the hierarchy. Hairlines separate; boxes do not contain.
+   Colour appears only where it means something: the four cases, and the
+   three genders that borrow the same palette.
+   ========================================================================== */
+
+:root {
+  /* surfaces */
+  --paper: #ffffff;
+  --raised: #f5f5f7;
+  --sunken: #fafafc;
+  --line: #e3e3e6;
+  --line-strong: #c9c9ce;
+
+  /* text */
+  --ink: #1d1d1f;
+  --ink-2: #4b4b50;
+  --ink-3: #6e6e73;
+  --ink-4: #86868b;
+
+  /* the four cases */
+  --nom: #12705a;
+  --akk: #b03225;
+  --dat: #2a5cad;
+  --gen: #6f4a9c;
+  --nom-bg: #12705a0f;
+  --akk-bg: #b0322510;
+  --dat-bg: #2a5cad0f;
+  --gen-bg: #6f4a9c0f;
+
+  --radius: 10px;
+  --radius-sm: 7px;
+
+  --f-display: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --f-body: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --nav-w: 252px;
+  --measure: 68ch;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="dark"] {
+  --paper: #000000;
+  --raised: #1c1c1e;
+  --sunken: #121214;
+  --line: #2a2a2d;
+  --line-strong: #3f3f44;
+  --ink: #f5f5f7;
+  --ink-2: #c4c4c9;
+  --ink-3: #a1a1a6;
+  --ink-4: #86868b;
+  --nom: #4cc4a0;
+  --akk: #ff7a68;
+  --dat: #7cabff;
+  --gen: #c79bf0;
+  --nom-bg: #4cc4a014;
+  --akk-bg: #ff7a6814;
+  --dat-bg: #7cabff14;
+  --gen-bg: #c79bf014;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.65;
+  letter-spacing: -0.003em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* Mein Deutsch Buddy · typography.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+
+.hero {
+  margin-bottom: 7rem;
+}
+
+.hero h1 {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-stretch: 100%;
+  font-size: clamp(2.6rem, 5.5vw, 4.5rem);
+  line-height: 1.04;
+  letter-spacing: -0.032em;
+  margin: 0 0 1.1rem;
+}
+
+.hero .sub {
+  font-size: 1.16rem;
+  line-height: 1.55;
+  color: var(--ink-3);
+  max-width: 48ch;
+  margin: 0 0 3.5rem;
+  letter-spacing: -0.01em;
+}
+
+/* Case key: no cards, no boxes. A colour rule above each name binds the
+   label to its hue; whitespace does the separating. */
+.case-key {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 2.25rem 2.5rem;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  overflow: visible;
+}
+
+.case-key > div {
+  background: none;
+  padding: 0.9rem 0 0;
+  border-top: 2px solid var(--line-strong);
+}
+
+.case-key .c-nom {
+  border-top-color: var(--nom);
+}
+
+.case-key .c-akk {
+  border-top-color: var(--akk);
+}
+
+.case-key .c-dat {
+  border-top-color: var(--dat);
+}
+
+.case-key .c-gen {
+  border-top-color: var(--gen);
+}
+
+.case-key .k-name {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-stretch: 100%;
+  font-size: 1.12rem;
+  letter-spacing: -0.015em;
+}
+
+.case-key .c-nom .k-name {
+  color: var(--nom);
+}
+
+.case-key .c-akk .k-name {
+  color: var(--akk);
+}
+
+.case-key .c-dat .k-name {
+  color: var(--dat);
+}
+
+.case-key .c-gen .k-name {
+  color: var(--gen);
+}
+
+.case-key .k-q {
+  font-family: var(--f-body);
+  font-size: 0.83rem;
+  color: var(--ink-3);
+  letter-spacing: 0;
+  margin: 0.1rem 0 0.6rem;
+}
+
+.case-key .k-role {
+  font-size: 0.9rem;
+  color: var(--ink-2);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   Sections and headings
+   ========================================================================== */
+
+section.topic {
+  margin: 0 0 6.5rem;
+  scroll-margin-top: 5.5rem;
+}
+
+.topic > h2 {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-stretch: 100%;
+  font-size: clamp(1.75rem, 3.2vw, 2.3rem);
+  letter-spacing: -0.026em;
+  line-height: 1.12;
+  margin: 0 0 0.35rem;
+  padding: 0;
+  border: 0;
+}
+
+.topic > .gloss {
+  font-family: var(--f-body);
+  font-size: 0.95rem;
+  color: var(--ink-3);
+  letter-spacing: -0.005em;
+  text-transform: none;
+  margin: 0 0 2.75rem;
+}
+
+h3 {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-stretch: 100%;
+  font-size: 1.22rem;
+  letter-spacing: -0.018em;
+  margin: 3.5rem 0 1.1rem;
+}
+
+h4 {
+  font-family: var(--f-body);
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 2.2rem 0 0.65rem;
+}
+
+p {
+  margin: 0 0 1.1rem;
+  max-width: var(--measure);
+}
+
+
+/* Mein Deutsch Buddy · layout.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+.shell {
+  display: grid;
+  grid-template-columns: var(--nav-w) minmax(0, 1fr);
+  align-items: start;
+}
+
+.sidenav {
+  position: sticky;
+  top: 3.6rem;
+  height: calc(100vh - 3.6rem);
+  overflow-y: auto;
+  padding: 2rem 1.25rem 5rem 2rem;
+  font-size: 0.86rem;
+  scrollbar-width: thin;
+}
+
+.sidenav h4 {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ink-4);
+  margin: 1.9rem 0 0.45rem;
+  text-transform: none;
+}
+
+.sidenav h4:first-child {
+  margin-top: 0;
+}
+
+.sidenav a {
+  display: block;
+  padding: 0.28rem 0.7rem;
+  margin-left: -0.7rem;
+  color: var(--ink-2);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  border-left: 0;
+  transition: background 0.16s var(--ease), color 0.16s var(--ease);
+}
+
+.sidenav a:hover {
+  color: var(--ink);
+  background: var(--raised);
+}
+
+.sidenav a.active {
+  color: var(--ink);
+  font-weight: 600;
+  background: var(--raised);
+  border-left: 0;
+}
+
+/* In DE+EN the English is a secondary line under the German. In EN-only it
+   is the label itself, so it inherits the link's own size, weight and
+   colour rather than staying demoted. */
+/* In DE+EN the two languages would otherwise run together as
+   "GrundlagenBasics". Links stack; the group headings take a middot so they
+   stay on one compact line. */
+[data-lang="both"] .sidenav h4 .en::before {
+  content: " · ";
+  color: var(--line-strong);
+}
+
+[data-lang="both"] .sidenav a .en {
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 400;
+  color: var(--ink-4);
+  line-height: 1.35;
+}
+
+main {
+  padding: 4rem 4rem 10rem;
+  max-width: 1120px;
+  min-width: 0;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 3rem 4rem 4rem;
+  color: var(--ink-4);
+  font-size: 0.85rem;
+}
+
+footer p {
+  max-width: var(--measure);
+}
+
+
+/* Mein Deutsch Buddy · chrome.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Top bar
+   ========================================================================== */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.7rem 2rem;
+  background: color-mix(in srgb, var(--paper) 82%, transparent);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+  margin-right: auto;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.brand span {
+  font-family: var(--f-body);
+  font-weight: 400;
+  font-size: 0.8rem;
+  letter-spacing: 0;
+  color: var(--ink-3);
+}
+
+.topbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.ctrl-label {
+  font-size: 0.74rem;
+  color: var(--ink-3);
+  letter-spacing: 0;
+}
+
+/* Segmented control. The group reads as one object; the pressed segment is
+   a raised pill inside it rather than a differently-coloured button. */
+.ctrl-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.ctrl-group:has(.chip) {
+  position: relative;
+  background: var(--raised);
+  border-radius: 999px;
+  padding: 2px;
+  gap: 0;
+}
+
+.ctrl-group:has(.chip) > .ctrl-label {
+  padding: 0 0.5rem 0 0.7rem;
+}
+
+.chip {
+  font-family: var(--f-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  padding: 0.34rem 0.78rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-2);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.18s var(--ease), color 0.18s var(--ease);
+}
+
+.chip:hover {
+  color: var(--ink);
+}
+
+.chip[aria-pressed="true"] {
+  color: var(--ink);
+}
+
+/* Inside a segmented group the pill is a separate sliding element, so the
+   chip itself stays transparent. */
+.ctrl-group .chip {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  box-shadow: none;
+}
+
+.seg-indicator {
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: 0;
+  width: 0;
+  z-index: 0;
+  border-radius: 999px;
+  background: var(--paper);
+  box-shadow: 0 1px 3px #0000001f, 0 0 0 0.5px #0000000f;
+  opacity: 0;
+  pointer-events: none;
+}
+
+[data-theme="dark"] .seg-indicator {
+  background: #3a3a3d;
+  box-shadow: none;
+}
+
+.ctrl-group.has-active .seg-indicator {
+  opacity: 1;
+}
+
+/* Applied one frame after the first measurement so the pill does not slide
+   in from the left on load. A slight overshoot gives the movement weight. */
+.ctrl-group.seg-ready .seg-indicator {
+  transition:
+    transform 0.34s cubic-bezier(0.34, 1.25, 0.4, 1),
+    width 0.34s cubic-bezier(0.34, 1.25, 0.4, 1),
+    opacity 0.2s var(--ease),
+    background 0.2s var(--ease);
+}
+
+.chip.case-nom[aria-pressed="true"] {
+  color: var(--nom);
+}
+
+.chip.case-akk[aria-pressed="true"] {
+  color: var(--akk);
+}
+
+.chip.case-dat[aria-pressed="true"] {
+  color: var(--dat);
+}
+
+.chip.case-gen[aria-pressed="true"] {
+  color: var(--gen);
+}
+
+/* ---------- theme morph -------------------------------------------------
+   The swap used to stagger: the page background has no transition and
+   snapped instantly, while chips, nav links and table rows animated their
+   own colours over 160-240ms, so pale controls briefly sat on a dark page.
+
+   The fix is to swap where it cannot be seen. A fixed overlay with a
+   backdrop-filter blurs everything currently on screen, including the top
+   bar, the sidebar and the drawer, without touching layout: no transforms,
+   no filters on flow elements, so position: sticky and page scroll are
+   untouched.
+
+   An earlier version scaled main instead. That was wrong. main is the whole
+   55,000px document, and a transform scales about the element's own centre,
+   so the further down the page you were the further the content slid.
+   ------------------------------------------------------------------------ */
+
+.theme-veil {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  opacity: 0;
+  backdrop-filter: blur(9px) saturate(0.9);
+  -webkit-backdrop-filter: blur(9px) saturate(0.9);
+}
+
+.theme-morph .theme-veil {
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity;
+}
+
+.theme-morph-out .theme-veil {
+  opacity: 1;
+}
+
+/* During the hidden swap every transition is suppressed so nothing animates
+   its colour out of step behind the blur. */
+[data-theme-instant] *,
+[data-theme-instant] *::before,
+[data-theme-instant] *::after {
+  transition: none !important;
+}
+
+/* The toggle is the exception. Suppressing it made the sun snap to a moon
+   rather than become one, so its transitions are restated here. */
+[data-theme-instant] .theme-icon {
+  transition: transform 0.6s cubic-bezier(0.5, 1.5, 0.5, 1) !important;
+}
+
+[data-theme-instant] .theme-icon .orb,
+[data-theme-instant] .theme-icon .cut {
+  transition: transform 0.5s var(--ease) !important;
+}
+
+[data-theme-instant] .theme-icon .rays {
+  transition: transform 0.5s var(--ease), opacity 0.3s var(--ease) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .theme-veil {
+    display: none;
+  }
+}
+
+/* ---------- theme toggle ------------------------------------------------
+   One shape does the work. The orb is masked by a second circle that lives
+   off-canvas in light mode and slides across it in dark mode, carving the
+   crescent. The rays retract into the orb as it arrives, so the sun does not
+   simply cross-fade into a moon: it becomes one.
+   ------------------------------------------------------------------------ */
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  flex: none;
+}
+
+.theme-icon {
+  display: block;
+  overflow: visible;
+  color: var(--ink-2);
+  transform: rotate(0deg);
+  transition: transform 0.6s cubic-bezier(0.5, 1.5, 0.5, 1);
+}
+
+.theme-toggle:hover .theme-icon {
+  color: var(--ink);
+}
+
+.theme-icon .orb {
+  fill: currentColor;
+  transform-origin: 12px 12px;
+  transform: scale(1);
+  transition: transform 0.5s var(--ease);
+}
+
+.theme-icon .cut {
+  transform: translate(0, 0);
+  transition: transform 0.5s var(--ease);
+}
+
+.theme-icon .rays {
+  stroke: currentColor;
+  stroke-width: 1.9;
+  transform-origin: 12px 12px;
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+  transition: transform 0.5s var(--ease), opacity 0.35s var(--ease);
+}
+
+/* dark: the cut slides in, the orb grows into a moon, the rays collapse */
+[data-theme="dark"] .theme-icon {
+  transform: rotate(-90deg);
+}
+
+[data-theme="dark"] .theme-icon .orb {
+  transform: scale(1.45);
+}
+
+[data-theme="dark"] .theme-icon .cut {
+  transform: translate(-13px, 13px);
+}
+
+[data-theme="dark"] .theme-icon .rays {
+  transform: rotate(45deg) scale(0.4);
+  opacity: 0;
+  transition: transform 0.5s var(--ease), opacity 0.2s var(--ease);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .theme-icon,
+  .theme-icon .orb,
+  .theme-icon .cut,
+  .theme-icon .rays {
+    transition: none;
+  }
+}
+
+/* Standalone buttons sit on a quiet fill so they still read as controls. */
+.nav-toggle,
+[data-theme-btn] {
+  background: var(--raised);
+  color: var(--ink-2);
+  padding: 0.38rem 0.85rem;
+}
+
+.nav-toggle:hover,
+[data-theme-btn]:hover {
+  background: var(--line);
+  color: var(--ink);
+}
+
+.chip:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+/* ==========================================================================
+   Scrollbars
+   The platform default is a wide, bright bar that reads as a system control
+   dropped onto the page, and it is worst in dark mode where it becomes the
+   lightest thing on screen.
+
+   Standard properties come first. Note that Chrome 121+ ignores the
+   ::-webkit-scrollbar pseudo-elements entirely once scrollbar-width is set,
+   so the two cannot be combined; the webkit block below is a fallback for
+   engines that lack scrollbar-color, not an enhancement on top.
+   ========================================================================== */
+
+.sidenav,
+.tw,
+.topbar-controls,
+.vocab,
+.formula {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+.sidenav:hover,
+.tw:hover,
+.vocab:hover,
+.formula:hover {
+  scrollbar-color: var(--ink-4) transparent;
+}
+
+/* Reserve the gutter so the bar appearing never nudges the nav contents. */
+.sidenav {
+  scrollbar-gutter: stable;
+}
+
+@supports not (scrollbar-color: auto) {
+
+  .sidenav::-webkit-scrollbar,
+  .tw::-webkit-scrollbar,
+  .topbar-controls::-webkit-scrollbar,
+  .vocab::-webkit-scrollbar,
+  .formula::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .sidenav::-webkit-scrollbar-track,
+  .tw::-webkit-scrollbar-track,
+  .topbar-controls::-webkit-scrollbar-track,
+  .vocab::-webkit-scrollbar-track,
+  .formula::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* A transparent border plus content-box clipping insets the thumb so it
+     floats in the gutter instead of butting against the edge. */
+  .sidenav::-webkit-scrollbar-thumb,
+  .tw::-webkit-scrollbar-thumb,
+  .topbar-controls::-webkit-scrollbar-thumb,
+  .vocab::-webkit-scrollbar-thumb,
+  .formula::-webkit-scrollbar-thumb {
+    background: var(--line-strong);
+    background-clip: content-box;
+    border: 2px solid transparent;
+    border-radius: 999px;
+  }
+
+  .sidenav::-webkit-scrollbar-thumb:hover,
+  .tw::-webkit-scrollbar-thumb:hover,
+  .vocab::-webkit-scrollbar-thumb:hover,
+  .formula::-webkit-scrollbar-thumb:hover {
+    background: var(--ink-4);
+    background-clip: content-box;
+  }
+
+  .sidenav::-webkit-scrollbar-corner,
+  .tw::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}
+
+/* The horizontal strip of controls in the mobile top bar scrolls by drag;
+   a visible bar there is noise. */
+.topbar-controls {
+  scrollbar-width: none;
+}
+
+.topbar-controls::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* Mein Deutsch Buddy · content.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Note: the bilingual, click-to-flip block
+   No box. An indent and a hairline mark it as an aside; a quiet pill carries
+   the affordance that hover used to hide.
+   ========================================================================== */
+
+.note {
+  position: relative;
+  margin: 0 0 2rem;
+  padding: 0 0 0 1.5rem;
+  max-width: var(--measure);
+  border: 0;
+  border-left: 2px solid var(--line-strong);
+  border-radius: 0;
+  background: none;
+  cursor: pointer;
+  transition: border-color 0.22s var(--ease);
+}
+
+.note:hover {
+  border-left-color: var(--akk);
+}
+
+.note:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 6px;
+  border-radius: 2px;
+}
+
+.note p {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.62;
+  color: var(--ink);
+}
+
+[data-lang="both"] .note p + p {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.note .de {
+  font-weight: 400;
+}
+
+/* Same principle: muted only when it sits beneath the German. */
+.note .en {
+  color: var(--ink);
+}
+
+[data-lang="both"] .note .en {
+  color: var(--ink-2);
+}
+
+.note::after {
+  content: attr(data-hint);
+  position: static;
+  display: inline-block;
+  margin-top: 0.7rem;
+  font-family: var(--f-body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--ink-4);
+  background: var(--raised);
+  border-radius: 999px;
+  padding: 0.16rem 0.62rem;
+  opacity: 0;
+  transform: translateY(-2px);
+  transition: opacity 0.22s var(--ease), transform 0.22s var(--ease);
+  pointer-events: none;
+}
+
+.note:hover::after,
+.note:focus-visible::after {
+  opacity: 1;
+  transform: none;
+}
+
+/* language visibility, driven by data-lang on <html> */
+[data-lang="de"] .en {
+  display: none;
+}
+
+[data-lang="en"] .de {
+  display: none;
+}
+
+[data-lang="de"] .note.flipped .en {
+  display: block;
+}
+
+[data-lang="de"] .note.flipped .de {
+  display: none;
+}
+
+[data-lang="en"] .note.flipped .de {
+  display: block;
+}
+
+[data-lang="en"] .note.flipped .en {
+  display: none;
+}
+
+[data-lang="both"] .note {
+  cursor: default;
+}
+
+[data-lang="both"] .note::after {
+  content: "";
+  display: none;
+}
+
+/* ==========================================================================
+   Tables
+   Hairlines only. No outer frame, no fill, no zebra.
+   ========================================================================== */
+
+.tw {
+  overflow-x: auto;
+  margin: 0 0 2.25rem;
+  scrollbar-width: thin;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 480px;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  font-size: 0.94rem;
+  font-variant-numeric: tabular-nums;
+}
+
+caption {
+  caption-side: top;
+  text-align: left;
+  font-family: var(--f-body);
+  font-size: 0.85rem;
+  color: var(--ink-3);
+  letter-spacing: -0.005em;
+  text-transform: none;
+  padding: 0 0 0.75rem;
+}
+
+th,
+td {
+  padding: 0.62rem 1.1rem 0.62rem 0;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+
+thead th {
+  background: none;
+  font-family: var(--f-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink-4);
+  border-bottom: 1px solid var(--line-strong);
+  white-space: nowrap;
+  padding-bottom: 0.5rem;
+}
+
+tbody th {
+  font-weight: 500;
+  white-space: nowrap;
+  background: none;
+  border-right: 0;
+  color: var(--ink);
+}
+
+tbody tr:last-child td,
+tbody tr:last-child th {
+  border-bottom: 0;
+}
+
+tbody tr:hover td {
+  background: none;
+}
+
+td .m,
+th .m {
+  font-family: var(--f-mono);
+  font-size: 0.87em;
+}
+
+.pl {
+  color: var(--ink-3);
+}
+
+.hi {
+  font-weight: 600;
+}
+
+.ex {
+  color: var(--ink-2);
+  font-size: 0.96em;
+}
+
+/* A highlight wash instead of an underline: quieter, and it survives the
+   translation line sitting directly beneath. */
+.ex em {
+  font-style: normal;
+  color: var(--ink);
+  box-shadow: inset 0 -0.42em 0 var(--akk-bg);
+}
+
+.ar {
+  direction: rtl;
+}
+
+/* Case colouring: a coloured label and a short bar, never a filled cell. */
+tr[data-case] > th:first-child {
+  position: relative;
+  padding-left: 0.85rem;
+  box-shadow: none;
+}
+
+tr[data-case] > th:first-child::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72rem;
+  bottom: 0.72rem;
+  width: 3px;
+  border-radius: 2px;
+  background: currentColor;
+}
+
+tr[data-case="nom"] > th:first-child,
+td[data-case="nom"] {
+  color: var(--nom);
+}
+
+tr[data-case="akk"] > th:first-child,
+td[data-case="akk"] {
+  color: var(--akk);
+}
+
+tr[data-case="dat"] > th:first-child,
+td[data-case="dat"] {
+  color: var(--dat);
+}
+
+tr[data-case="gen"] > th:first-child,
+td[data-case="gen"] {
+  color: var(--gen);
+}
+
+/* case focus */
+[data-focus] tr[data-case] {
+  transition: opacity 0.24s var(--ease), background 0.24s var(--ease);
+}
+
+[data-focus="nom"] tr[data-case]:not([data-case="nom"]),
+[data-focus="akk"] tr[data-case]:not([data-case="akk"]),
+[data-focus="dat"] tr[data-case]:not([data-case="dat"]),
+[data-focus="gen"] tr[data-case]:not([data-case="gen"]) {
+  opacity: 0.24;
+}
+
+[data-focus="nom"] tr[data-case="nom"] > * {
+  background: var(--nom-bg);
+}
+
+[data-focus="akk"] tr[data-case="akk"] > * {
+  background: var(--akk-bg);
+}
+
+[data-focus="dat"] tr[data-case="dat"] > * {
+  background: var(--dat-bg);
+}
+
+[data-focus="gen"] tr[data-case="gen"] > * {
+  background: var(--gen-bg);
+}
+
+/* ==========================================================================
+   Translations under German examples
+   ========================================================================== */
+
+.tr {
+  display: none;
+}
+
+[data-lang="en"] .tr,
+[data-lang="both"] .tr {
+  display: block;
+  margin-top: 0.28rem;
+  font-size: 0.88em;
+  line-height: 1.45;
+  color: var(--ink-3);
+  font-style: normal;
+  font-weight: 400;
+  white-space: normal;
+}
+
+.hi .tr,
+b .tr {
+  font-weight: 400;
+}
+
+[data-lang="both"] td > .en,
+[data-lang="both"] th > .en,
+[data-lang="both"] dd > .en {
+  display: block;
+  margin-top: 0.22rem;
+  color: var(--ink-3);
+  font-size: 0.92em;
+  line-height: 1.45;
+}
+
+[data-lang="both"] .rule .en,
+[data-lang="both"] p > .en,
+[data-lang="both"] li > .en,
+[data-lang="both"] .k-role .en {
+  display: block;
+  color: var(--ink-3);
+  margin-top: 0.2rem;
+}
+
+/* ==========================================================================
+   Rule, formula, code, vocab
+   ========================================================================== */
+
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 2.5rem;
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 2.5rem;
+}
+
+/* A rule is a labelled aside, not a card. */
+.rule {
+  background: none;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  padding: 1.1rem 0 0;
+  margin: 0 0 2.25rem;
+  max-width: var(--measure);
+}
+
+.rule .tag {
+  display: block;
+  font-family: var(--f-body);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink-4);
+  margin-bottom: 0.6rem;
+}
+
+.rule ul,
+.plain ul {
+  margin: 0.3rem 0 0;
+  padding-left: 1.15rem;
+}
+
+.rule li,
+.plain li {
+  margin-bottom: 0.5rem;
+}
+
+.rule li::marker {
+  color: var(--ink-4);
+}
+
+/* The one place a filled surface earns its keep: a formula is a discrete
+   object you scan, not prose you read. */
+.formula {
+  font-family: var(--f-mono);
+  font-size: 0.92rem;
+  background: var(--raised);
+  border: 0;
+  border-radius: var(--radius);
+  padding: 0.95rem 1.15rem;
+  margin: 0 0 2rem;
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  max-width: var(--measure);
+}
+
+.formula b {
+  color: var(--akk);
+  font-weight: 500;
+}
+
+.formula .tr {
+  font-family: var(--f-body);
+  border-top: 1px solid var(--line-strong);
+  padding-top: 0.55rem;
+  margin-top: 0.6rem;
+  white-space: normal;
+}
+
+code {
+  font-family: var(--f-mono);
+  font-size: 0.86em;
+  background: var(--raised);
+  border: 0;
+  border-radius: 5px;
+  padding: 0.1em 0.38em;
+}
+
+.vocab {
+  columns: 250px;
+  column-gap: 3rem;
+  margin: 0 0 2rem;
+}
+
+.vocab dl {
+  margin: 0;
+}
+
+.vocab div {
+  break-inside: avoid;
+  display: flex;
+  gap: 0.6rem;
+  align-items: baseline;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.vocab dt {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.vocab dt.g-m {
+  color: var(--dat);
+}
+
+.vocab dt.g-f {
+  color: var(--akk);
+}
+
+.vocab dt.g-n {
+  color: var(--nom);
+}
+
+.vocab dd {
+  margin: 0 0 0 auto;
+  color: var(--ink-3);
+  font-size: 0.88rem;
+  text-align: right;
+}
+
+.gender-key {
+  font-family: var(--f-body);
+  font-size: 0.82rem;
+  color: var(--ink-3);
+  margin-bottom: 1rem;
+}
+
+.gender-key .g-m {
+  color: var(--dat);
+}
+
+.gender-key .g-f {
+  color: var(--akk);
+}
+
+.gender-key .g-n {
+  color: var(--nom);
+}
+
+
+/* Mein Deutsch Buddy · figures.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Body figure
+   A labelled drawing beats a word list here: the words describe positions on
+   a body, so showing the body carries meaning the list cannot.
+   ========================================================================== */
+
+.body-figure {
+  --bd-fill: #f0f0f2;
+  --bd-fill-on: color-mix(in srgb, var(--akk) 14%, transparent);
+  margin: 0 0 2.5rem;
+  max-width: 780px;
+}
+
+[data-theme="dark"] .body-figure {
+  --bd-fill: #1a1a1c;
+}
+
+/* The neck tucks under the shoulders rather than crossing them. */
+.bd-under {
+  stroke: none;
+}
+
+.body-figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* Silhouette shapes carry a fill: an unfilled contour reads as a cookie
+   cutter no matter how correct its proportions are. The fill gives the figure
+   mass, and the interior lines give it form. */
+.bd-body .bd-form {
+  fill: var(--bd-fill);
+}
+
+.bd-body path,
+.bd-body ellipse,
+.bd-body circle,
+.bd-line {
+  fill: none;
+  stroke: var(--ink-3);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke 0.2s var(--ease), stroke-width 0.2s var(--ease);
+}
+
+.bd-body .bd-solid {
+  fill: var(--ink-3);
+  stroke: none;
+}
+
+/* The back is behind the reader on a front view, so it is dashed rather than
+   drawn as if it were visible. */
+.bd-behind path {
+  stroke-dasharray: 5 6;
+  opacity: 0.55;
+}
+
+.bd-label-hit {
+  fill: transparent;
+  stroke: none;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.bd-hit {
+  fill: none;
+  stroke: transparent;
+  stroke-width: 18;
+  pointer-events: stroke;
+  cursor: pointer;
+}
+
+/* The visible strokes stay out of hit testing so the fat twin above owns it. */
+.bd-body path,
+.bd-body ellipse,
+.bd-body circle {
+  pointer-events: none;
+}
+
+/* A filled silhouette can be hit on its whole area, which is far better than
+   an 18px band along the stroke. */
+.bd-part .bd-form {
+  pointer-events: fill;
+  cursor: pointer;
+}
+
+.bd-body .bd-label-hit {
+  fill: transparent;
+  stroke: none;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.bd-hit {
+  pointer-events: stroke;
+}
+
+.bd-lead {
+  fill: none;
+  stroke: var(--line-strong);
+  stroke-width: 1;
+  transition: stroke 0.2s var(--ease);
+}
+
+.bd-dot {
+  fill: var(--line-strong);
+  stroke: none;
+  transition: fill 0.2s var(--ease), r 0.2s var(--ease);
+}
+
+.bd-name {
+  font-family: var(--f-body);
+  font-size: 15px;
+  fill: var(--ink-2);
+  transition: fill 0.2s var(--ease);
+}
+
+.bd-label {
+  cursor: pointer;
+}
+
+[data-lang="both"] .bd-name.en {
+  transform: translateY(17px);
+  font-size: 13px;
+  fill: var(--ink-4);
+}
+
+/* ---- highlight, driven from either the label or the figure ---- */
+
+.bd-label.on .bd-name {
+  fill: var(--ink);
+  font-weight: 600;
+}
+
+.bd-label.on .bd-lead {
+  stroke: var(--akk);
+}
+
+.bd-label.on .bd-dot {
+  fill: var(--akk);
+}
+
+.bd-part.on path,
+.bd-part.on ellipse,
+.bd-part.on circle {
+  stroke: var(--akk);
+  stroke-width: 2.8;
+}
+
+.bd-body .bd-part.on .bd-form {
+  fill: var(--bd-fill-on);
+}
+
+.bd-part.on .bd-solid {
+  fill: var(--akk);
+  stroke: none;
+}
+
+.bd-part.on.bd-behind path {
+  opacity: 1;
+}
+
+/* Everything unrelated recedes so the named part reads unambiguously. */
+.body-figure.focused .bd-body > :not(.on) .bd-form,
+.body-figure.focused .bd-body :not(.on) > .bd-form {
+  fill: var(--bd-fill);
+  opacity: 0.55;
+}
+
+.body-figure.focused .bd-body > :not(.on) path,
+.body-figure.focused .bd-body > :not(.on) ellipse,
+.body-figure.focused .bd-body > :not(.on) circle,
+.body-figure.focused .bd-line:not(.on) {
+  stroke: var(--line-strong);
+}
+
+.body-figure.focused .bd-label:not(.on) .bd-name {
+  fill: var(--ink-4);
+}
+
+.body-figure.focused .bd-label:not(.on) .bd-lead,
+.body-figure.focused .bd-label:not(.on) .bd-dot {
+  opacity: 0.35;
+}
+
+.bd-label:focus-visible {
+  outline: none;
+}
+
+.bd-label:focus-visible .bd-name {
+  fill: var(--ink);
+  font-weight: 600;
+}
+
+/* ---- chips: the phone version of the labels ---- */
+
+.bd-chips {
+  display: none;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1.25rem;
+}
+
+.bd-chip {
+  font-family: var(--f-body);
+  font-size: 0.84rem;
+  padding: 0.45rem 0.75rem;
+  min-height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: background 0.18s var(--ease), color 0.18s var(--ease), border-color 0.18s var(--ease);
+}
+
+.bd-chip .en {
+  color: var(--ink-4);
+}
+
+[data-lang="both"] .bd-chip .en::before {
+  content: " · ";
+  color: var(--line-strong);
+}
+
+.bd-chip.on {
+  background: var(--akk);
+  border-color: var(--akk);
+  color: #fff;
+}
+
+.bd-chip.on .en {
+  color: #ffffffcc;
+}
+
+@media (max-width: 760px) {
+
+  /* Leader labels do not survive the shrink: at a 390px viewport the 15px
+     type would render near 7px. The figure keeps its scale and the labels
+     become tappable chips underneath. */
+  .bd-label {
+    display: none;
+  }
+
+  .body-figure svg {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .bd-chips {
+    display: flex;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .bd-body path,
+  .bd-body ellipse,
+  .bd-body circle,
+  .bd-lead,
+  .bd-dot,
+  .bd-name,
+  .bd-chip {
+    transition: none;
+  }
+}
+
+/* ==========================================================================
+   Vocabulary preview
+   Hovering a concrete noun raises a pictogram that tracks the cursor. Drawn
+   rather than photographed so the app stays one offline file, and stroked in
+   currentColor so it follows the theme.
+   ========================================================================== */
+
+.vocab div.has-preview dt {
+  cursor: help;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 3px;
+}
+
+@media (pointer: coarse) {
+
+  .vocab div.has-preview dt {
+    cursor: pointer;
+  }
+}
+
+.vp-card {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 130;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.7rem 0.95rem 0.7rem 0.75rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px #00000021, 0 1px 3px #0000001a;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transform-origin: top left;
+  transition:
+    opacity 0.16s var(--ease),
+    visibility 0.16s var(--ease);
+  /* Position is written every frame, so it must not be transitioned or the
+     card lags visibly behind the pointer. */
+  will-change: transform;
+}
+
+.vp-card.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Used for one frame to measure before the first reveal. */
+.vp-card.measuring {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.vp-art {
+  width: 52px;
+  height: 52px;
+  flex: none;
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.vp-swatch {
+  width: 46px;
+  height: 46px;
+  flex: none;
+  border-radius: 10px;
+  border: 1px solid var(--line-strong);
+}
+
+.vp-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.vp-term {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.vp-gloss {
+  font-size: 0.8rem;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .vp-card {
+    transition: none;
+  }
+}
+
+
+/* Mein Deutsch Buddy · search.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Search
+   An overlay rather than a docked bar: it behaves identically on phone and
+   desktop, costs no permanent space, and dismissing it returns you to exactly
+   where you were, which the primary job (checking a form mid-sentence)
+   depends on.
+   ========================================================================== */
+
+.exam-link {
+  text-decoration: none;
+  flex: none;
+}
+
+.search-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.34rem 0.6rem 0.34rem 0.55rem;
+  flex: none;
+}
+
+.search-trigger .search-icon {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  flex: none;
+}
+
+.search-kbd,
+.search-esc,
+.search-foot kbd {
+  font-family: var(--f-mono);
+  font-size: 0.66rem;
+  line-height: 1;
+  color: var(--ink-4);
+  background: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0.16rem 0.32rem;
+}
+
+.search-trigger .search-kbd {
+  background: var(--paper);
+}
+
+/* ---------- overlay ------------------------------------------------------ */
+
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: none;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 9vh 1rem 2rem;
+  background: color-mix(in srgb, var(--ink) 32%, transparent);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.search-overlay.open {
+  display: flex;
+}
+
+.search-panel {
+  width: min(680px, 100%);
+  max-height: 78vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 24px 60px #00000026, 0 2px 8px #0000001a;
+  overflow: hidden;
+  animation: search-in 0.22s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+
+@keyframes search-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.985);
+  }
+}
+
+/* ---------- field -------------------------------------------------------- */
+
+.search-field {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid var(--line);
+  flex: none;
+}
+
+.search-field .search-icon {
+  fill: none;
+  stroke: var(--ink-3);
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  width: 19px;
+  height: 19px;
+  flex: none;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: none;
+  font-family: var(--f-body);
+  font-size: 1.02rem;
+  color: var(--ink);
+  padding: 0;
+}
+
+.search-input::placeholder {
+  color: var(--ink-4);
+}
+
+.search-input::-webkit-search-cancel-button {
+  display: none;
+}
+
+/* ---------- field controls ---------------------------------------------- */
+
+.search-back,
+.search-clear,
+.search-close {
+  flex: none;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  color: var(--ink-3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  transition: background 0.16s var(--ease), color 0.16s var(--ease);
+}
+
+.search-back:hover,
+.search-clear:hover,
+.search-close:hover {
+  color: var(--ink);
+  background: var(--raised);
+}
+
+.search-back svg,
+.search-clear svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.search-back {
+  width: 36px;
+  height: 36px;
+  margin-left: -0.35rem;
+  display: none;
+}
+
+.search-clear {
+  width: 30px;
+  height: 30px;
+}
+
+.search-close {
+  font-family: var(--f-mono);
+  font-size: 0.68rem;
+  padding: 0.24rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--raised);
+}
+
+/* ---------- results ------------------------------------------------------ */
+
+.search-results {
+  list-style: none;
+  margin: 0;
+  padding: 0.3rem 0.35rem 0.5rem;
+  overflow-y: auto;
+  flex: 1;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+/* Grouping gives the list a rhythm to scan by; groups are ordered by their
+   strongest hit, so relevance still decides what leads. */
+.sr-group {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+  padding: 0.85rem 0.7rem 0.3rem;
+}
+
+.sr-group:first-child {
+  padding-top: 0.35rem;
+}
+
+.sr {
+  padding: 0.5rem 0.7rem 0.55rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.sr.active {
+  background: var(--raised);
+}
+
+/* Three tiers, three weights: where it lives, what it is, what it says. */
+.sr-crumb {
+  font-size: 0.71rem;
+  line-height: 1.3;
+  color: var(--ink-4);
+  margin-bottom: 0.1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sr-title {
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ink);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.sr-detail {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--ink-2);
+  margin-top: 0.1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.sr-title mark,
+.sr-detail mark {
+  background: none;
+  color: inherit;
+  font-weight: 700;
+  box-shadow: inset 0 -0.4em 0 var(--akk-bg);
+}
+
+/* The case colour marks the crumb rather than the row edge, so it reads as a
+   property of the content instead of a decorative stripe. */
+.sr[data-case="nom"] .sr-crumb { color: var(--nom); }
+.sr[data-case="akk"] .sr-crumb { color: var(--akk); }
+.sr[data-case="dat"] .sr-crumb { color: var(--dat); }
+.sr[data-case="gen"] .sr-crumb { color: var(--gen); }
+
+.sr-empty {
+  padding: 2rem 1.2rem;
+  text-align: center;
+  color: var(--ink-3);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+.sr-empty-q {
+  display: block;
+  font-size: 1rem;
+  color: var(--ink);
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.sr-empty b {
+  color: var(--ink-2);
+  font-weight: 500;
+}
+
+/* ---------- footer ------------------------------------------------------- */
+
+.search-foot {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 0.9rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.72rem;
+  color: var(--ink-4);
+  flex: none;
+}
+
+.search-foot kbd {
+  margin-right: 0.2rem;
+}
+
+.search-count {
+  margin-left: auto;
+}
+
+/* ---------- landing flash ------------------------------------------------ */
+
+/* After jumping, the exact row is washed briefly. Without it you arrive in
+   the middle of a table with no idea which line you came for. */
+.search-flash {
+  animation: search-flash 1.8s var(--ease);
+}
+
+.search-flash > * {
+  animation: search-flash 1.8s var(--ease);
+}
+
+@keyframes search-flash {
+  0%, 45% {
+    background-color: var(--akk-bg);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@media (max-width: 900px) {
+
+  .search-overlay {
+    padding: 0;
+  }
+
+  .search-panel {
+    width: 100%;
+    max-height: 100dvh;
+    height: 100dvh;
+    border: 0;
+    border-radius: 0;
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .search-trigger-label {
+    display: none;
+  }
+
+  .search-trigger .search-kbd {
+    display: none;
+  }
+
+  .search-trigger {
+    padding: 0.5rem;
+    width: 40px;
+    justify-content: center;
+  }
+
+  /* Arrow and Enter hints are meaningless without a keyboard, and the space
+     matters once the on-screen keyboard halves the viewport. */
+  .search-foot {
+    display: none;
+  }
+
+  /* No backdrop to tap on a full-screen panel, so the exit has to be visible.
+     A back chevron reads as "return" where a keyboard hint means nothing. */
+  .search-back {
+    display: inline-flex;
+  }
+
+  .search-field .search-icon,
+  .search-close {
+    display: none;
+  }
+
+  .search-field {
+    padding: 0.75rem 0.9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .search-panel,
+  .search-flash,
+  .search-flash > * {
+    animation: none;
+  }
+}
+
+
+/* Mein Deutsch Buddy · home.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Home
+   Three destinations, nothing else. The cards borrow the case palette so the
+   colour system introduced on the grammar page is already familiar by the
+   time you meet it.
+   ========================================================================== */
+
+.home-bar {
+  justify-content: space-between;
+}
+
+.home-main {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 6rem 2rem 6rem;
+}
+
+.home-hero {
+  margin-bottom: 4rem;
+}
+
+.home-hero h1 {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  margin: 0 0 0.9rem;
+}
+
+.home-hero .sub {
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--ink-3);
+  max-width: 46ch;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.home-grid {
+  display: grid;
+  gap: 1px;
+  background: var(--line);
+  border-block: 1px solid var(--line);
+}
+
+/* Hairline separators rather than three floating boxes: the page already has
+   one strong element in the heading, and boxes would compete with it. */
+.hcard {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1.6rem;
+  padding: 1.9rem 1rem 1.9rem 0.4rem;
+  background: var(--paper);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.18s var(--ease), padding-left 0.18s var(--ease);
+}
+
+.hcard:hover {
+  background: var(--raised);
+  padding-left: 1rem;
+}
+
+.hcard:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: -3px;
+}
+
+.hcard-art {
+  inline-size: 60px;
+  block-size: 60px;
+  flex: none;
+  display: grid;
+  place-items: center;
+}
+
+.hcard-art svg {
+  inline-size: 44px;
+  block-size: 44px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hcard[data-case="nom"] .hcard-art { color: var(--nom); }
+.hcard[data-case="akk"] .hcard-art { color: var(--akk); }
+.hcard[data-case="dat"] .hcard-art { color: var(--dat); }
+
+.hcard-body {
+  display: grid;
+  gap: 0.18rem;
+  min-width: 0;
+}
+
+.hcard-title {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: 1.55rem;
+  letter-spacing: -0.022em;
+  line-height: 1.15;
+}
+
+.hcard-sub {
+  font-size: 0.95rem;
+  color: var(--ink-2);
+  line-height: 1.45;
+}
+
+.hcard-meta {
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  color: var(--ink-4);
+  margin-top: 0.25rem;
+}
+
+.hcard-go {
+  inline-size: 26px;
+  block-size: 26px;
+  color: var(--ink-4);
+  transition: transform 0.22s var(--ease), color 0.18s var(--ease);
+}
+
+.hcard-go svg {
+  inline-size: 100%;
+  block-size: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hcard:hover .hcard-go {
+  transform: translateX(5px);
+  color: var(--ink);
+}
+
+.home-note {
+  margin-top: 3.5rem;
+  font-size: 0.88rem;
+  color: var(--ink-3);
+  max-width: 62ch;
+}
+
+.home-note p {
+  margin: 0;
+}
+
+.home-note kbd {
+  font-family: var(--f-mono);
+  font-size: 0.76em;
+  background: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0.1em 0.34em;
+}
+
+body.home footer {
+  max-width: 980px;
+  margin: 0 auto;
+  padding-inline: 2rem;
+}
+
+/* ---------- home icon on every other page ------------------------------- */
+
+.home-link,
+.nav-page {
+  text-decoration: none;
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-link {
+  inline-size: 34px;
+  block-size: 34px;
+  padding: 0;
+  border-radius: 999px;
+  background: var(--raised);
+  color: var(--ink-2);
+}
+
+.home-link:hover {
+  background: var(--line);
+  color: var(--ink);
+}
+
+.home-link svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 900px) {
+
+  .home-main {
+    padding: 3rem 1.25rem 4rem;
+  }
+
+  .home-hero {
+    margin-bottom: 2.5rem;
+  }
+
+  .hcard {
+    gap: 1.1rem;
+    padding: 1.4rem 0.5rem 1.4rem 0.2rem;
+  }
+
+  .hcard:hover {
+    padding-left: 0.2rem;
+  }
+
+  .hcard-art {
+    inline-size: 42px;
+    block-size: 42px;
+  }
+
+  .hcard-art svg {
+    inline-size: 32px;
+    block-size: 32px;
+  }
+
+  .hcard-title {
+    font-size: 1.25rem;
+  }
+
+  .hcard-sub {
+    font-size: 0.88rem;
+  }
+
+  .hcard-go {
+    display: none;
+  }
+
+  body.home footer {
+    padding-inline: 1.25rem;
+  }
+
+  /* The home icon replaces the menu button's slot partner; both sit on row 1. */
+  .home-link {
+    grid-area: 1 / 2;
+    inline-size: 40px;
+    block-size: 40px;
+  }
+
+  .topbar .brand {
+    grid-area: 1 / 3;
+  }
+
+  .nav-page {
+    flex: none;
+  }
+}
+
+
+/* Mein Deutsch Buddy · exam.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Prüfungsmodus
+   Drills and spoken practice. Feedback explains every option, so the layout
+   has to give each one room rather than just marking one green.
+   ========================================================================== */
+
+.dr-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 1.25rem;
+}
+
+.dr-filter .chip {
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.dr-filter .chip[aria-pressed="true"] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+
+.dr-score {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  padding: 0.7rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 1.75rem;
+  font-size: 0.88rem;
+  color: var(--ink-2);
+}
+
+.dr-reset {
+  margin-left: auto;
+  border: 1px solid var(--line);
+}
+
+.dr {
+  padding: 0 0 1.75rem;
+  margin: 0 0 1.75rem;
+  border-bottom: 1px solid var(--line);
+  max-width: 74ch;
+}
+
+.dr-part {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+  margin-bottom: 0.35rem;
+}
+
+.dr-q {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: -0.012em;
+  margin: 0 0 0.2rem;
+}
+
+.dr-hint {
+  font-size: 0.85rem;
+  color: var(--ink-3);
+  margin-bottom: 0.7rem;
+}
+
+.dr-opts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 0.7rem;
+}
+
+.dr-o {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.1rem 0.65rem;
+  align-items: baseline;
+  text-align: left;
+  font-family: var(--f-body);
+  font-size: 0.95rem;
+  color: var(--ink);
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--paper);
+  cursor: pointer;
+  transition: border-color 0.16s var(--ease), background 0.16s var(--ease);
+}
+
+.dr:not(.done) .dr-o:hover {
+  border-color: var(--ink-3);
+  background: var(--raised);
+}
+
+.dr-letter {
+  font-family: var(--f-mono);
+  font-size: 0.78rem;
+  color: var(--ink-4);
+}
+
+.dr.done .dr-o {
+  cursor: default;
+}
+
+/* Both the correct option and the ones you did not pick carry a reason. */
+.dr-why {
+  grid-column: 2;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--ink-2);
+  margin-top: 0.35rem;
+  padding-top: 0.35rem;
+  border-top: 1px dashed var(--line);
+}
+
+.dr-o.right {
+  border-color: var(--nom);
+  background: var(--nom-bg);
+}
+
+.dr-o.right .dr-letter,
+.dr-o.right .dr-t {
+  color: var(--nom);
+  font-weight: 600;
+}
+
+.dr-o.wrong {
+  opacity: 0.75;
+}
+
+.dr-o.wrong.chosen {
+  border-color: var(--akk);
+  background: var(--akk-bg);
+  opacity: 1;
+}
+
+.dr-o.wrong.chosen .dr-letter,
+.dr-o.wrong.chosen .dr-t {
+  color: var(--akk);
+  font-weight: 600;
+}
+
+.dr-fb {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
+}
+
+.dr-verdict {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  flex: none;
+}
+
+.dr-verdict.ok {
+  color: var(--nom);
+  background: var(--nom-bg);
+}
+
+.dr-verdict.no {
+  color: var(--akk);
+  background: var(--akk-bg);
+}
+
+.dr-rule {
+  font-family: var(--f-mono);
+  font-size: 0.8rem;
+  color: var(--ink-3);
+}
+
+/* ---------- spoken practice --------------------------------------------- */
+
+.sp-list {
+  max-width: 74ch;
+}
+
+.sp {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem 1rem;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.sp-q {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.sp-n {
+  font-family: var(--f-mono);
+  font-size: 0.75rem;
+  color: var(--ink-4);
+  margin-right: 0.6rem;
+}
+
+.sp-show {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  flex: none;
+}
+
+.sp-a {
+  grid-column: 1 / -1;
+  padding-left: 2.1rem;
+}
+
+.sp-model {
+  font-size: 1rem;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.sp-tip {
+  font-size: 0.85rem;
+  color: var(--ink-3);
+  margin-top: 0.2rem;
+}
+
+@media (max-width: 620px) {
+
+  .sp {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-show {
+    justify-self: start;
+  }
+
+  .sp-a {
+    padding-left: 0;
+  }
+
+  .dr-o {
+    font-size: 0.92rem;
+  }
+}
+
+
+/* Mein Deutsch Buddy · responsive.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Mobile and touch
+   ========================================================================== */
+
+@media (max-width: 900px) {
+
+  /* minmax(0, 1fr), never a bare 1fr: the auto minimum lets the column grow
+     to its content and pushes the page into horizontal scroll. */
+  .shell {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  main {
+    padding: 2.25rem 1.25rem 5rem;
+    padding-left: max(1.25rem, env(safe-area-inset-left));
+    padding-right: max(1.25rem, env(safe-area-inset-right));
+  }
+
+  footer {
+    padding: 2rem 1.25rem 3rem;
+    padding-bottom: max(3rem, env(safe-area-inset-bottom));
+  }
+
+  /* Four columns, not three. The search trigger had no placement and was
+     being auto-flowed onto a third row, which pushed the bar to 155px on a
+     phone. */
+  .topbar {
+    display: grid;
+    grid-template-columns: auto auto minmax(0, 1fr) auto auto;
+    gap: 0.45rem 0.5rem;
+    padding: 0.45rem 0.75rem;
+    padding-left: max(0.75rem, env(safe-area-inset-left));
+    padding-right: max(0.75rem, env(safe-area-inset-right));
+  }
+
+  /* Reclaim height while reading by collapsing the second row only. Tucking
+     the whole bar took the search and menu buttons off-screen, which made
+     search unreachable exactly when it was wanted. */
+  .topbar-controls {
+    max-height: 46px;
+    transition: max-height 0.26s var(--ease), opacity 0.2s var(--ease);
+  }
+
+  .topbar.tucked .topbar-controls {
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .nav-toggle {
+    grid-area: 1 / 1;
+    padding: 0.5rem;
+    width: 40px;
+    justify-content: center;
+  }
+
+  .brand {
+    grid-area: 1 / 3;
+    margin-right: 0;
+    font-size: 0.85rem;
+    align-self: center;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+  }
+
+  .brand span {
+    display: none;
+  }
+
+  .exam-link,
+  .search-trigger {
+    grid-area: 1 / 4;
+  }
+
+  [data-theme-btn] {
+    grid-area: 1 / 5;
+  }
+
+  /* Page links do not fit on row 1 next to everything else, so they join the
+     scrolling control strip on row 2. */
+  .nav-page {
+    grid-row: 2;
+  }
+
+  .topbar-controls {
+    grid-area: 2 / 1 / 2 / -1;
+    gap: 0.6rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 2px;
+  }
+
+  .topbar-controls::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ctrl-group {
+    flex: none;
+  }
+
+  .ctrl-label,
+  .ctrl-group:has(.chip) > .ctrl-label {
+    display: none;
+  }
+
+  .sidenav {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: min(82vw, 320px);
+    padding: 1.5rem 1.25rem 4rem;
+    padding-left: max(1.25rem, env(safe-area-inset-left));
+    padding-top: max(1.5rem, env(safe-area-inset-top));
+    height: 100%;
+    background: var(--paper);
+    border-right: 1px solid var(--line);
+    z-index: 60;
+    transform: translateX(-101%);
+    transition: transform 0.32s var(--ease);
+    box-shadow: 0 0 40px #00000026;
+    overscroll-behavior: contain;
+  }
+
+  .sidenav.open {
+    transform: none;
+  }
+
+  .nav-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 55;
+    background: #00000059;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.32s var(--ease);
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .nav-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .hero {
+    margin-bottom: 4rem;
+  }
+
+  .hero .sub {
+    font-size: 1.02rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .case-key {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem 1.5rem;
+  }
+
+  section.topic {
+    margin-bottom: 4.5rem;
+  }
+
+  h3 {
+    margin-top: 2.5rem;
+  }
+
+  .grid2,
+  .grid3 {
+    gap: 1.75rem;
+  }
+
+  .vocab {
+    columns: 1;
+  }
+
+  .tw {
+    max-width: 100%;
+    overscroll-behavior-x: contain;
+    background:
+      linear-gradient(to left, var(--paper), transparent) right / 28px 100% no-repeat,
+      radial-gradient(farthest-side at 100% 50%, #00000014, transparent) right / 14px 100% no-repeat;
+    background-attachment: local, scroll;
+  }
+
+  table {
+    min-width: 440px;
+  }
+
+  /* Keep the case label in view while the genders scroll past it. */
+  thead th:first-child,
+  tbody th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background: var(--paper);
+    padding-right: 0.9rem;
+  }
+
+  thead th:first-child {
+    z-index: 3;
+  }
+}
+
+@media (pointer: coarse) {
+
+  .chip {
+    min-height: 38px;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.82rem;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* The generic chip padding above would stretch the round toggle into a
+     pill, so restate it as a square. */
+  .theme-toggle {
+    width: 40px;
+    height: 40px;
+    min-height: 40px;
+    padding: 0;
+  }
+
+  .sidenav a {
+    padding: 0.55rem 0.7rem;
+    min-height: 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Hover never fires on touch, so the flip affordance has to be permanent. */
+  .note::after {
+    opacity: 1;
+    transform: none;
+  }
+
+  td,
+  th {
+    padding-top: 0.72rem;
+    padding-bottom: 0.72rem;
+  }
+}
+
+@media (max-width: 420px) {
+
+  .case-key {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .grid2,
+  .grid3 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+@media print {
+
+  .topbar,
+  .sidenav,
+  .nav-backdrop {
+    display: none;
+  }
+
+  .shell {
+    grid-template-columns: 1fr;
+  }
+
+  body {
+    background: #fff;
+    font-size: 10pt;
+  }
+
+  .en,
+  .de,
+  .tr {
+    display: block !important;
+  }
+
+  section.topic {
+    break-inside: avoid-page;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+
+  </style>
+  <script type="module">
+/**
+ * Mein Deutsch Buddy — shared types and storage keys
+ */
+const STORE = {
+    lang: 'de.lang',
+    theme: 'de.theme',
+};
+const root = document.documentElement;
+
+/**
+ * Mein Deutsch Buddy — theme
+ * Light and dark, swapped behind a blur so the change is never seen mid-flight.
+ */
+
+/* ----------------------------------------------------------------- theme */
+function setTheme(t) {
+    root.setAttribute('data-theme', t);
+    const btn = document.querySelector('[data-theme-btn]');
+    if (btn) {
+        /* The button holds an SVG, so its label lives on aria-label and title.
+           Writing textContent here would delete the icon. */
+        const label = t === 'dark' ? 'Hellmodus einschalten' : 'Dunkelmodus einschalten';
+        btn.setAttribute('aria-label', label);
+        btn.setAttribute('title', label);
+    }
+    try {
+        localStorage.setItem(STORE.theme, t);
+    }
+    catch {
+        /* ignore */
+    }
+}
+function initTheme() {
+    let t = window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light';
+    try {
+        const v = localStorage.getItem(STORE.theme);
+        if (v === 'light' || v === 'dark')
+            t = v;
+    }
+    catch {
+        /* ignore */
+    }
+    setTheme(t);
+    getVeil();
+    document
+        .querySelector('[data-theme-btn]')
+        ?.addEventListener('click', () => {
+        morphTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
+}
+/* Timings are duplicated from the CSS by necessity: the swap has to land at
+   peak blur, so JS and CSS must agree on when that is. */
+const MORPH_OUT = 300;
+const MORPH_IN = 300;
+let morphing = false;
+let veil = null;
+function getVeil() {
+    if (!veil) {
+        veil = document.createElement('div');
+        veil.className = 'theme-veil';
+        veil.setAttribute('aria-hidden', 'true');
+        document.body.appendChild(veil);
+    }
+    return veil;
+}
+function morphTheme(next) {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced) {
+        setTheme(next);
+        return;
+    }
+    /* A second click mid-flight would strand the page blurred. */
+    if (morphing)
+        return;
+    morphing = true;
+    const body = document.body;
+    getVeil();
+    body.classList.add('theme-morph');
+    requestAnimationFrame(() => {
+        body.classList.add('theme-morph-out');
+        window.setTimeout(() => {
+            /* Swap with other transitions suppressed, then force a reflow so the
+               browser commits the new colours before animation resumes. The theme
+               toggle is exempt in CSS so its icon still morphs. */
+            root.setAttribute('data-theme-instant', '');
+            setTheme(next);
+            void body.offsetWidth;
+            root.removeAttribute('data-theme-instant');
+            body.classList.remove('theme-morph-out');
+            window.setTimeout(() => {
+                body.classList.remove('theme-morph');
+                morphing = false;
+            }, MORPH_IN + 40);
+        }, MORPH_OUT);
+    });
+}
+
+/** Entry point: Startseite. Only the theme toggle is needed here. */
+
+initTheme();
+
+  </script>
+</head>
+
+<body class="home">
+
+  <header class="topbar home-bar">
+    <div class="brand">Mein Deutsch Buddy</div>
+    <button class="chip theme-toggle" data-theme-btn type="button" aria-label="Dunkelmodus einschalten"
+      title="Dunkelmodus einschalten">
+      <svg class="theme-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+        <mask id="crescent-home">
+          <rect x="0" y="0" width="24" height="24" fill="#fff" />
+          <circle class="cut" cx="30" cy="-6" r="6" fill="#000" />
+        </mask>
+        <circle class="orb" cx="12" cy="12" r="5.2" mask="url(#crescent-home)" />
+        <g class="rays" stroke-linecap="round">
+          <line x1="12" y1="0.8" x2="12" y2="3.2" />
+          <line x1="12" y1="20.8" x2="12" y2="23.2" />
+          <line x1="0.8" y1="12" x2="3.2" y2="12" />
+          <line x1="20.8" y1="12" x2="23.2" y2="12" />
+          <line x1="4.1" y1="4.1" x2="5.8" y2="5.8" />
+          <line x1="18.2" y1="18.2" x2="19.9" y2="19.9" />
+          <line x1="4.1" y1="19.9" x2="5.8" y2="18.2" />
+          <line x1="18.2" y1="5.8" x2="19.9" y2="4.1" />
+        </g>
+      </svg>
+    </button>
+  </header>
+
+  <main class="home-main">
+
+    <div class="home-hero">
+      <h1>Guten Tag.</h1>
+      <p class="sub">Grammatik zum Nachschlagen, Wortschatz nach Themen, und ein Modus für die Prüfung.</p>
+    </div>
+
+    <nav class="home-grid" aria-label="Bereiche">
+
+      <a class="hcard" href="grammatik.html" data-case="dat">
+        <span class="hcard-art" aria-hidden="true">
+          <svg viewBox="0 0 64 64">
+            <rect x="8" y="14" width="48" height="9" rx="2" />
+            <rect x="8" y="27.5" width="48" height="9" rx="2" />
+            <rect x="8" y="41" width="48" height="9" rx="2" />
+            <line x1="21" y1="14" x2="21" y2="50" />
+          </svg>
+        </span>
+        <span class="hcard-body">
+          <span class="hcard-title">Grammatik</span>
+          <span class="hcard-sub"><span class="de">Fälle, Artikel, Pronomen, Zeitformen, Präpositionen, Zahlen,
+              Satzbau</span><span class="en">Cases, articles, pronouns, tenses, prepositions, numbers, word
+              order</span></span>
+          <span class="hcard-meta">30 Kapitel · 60 Tabellen</span>
+        </span>
+        <span class="hcard-go" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M5 12h13M12 5.5 18.5 12 12 18.5" />
+          </svg>
+        </span>
+      </a>
+
+      <a class="hcard" href="worten.html" data-case="akk">
+        <span class="hcard-art" aria-hidden="true">
+          <svg viewBox="0 0 64 64">
+            <circle cx="20" cy="20" r="8" />
+            <circle cx="44" cy="20" r="8" />
+            <circle cx="20" cy="44" r="8" />
+            <circle cx="44" cy="44" r="8" />
+          </svg>
+        </span>
+        <span class="hcard-body">
+          <span class="hcard-title">Wortschatz</span>
+          <span class="hcard-sub"><span class="de">Familie, Beruf, Wohnung, Körper, Kleidung, Farben und
+              Materialien</span><span class="en">Family, jobs, home, body, clothes, colours and materials</span></span>
+          <span class="hcard-meta">8 Themen · 180 Wörter mit Artikel</span>
+        </span>
+        <span class="hcard-go" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M5 12h13M12 5.5 18.5 12 12 18.5" />
+          </svg>
+        </span>
+      </a>
+
+      <a class="hcard" href="pruefung.html" data-case="nom">
+        <span class="hcard-art" aria-hidden="true">
+          <svg viewBox="0 0 64 64">
+            <path d="M14 10h30l8 8v36H14Z" />
+            <path d="M44 10v8h8" />
+            <path d="M22 32l6 6 12-14" />
+          </svg>
+        </span>
+        <span class="hcard-body">
+          <span class="hcard-title">Prüfung</span>
+          <span class="hcard-sub"><span class="de">Plan, Lektionen, Aufgaben mit Erklärung und mündliche
+              Vorbereitung</span><span class="en">Plan, lesson recaps, drills with explanations, and spoken
+              practice</span></span>
+          <span class="hcard-meta">35 Aufgaben · 28 Fragen mündlich</span>
+        </span>
+        <span class="hcard-go" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M5 12h13M12 5.5 18.5 12 12 18.5" />
+          </svg>
+        </span>
+      </a>
+
+    </nav>
+
+    <div class="home-note">
+      <p class="de">Jede Seite hat oben links ein Haus-Symbol, das dich hierher zurückbringt. Auf Grammatik und
+        Wortschatz öffnest du die Suche mit <kbd>/</kbd> oder <kbd>Strg</kbd>+<kbd>K</kbd>.</p>
+      <p class="en">Every page has a house icon in the top left that brings you back here. On Grammatik and Wortschatz
+        you can open search with <kbd>/</kbd> or <kbd>Ctrl</kbd>+<kbd>K</kbd>.</p>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Mein Deutsch Buddy · <span class="de">Eine wachsende Referenz. Neue Kapitel kommen dazu, wenn du sie
+        brauchst.</span><span class="en">A growing reference. New chapters get added as you need them.</span></p>
+  </footer>
+
+</body>
+
+</html>

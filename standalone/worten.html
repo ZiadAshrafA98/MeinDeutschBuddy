@@ -1,0 +1,5261 @@
+<!DOCTYPE html>
+<html lang="de" data-lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wortschatz — Mein Deutsch Buddy</title>
+  <meta name="description" content="German vocabulary by theme: family, jobs, home, body, clothes, colours and materials.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+/* Mein Deutsch Buddy · tokens.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Mein Deutsch Buddy
+
+   Type carries the hierarchy. Hairlines separate; boxes do not contain.
+   Colour appears only where it means something: the four cases, and the
+   three genders that borrow the same palette.
+   ========================================================================== */
+
+:root {
+  /* surfaces */
+  --paper: #ffffff;
+  --raised: #f5f5f7;
+  --sunken: #fafafc;
+  --line: #e3e3e6;
+  --line-strong: #c9c9ce;
+
+  /* text */
+  --ink: #1d1d1f;
+  --ink-2: #4b4b50;
+  --ink-3: #6e6e73;
+  --ink-4: #86868b;
+
+  /* the four cases */
+  --nom: #12705a;
+  --akk: #b03225;
+  --dat: #2a5cad;
+  --gen: #6f4a9c;
+  --nom-bg: #12705a0f;
+  --akk-bg: #b0322510;
+  --dat-bg: #2a5cad0f;
+  --gen-bg: #6f4a9c0f;
+
+  --radius: 10px;
+  --radius-sm: 7px;
+
+  --f-display: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --f-body: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --nav-w: 252px;
+  --measure: 68ch;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="dark"] {
+  --paper: #000000;
+  --raised: #1c1c1e;
+  --sunken: #121214;
+  --line: #2a2a2d;
+  --line-strong: #3f3f44;
+  --ink: #f5f5f7;
+  --ink-2: #c4c4c9;
+  --ink-3: #a1a1a6;
+  --ink-4: #86868b;
+  --nom: #4cc4a0;
+  --akk: #ff7a68;
+  --dat: #7cabff;
+  --gen: #c79bf0;
+  --nom-bg: #4cc4a014;
+  --akk-bg: #ff7a6814;
+  --dat-bg: #7cabff14;
+  --gen-bg: #c79bf014;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.65;
+  letter-spacing: -0.003em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* Mein Deutsch Buddy · typography.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+
+.hero {
+  margin-bottom: 7rem;
+}
+
+.hero h1 {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-stretch: 100%;
+  font-size: clamp(2.6rem, 5.5vw, 4.5rem);
+  line-height: 1.04;
+  letter-spacing: -0.032em;
+  margin: 0 0 1.1rem;
+}
+
+.hero .sub {
+  font-size: 1.16rem;
+  line-height: 1.55;
+  color: var(--ink-3);
+  max-width: 48ch;
+  margin: 0 0 3.5rem;
+  letter-spacing: -0.01em;
+}
+
+/* Case key: no cards, no boxes. A colour rule above each name binds the
+   label to its hue; whitespace does the separating. */
+.case-key {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 2.25rem 2.5rem;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  overflow: visible;
+}
+
+.case-key > div {
+  background: none;
+  padding: 0.9rem 0 0;
+  border-top: 2px solid var(--line-strong);
+}
+
+.case-key .c-nom {
+  border-top-color: var(--nom);
+}
+
+.case-key .c-akk {
+  border-top-color: var(--akk);
+}
+
+.case-key .c-dat {
+  border-top-color: var(--dat);
+}
+
+.case-key .c-gen {
+  border-top-color: var(--gen);
+}
+
+.case-key .k-name {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-stretch: 100%;
+  font-size: 1.12rem;
+  letter-spacing: -0.015em;
+}
+
+.case-key .c-nom .k-name {
+  color: var(--nom);
+}
+
+.case-key .c-akk .k-name {
+  color: var(--akk);
+}
+
+.case-key .c-dat .k-name {
+  color: var(--dat);
+}
+
+.case-key .c-gen .k-name {
+  color: var(--gen);
+}
+
+.case-key .k-q {
+  font-family: var(--f-body);
+  font-size: 0.83rem;
+  color: var(--ink-3);
+  letter-spacing: 0;
+  margin: 0.1rem 0 0.6rem;
+}
+
+.case-key .k-role {
+  font-size: 0.9rem;
+  color: var(--ink-2);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   Sections and headings
+   ========================================================================== */
+
+section.topic {
+  margin: 0 0 6.5rem;
+  scroll-margin-top: 5.5rem;
+}
+
+.topic > h2 {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-stretch: 100%;
+  font-size: clamp(1.75rem, 3.2vw, 2.3rem);
+  letter-spacing: -0.026em;
+  line-height: 1.12;
+  margin: 0 0 0.35rem;
+  padding: 0;
+  border: 0;
+}
+
+.topic > .gloss {
+  font-family: var(--f-body);
+  font-size: 0.95rem;
+  color: var(--ink-3);
+  letter-spacing: -0.005em;
+  text-transform: none;
+  margin: 0 0 2.75rem;
+}
+
+h3 {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-stretch: 100%;
+  font-size: 1.22rem;
+  letter-spacing: -0.018em;
+  margin: 3.5rem 0 1.1rem;
+}
+
+h4 {
+  font-family: var(--f-body);
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 2.2rem 0 0.65rem;
+}
+
+p {
+  margin: 0 0 1.1rem;
+  max-width: var(--measure);
+}
+
+
+/* Mein Deutsch Buddy · layout.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+.shell {
+  display: grid;
+  grid-template-columns: var(--nav-w) minmax(0, 1fr);
+  align-items: start;
+}
+
+.sidenav {
+  position: sticky;
+  top: 3.6rem;
+  height: calc(100vh - 3.6rem);
+  overflow-y: auto;
+  padding: 2rem 1.25rem 5rem 2rem;
+  font-size: 0.86rem;
+  scrollbar-width: thin;
+}
+
+.sidenav h4 {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ink-4);
+  margin: 1.9rem 0 0.45rem;
+  text-transform: none;
+}
+
+.sidenav h4:first-child {
+  margin-top: 0;
+}
+
+.sidenav a {
+  display: block;
+  padding: 0.28rem 0.7rem;
+  margin-left: -0.7rem;
+  color: var(--ink-2);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  border-left: 0;
+  transition: background 0.16s var(--ease), color 0.16s var(--ease);
+}
+
+.sidenav a:hover {
+  color: var(--ink);
+  background: var(--raised);
+}
+
+.sidenav a.active {
+  color: var(--ink);
+  font-weight: 600;
+  background: var(--raised);
+  border-left: 0;
+}
+
+/* In DE+EN the English is a secondary line under the German. In EN-only it
+   is the label itself, so it inherits the link's own size, weight and
+   colour rather than staying demoted. */
+/* In DE+EN the two languages would otherwise run together as
+   "GrundlagenBasics". Links stack; the group headings take a middot so they
+   stay on one compact line. */
+[data-lang="both"] .sidenav h4 .en::before {
+  content: " · ";
+  color: var(--line-strong);
+}
+
+[data-lang="both"] .sidenav a .en {
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 400;
+  color: var(--ink-4);
+  line-height: 1.35;
+}
+
+main {
+  padding: 4rem 4rem 10rem;
+  max-width: 1120px;
+  min-width: 0;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 3rem 4rem 4rem;
+  color: var(--ink-4);
+  font-size: 0.85rem;
+}
+
+footer p {
+  max-width: var(--measure);
+}
+
+
+/* Mein Deutsch Buddy · chrome.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Top bar
+   ========================================================================== */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.7rem 2rem;
+  background: color-mix(in srgb, var(--paper) 82%, transparent);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+  margin-right: auto;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.brand span {
+  font-family: var(--f-body);
+  font-weight: 400;
+  font-size: 0.8rem;
+  letter-spacing: 0;
+  color: var(--ink-3);
+}
+
+.topbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.ctrl-label {
+  font-size: 0.74rem;
+  color: var(--ink-3);
+  letter-spacing: 0;
+}
+
+/* Segmented control. The group reads as one object; the pressed segment is
+   a raised pill inside it rather than a differently-coloured button. */
+.ctrl-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.ctrl-group:has(.chip) {
+  position: relative;
+  background: var(--raised);
+  border-radius: 999px;
+  padding: 2px;
+  gap: 0;
+}
+
+.ctrl-group:has(.chip) > .ctrl-label {
+  padding: 0 0.5rem 0 0.7rem;
+}
+
+.chip {
+  font-family: var(--f-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  padding: 0.34rem 0.78rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-2);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.18s var(--ease), color 0.18s var(--ease);
+}
+
+.chip:hover {
+  color: var(--ink);
+}
+
+.chip[aria-pressed="true"] {
+  color: var(--ink);
+}
+
+/* Inside a segmented group the pill is a separate sliding element, so the
+   chip itself stays transparent. */
+.ctrl-group .chip {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  box-shadow: none;
+}
+
+.seg-indicator {
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: 0;
+  width: 0;
+  z-index: 0;
+  border-radius: 999px;
+  background: var(--paper);
+  box-shadow: 0 1px 3px #0000001f, 0 0 0 0.5px #0000000f;
+  opacity: 0;
+  pointer-events: none;
+}
+
+[data-theme="dark"] .seg-indicator {
+  background: #3a3a3d;
+  box-shadow: none;
+}
+
+.ctrl-group.has-active .seg-indicator {
+  opacity: 1;
+}
+
+/* Applied one frame after the first measurement so the pill does not slide
+   in from the left on load. A slight overshoot gives the movement weight. */
+.ctrl-group.seg-ready .seg-indicator {
+  transition:
+    transform 0.34s cubic-bezier(0.34, 1.25, 0.4, 1),
+    width 0.34s cubic-bezier(0.34, 1.25, 0.4, 1),
+    opacity 0.2s var(--ease),
+    background 0.2s var(--ease);
+}
+
+.chip.case-nom[aria-pressed="true"] {
+  color: var(--nom);
+}
+
+.chip.case-akk[aria-pressed="true"] {
+  color: var(--akk);
+}
+
+.chip.case-dat[aria-pressed="true"] {
+  color: var(--dat);
+}
+
+.chip.case-gen[aria-pressed="true"] {
+  color: var(--gen);
+}
+
+/* ---------- theme morph -------------------------------------------------
+   The swap used to stagger: the page background has no transition and
+   snapped instantly, while chips, nav links and table rows animated their
+   own colours over 160-240ms, so pale controls briefly sat on a dark page.
+
+   The fix is to swap where it cannot be seen. A fixed overlay with a
+   backdrop-filter blurs everything currently on screen, including the top
+   bar, the sidebar and the drawer, without touching layout: no transforms,
+   no filters on flow elements, so position: sticky and page scroll are
+   untouched.
+
+   An earlier version scaled main instead. That was wrong. main is the whole
+   55,000px document, and a transform scales about the element's own centre,
+   so the further down the page you were the further the content slid.
+   ------------------------------------------------------------------------ */
+
+.theme-veil {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  opacity: 0;
+  backdrop-filter: blur(9px) saturate(0.9);
+  -webkit-backdrop-filter: blur(9px) saturate(0.9);
+}
+
+.theme-morph .theme-veil {
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity;
+}
+
+.theme-morph-out .theme-veil {
+  opacity: 1;
+}
+
+/* During the hidden swap every transition is suppressed so nothing animates
+   its colour out of step behind the blur. */
+[data-theme-instant] *,
+[data-theme-instant] *::before,
+[data-theme-instant] *::after {
+  transition: none !important;
+}
+
+/* The toggle is the exception. Suppressing it made the sun snap to a moon
+   rather than become one, so its transitions are restated here. */
+[data-theme-instant] .theme-icon {
+  transition: transform 0.6s cubic-bezier(0.5, 1.5, 0.5, 1) !important;
+}
+
+[data-theme-instant] .theme-icon .orb,
+[data-theme-instant] .theme-icon .cut {
+  transition: transform 0.5s var(--ease) !important;
+}
+
+[data-theme-instant] .theme-icon .rays {
+  transition: transform 0.5s var(--ease), opacity 0.3s var(--ease) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .theme-veil {
+    display: none;
+  }
+}
+
+/* ---------- theme toggle ------------------------------------------------
+   One shape does the work. The orb is masked by a second circle that lives
+   off-canvas in light mode and slides across it in dark mode, carving the
+   crescent. The rays retract into the orb as it arrives, so the sun does not
+   simply cross-fade into a moon: it becomes one.
+   ------------------------------------------------------------------------ */
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  flex: none;
+}
+
+.theme-icon {
+  display: block;
+  overflow: visible;
+  color: var(--ink-2);
+  transform: rotate(0deg);
+  transition: transform 0.6s cubic-bezier(0.5, 1.5, 0.5, 1);
+}
+
+.theme-toggle:hover .theme-icon {
+  color: var(--ink);
+}
+
+.theme-icon .orb {
+  fill: currentColor;
+  transform-origin: 12px 12px;
+  transform: scale(1);
+  transition: transform 0.5s var(--ease);
+}
+
+.theme-icon .cut {
+  transform: translate(0, 0);
+  transition: transform 0.5s var(--ease);
+}
+
+.theme-icon .rays {
+  stroke: currentColor;
+  stroke-width: 1.9;
+  transform-origin: 12px 12px;
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+  transition: transform 0.5s var(--ease), opacity 0.35s var(--ease);
+}
+
+/* dark: the cut slides in, the orb grows into a moon, the rays collapse */
+[data-theme="dark"] .theme-icon {
+  transform: rotate(-90deg);
+}
+
+[data-theme="dark"] .theme-icon .orb {
+  transform: scale(1.45);
+}
+
+[data-theme="dark"] .theme-icon .cut {
+  transform: translate(-13px, 13px);
+}
+
+[data-theme="dark"] .theme-icon .rays {
+  transform: rotate(45deg) scale(0.4);
+  opacity: 0;
+  transition: transform 0.5s var(--ease), opacity 0.2s var(--ease);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .theme-icon,
+  .theme-icon .orb,
+  .theme-icon .cut,
+  .theme-icon .rays {
+    transition: none;
+  }
+}
+
+/* Standalone buttons sit on a quiet fill so they still read as controls. */
+.nav-toggle,
+[data-theme-btn] {
+  background: var(--raised);
+  color: var(--ink-2);
+  padding: 0.38rem 0.85rem;
+}
+
+.nav-toggle:hover,
+[data-theme-btn]:hover {
+  background: var(--line);
+  color: var(--ink);
+}
+
+.chip:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+/* ==========================================================================
+   Scrollbars
+   The platform default is a wide, bright bar that reads as a system control
+   dropped onto the page, and it is worst in dark mode where it becomes the
+   lightest thing on screen.
+
+   Standard properties come first. Note that Chrome 121+ ignores the
+   ::-webkit-scrollbar pseudo-elements entirely once scrollbar-width is set,
+   so the two cannot be combined; the webkit block below is a fallback for
+   engines that lack scrollbar-color, not an enhancement on top.
+   ========================================================================== */
+
+.sidenav,
+.tw,
+.topbar-controls,
+.vocab,
+.formula {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+.sidenav:hover,
+.tw:hover,
+.vocab:hover,
+.formula:hover {
+  scrollbar-color: var(--ink-4) transparent;
+}
+
+/* Reserve the gutter so the bar appearing never nudges the nav contents. */
+.sidenav {
+  scrollbar-gutter: stable;
+}
+
+@supports not (scrollbar-color: auto) {
+
+  .sidenav::-webkit-scrollbar,
+  .tw::-webkit-scrollbar,
+  .topbar-controls::-webkit-scrollbar,
+  .vocab::-webkit-scrollbar,
+  .formula::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .sidenav::-webkit-scrollbar-track,
+  .tw::-webkit-scrollbar-track,
+  .topbar-controls::-webkit-scrollbar-track,
+  .vocab::-webkit-scrollbar-track,
+  .formula::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* A transparent border plus content-box clipping insets the thumb so it
+     floats in the gutter instead of butting against the edge. */
+  .sidenav::-webkit-scrollbar-thumb,
+  .tw::-webkit-scrollbar-thumb,
+  .topbar-controls::-webkit-scrollbar-thumb,
+  .vocab::-webkit-scrollbar-thumb,
+  .formula::-webkit-scrollbar-thumb {
+    background: var(--line-strong);
+    background-clip: content-box;
+    border: 2px solid transparent;
+    border-radius: 999px;
+  }
+
+  .sidenav::-webkit-scrollbar-thumb:hover,
+  .tw::-webkit-scrollbar-thumb:hover,
+  .vocab::-webkit-scrollbar-thumb:hover,
+  .formula::-webkit-scrollbar-thumb:hover {
+    background: var(--ink-4);
+    background-clip: content-box;
+  }
+
+  .sidenav::-webkit-scrollbar-corner,
+  .tw::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}
+
+/* The horizontal strip of controls in the mobile top bar scrolls by drag;
+   a visible bar there is noise. */
+.topbar-controls {
+  scrollbar-width: none;
+}
+
+.topbar-controls::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* Mein Deutsch Buddy · content.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Note: the bilingual, click-to-flip block
+   No box. An indent and a hairline mark it as an aside; a quiet pill carries
+   the affordance that hover used to hide.
+   ========================================================================== */
+
+.note {
+  position: relative;
+  margin: 0 0 2rem;
+  padding: 0 0 0 1.5rem;
+  max-width: var(--measure);
+  border: 0;
+  border-left: 2px solid var(--line-strong);
+  border-radius: 0;
+  background: none;
+  cursor: pointer;
+  transition: border-color 0.22s var(--ease);
+}
+
+.note:hover {
+  border-left-color: var(--akk);
+}
+
+.note:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 6px;
+  border-radius: 2px;
+}
+
+.note p {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.62;
+  color: var(--ink);
+}
+
+[data-lang="both"] .note p + p {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.note .de {
+  font-weight: 400;
+}
+
+/* Same principle: muted only when it sits beneath the German. */
+.note .en {
+  color: var(--ink);
+}
+
+[data-lang="both"] .note .en {
+  color: var(--ink-2);
+}
+
+.note::after {
+  content: attr(data-hint);
+  position: static;
+  display: inline-block;
+  margin-top: 0.7rem;
+  font-family: var(--f-body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--ink-4);
+  background: var(--raised);
+  border-radius: 999px;
+  padding: 0.16rem 0.62rem;
+  opacity: 0;
+  transform: translateY(-2px);
+  transition: opacity 0.22s var(--ease), transform 0.22s var(--ease);
+  pointer-events: none;
+}
+
+.note:hover::after,
+.note:focus-visible::after {
+  opacity: 1;
+  transform: none;
+}
+
+/* language visibility, driven by data-lang on <html> */
+[data-lang="de"] .en {
+  display: none;
+}
+
+[data-lang="en"] .de {
+  display: none;
+}
+
+[data-lang="de"] .note.flipped .en {
+  display: block;
+}
+
+[data-lang="de"] .note.flipped .de {
+  display: none;
+}
+
+[data-lang="en"] .note.flipped .de {
+  display: block;
+}
+
+[data-lang="en"] .note.flipped .en {
+  display: none;
+}
+
+[data-lang="both"] .note {
+  cursor: default;
+}
+
+[data-lang="both"] .note::after {
+  content: "";
+  display: none;
+}
+
+/* ==========================================================================
+   Tables
+   Hairlines only. No outer frame, no fill, no zebra.
+   ========================================================================== */
+
+.tw {
+  overflow-x: auto;
+  margin: 0 0 2.25rem;
+  scrollbar-width: thin;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 480px;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  font-size: 0.94rem;
+  font-variant-numeric: tabular-nums;
+}
+
+caption {
+  caption-side: top;
+  text-align: left;
+  font-family: var(--f-body);
+  font-size: 0.85rem;
+  color: var(--ink-3);
+  letter-spacing: -0.005em;
+  text-transform: none;
+  padding: 0 0 0.75rem;
+}
+
+th,
+td {
+  padding: 0.62rem 1.1rem 0.62rem 0;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+
+thead th {
+  background: none;
+  font-family: var(--f-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink-4);
+  border-bottom: 1px solid var(--line-strong);
+  white-space: nowrap;
+  padding-bottom: 0.5rem;
+}
+
+tbody th {
+  font-weight: 500;
+  white-space: nowrap;
+  background: none;
+  border-right: 0;
+  color: var(--ink);
+}
+
+tbody tr:last-child td,
+tbody tr:last-child th {
+  border-bottom: 0;
+}
+
+tbody tr:hover td {
+  background: none;
+}
+
+td .m,
+th .m {
+  font-family: var(--f-mono);
+  font-size: 0.87em;
+}
+
+.pl {
+  color: var(--ink-3);
+}
+
+.hi {
+  font-weight: 600;
+}
+
+.ex {
+  color: var(--ink-2);
+  font-size: 0.96em;
+}
+
+/* A highlight wash instead of an underline: quieter, and it survives the
+   translation line sitting directly beneath. */
+.ex em {
+  font-style: normal;
+  color: var(--ink);
+  box-shadow: inset 0 -0.42em 0 var(--akk-bg);
+}
+
+.ar {
+  direction: rtl;
+}
+
+/* Case colouring: a coloured label and a short bar, never a filled cell. */
+tr[data-case] > th:first-child {
+  position: relative;
+  padding-left: 0.85rem;
+  box-shadow: none;
+}
+
+tr[data-case] > th:first-child::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72rem;
+  bottom: 0.72rem;
+  width: 3px;
+  border-radius: 2px;
+  background: currentColor;
+}
+
+tr[data-case="nom"] > th:first-child,
+td[data-case="nom"] {
+  color: var(--nom);
+}
+
+tr[data-case="akk"] > th:first-child,
+td[data-case="akk"] {
+  color: var(--akk);
+}
+
+tr[data-case="dat"] > th:first-child,
+td[data-case="dat"] {
+  color: var(--dat);
+}
+
+tr[data-case="gen"] > th:first-child,
+td[data-case="gen"] {
+  color: var(--gen);
+}
+
+/* case focus */
+[data-focus] tr[data-case] {
+  transition: opacity 0.24s var(--ease), background 0.24s var(--ease);
+}
+
+[data-focus="nom"] tr[data-case]:not([data-case="nom"]),
+[data-focus="akk"] tr[data-case]:not([data-case="akk"]),
+[data-focus="dat"] tr[data-case]:not([data-case="dat"]),
+[data-focus="gen"] tr[data-case]:not([data-case="gen"]) {
+  opacity: 0.24;
+}
+
+[data-focus="nom"] tr[data-case="nom"] > * {
+  background: var(--nom-bg);
+}
+
+[data-focus="akk"] tr[data-case="akk"] > * {
+  background: var(--akk-bg);
+}
+
+[data-focus="dat"] tr[data-case="dat"] > * {
+  background: var(--dat-bg);
+}
+
+[data-focus="gen"] tr[data-case="gen"] > * {
+  background: var(--gen-bg);
+}
+
+/* ==========================================================================
+   Translations under German examples
+   ========================================================================== */
+
+.tr {
+  display: none;
+}
+
+[data-lang="en"] .tr,
+[data-lang="both"] .tr {
+  display: block;
+  margin-top: 0.28rem;
+  font-size: 0.88em;
+  line-height: 1.45;
+  color: var(--ink-3);
+  font-style: normal;
+  font-weight: 400;
+  white-space: normal;
+}
+
+.hi .tr,
+b .tr {
+  font-weight: 400;
+}
+
+[data-lang="both"] td > .en,
+[data-lang="both"] th > .en,
+[data-lang="both"] dd > .en {
+  display: block;
+  margin-top: 0.22rem;
+  color: var(--ink-3);
+  font-size: 0.92em;
+  line-height: 1.45;
+}
+
+[data-lang="both"] .rule .en,
+[data-lang="both"] p > .en,
+[data-lang="both"] li > .en,
+[data-lang="both"] .k-role .en {
+  display: block;
+  color: var(--ink-3);
+  margin-top: 0.2rem;
+}
+
+/* ==========================================================================
+   Rule, formula, code, vocab
+   ========================================================================== */
+
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 2.5rem;
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 2.5rem;
+}
+
+/* A rule is a labelled aside, not a card. */
+.rule {
+  background: none;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  padding: 1.1rem 0 0;
+  margin: 0 0 2.25rem;
+  max-width: var(--measure);
+}
+
+.rule .tag {
+  display: block;
+  font-family: var(--f-body);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink-4);
+  margin-bottom: 0.6rem;
+}
+
+.rule ul,
+.plain ul {
+  margin: 0.3rem 0 0;
+  padding-left: 1.15rem;
+}
+
+.rule li,
+.plain li {
+  margin-bottom: 0.5rem;
+}
+
+.rule li::marker {
+  color: var(--ink-4);
+}
+
+/* The one place a filled surface earns its keep: a formula is a discrete
+   object you scan, not prose you read. */
+.formula {
+  font-family: var(--f-mono);
+  font-size: 0.92rem;
+  background: var(--raised);
+  border: 0;
+  border-radius: var(--radius);
+  padding: 0.95rem 1.15rem;
+  margin: 0 0 2rem;
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  max-width: var(--measure);
+}
+
+.formula b {
+  color: var(--akk);
+  font-weight: 500;
+}
+
+.formula .tr {
+  font-family: var(--f-body);
+  border-top: 1px solid var(--line-strong);
+  padding-top: 0.55rem;
+  margin-top: 0.6rem;
+  white-space: normal;
+}
+
+code {
+  font-family: var(--f-mono);
+  font-size: 0.86em;
+  background: var(--raised);
+  border: 0;
+  border-radius: 5px;
+  padding: 0.1em 0.38em;
+}
+
+.vocab {
+  columns: 250px;
+  column-gap: 3rem;
+  margin: 0 0 2rem;
+}
+
+.vocab dl {
+  margin: 0;
+}
+
+.vocab div {
+  break-inside: avoid;
+  display: flex;
+  gap: 0.6rem;
+  align-items: baseline;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.vocab dt {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.vocab dt.g-m {
+  color: var(--dat);
+}
+
+.vocab dt.g-f {
+  color: var(--akk);
+}
+
+.vocab dt.g-n {
+  color: var(--nom);
+}
+
+.vocab dd {
+  margin: 0 0 0 auto;
+  color: var(--ink-3);
+  font-size: 0.88rem;
+  text-align: right;
+}
+
+.gender-key {
+  font-family: var(--f-body);
+  font-size: 0.82rem;
+  color: var(--ink-3);
+  margin-bottom: 1rem;
+}
+
+.gender-key .g-m {
+  color: var(--dat);
+}
+
+.gender-key .g-f {
+  color: var(--akk);
+}
+
+.gender-key .g-n {
+  color: var(--nom);
+}
+
+
+/* Mein Deutsch Buddy · figures.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Body figure
+   A labelled drawing beats a word list here: the words describe positions on
+   a body, so showing the body carries meaning the list cannot.
+   ========================================================================== */
+
+.body-figure {
+  --bd-fill: #f0f0f2;
+  --bd-fill-on: color-mix(in srgb, var(--akk) 14%, transparent);
+  margin: 0 0 2.5rem;
+  max-width: 780px;
+}
+
+[data-theme="dark"] .body-figure {
+  --bd-fill: #1a1a1c;
+}
+
+/* The neck tucks under the shoulders rather than crossing them. */
+.bd-under {
+  stroke: none;
+}
+
+.body-figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* Silhouette shapes carry a fill: an unfilled contour reads as a cookie
+   cutter no matter how correct its proportions are. The fill gives the figure
+   mass, and the interior lines give it form. */
+.bd-body .bd-form {
+  fill: var(--bd-fill);
+}
+
+.bd-body path,
+.bd-body ellipse,
+.bd-body circle,
+.bd-line {
+  fill: none;
+  stroke: var(--ink-3);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke 0.2s var(--ease), stroke-width 0.2s var(--ease);
+}
+
+.bd-body .bd-solid {
+  fill: var(--ink-3);
+  stroke: none;
+}
+
+/* The back is behind the reader on a front view, so it is dashed rather than
+   drawn as if it were visible. */
+.bd-behind path {
+  stroke-dasharray: 5 6;
+  opacity: 0.55;
+}
+
+.bd-label-hit {
+  fill: transparent;
+  stroke: none;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.bd-hit {
+  fill: none;
+  stroke: transparent;
+  stroke-width: 18;
+  pointer-events: stroke;
+  cursor: pointer;
+}
+
+/* The visible strokes stay out of hit testing so the fat twin above owns it. */
+.bd-body path,
+.bd-body ellipse,
+.bd-body circle {
+  pointer-events: none;
+}
+
+/* A filled silhouette can be hit on its whole area, which is far better than
+   an 18px band along the stroke. */
+.bd-part .bd-form {
+  pointer-events: fill;
+  cursor: pointer;
+}
+
+.bd-body .bd-label-hit {
+  fill: transparent;
+  stroke: none;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.bd-hit {
+  pointer-events: stroke;
+}
+
+.bd-lead {
+  fill: none;
+  stroke: var(--line-strong);
+  stroke-width: 1;
+  transition: stroke 0.2s var(--ease);
+}
+
+.bd-dot {
+  fill: var(--line-strong);
+  stroke: none;
+  transition: fill 0.2s var(--ease), r 0.2s var(--ease);
+}
+
+.bd-name {
+  font-family: var(--f-body);
+  font-size: 15px;
+  fill: var(--ink-2);
+  transition: fill 0.2s var(--ease);
+}
+
+.bd-label {
+  cursor: pointer;
+}
+
+[data-lang="both"] .bd-name.en {
+  transform: translateY(17px);
+  font-size: 13px;
+  fill: var(--ink-4);
+}
+
+/* ---- highlight, driven from either the label or the figure ---- */
+
+.bd-label.on .bd-name {
+  fill: var(--ink);
+  font-weight: 600;
+}
+
+.bd-label.on .bd-lead {
+  stroke: var(--akk);
+}
+
+.bd-label.on .bd-dot {
+  fill: var(--akk);
+}
+
+.bd-part.on path,
+.bd-part.on ellipse,
+.bd-part.on circle {
+  stroke: var(--akk);
+  stroke-width: 2.8;
+}
+
+.bd-body .bd-part.on .bd-form {
+  fill: var(--bd-fill-on);
+}
+
+.bd-part.on .bd-solid {
+  fill: var(--akk);
+  stroke: none;
+}
+
+.bd-part.on.bd-behind path {
+  opacity: 1;
+}
+
+/* Everything unrelated recedes so the named part reads unambiguously. */
+.body-figure.focused .bd-body > :not(.on) .bd-form,
+.body-figure.focused .bd-body :not(.on) > .bd-form {
+  fill: var(--bd-fill);
+  opacity: 0.55;
+}
+
+.body-figure.focused .bd-body > :not(.on) path,
+.body-figure.focused .bd-body > :not(.on) ellipse,
+.body-figure.focused .bd-body > :not(.on) circle,
+.body-figure.focused .bd-line:not(.on) {
+  stroke: var(--line-strong);
+}
+
+.body-figure.focused .bd-label:not(.on) .bd-name {
+  fill: var(--ink-4);
+}
+
+.body-figure.focused .bd-label:not(.on) .bd-lead,
+.body-figure.focused .bd-label:not(.on) .bd-dot {
+  opacity: 0.35;
+}
+
+.bd-label:focus-visible {
+  outline: none;
+}
+
+.bd-label:focus-visible .bd-name {
+  fill: var(--ink);
+  font-weight: 600;
+}
+
+/* ---- chips: the phone version of the labels ---- */
+
+.bd-chips {
+  display: none;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1.25rem;
+}
+
+.bd-chip {
+  font-family: var(--f-body);
+  font-size: 0.84rem;
+  padding: 0.45rem 0.75rem;
+  min-height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: background 0.18s var(--ease), color 0.18s var(--ease), border-color 0.18s var(--ease);
+}
+
+.bd-chip .en {
+  color: var(--ink-4);
+}
+
+[data-lang="both"] .bd-chip .en::before {
+  content: " · ";
+  color: var(--line-strong);
+}
+
+.bd-chip.on {
+  background: var(--akk);
+  border-color: var(--akk);
+  color: #fff;
+}
+
+.bd-chip.on .en {
+  color: #ffffffcc;
+}
+
+@media (max-width: 760px) {
+
+  /* Leader labels do not survive the shrink: at a 390px viewport the 15px
+     type would render near 7px. The figure keeps its scale and the labels
+     become tappable chips underneath. */
+  .bd-label {
+    display: none;
+  }
+
+  .body-figure svg {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .bd-chips {
+    display: flex;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .bd-body path,
+  .bd-body ellipse,
+  .bd-body circle,
+  .bd-lead,
+  .bd-dot,
+  .bd-name,
+  .bd-chip {
+    transition: none;
+  }
+}
+
+/* ==========================================================================
+   Vocabulary preview
+   Hovering a concrete noun raises a pictogram that tracks the cursor. Drawn
+   rather than photographed so the app stays one offline file, and stroked in
+   currentColor so it follows the theme.
+   ========================================================================== */
+
+.vocab div.has-preview dt {
+  cursor: help;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 3px;
+}
+
+@media (pointer: coarse) {
+
+  .vocab div.has-preview dt {
+    cursor: pointer;
+  }
+}
+
+.vp-card {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 130;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.7rem 0.95rem 0.7rem 0.75rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px #00000021, 0 1px 3px #0000001a;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transform-origin: top left;
+  transition:
+    opacity 0.16s var(--ease),
+    visibility 0.16s var(--ease);
+  /* Position is written every frame, so it must not be transitioned or the
+     card lags visibly behind the pointer. */
+  will-change: transform;
+}
+
+.vp-card.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Used for one frame to measure before the first reveal. */
+.vp-card.measuring {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.vp-art {
+  width: 52px;
+  height: 52px;
+  flex: none;
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.vp-swatch {
+  width: 46px;
+  height: 46px;
+  flex: none;
+  border-radius: 10px;
+  border: 1px solid var(--line-strong);
+}
+
+.vp-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.vp-term {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.vp-gloss {
+  font-size: 0.8rem;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .vp-card {
+    transition: none;
+  }
+}
+
+
+/* Mein Deutsch Buddy · search.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Search
+   An overlay rather than a docked bar: it behaves identically on phone and
+   desktop, costs no permanent space, and dismissing it returns you to exactly
+   where you were, which the primary job (checking a form mid-sentence)
+   depends on.
+   ========================================================================== */
+
+.exam-link {
+  text-decoration: none;
+  flex: none;
+}
+
+.search-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.34rem 0.6rem 0.34rem 0.55rem;
+  flex: none;
+}
+
+.search-trigger .search-icon {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  flex: none;
+}
+
+.search-kbd,
+.search-esc,
+.search-foot kbd {
+  font-family: var(--f-mono);
+  font-size: 0.66rem;
+  line-height: 1;
+  color: var(--ink-4);
+  background: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0.16rem 0.32rem;
+}
+
+.search-trigger .search-kbd {
+  background: var(--paper);
+}
+
+/* ---------- overlay ------------------------------------------------------ */
+
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: none;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 9vh 1rem 2rem;
+  background: color-mix(in srgb, var(--ink) 32%, transparent);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.search-overlay.open {
+  display: flex;
+}
+
+.search-panel {
+  width: min(680px, 100%);
+  max-height: 78vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 24px 60px #00000026, 0 2px 8px #0000001a;
+  overflow: hidden;
+  animation: search-in 0.22s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+
+@keyframes search-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.985);
+  }
+}
+
+/* ---------- field -------------------------------------------------------- */
+
+.search-field {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid var(--line);
+  flex: none;
+}
+
+.search-field .search-icon {
+  fill: none;
+  stroke: var(--ink-3);
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  width: 19px;
+  height: 19px;
+  flex: none;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: none;
+  font-family: var(--f-body);
+  font-size: 1.02rem;
+  color: var(--ink);
+  padding: 0;
+}
+
+.search-input::placeholder {
+  color: var(--ink-4);
+}
+
+.search-input::-webkit-search-cancel-button {
+  display: none;
+}
+
+/* ---------- field controls ---------------------------------------------- */
+
+.search-back,
+.search-clear,
+.search-close {
+  flex: none;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  color: var(--ink-3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  transition: background 0.16s var(--ease), color 0.16s var(--ease);
+}
+
+.search-back:hover,
+.search-clear:hover,
+.search-close:hover {
+  color: var(--ink);
+  background: var(--raised);
+}
+
+.search-back svg,
+.search-clear svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.search-back {
+  width: 36px;
+  height: 36px;
+  margin-left: -0.35rem;
+  display: none;
+}
+
+.search-clear {
+  width: 30px;
+  height: 30px;
+}
+
+.search-close {
+  font-family: var(--f-mono);
+  font-size: 0.68rem;
+  padding: 0.24rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--raised);
+}
+
+/* ---------- results ------------------------------------------------------ */
+
+.search-results {
+  list-style: none;
+  margin: 0;
+  padding: 0.3rem 0.35rem 0.5rem;
+  overflow-y: auto;
+  flex: 1;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+/* Grouping gives the list a rhythm to scan by; groups are ordered by their
+   strongest hit, so relevance still decides what leads. */
+.sr-group {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+  padding: 0.85rem 0.7rem 0.3rem;
+}
+
+.sr-group:first-child {
+  padding-top: 0.35rem;
+}
+
+.sr {
+  padding: 0.5rem 0.7rem 0.55rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.sr.active {
+  background: var(--raised);
+}
+
+/* Three tiers, three weights: where it lives, what it is, what it says. */
+.sr-crumb {
+  font-size: 0.71rem;
+  line-height: 1.3;
+  color: var(--ink-4);
+  margin-bottom: 0.1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sr-title {
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ink);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.sr-detail {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--ink-2);
+  margin-top: 0.1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.sr-title mark,
+.sr-detail mark {
+  background: none;
+  color: inherit;
+  font-weight: 700;
+  box-shadow: inset 0 -0.4em 0 var(--akk-bg);
+}
+
+/* The case colour marks the crumb rather than the row edge, so it reads as a
+   property of the content instead of a decorative stripe. */
+.sr[data-case="nom"] .sr-crumb { color: var(--nom); }
+.sr[data-case="akk"] .sr-crumb { color: var(--akk); }
+.sr[data-case="dat"] .sr-crumb { color: var(--dat); }
+.sr[data-case="gen"] .sr-crumb { color: var(--gen); }
+
+.sr-empty {
+  padding: 2rem 1.2rem;
+  text-align: center;
+  color: var(--ink-3);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+.sr-empty-q {
+  display: block;
+  font-size: 1rem;
+  color: var(--ink);
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.sr-empty b {
+  color: var(--ink-2);
+  font-weight: 500;
+}
+
+/* ---------- footer ------------------------------------------------------- */
+
+.search-foot {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 0.9rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.72rem;
+  color: var(--ink-4);
+  flex: none;
+}
+
+.search-foot kbd {
+  margin-right: 0.2rem;
+}
+
+.search-count {
+  margin-left: auto;
+}
+
+/* ---------- landing flash ------------------------------------------------ */
+
+/* After jumping, the exact row is washed briefly. Without it you arrive in
+   the middle of a table with no idea which line you came for. */
+.search-flash {
+  animation: search-flash 1.8s var(--ease);
+}
+
+.search-flash > * {
+  animation: search-flash 1.8s var(--ease);
+}
+
+@keyframes search-flash {
+  0%, 45% {
+    background-color: var(--akk-bg);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@media (max-width: 900px) {
+
+  .search-overlay {
+    padding: 0;
+  }
+
+  .search-panel {
+    width: 100%;
+    max-height: 100dvh;
+    height: 100dvh;
+    border: 0;
+    border-radius: 0;
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .search-trigger-label {
+    display: none;
+  }
+
+  .search-trigger .search-kbd {
+    display: none;
+  }
+
+  .search-trigger {
+    padding: 0.5rem;
+    width: 40px;
+    justify-content: center;
+  }
+
+  /* Arrow and Enter hints are meaningless without a keyboard, and the space
+     matters once the on-screen keyboard halves the viewport. */
+  .search-foot {
+    display: none;
+  }
+
+  /* No backdrop to tap on a full-screen panel, so the exit has to be visible.
+     A back chevron reads as "return" where a keyboard hint means nothing. */
+  .search-back {
+    display: inline-flex;
+  }
+
+  .search-field .search-icon,
+  .search-close {
+    display: none;
+  }
+
+  .search-field {
+    padding: 0.75rem 0.9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .search-panel,
+  .search-flash,
+  .search-flash > * {
+    animation: none;
+  }
+}
+
+
+/* Mein Deutsch Buddy · home.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Home
+   Three destinations, nothing else. The cards borrow the case palette so the
+   colour system introduced on the grammar page is already familiar by the
+   time you meet it.
+   ========================================================================== */
+
+.home-bar {
+  justify-content: space-between;
+}
+
+.home-main {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 6rem 2rem 6rem;
+}
+
+.home-hero {
+  margin-bottom: 4rem;
+}
+
+.home-hero h1 {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  margin: 0 0 0.9rem;
+}
+
+.home-hero .sub {
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--ink-3);
+  max-width: 46ch;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.home-grid {
+  display: grid;
+  gap: 1px;
+  background: var(--line);
+  border-block: 1px solid var(--line);
+}
+
+/* Hairline separators rather than three floating boxes: the page already has
+   one strong element in the heading, and boxes would compete with it. */
+.hcard {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1.6rem;
+  padding: 1.9rem 1rem 1.9rem 0.4rem;
+  background: var(--paper);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.18s var(--ease), padding-left 0.18s var(--ease);
+}
+
+.hcard:hover {
+  background: var(--raised);
+  padding-left: 1rem;
+}
+
+.hcard:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: -3px;
+}
+
+.hcard-art {
+  inline-size: 60px;
+  block-size: 60px;
+  flex: none;
+  display: grid;
+  place-items: center;
+}
+
+.hcard-art svg {
+  inline-size: 44px;
+  block-size: 44px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hcard[data-case="nom"] .hcard-art { color: var(--nom); }
+.hcard[data-case="akk"] .hcard-art { color: var(--akk); }
+.hcard[data-case="dat"] .hcard-art { color: var(--dat); }
+
+.hcard-body {
+  display: grid;
+  gap: 0.18rem;
+  min-width: 0;
+}
+
+.hcard-title {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: 1.55rem;
+  letter-spacing: -0.022em;
+  line-height: 1.15;
+}
+
+.hcard-sub {
+  font-size: 0.95rem;
+  color: var(--ink-2);
+  line-height: 1.45;
+}
+
+.hcard-meta {
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  color: var(--ink-4);
+  margin-top: 0.25rem;
+}
+
+.hcard-go {
+  inline-size: 26px;
+  block-size: 26px;
+  color: var(--ink-4);
+  transition: transform 0.22s var(--ease), color 0.18s var(--ease);
+}
+
+.hcard-go svg {
+  inline-size: 100%;
+  block-size: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hcard:hover .hcard-go {
+  transform: translateX(5px);
+  color: var(--ink);
+}
+
+.home-note {
+  margin-top: 3.5rem;
+  font-size: 0.88rem;
+  color: var(--ink-3);
+  max-width: 62ch;
+}
+
+.home-note p {
+  margin: 0;
+}
+
+.home-note kbd {
+  font-family: var(--f-mono);
+  font-size: 0.76em;
+  background: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0.1em 0.34em;
+}
+
+body.home footer {
+  max-width: 980px;
+  margin: 0 auto;
+  padding-inline: 2rem;
+}
+
+/* ---------- home icon on every other page ------------------------------- */
+
+.home-link,
+.nav-page {
+  text-decoration: none;
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-link {
+  inline-size: 34px;
+  block-size: 34px;
+  padding: 0;
+  border-radius: 999px;
+  background: var(--raised);
+  color: var(--ink-2);
+}
+
+.home-link:hover {
+  background: var(--line);
+  color: var(--ink);
+}
+
+.home-link svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 900px) {
+
+  .home-main {
+    padding: 3rem 1.25rem 4rem;
+  }
+
+  .home-hero {
+    margin-bottom: 2.5rem;
+  }
+
+  .hcard {
+    gap: 1.1rem;
+    padding: 1.4rem 0.5rem 1.4rem 0.2rem;
+  }
+
+  .hcard:hover {
+    padding-left: 0.2rem;
+  }
+
+  .hcard-art {
+    inline-size: 42px;
+    block-size: 42px;
+  }
+
+  .hcard-art svg {
+    inline-size: 32px;
+    block-size: 32px;
+  }
+
+  .hcard-title {
+    font-size: 1.25rem;
+  }
+
+  .hcard-sub {
+    font-size: 0.88rem;
+  }
+
+  .hcard-go {
+    display: none;
+  }
+
+  body.home footer {
+    padding-inline: 1.25rem;
+  }
+
+  /* The home icon replaces the menu button's slot partner; both sit on row 1. */
+  .home-link {
+    grid-area: 1 / 2;
+    inline-size: 40px;
+    block-size: 40px;
+  }
+
+  .topbar .brand {
+    grid-area: 1 / 3;
+  }
+
+  .nav-page {
+    flex: none;
+  }
+}
+
+
+/* Mein Deutsch Buddy · exam.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Prüfungsmodus
+   Drills and spoken practice. Feedback explains every option, so the layout
+   has to give each one room rather than just marking one green.
+   ========================================================================== */
+
+.dr-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 1.25rem;
+}
+
+.dr-filter .chip {
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.dr-filter .chip[aria-pressed="true"] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+
+.dr-score {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  padding: 0.7rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 1.75rem;
+  font-size: 0.88rem;
+  color: var(--ink-2);
+}
+
+.dr-reset {
+  margin-left: auto;
+  border: 1px solid var(--line);
+}
+
+.dr {
+  padding: 0 0 1.75rem;
+  margin: 0 0 1.75rem;
+  border-bottom: 1px solid var(--line);
+  max-width: 74ch;
+}
+
+.dr-part {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+  margin-bottom: 0.35rem;
+}
+
+.dr-q {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: -0.012em;
+  margin: 0 0 0.2rem;
+}
+
+.dr-hint {
+  font-size: 0.85rem;
+  color: var(--ink-3);
+  margin-bottom: 0.7rem;
+}
+
+.dr-opts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 0.7rem;
+}
+
+.dr-o {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.1rem 0.65rem;
+  align-items: baseline;
+  text-align: left;
+  font-family: var(--f-body);
+  font-size: 0.95rem;
+  color: var(--ink);
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--paper);
+  cursor: pointer;
+  transition: border-color 0.16s var(--ease), background 0.16s var(--ease);
+}
+
+.dr:not(.done) .dr-o:hover {
+  border-color: var(--ink-3);
+  background: var(--raised);
+}
+
+.dr-letter {
+  font-family: var(--f-mono);
+  font-size: 0.78rem;
+  color: var(--ink-4);
+}
+
+.dr.done .dr-o {
+  cursor: default;
+}
+
+/* Both the correct option and the ones you did not pick carry a reason. */
+.dr-why {
+  grid-column: 2;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--ink-2);
+  margin-top: 0.35rem;
+  padding-top: 0.35rem;
+  border-top: 1px dashed var(--line);
+}
+
+.dr-o.right {
+  border-color: var(--nom);
+  background: var(--nom-bg);
+}
+
+.dr-o.right .dr-letter,
+.dr-o.right .dr-t {
+  color: var(--nom);
+  font-weight: 600;
+}
+
+.dr-o.wrong {
+  opacity: 0.75;
+}
+
+.dr-o.wrong.chosen {
+  border-color: var(--akk);
+  background: var(--akk-bg);
+  opacity: 1;
+}
+
+.dr-o.wrong.chosen .dr-letter,
+.dr-o.wrong.chosen .dr-t {
+  color: var(--akk);
+  font-weight: 600;
+}
+
+.dr-fb {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
+}
+
+.dr-verdict {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  flex: none;
+}
+
+.dr-verdict.ok {
+  color: var(--nom);
+  background: var(--nom-bg);
+}
+
+.dr-verdict.no {
+  color: var(--akk);
+  background: var(--akk-bg);
+}
+
+.dr-rule {
+  font-family: var(--f-mono);
+  font-size: 0.8rem;
+  color: var(--ink-3);
+}
+
+/* ---------- spoken practice --------------------------------------------- */
+
+.sp-list {
+  max-width: 74ch;
+}
+
+.sp {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem 1rem;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.sp-q {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.sp-n {
+  font-family: var(--f-mono);
+  font-size: 0.75rem;
+  color: var(--ink-4);
+  margin-right: 0.6rem;
+}
+
+.sp-show {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  flex: none;
+}
+
+.sp-a {
+  grid-column: 1 / -1;
+  padding-left: 2.1rem;
+}
+
+.sp-model {
+  font-size: 1rem;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.sp-tip {
+  font-size: 0.85rem;
+  color: var(--ink-3);
+  margin-top: 0.2rem;
+}
+
+@media (max-width: 620px) {
+
+  .sp {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-show {
+    justify-self: start;
+  }
+
+  .sp-a {
+    padding-left: 0;
+  }
+
+  .dr-o {
+    font-size: 0.92rem;
+  }
+}
+
+
+/* Mein Deutsch Buddy · responsive.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Mobile and touch
+   ========================================================================== */
+
+@media (max-width: 900px) {
+
+  /* minmax(0, 1fr), never a bare 1fr: the auto minimum lets the column grow
+     to its content and pushes the page into horizontal scroll. */
+  .shell {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  main {
+    padding: 2.25rem 1.25rem 5rem;
+    padding-left: max(1.25rem, env(safe-area-inset-left));
+    padding-right: max(1.25rem, env(safe-area-inset-right));
+  }
+
+  footer {
+    padding: 2rem 1.25rem 3rem;
+    padding-bottom: max(3rem, env(safe-area-inset-bottom));
+  }
+
+  /* Four columns, not three. The search trigger had no placement and was
+     being auto-flowed onto a third row, which pushed the bar to 155px on a
+     phone. */
+  .topbar {
+    display: grid;
+    grid-template-columns: auto auto minmax(0, 1fr) auto auto;
+    gap: 0.45rem 0.5rem;
+    padding: 0.45rem 0.75rem;
+    padding-left: max(0.75rem, env(safe-area-inset-left));
+    padding-right: max(0.75rem, env(safe-area-inset-right));
+  }
+
+  /* Reclaim height while reading by collapsing the second row only. Tucking
+     the whole bar took the search and menu buttons off-screen, which made
+     search unreachable exactly when it was wanted. */
+  .topbar-controls {
+    max-height: 46px;
+    transition: max-height 0.26s var(--ease), opacity 0.2s var(--ease);
+  }
+
+  .topbar.tucked .topbar-controls {
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .nav-toggle {
+    grid-area: 1 / 1;
+    padding: 0.5rem;
+    width: 40px;
+    justify-content: center;
+  }
+
+  .brand {
+    grid-area: 1 / 3;
+    margin-right: 0;
+    font-size: 0.85rem;
+    align-self: center;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+  }
+
+  .brand span {
+    display: none;
+  }
+
+  .exam-link,
+  .search-trigger {
+    grid-area: 1 / 4;
+  }
+
+  [data-theme-btn] {
+    grid-area: 1 / 5;
+  }
+
+  /* Page links do not fit on row 1 next to everything else, so they join the
+     scrolling control strip on row 2. */
+  .nav-page {
+    grid-row: 2;
+  }
+
+  .topbar-controls {
+    grid-area: 2 / 1 / 2 / -1;
+    gap: 0.6rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 2px;
+  }
+
+  .topbar-controls::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ctrl-group {
+    flex: none;
+  }
+
+  .ctrl-label,
+  .ctrl-group:has(.chip) > .ctrl-label {
+    display: none;
+  }
+
+  .sidenav {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: min(82vw, 320px);
+    padding: 1.5rem 1.25rem 4rem;
+    padding-left: max(1.25rem, env(safe-area-inset-left));
+    padding-top: max(1.5rem, env(safe-area-inset-top));
+    height: 100%;
+    background: var(--paper);
+    border-right: 1px solid var(--line);
+    z-index: 60;
+    transform: translateX(-101%);
+    transition: transform 0.32s var(--ease);
+    box-shadow: 0 0 40px #00000026;
+    overscroll-behavior: contain;
+  }
+
+  .sidenav.open {
+    transform: none;
+  }
+
+  .nav-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 55;
+    background: #00000059;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.32s var(--ease);
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .nav-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .hero {
+    margin-bottom: 4rem;
+  }
+
+  .hero .sub {
+    font-size: 1.02rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .case-key {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem 1.5rem;
+  }
+
+  section.topic {
+    margin-bottom: 4.5rem;
+  }
+
+  h3 {
+    margin-top: 2.5rem;
+  }
+
+  .grid2,
+  .grid3 {
+    gap: 1.75rem;
+  }
+
+  .vocab {
+    columns: 1;
+  }
+
+  .tw {
+    max-width: 100%;
+    overscroll-behavior-x: contain;
+    background:
+      linear-gradient(to left, var(--paper), transparent) right / 28px 100% no-repeat,
+      radial-gradient(farthest-side at 100% 50%, #00000014, transparent) right / 14px 100% no-repeat;
+    background-attachment: local, scroll;
+  }
+
+  table {
+    min-width: 440px;
+  }
+
+  /* Keep the case label in view while the genders scroll past it. */
+  thead th:first-child,
+  tbody th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background: var(--paper);
+    padding-right: 0.9rem;
+  }
+
+  thead th:first-child {
+    z-index: 3;
+  }
+}
+
+@media (pointer: coarse) {
+
+  .chip {
+    min-height: 38px;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.82rem;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* The generic chip padding above would stretch the round toggle into a
+     pill, so restate it as a square. */
+  .theme-toggle {
+    width: 40px;
+    height: 40px;
+    min-height: 40px;
+    padding: 0;
+  }
+
+  .sidenav a {
+    padding: 0.55rem 0.7rem;
+    min-height: 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Hover never fires on touch, so the flip affordance has to be permanent. */
+  .note::after {
+    opacity: 1;
+    transform: none;
+  }
+
+  td,
+  th {
+    padding-top: 0.72rem;
+    padding-bottom: 0.72rem;
+  }
+}
+
+@media (max-width: 420px) {
+
+  .case-key {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .grid2,
+  .grid3 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+@media print {
+
+  .topbar,
+  .sidenav,
+  .nav-backdrop {
+    display: none;
+  }
+
+  .shell {
+    grid-template-columns: 1fr;
+  }
+
+  body {
+    background: #fff;
+    font-size: 10pt;
+  }
+
+  .en,
+  .de,
+  .tr {
+    display: block !important;
+  }
+
+  section.topic {
+    break-inside: avoid-page;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+
+  </style>
+  <script type="module">
+/**
+ * Mein Deutsch Buddy — shared types and storage keys
+ */
+const STORE = {
+    lang: 'de.lang',
+    theme: 'de.theme',
+};
+const root = document.documentElement;
+
+/**
+ * Mein Deutsch Buddy — language mode
+ * DE, EN and DE+EN, plus per-block flipping.
+ */
+
+/* -------------------------------------------------------------- language */
+const HINTS = {
+    de: 'CLICK FOR EN',
+    en: 'CLICK FOR DE',
+    both: '',
+};
+function setLang(mode) {
+    root.setAttribute('data-lang', mode);
+    document.querySelectorAll('.note').forEach((n) => {
+        n.classList.remove('flipped');
+        n.dataset.hint = HINTS[mode];
+    });
+    document.querySelectorAll('[data-lang-btn]').forEach((b) => {
+        b.setAttribute('aria-pressed', String(b.dataset.langBtn === mode));
+    });
+    try {
+        localStorage.setItem(STORE.lang, mode);
+    }
+    catch {
+        /* storage unavailable, mode still applies for this visit */
+    }
+}
+function initLang() {
+    let saved = 'de';
+    try {
+        const v = localStorage.getItem(STORE.lang);
+        if (v === 'de' || v === 'en' || v === 'both')
+            saved = v;
+    }
+    catch {
+        /* ignore */
+    }
+    setLang(saved);
+    document.querySelectorAll('[data-lang-btn]').forEach((btn) => {
+        btn.addEventListener('click', () => setLang(btn.dataset.langBtn));
+    });
+    // Click any note to flip that one block to the other language.
+    document.querySelectorAll('.note').forEach((note) => {
+        note.tabIndex = 0;
+        note.setAttribute('role', 'button');
+        const flip = () => {
+            if (root.getAttribute('data-lang') === 'both')
+                return;
+            note.classList.toggle('flipped');
+        };
+        note.addEventListener('click', flip);
+        note.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                flip();
+            }
+        });
+    });
+}
+
+/**
+ * Mein Deutsch Buddy — case focus
+ * Dims every row outside the selected case.
+ */
+
+/* ------------------------------------------------------------ case focus */
+function setFocus(c) {
+    if (c)
+        root.setAttribute('data-focus', c);
+    else
+        root.removeAttribute('data-focus');
+    document.querySelectorAll('[data-case-btn]').forEach((b) => {
+        b.setAttribute('aria-pressed', String(b.dataset.caseBtn === c));
+    });
+}
+function initFocus() {
+    document.querySelectorAll('[data-case-btn]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const id = btn.dataset.caseBtn;
+            setFocus(root.getAttribute('data-focus') === id ? null : id);
+        });
+    });
+}
+
+/**
+ * Mein Deutsch Buddy — theme
+ * Light and dark, swapped behind a blur so the change is never seen mid-flight.
+ */
+
+/* ----------------------------------------------------------------- theme */
+function setTheme(t) {
+    root.setAttribute('data-theme', t);
+    const btn = document.querySelector('[data-theme-btn]');
+    if (btn) {
+        /* The button holds an SVG, so its label lives on aria-label and title.
+           Writing textContent here would delete the icon. */
+        const label = t === 'dark' ? 'Hellmodus einschalten' : 'Dunkelmodus einschalten';
+        btn.setAttribute('aria-label', label);
+        btn.setAttribute('title', label);
+    }
+    try {
+        localStorage.setItem(STORE.theme, t);
+    }
+    catch {
+        /* ignore */
+    }
+}
+function initTheme() {
+    let t = window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light';
+    try {
+        const v = localStorage.getItem(STORE.theme);
+        if (v === 'light' || v === 'dark')
+            t = v;
+    }
+    catch {
+        /* ignore */
+    }
+    setTheme(t);
+    getVeil();
+    document
+        .querySelector('[data-theme-btn]')
+        ?.addEventListener('click', () => {
+        morphTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
+}
+/* Timings are duplicated from the CSS by necessity: the swap has to land at
+   peak blur, so JS and CSS must agree on when that is. */
+const MORPH_OUT = 300;
+const MORPH_IN = 300;
+let morphing = false;
+let veil = null;
+function getVeil() {
+    if (!veil) {
+        veil = document.createElement('div');
+        veil.className = 'theme-veil';
+        veil.setAttribute('aria-hidden', 'true');
+        document.body.appendChild(veil);
+    }
+    return veil;
+}
+function morphTheme(next) {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced) {
+        setTheme(next);
+        return;
+    }
+    /* A second click mid-flight would strand the page blurred. */
+    if (morphing)
+        return;
+    morphing = true;
+    const body = document.body;
+    getVeil();
+    body.classList.add('theme-morph');
+    requestAnimationFrame(() => {
+        body.classList.add('theme-morph-out');
+        window.setTimeout(() => {
+            /* Swap with other transitions suppressed, then force a reflow so the
+               browser commits the new colours before animation resumes. The theme
+               toggle is exempt in CSS so its icon still morphs. */
+            root.setAttribute('data-theme-instant', '');
+            setTheme(next);
+            void body.offsetWidth;
+            root.removeAttribute('data-theme-instant');
+            body.classList.remove('theme-morph-out');
+            window.setTimeout(() => {
+                body.classList.remove('theme-morph');
+                morphing = false;
+            }, MORPH_IN + 40);
+        }, MORPH_OUT);
+    });
+}
+
+/**
+ * Mein Deutsch Buddy — segmented control
+ * A single pill that slides to the pressed chip.
+ */
+/* ------------------------------------------------------- segmented control */
+/* The pressed pill used to appear on one chip and vanish from another. A
+   single indicator element per group slides and resizes to the pressed chip
+   instead, so DE to DE+EN reads as one object moving. It watches aria-pressed
+   rather than being called from setLang and setFocus, so it stays correct no
+   matter what changes the state. */
+function initSegments() {
+    document.querySelectorAll('.ctrl-group').forEach((group) => {
+        const chips = Array.from(group.querySelectorAll('.chip'));
+        if (!chips.length)
+            return;
+        const indicator = document.createElement('span');
+        indicator.className = 'seg-indicator';
+        indicator.setAttribute('aria-hidden', 'true');
+        group.prepend(indicator);
+        const sync = () => {
+            const on = group.querySelector('.chip[aria-pressed="true"]');
+            /* The case group has no pressed chip when no case is focused. */
+            group.classList.toggle('has-active', !!on);
+            if (!on)
+                return;
+            indicator.style.width = `${on.offsetWidth}px`;
+            indicator.style.transform = `translateX(${on.offsetLeft}px)`;
+        };
+        const observer = new MutationObserver(sync);
+        chips.forEach((c) => observer.observe(c, { attributes: true, attributeFilter: ['aria-pressed'] }));
+        window.addEventListener('resize', sync);
+        /* Web fonts change chip widths after load. */
+        if (document.fonts?.ready)
+            void document.fonts.ready.then(sync);
+        sync();
+        /* Position first, animate after, or the pill slides in from the left on
+           page load. */
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => group.classList.add('seg-ready'));
+        });
+    });
+}
+
+/**
+ * Mein Deutsch Buddy — navigation
+ * Mobile drawer, sticky bar and section tracking.
+ */
+/* ------------------------------------------------------------------- nav */
+/* The bar carries two rows on a phone. Tucking it away while the reader is
+   moving down the page gives that height back, and any upward scroll returns
+   it immediately. */
+function initStickyBar() {
+    const bar = document.querySelector('.topbar');
+    if (!bar)
+        return;
+    let last = window.scrollY;
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (ticking)
+            return;
+        ticking = true;
+        requestAnimationFrame(() => {
+            ticking = false;
+            const y = window.scrollY;
+            const delta = y - last;
+            last = y;
+            if (window.innerWidth > 900) {
+                bar.classList.remove('tucked');
+                return;
+            }
+            /* Ignore jitter, and never hide it near the top of the page. */
+            if (Math.abs(delta) < 6 || y < 140) {
+                if (y < 140)
+                    bar.classList.remove('tucked');
+                return;
+            }
+            bar.classList.toggle('tucked', delta > 0);
+        });
+    }, { passive: true });
+}
+function initNav() {
+    const nav = document.querySelector('.sidenav');
+    const toggle = document.querySelector('.nav-toggle');
+    /* Backdrop for the mobile drawer. Built here rather than in the markup so
+       the two pages that share this script do not both have to declare it. */
+    let backdrop = null;
+    if (nav) {
+        backdrop = document.createElement('button');
+        backdrop.className = 'nav-backdrop';
+        backdrop.setAttribute('aria-label', 'Menü schließen');
+        backdrop.tabIndex = -1;
+        document.body.appendChild(backdrop);
+    }
+    function setNav(open) {
+        if (!nav)
+            return;
+        nav.classList.toggle('open', open);
+        backdrop?.classList.toggle('open', open);
+        toggle?.setAttribute('aria-expanded', String(open));
+        if (backdrop)
+            backdrop.tabIndex = open ? 0 : -1;
+        /* Stop the page behind the drawer from scrolling under the finger. */
+        document.body.style.overflow = open && window.innerWidth <= 900 ? 'hidden' : '';
+        if (open) {
+            /* preventScroll, or focusing the first link yanks the nav to the top
+               and undoes the reveal below. */
+            nav.querySelector('a')?.focus({ preventScroll: true });
+            /* The active link only gets revealed when the section changes, so a
+               drawer opened mid-page would show the top of the list instead. */
+            const current = nav.querySelector('a.active');
+            if (current)
+                requestAnimationFrame(() => keepLinkVisible(current));
+        }
+    }
+    toggle?.addEventListener('click', () => {
+        setNav(!(nav?.classList.contains('open') ?? false));
+    });
+    backdrop?.addEventListener('click', () => {
+        setNav(false);
+        toggle?.focus();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && nav?.classList.contains('open')) {
+            setNav(false);
+            toggle?.focus();
+        }
+    });
+    /* A drawer left open while the viewport grows back to desktop would keep
+       the body scroll-locked, so reset on resize. */
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 900)
+            setNav(false);
+    });
+    nav?.querySelectorAll('a').forEach((a) => {
+        a.addEventListener('click', () => {
+            if (window.innerWidth <= 900)
+                setNav(false);
+        });
+    });
+    // Highlight the section currently in view.
+    const links = Array.from(nav?.querySelectorAll('a') ?? []);
+    const byId = new Map();
+    links.forEach((l) => byId.set(l.hash.slice(1), l));
+    const sections = Array.from(document.querySelectorAll('section.topic'));
+    if (!sections.length || !nav)
+        return;
+    /* An IntersectionObserver watching a thin band near the top of the viewport
+       leaves nothing active whenever that band falls in the 104px gap between
+       two sections. Resolving against an anchor line instead always yields
+       exactly one section: the last one that has started above the line. */
+    const ANCHOR = 140;
+    let activeId = '';
+    function keepLinkVisible(link) {
+        if (!nav)
+            return;
+        /* Skip while the mobile drawer is shut, otherwise the nav silently
+           scrolls behind a closed panel. */
+        if (window.innerWidth <= 900 && !nav.classList.contains('open'))
+            return;
+        const nr = nav.getBoundingClientRect();
+        const lr = link.getBoundingClientRect();
+        const pad = 56;
+        let delta = 0;
+        if (lr.top < nr.top + pad)
+            delta = lr.top - (nr.top + pad);
+        else if (lr.bottom > nr.bottom - pad)
+            delta = lr.bottom - (nr.bottom - pad);
+        if (!delta)
+            return;
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        nav.scrollTo({ top: nav.scrollTop + delta, behavior: reduced ? 'auto' : 'smooth' });
+    }
+    function syncActive() {
+        let current = sections[0];
+        for (const s of sections) {
+            if (s.getBoundingClientRect().top <= ANCHOR)
+                current = s;
+            else
+                break;
+        }
+        /* At the very bottom the last section may never cross the line, so claim
+           it explicitly. */
+        if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
+            current = sections[sections.length - 1];
+        }
+        if (!current || current.id === activeId)
+            return;
+        activeId = current.id;
+        links.forEach((l) => l.classList.remove('active'));
+        const link = byId.get(activeId);
+        if (link) {
+            link.classList.add('active');
+            keepLinkVisible(link);
+        }
+    }
+    let ticking = false;
+    function onScroll() {
+        if (ticking)
+            return;
+        ticking = true;
+        requestAnimationFrame(() => {
+            syncActive();
+            ticking = false;
+        });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    syncActive();
+}
+
+/**
+ * Mein Deutsch Buddy — page chrome
+ *
+ * Every page shares the same shell: language modes, case focus, theme and
+ * navigation. Pages differ only in what they add on top, so this is the one
+ * import an entry point always needs.
+ */
+
+
+
+
+
+function initChrome() {
+    initTheme();
+    initLang();
+    initFocus();
+    initSegments();
+    initStickyBar();
+    initNav();
+}
+
+/**
+ * Mein Deutsch Buddy — search
+ *
+ * The document is 54,000px tall and the median section is 1,252px, so a
+ * search that returns section links hands you a haystack and calls it an
+ * answer. The unit of value here is the row: 461 table rows averaging 45
+ * characters, plus 180 vocab entries and 78 rule bullets. Results therefore
+ * render the fact itself, and jumping to context is the secondary action.
+ *
+ * The index is built from the live DOM at load rather than maintained
+ * separately, so it can never drift from the content. The whole corpus is
+ * 8,561 words, which makes that free.
+ */
+const MAX_RESULTS = 24;
+/* ------------------------------------------------------------- normalising */
+/**
+ * Folds the query and the corpus into the same shape. Umlauts and ß are the
+ * point: on a keyboard without them, "fur" has to find "für" and "gross" has
+ * to find "große", or search fails exactly when it is most needed.
+ */
+function fold(s) {
+    return s
+        .toLowerCase()
+        .replace(/ß/g, 'ss')
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/\s+/g, ' ')
+        .trim();
+}
+/**
+ * Reads an element's text including anything the current language mode has
+ * hidden. innerText would drop the English spans in DE mode and the
+ * translation lines outside EN mode, which would make the index depend on
+ * which button was last pressed.
+ */
+function readText(el) {
+    const clone = el.cloneNode(true);
+    clone.querySelectorAll('.en, .tr').forEach((n) => {
+        n.textContent = ' · ' + (n.textContent || '').trim();
+    });
+    return (clone.textContent || '').replace(/\s+/g, ' ').trim();
+}
+const sectionOrder = new Map();
+document.querySelectorAll('section.topic').forEach((s, i) => sectionOrder.set(s.id, i));
+function sectionOf(el) {
+    const sec = el.closest('section.topic');
+    if (!sec)
+        return { id: '', title: '', order: 99 };
+    const h2 = sec.querySelector('h2');
+    return {
+        id: sec.id,
+        title: h2 ? readText(h2).split(' · ')[0] : sec.id,
+        order: sectionOrder.get(sec.id) ?? 99,
+    };
+}
+/* ---------------------------------------------------------------- indexing */
+function buildIndex() {
+    const out = [];
+    const push = (e) => {
+        if (!e.text)
+            return;
+        out.push({
+            ...e,
+            keyFold: fold(e.key),
+            cellsFold: e.cells.map(fold),
+            textFold: fold(e.text),
+        });
+    };
+    /* Table rows. The row on its own is often meaningless ("Dativ: dem, der,
+       dem"), so each carries its caption and column headers as context. */
+    document.querySelectorAll('tbody tr').forEach((tr) => {
+        const table = tr.closest('table');
+        const caption = table?.querySelector('caption');
+        const heads = Array.from(table?.querySelectorAll('thead th') ?? []).map(readText);
+        const cellEls = Array.from(tr.children);
+        const cells = cellEls.map(readText);
+        const { id, title, order } = sectionOf(tr);
+        const labelled = cells
+            .map((c, i) => (heads[i] && i > 0 ? `${heads[i]}: ${c}` : c))
+            .filter(Boolean);
+        push({
+            key: cells[0] || '',
+            cells,
+            text: labelled.join(' · '),
+            context: caption ? readText(caption) : title,
+            sectionId: id,
+            sectionTitle: title,
+            kase: tr.getAttribute('data-case'),
+            type: 'row',
+            el: tr,
+            order,
+        });
+    });
+    /* Vocab entries: term plus gloss, with grammatical gender preserved. */
+    document.querySelectorAll('.vocab div').forEach((row) => {
+        const dt = row.querySelector('dt');
+        const dd = row.querySelector('dd');
+        if (!dt)
+            return;
+        const term = readText(dt);
+        const gloss = dd ? readText(dd) : '';
+        const { id, title, order } = sectionOf(row);
+        const gender = dt.classList.contains('g-m')
+            ? 'dat'
+            : dt.classList.contains('g-f')
+                ? 'akk'
+                : dt.classList.contains('g-n')
+                    ? 'nom'
+                    : null;
+        push({
+            key: term,
+            cells: [term, gloss],
+            text: `${term} · ${gloss}`,
+            context: title,
+            sectionId: id,
+            sectionTitle: title,
+            kase: gender,
+            type: 'vocab',
+            el: row,
+            order,
+        });
+    });
+    /* Labels on the body figure. These replaced a vocabulary list, so without
+       this the eighteen body parts would silently vanish from search. */
+    document.querySelectorAll('.bd-label').forEach((label) => {
+        const de = label.querySelector('.bd-name.de')?.textContent?.trim() || '';
+        const en = label.querySelector('.bd-name.en')?.textContent?.trim() || '';
+        if (!de)
+            return;
+        const { id, title, order } = sectionOf(label);
+        push({
+            key: de,
+            cells: [de, en],
+            text: `${de} · ${en}`,
+            context: 'Körper',
+            sectionId: id,
+            sectionTitle: title,
+            kase: null,
+            type: 'vocab',
+            el: label,
+            order,
+        });
+    });
+    /* Rule bullets: short, declarative, often the actual answer to a "when do
+       I use X" question. */
+    document.querySelectorAll('.rule li').forEach((li) => {
+        const { id, title, order } = sectionOf(li);
+        const tag = li.closest('.rule')?.querySelector('.tag');
+        push({
+            key: '',
+            cells: [],
+            text: readText(li),
+            context: tag ? readText(tag) : title,
+            sectionId: id,
+            sectionTitle: title,
+            kase: null,
+            type: 'rule',
+            el: li,
+            order,
+        });
+    });
+    /* Explanations. Only the first paragraph; the flip gives the rest. */
+    document.querySelectorAll('.note').forEach((note) => {
+        const { id, title, order } = sectionOf(note);
+        push({
+            key: '',
+            cells: [],
+            text: readText(note),
+            context: title,
+            sectionId: id,
+            sectionTitle: title,
+            kase: null,
+            type: 'note',
+            el: note,
+            order,
+        });
+    });
+    /* Sections, so the palette can also do the nav's job — which matters most
+       on mobile, where the nav is behind a drawer. */
+    document.querySelectorAll('section.topic').forEach((sec) => {
+        const h2 = sec.querySelector('h2');
+        const gloss = sec.querySelector('.gloss');
+        if (!h2)
+            return;
+        const title = readText(h2);
+        push({
+            key: title,
+            cells: [title],
+            text: `${title} · ${gloss ? readText(gloss) : ''}`,
+            context: '',
+            sectionId: sec.id,
+            sectionTitle: title,
+            kase: null,
+            type: 'section',
+            el: sec,
+            order: sectionOrder.get(sec.id) ?? 99,
+        });
+    });
+    return out;
+}
+/* ----------------------------------------------------------------- scoring */
+/**
+ * Deliberately not fuzzy. Prefix, substring and word-boundary matching over
+ * folded text covers the realistic cases; typo tolerance and synonyms make
+ * ranking worse long before they make it better.
+ */
+function scoreToken(e, q) {
+    let best = 0;
+    if (e.keyFold === q)
+        best = Math.max(best, 1000);
+    else if (e.keyFold.startsWith(q))
+        best = Math.max(best, 700);
+    for (const c of e.cellsFold) {
+        if (c === q)
+            best = Math.max(best, 900);
+        else if (c.startsWith(q))
+            best = Math.max(best, 620);
+    }
+    if (!best && e.keyFold.includes(q))
+        best = 450;
+    if (!best) {
+        const i = e.textFold.indexOf(q);
+        if (i === 0)
+            best = 320;
+        else if (i > 0)
+            best = /\s|·/.test(e.textFold[i - 1] || '') ? 300 : 150;
+    }
+    if (!best)
+        return 0;
+    /* Sections rank up for short queries so navigation intent surfaces fast,
+       and down for long ones where the user clearly wants a fact. */
+    if (e.type === 'section')
+        best += q.length <= 4 ? 140 : -60;
+    if (e.type === 'row' || e.type === 'vocab')
+        best += 40;
+    if (e.type === 'note')
+        best -= 40;
+    /* Prefer the tersest entry that matches: "dem" should land on a table row,
+       not on a sentence that happens to contain it. */
+    best -= Math.min(120, e.text.length / 6);
+    /* And among equals, prefer the earlier, more fundamental section. */
+    best += Math.max(0, 70 - e.order * 2.2);
+    return best;
+}
+function search(index, raw) {
+    const q = fold(raw);
+    if (!q)
+        return [];
+    const tokens = q.split(' ').filter(Boolean);
+    const scored = [];
+    for (const e of index) {
+        let total = 0;
+        let ok = true;
+        for (const t of tokens) {
+            const s = scoreToken(e, t);
+            if (!s) {
+                ok = false;
+                break;
+            }
+            total += s;
+        }
+        if (!ok)
+            continue;
+        /* Reward the whole phrase appearing intact. */
+        if (tokens.length > 1 && e.textFold.includes(q))
+            total += 250;
+        scored.push({ e, s: total / tokens.length });
+    }
+    scored.sort((a, b) => b.s - a.s);
+    /* Several tables repeat the same paradigm verbatim, so an unfiltered list
+       can open with three identical lines. Keep the best-ranked of each. */
+    const seen = new Set();
+    const unique = [];
+    for (const hit of scored) {
+        if (seen.has(hit.e.textFold))
+            continue;
+        seen.add(hit.e.textFold);
+        unique.push(hit);
+        if (unique.length >= MAX_RESULTS)
+            break;
+    }
+    return unique;
+}
+/* ------------------------------------------------------------------ markup */
+function esc(s) {
+    return s.replace(/[&<>"]/g, (c) => c === '&' ? '&amp;' : c === '<' ? '&lt;' : c === '>' ? '&gt;' : '&quot;');
+}
+/** Marks every folded occurrence of the query in the original string. */
+function highlight(text, q) {
+    if (!q)
+        return esc(text);
+    const foldedText = fold(text);
+    const tokens = Array.from(new Set(fold(q).split(' ').filter(Boolean)));
+    const hits = [];
+    for (const t of tokens) {
+        let i = foldedText.indexOf(t);
+        while (i !== -1) {
+            hits.push([i, i + t.length]);
+            i = foldedText.indexOf(t, i + t.length);
+        }
+    }
+    if (!hits.length)
+        return esc(text);
+    hits.sort((a, b) => a[0] - b[0]);
+    /* Folding can change length (ß becomes ss), so only use these offsets when
+       the two strings still line up. */
+    if (foldedText.length !== text.length)
+        return esc(text);
+    let out = '';
+    let cursor = 0;
+    for (const [s, e] of hits) {
+        if (s < cursor)
+            continue;
+        out += esc(text.slice(cursor, s)) + '<mark>' + esc(text.slice(s, e)) + '</mark>';
+        cursor = e;
+    }
+    return out + esc(text.slice(cursor));
+}
+const TYPE_LABEL = {
+    section: 'Kapitel',
+    row: 'Tabellen',
+    vocab: 'Wortschatz',
+    rule: 'Regeln',
+    note: 'Erklärungen',
+};
+/* Groups appear in this order only when tied; otherwise the group holding the
+   single best hit leads, so relevance still governs what you see first. */
+const TYPE_ORDER = ['section', 'row', 'vocab', 'rule', 'note'];
+function clamp(s, n) {
+    return s.length > n ? s.slice(0, n - 1).trimEnd() + '…' : s;
+}
+/**
+ * Splits an entry into three tiers: where it lives, what it is, and what it
+ * says. A single undifferentiated line gives the eye nothing to land on, and
+ * scanning collapses.
+ */
+function tiers(e) {
+    const sec = e.sectionTitle;
+    switch (e.type) {
+        case 'row': {
+            const caption = e.context && e.context !== sec ? `${sec} › ${e.context}` : sec;
+            const rest = e.cells.slice(1).filter(Boolean).join('  ·  ');
+            return { crumb: clamp(caption, 62), title: e.cells[0] || sec, detail: rest };
+        }
+        case 'vocab':
+            return { crumb: sec, title: e.cells[0] || '', detail: e.cells[1] || '' };
+        case 'section':
+            return { crumb: 'Kapitel', title: e.key, detail: e.text.replace(`${e.key} · `, '') };
+        default:
+            return {
+                crumb: e.context && e.context !== sec ? `${sec} › ${e.context}` : sec,
+                title: clamp(e.text, 150),
+                detail: '',
+            };
+    }
+}
+function renderResult(e, q, active, i) {
+    const t = tiers(e);
+    const kase = e.kase ? ` data-case="${e.kase}"` : '';
+    return (`<li class="sr${active ? ' active' : ''}"${kase} role="option" data-i="${i}" ` +
+        `aria-selected="${active}">` +
+        `<div class="sr-crumb">${esc(t.crumb)}</div>` +
+        `<div class="sr-title">${highlight(t.title, q)}</div>` +
+        (t.detail ? `<div class="sr-detail">${highlight(t.detail, q)}</div>` : '') +
+        `</li>`);
+}
+/** Groups hits by type, ordering groups by the strongest hit inside each. */
+function renderGrouped(hits, q) {
+    const buckets = new Map();
+    hits.forEach((h) => {
+        const arr = buckets.get(h.e.type) ?? [];
+        arr.push(h);
+        buckets.set(h.e.type, arr);
+    });
+    const groups = Array.from(buckets.entries()).sort((a, b) => {
+        const best = Math.max(...b[1].map((h) => h.s)) - Math.max(...a[1].map((h) => h.s));
+        return best !== 0 ? best : TYPE_ORDER.indexOf(a[0]) - TYPE_ORDER.indexOf(b[0]);
+    });
+    const flat = [];
+    let html = '';
+    for (const [type, list] of groups) {
+        html += `<li class="sr-group" role="presentation">${TYPE_LABEL[type]}</li>`;
+        for (const h of list) {
+            html += renderResult(h.e, q, flat.length === 0, flat.length);
+            flat.push(h.e);
+        }
+    }
+    return { html, flat };
+}
+/* --------------------------------------------------------------------- ui */
+function initSearch() {
+    if (!document.querySelector('section.topic'))
+        return;
+    const index = buildIndex();
+    let results = [];
+    let cursor = 0;
+    let open = false;
+    const overlay = document.createElement('div');
+    overlay.className = 'search-overlay';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-label', 'Suchen');
+    overlay.innerHTML =
+        '<div class="search-panel">' +
+            '<div class="search-field">' +
+            '<button type="button" class="search-back" aria-label="Suche schließen">' +
+            '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg></button>' +
+            '<svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><line x1="15.8" y1="15.8" x2="21" y2="21"/></svg>' +
+            '<input type="text" class="search-input" autocomplete="off" spellcheck="false" ' +
+            'placeholder="Wort, Form oder Kapitel suchen" aria-label="Suchen" ' +
+            'role="combobox" aria-expanded="true" aria-controls="search-results">' +
+            '<button type="button" class="search-clear" aria-label="Eingabe löschen" hidden>' +
+            '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>' +
+            '<button type="button" class="search-close" aria-label="Suche schließen">Esc</button>' +
+            '</div>' +
+            '<ul class="search-results" id="search-results" role="listbox"></ul>' +
+            '<div class="search-foot"><span><kbd>↑</kbd><kbd>↓</kbd> bewegen</span>' +
+            '<span><kbd>↵</kbd> öffnen</span><span class="search-count"></span></div>' +
+            '</div>';
+    document.body.appendChild(overlay);
+    const input = overlay.querySelector('.search-input');
+    const list = overlay.querySelector('.search-results');
+    const count = overlay.querySelector('.search-count');
+    const clearBtn = overlay.querySelector('.search-clear');
+    const closeBtn = overlay.querySelector('.search-close');
+    const backBtn = overlay.querySelector('.search-back');
+    /* Before anything is typed the palette lists the chapters, so it doubles as
+       navigation rather than showing an empty box. */
+    const sections = index.filter((e) => e.type === 'section');
+    function draw() {
+        const q = input.value.trim();
+        clearBtn.hidden = !q;
+        cursor = 0;
+        if (!q) {
+            const hits = sections.map((e) => ({ e, s: 1 }));
+            const g = renderGrouped(hits, '');
+            list.innerHTML = g.html;
+            results = g.flat;
+            count.textContent = `${sections.length} Kapitel`;
+            list.scrollTop = 0;
+            return;
+        }
+        const hits = search(index, q);
+        if (!hits.length) {
+            results = [];
+            list.innerHTML =
+                '<li class="sr-empty"><span class="sr-empty-q">Keine Treffer für „' +
+                    esc(q) +
+                    '“</span>Versuch ein einzelnes Wort, zum Beispiel <b>dem</b>, <b>weil</b> ' +
+                    'oder <b>Dativ</b>. Umlaute sind egal: <b>fur</b> findet <b>für</b>.</li>';
+            count.textContent = '0 Treffer';
+            return;
+        }
+        const g = renderGrouped(hits, q);
+        list.innerHTML = g.html;
+        results = g.flat;
+        count.textContent = `${results.length} Treffer`;
+        list.scrollTop = 0;
+    }
+    function moveCursor(delta) {
+        if (!results.length)
+            return;
+        const items = list.querySelectorAll('.sr[data-i]');
+        items[cursor]?.classList.remove('active');
+        items[cursor]?.setAttribute('aria-selected', 'false');
+        cursor = (cursor + delta + results.length) % results.length;
+        const next = items[cursor];
+        if (next) {
+            next.classList.add('active');
+            next.setAttribute('aria-selected', 'true');
+            next.scrollIntoView({ block: 'nearest' });
+        }
+    }
+    function choose(i) {
+        const e = results[i];
+        if (!e)
+            return;
+        close();
+        const target = e.el ?? document.getElementById(e.sectionId);
+        if (!target)
+            return;
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        /* Sections go to their top; a fact is centred, since its meaning usually
+           depends on the rows around it. */
+        if (e.type === 'section') {
+            target.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+        }
+        else {
+            target.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'center' });
+        }
+        target.classList.add('search-flash');
+        window.setTimeout(() => target.classList.remove('search-flash'), 1800);
+    }
+    function openPalette() {
+        if (open)
+            return;
+        open = true;
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        input.value = '';
+        draw();
+        /* iOS needs the focus in the same gesture turn to raise the keyboard. */
+        input.focus();
+    }
+    function close() {
+        if (!open)
+            return;
+        open = false;
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+    input.addEventListener('input', draw);
+    closeBtn.addEventListener('click', close);
+    backBtn.addEventListener('click', close);
+    clearBtn.addEventListener('click', () => {
+        input.value = '';
+        draw();
+        input.focus();
+    });
+    input.addEventListener('keydown', (ev) => {
+        if (ev.key === 'ArrowDown') {
+            ev.preventDefault();
+            moveCursor(1);
+        }
+        else if (ev.key === 'ArrowUp') {
+            ev.preventDefault();
+            moveCursor(-1);
+        }
+        else if (ev.key === 'Enter') {
+            ev.preventDefault();
+            choose(cursor);
+        }
+        else if (ev.key === 'Escape') {
+            ev.preventDefault();
+            close();
+        }
+    });
+    list.addEventListener('click', (ev) => {
+        const li = ev.target.closest('.sr[data-i]');
+        if (!li)
+            return;
+        choose(Number(li.dataset.i));
+    });
+    overlay.addEventListener('mousedown', (ev) => {
+        if (ev.target === overlay)
+            close();
+    });
+    document.querySelectorAll('[data-search-open]').forEach((btn) => {
+        btn.addEventListener('click', openPalette);
+    });
+    document.addEventListener('keydown', (ev) => {
+        const k = ev.key.toLowerCase();
+        if ((ev.metaKey || ev.ctrlKey) && k === 'k') {
+            ev.preventDefault();
+            open ? close() : openPalette();
+            return;
+        }
+        if (open && ev.key === 'Escape') {
+            close();
+            return;
+        }
+        /* Slash opens search, but not while the user is typing somewhere else. */
+        const t = ev.target;
+        const typing = /^(input|textarea|select)$/i.test(t.tagName) || t.isContentEditable;
+        if (!open && !typing && ev.key === '/') {
+            ev.preventDefault();
+            openPalette();
+        }
+    });
+}
+
+/**
+ * Mein Deutsch Buddy — vocabulary preview
+ *
+ * Pairing a word with an image measurably helps retention, so hovering a
+ * concrete noun raises a small card showing it.
+ *
+ * These are drawn as line pictograms rather than photographs. Photos would
+ * mean bundling roughly 180 images or hotlinking a CDN, and the second breaks
+ * the property that this whole app is one file that works offline. Strokes
+ * inherit currentColor, so they follow the theme for free, and they share the
+ * stroke language of the search and theme icons instead of reading as clip
+ * art dropped into a typographic layout.
+ *
+ * Colours get a literal swatch, which beats any drawing of a colour.
+ */
+const VIEW = '0 0 24 24';
+/* Path data only; stroke styling is applied once in CSS. */
+const ICONS = {
+    /* ---- Kleidung ---- */
+    tshirt: 'M8.5 3.5 3.5 5.5 2 10l3.5 1.2V20.5h13V11.2L22 10l-1.5-4.5-5-2a3.5 3.5 0 0 1-7 0Z',
+    hemd: 'M8.5 3.5 3.5 5.5 2 10l3.5 1.2V20.5h13V11.2L22 10l-1.5-4.5-5-2M8.5 3.5 12 7.5l3.5-4M12 7.5v13',
+    pullover: 'M8.5 3.5 2.5 6 1 12.5l4 1.3M15.5 3.5 21.5 6 23 12.5l-4 1.3M5 13.8V20.5h14v-6.7M8.5 3.5a3.5 3.5 0 0 0 7 0',
+    jacke: 'M8.5 3.5 2.5 6 1 12.5l4 1.3M15.5 3.5 21.5 6 23 12.5l-4 1.3M5 13.8V20.5h14v-6.7M8.5 3.5 12 8l3.5-4.5M12 8v12.5',
+    mantel: 'M8 3.5 3 6 1.5 12.5l3.5 1.2V21h14v-7.3l3.5-1.2L20 6l-5-2.5M8 3.5 12 8.5l4-5M12 8.5V21M9.5 14.5h1',
+    bluse: 'M9 3.5 4.5 6 3 11.5l3 1V20.5h12v-8l3-1L19.5 6 15 3.5M9 3.5 12 7.5l3-4M12 7.5v13',
+    hose: 'M6.5 3h11l1 18h-4.5L12 11.5 10 21H5.5ZM6.5 3h11M12 11.5V3',
+    rock: 'M8 4h8l3.5 15.5h-15ZM8 4h8M11 4v15.5M13 4v15.5',
+    kleid: 'M9 3.5 12 6.5l3-3 2 4.5-1.8 1.8L18.5 21h-13l2.3-11.2L6 8Z',
+    guertel: 'M2 9.5h20v5H2Zm7.5 0v5m5-5v5M14.5 12h5',
+    schuh: 'M2.5 16.5h6.5l3 2.2h8a2 2 0 0 1 2 2v.8H2.5Zm0 0v-4.8h4.2l2.3 4.8',
+    socke: 'M8 3h5.5v8.8l3.8 3.2a3.6 3.6 0 0 1-4.6 5.5l-4.7-4V3ZM8 6h5.5',
+    /* ---- Körper ---- */
+    kopf: 'M12 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9ZM4 21a8 8 0 0 1 16 0',
+    gesicht: 'M12 2.5a9.5 9.5 0 1 1 0 19 9.5 9.5 0 0 1 0-19ZM9 10h.01M15 10h.01M8.5 14.5a4.5 4.5 0 0 0 7 0',
+    auge: 'M1.5 12S5 5.5 12 5.5 22.5 12 22.5 12 19 18.5 12 18.5 1.5 12 1.5 12Zm10.5 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z',
+    ohr: 'M7 8.5a5 5 0 0 1 10 0c0 3-2 4-2.8 5.6-.7 1.4-.2 2.4-1.2 4.4A3.4 3.4 0 0 1 7 17.5c0-3 1.5-4 1.5-6a2 2 0 0 1 4 0',
+    nase: 'M12 3v8.5c0 1.4 1.5 2 1.5 3.5a3 3 0 0 1-5.5 1.6M12 3l-2.5 2.5M15 19.5c-1 1-4.5 1.4-6.5 0',
+    mund: 'M2.5 12S6.5 8 12 8s9.5 4 9.5 4-4 4-9.5 4-9.5-4-9.5-4Zm0 0h19',
+    zahn: 'M6.5 3.5c-2 0-3 1.8-3 4 0 4 1.7 5.5 2.4 10 .3 2 .8 3 1.8 3 1.6 0 1.6-3 2.3-5.6.3-1 .6-1.4 2-1.4s1.7.4 2 1.4c.7 2.6.7 5.6 2.3 5.6 1 0 1.5-1 1.8-3 .7-4.5 2.4-6 2.4-10 0-2.2-1-4-3-4-1.7 0-2.6 1-5.5 1s-3.8-1-5.5-1Z',
+    schulter: 'M12 4.5a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7ZM3 21c0-4 3-6.5 5.5-7.5M21 21c0-4-3-6.5-5.5-7.5M3 21h4.5M21 21h-4.5',
+    arm: 'M7 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM7 9v5.5c0 3 2 5 5 5h5.5M17.5 16.5l3 3-3 3',
+    hand: 'M8.5 12V5a1.5 1.5 0 0 1 3 0v5.5M11.5 10V4a1.5 1.5 0 0 1 3 0v6.5M14.5 10.5V6a1.5 1.5 0 0 1 3 0v8c0 4-2.5 7-6 7s-6-2.5-6-6v-4.5a1.5 1.5 0 0 1 3 0V13',
+    bauch: 'M12 2.5a3 3 0 1 1 0 6 3 3 0 0 1 0-6ZM7.5 21c-1-3.5-1-6 0-8.5C8.3 10.6 9.8 9.5 12 9.5s3.7 1.1 4.5 3c1 2.5 1 5 0 8.5M9.5 15a3.5 3.5 0 0 0 5 0',
+    ruecken: 'M12 2.5a3 3 0 1 1 0 6 3 3 0 0 1 0-6ZM7.5 21c-1-3.5-1-6 0-8.5C8.3 10.6 9.8 9.5 12 9.5s3.7 1.1 4.5 3c1 2.5 1 5 0 8.5M12 10v10M9.8 12.5h4.4M9.8 15.5h4.4M9.8 18.5h4.4',
+    bein: 'M9 2.5h6l-.8 8.5c-.2 2 .3 3 .8 4.5.6 1.8.8 3.5.8 6h-4c0-2.5-.4-4-1-5.5-.6 1.5-1 3-1 5.5H6c0-3 .3-5 1-7 .6-1.8.8-3 .7-4.5Z',
+    fuss: 'M6 4.5c-1.5 2-2 5-1.5 8 .4 2.5 1.2 4 1.2 6.5h4.6c0-2.5-.8-4-1-6 2 1 4 1.5 6.2 1.5 2 0 3-1 3-2.5s-1.5-2.5-3.5-3c-3-.8-5.5-2.5-6.5-4.5Z',
+    fieber: 'M14 14.8V4.5a2.5 2.5 0 0 0-5 0v10.3a4.5 4.5 0 1 0 5 0ZM11.5 16.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm0-1.5V7',
+    husten: 'M9 4.5a4 4 0 1 1 0 8 4 4 0 0 1 0-8ZM2 21c0-3.5 2.5-6 7-6M14.5 8.5c1.5.6 1.5 2.4 0 3M17.5 6.5c3 1.3 3 6.7 0 8M15 16.5h5M15 19.5h3',
+    schnupfen: 'M12 3v8.5c0 1.4 1.5 2 1.5 3.5a3 3 0 0 1-5.5 1.6M12 3l-2.5 2.5M16.5 15c1.2 1.6 2 2.7 2 3.6a2 2 0 1 1-4 0c0-.9.8-2 2-3.6Z',
+    schmerzen: 'M12 1.5 14 8l6.5-2-4 5.5 4 5.5L14 15l-2 6.5-2-6.5-6.5 2 4-5.5-4-5.5L10 8Z',
+    /* ---- Wohnung ---- */
+    haus: 'M3 10.5 12 3l9 7.5M5 9.5V21h14V9.5M10 21v-6.5h4V21',
+    wohnung: 'M2.5 21h19M4.5 21V6l7-3.5V21M11.5 21V8.5l8 3V21M7 9h1.5M7 12.5h1.5M7 16h1.5M15 13.5h1.5M15 17h1.5',
+    zimmer: 'M3 20V7l9-4 9 4v13M3 20h18M8 20v-6h4v6M16 10.5h2.5v3H16Z',
+    tisch: 'M2 9h20M4 9v11M20 9v11M2 9v-.5A1.5 1.5 0 0 1 3.5 7h17A1.5 1.5 0 0 1 22 8.5V9',
+    schreibtisch: 'M2 8.5h20M3.5 8.5V20M20.5 8.5V20M13 8.5V16h7.5M15.5 12h2.5M15.5 8.5h5',
+    stuhl: 'M6.5 3.5h11v9h-11ZM6.5 12.5h11M7.5 12.5V21M16.5 12.5V21M7.5 17.5h9',
+    sofa: 'M2 11.5a2 2 0 0 1 4 0v3h12v-3a2 2 0 0 1 4 0V18H2ZM6 14.5V8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v6.5M4 18v2.5M20 18v2.5',
+    sessel: 'M5 11.5a2 2 0 0 1 3.5-1.3v-2A2.2 2.2 0 0 1 10.7 6h2.6a2.2 2.2 0 0 1 2.2 2.2v2A2 2 0 0 1 19 11.5V18H5ZM8.5 10.2V15h7v-4.8M6.5 18v2.5M17.5 18v2.5',
+    bett: 'M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8M2 16h20M2 12V6M22 12V6M6 10V7.5h5V10',
+    kleiderschrank: 'M4 2.5h16v19H4ZM12 2.5v19M10 11v2.5M14 11v2.5M4 21.5v-19M7 6h2M15 6h2',
+    fernseher: 'M2.5 4.5h19v12h-19ZM8 20.5h8M12 16.5v4',
+    kuehlschrank: 'M4.5 2.5h15v19h-15ZM4.5 9.5h15M7.5 5.5v2.5M7.5 12v3',
+    herd: 'M3 6.5h18v14H3ZM3 11.5h18M6.5 8.5h.01M10 8.5h.01M13.5 8.5h.01M17 8.5h.01M7 15.5h10M7 18h10',
+    dusche: 'M12 2.5v4M7 9.5a5 5 0 0 1 10 0ZM9 13.5v1.5M12 13.5v3M15 13.5v1.5M9.5 19v1.5M13.5 18.5v2',
+    waschbecken: 'M3 11.5h18v2a6 6 0 0 1-6 6H9a6 6 0 0 1-6-6ZM12 11.5V7a3 3 0 0 1 3-3h2M12 15.5h.01',
+    toilette: 'M6 3.5h4v6h6a2 2 0 0 1 2 2c0 3.5-1.5 6-4 7.5V21H9v-2c-2.5-1.5-4-4-4-7.5a2 2 0 0 1 1-1.7M6 3.5v6',
+    teppich: 'M4 6.5h16v11H4ZM4 6.5 2 4.5M20 6.5l2-2M4 17.5l-2 2M20 17.5l2 2M7.5 9.5h9M7.5 12h9M7.5 14.5h9',
+    fenster: 'M3.5 3.5h17v17h-17ZM12 3.5v17M3.5 12h17',
+    tuer: 'M5 2.5h14v19H5ZM15 12h.01',
+    wand: 'M2.5 5h19v14h-19ZM2.5 9.5h19M2.5 14.5h19M9 5v4.5M15 9.5V14.5M9 14.5V19',
+    balkon: 'M3 3.5h18M4.5 3.5V10M19.5 3.5V10M3 10h18M4 10v11M20 10v11M8 10v11M12 10v11M16 10v11M3 21h18',
+    kueche: 'M3 3.5h18v17H3ZM3 10.5h18M6.5 6.5h.01M6.5 14h4M6.5 17h4M15 13.5h3v6h-3Z',
+    keller: 'M3 10.5 12 3l9 7.5M5 9.5V15h14V9.5M3 15h18v6H3ZM8 18h.01M12 18h.01M16 18h.01',
+    geschirr: 'M4.5 2.5h15v19h-15ZM4.5 7h15M7.5 4.5h.01M10.5 4.5h.01M12 10a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Z',
+};
+/* Term to icon. Written against the normalised term: no article, and only
+   the part before a slash. */
+const TERMS = {
+    /* Kleidung */
+    'hose': 'hose', 'mantel': 'mantel', 'jacke': 'jacke', 'bluse': 'bluse',
+    'guertel': 'guertel', 'hemd': 'hemd', 't-shirt': 'tshirt', 'pullover': 'pullover',
+    'kleid': 'kleid', 'rock': 'rock', 'schuh': 'schuh', 'socke': 'socke',
+    /* Körper */
+    'kopf': 'kopf', 'gesicht': 'gesicht', 'auge': 'auge', 'ohr': 'ohr',
+    'nase': 'nase', 'mund': 'mund', 'zahn': 'zahn', 'schulter': 'schulter',
+    'arm': 'arm', 'hand': 'hand', 'bauch': 'bauch', 'ruecken': 'ruecken',
+    'bein': 'bein', 'fuss': 'fuss', 'husten': 'husten', 'fieber': 'fieber',
+    'schnupfen': 'schnupfen', 'schmerzen': 'schmerzen',
+    /* Wohnung */
+    'wohnung': 'wohnung', 'haus': 'haus', 'zimmer': 'zimmer',
+    'wohnzimmer': 'sofa', 'schlafzimmer': 'bett', 'arbeitszimmer': 'schreibtisch',
+    'badezimmer': 'dusche', 'kueche': 'kueche', 'balkon': 'balkon',
+    'keller': 'keller', 'sofa': 'sofa', 'sessel': 'sessel', 'tisch': 'tisch',
+    'esstisch': 'tisch', 'schreibtisch': 'schreibtisch', 'stuhl': 'stuhl',
+    'fernseher': 'fernseher', 'bett': 'bett', 'kleiderschrank': 'kleiderschrank',
+    'herd': 'herd', 'kuehlschrank': 'kuehlschrank',
+    'geschirrspuelmaschine': 'geschirr', 'dusche': 'dusche',
+    'waschbecken': 'waschbecken', 'toilette': 'toilette', 'teppich': 'teppich',
+    'fenster': 'fenster', 'tuer': 'tuer', 'wand': 'wand',
+};
+/* Colours render as a swatch instead of a drawing. */
+const SWATCHES = {
+    rot: '#c8302b', blau: '#2a5cad', gelb: '#e8b83a', 'gruen': '#2f8f4e',
+    schwarz: '#1d1d1f', weiss: '#fbfbfd', grau: '#8e8e93', braun: '#8a5a3b',
+    dunkelbraun: '#4a2f1d', lila: '#7b4fa8', orange: '#e07a2f', rosa: '#e7a0bd',
+    silber: '#c0c3c8', gold: '#c9a227',
+};
+/** Strips the article, plural marker and any alternative after a slash. */
+function normalise(raw) {
+    return raw
+        .toLowerCase()
+        .split('/')[0]
+        .replace(/\bpl\.?\b/g, '')
+        .replace(/^(der|die|das)\s+/, '')
+        .replace(/ß/g, 'ss')
+        .replace(/ä/g, 'ae')
+        .replace(/ö/g, 'oe')
+        .replace(/ü/g, 'ue')
+        .replace(/[^a-z0-9-]/g, '')
+        .trim();
+}
+function artFor(term) {
+    const key = normalise(term);
+    if (!key)
+        return null;
+    if (TERMS[key] && ICONS[TERMS[key]])
+        return { kind: 'icon', value: ICONS[TERMS[key]] };
+    if (SWATCHES[key])
+        return { kind: 'swatch', value: SWATCHES[key] };
+    return null;
+}
+/* --------------------------------------------------------------------- ui */
+function initVocabPreview() {
+    const items = Array.from(document.querySelectorAll('.vocab div'));
+    if (!items.length)
+        return;
+    const card = document.createElement('div');
+    card.className = 'vp-card';
+    card.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(card);
+    let showTimer = 0;
+    let visible = false;
+    let pending = null;
+    let frame = 0;
+    function place(x, y) {
+        const w = card.offsetWidth;
+        const h = card.offsetHeight;
+        const pad = 14;
+        /* Flip rather than clip when the cursor nears an edge. */
+        let left = x + 18;
+        let top = y + 18;
+        if (left + w > window.innerWidth - pad)
+            left = x - w - 18;
+        if (top + h > window.innerHeight - pad)
+            top = y - h - 18;
+        card.style.transform = `translate3d(${Math.max(pad, left)}px, ${Math.max(pad, top)}px, 0)`;
+    }
+    /* Set while the pointer is inside an item, so a card cancelled mid-delay
+       (by a scroll, say) can be rescheduled rather than lost until the pointer
+       leaves and re-enters. */
+    let hovered = null;
+    function onMove(ev) {
+        pending = { x: ev.clientX, y: ev.clientY };
+        if (!visible && !showTimer && hovered) {
+            const { item, art } = hovered;
+            const x = ev.clientX;
+            const y = ev.clientY;
+            showTimer = window.setTimeout(() => {
+                showTimer = 0;
+                show(item, art, x, y);
+            }, 130);
+        }
+        if (frame)
+            return;
+        frame = requestAnimationFrame(() => {
+            frame = 0;
+            if (pending && visible)
+                place(pending.x, pending.y);
+        });
+    }
+    function show(item, art, x, y) {
+        const dt = item.querySelector('dt');
+        const dd = item.querySelector('dd');
+        const term = dt ? dt.textContent || '' : '';
+        const gloss = dd ? dd.textContent || '' : '';
+        const body = art.kind === 'icon'
+            ? `<svg class="vp-art" viewBox="${VIEW}" aria-hidden="true"><path d="${art.value}"/></svg>`
+            : `<span class="vp-swatch" style="background:${art.value}"></span>`;
+        card.innerHTML =
+            `${body}<div class="vp-text"><span class="vp-term">${term}</span>` +
+                `<span class="vp-gloss">${gloss}</span></div>`;
+        /* Position before revealing, or the card flashes at its last location. */
+        card.classList.add('measuring');
+        place(x, y);
+        card.classList.remove('measuring');
+        card.classList.add('open');
+        visible = true;
+    }
+    /* Anchored placement for touch: centred over the word, flipped below it if
+       there is no room above. */
+    function anchor(item, art, r) {
+        show(item, art, 0, 0);
+        const w = card.offsetWidth;
+        const h = card.offsetHeight;
+        const pad = 12;
+        let left = r.left + r.width / 2 - w / 2;
+        left = Math.min(Math.max(pad, left), window.innerWidth - w - pad);
+        let top = r.top - h - 10;
+        if (top < pad)
+            top = r.bottom + 10;
+        card.style.transform = `translate3d(${left}px, ${top}px, 0)`;
+    }
+    function hide() {
+        window.clearTimeout(showTimer);
+        showTimer = 0;
+        card.classList.remove('open');
+        visible = false;
+    }
+    /* Input type is decided per event rather than once from a media query, so
+       a laptop with both a trackpad and a touchscreen behaves correctly with
+       whichever the reader actually used. */
+    let lastPointer = 'mouse';
+    document.addEventListener('pointerdown', (ev) => {
+        lastPointer = ev.pointerType || 'mouse';
+    }, true);
+    items.forEach((item) => {
+        const dt = item.querySelector('dt');
+        if (!dt)
+            return;
+        const art = artFor(dt.textContent || '');
+        if (!art)
+            return;
+        item.classList.add('has-preview');
+        item.addEventListener('pointerenter', (ev) => {
+            if (ev.pointerType !== 'mouse')
+                return;
+            /* A short delay stops cards firing while the pointer sweeps down a list
+               on its way somewhere else. */
+            window.clearTimeout(showTimer);
+            hovered = { item, art };
+            const x = ev.clientX;
+            const y = ev.clientY;
+            showTimer = window.setTimeout(() => {
+                showTimer = 0;
+                show(item, art, x, y);
+            }, 130);
+            item.addEventListener('pointermove', onMove);
+        });
+        item.addEventListener('pointerleave', (ev) => {
+            if (ev.pointerType !== 'mouse')
+                return;
+            item.removeEventListener('pointermove', onMove);
+            hovered = null;
+            hide();
+        });
+        /* Touch and pen have no hover, so the card is tapped open and anchored to
+           the word instead of tracking a cursor. */
+        item.addEventListener('click', (ev) => {
+            if (lastPointer === 'mouse')
+                return;
+            ev.stopPropagation();
+            if (visible) {
+                hide();
+                return;
+            }
+            const r = item.getBoundingClientRect();
+            anchor(item, art, r);
+        });
+    });
+    document.addEventListener('click', () => {
+        if (lastPointer !== 'mouse')
+            hide();
+    });
+    window.addEventListener('scroll', hide, { passive: true });
+}
+
+/**
+ * Mein Deutsch Buddy — body figure
+ *
+ * The Körper vocabulary describes positions on a body, so a labelled drawing
+ * carries meaning a two-column word list cannot. Hovering a name lights the
+ * part, hovering the part lights the name, and everything else recedes so the
+ * pairing is unambiguous.
+ */
+function initBodyFigure() {
+    const found = document.querySelector('.body-figure');
+    if (!found)
+        return;
+    const fig = found;
+    const labels = Array.from(fig.querySelectorAll('.bd-label'));
+    const parts = Array.from(fig.querySelectorAll('.bd-part'));
+    const chips = Array.from(fig.querySelectorAll('.bd-chip'));
+    /* A 2px stroke on a fill:none path is a 2px hover target. Each drawn shape
+       gets a transparent twin with a fat stroke to catch the pointer, so the
+       drawing is as easy to hover as the labels are. */
+    parts.forEach((group) => {
+        Array.from(group.querySelectorAll('path, ellipse, circle')).forEach((shape) => {
+            if (shape.classList.contains('bd-solid'))
+                return;
+            const hit = shape.cloneNode(false);
+            hit.setAttribute('class', 'bd-hit');
+            group.insertBefore(hit, group.firstChild);
+        });
+    });
+    /* The label group is mostly empty space: a thin leader line and some text.
+       A transparent rect covering both texts, padded, makes the whole label
+       region hoverable instead of just the glyphs. */
+    labels.forEach((group) => {
+        const texts = Array.from(group.querySelectorAll('.bd-name'));
+        if (!texts.length)
+            return;
+        let x1 = Infinity;
+        let y1 = Infinity;
+        let x2 = -Infinity;
+        let y2 = -Infinity;
+        texts.forEach((t) => {
+            const bb = t.getBBox();
+            /* A text hidden by the current language mode reports a zero box at the
+               origin, which would stretch the rect back to x=0 and leave every
+               label overlapping every other. */
+            if (!bb.width && !bb.height)
+                return;
+            x1 = Math.min(x1, bb.x);
+            y1 = Math.min(y1, bb.y);
+            x2 = Math.max(x2, bb.x + bb.width);
+            y2 = Math.max(y2, bb.y + bb.height);
+        });
+        if (!isFinite(x1))
+            return;
+        const pad = 6;
+        const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        rect.setAttribute('class', 'bd-label-hit');
+        rect.setAttribute('x', String(x1 - pad));
+        rect.setAttribute('y', String(y1 - pad));
+        rect.setAttribute('width', String(x2 - x1 + pad * 2));
+        /* Room for the English line that appears underneath in DE+EN. */
+        rect.setAttribute('height', String(y2 - y1 + pad * 2 + 15));
+        group.insertBefore(rect, group.firstChild);
+    });
+    function setActive(part) {
+        fig.classList.toggle('focused', !!part);
+        labels.forEach((l) => l.classList.toggle('on', l.dataset.part === part));
+        parts.forEach((p) => p.classList.toggle('on', p.dataset.part === part));
+        chips.forEach((c) => {
+            const on = c.dataset.part === part;
+            c.classList.toggle('on', on);
+            c.setAttribute('aria-pressed', String(on));
+        });
+    }
+    /* Labels and the drawing are two views of the same thing, so either one
+       lighting up should light the other. */
+    [...labels, ...parts].forEach((el) => {
+        const part = el.dataset.part || null;
+        el.addEventListener('pointerenter', (ev) => {
+            if (ev.pointerType !== 'mouse')
+                return;
+            setActive(part);
+        });
+        el.addEventListener('pointerleave', (ev) => {
+            if (ev.pointerType !== 'mouse')
+                return;
+            setActive(null);
+        });
+        el.addEventListener('focus', () => setActive(part));
+        el.addEventListener('blur', () => setActive(null));
+    });
+    /* Touch: tapping the figure or a chip pins the highlight until it is
+       tapped again, since there is nothing to hover away from. */
+    let pinned = null;
+    const toggle = (part) => {
+        pinned = pinned === part ? null : part;
+        setActive(pinned);
+    };
+    chips.forEach((c) => c.addEventListener('click', () => toggle(c.dataset.part || null)));
+    parts.forEach((p) => p.addEventListener('click', () => {
+        if (window.innerWidth <= 760)
+            toggle(p.dataset.part || null);
+    }));
+    labels.forEach((l) => l.addEventListener('click', () => toggle(l.dataset.part || null)));
+}
+
+/** Entry point: Wortschatz */
+
+
+
+
+initChrome();
+initSearch();
+initVocabPreview();
+initBodyFigure();
+
+  </script>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <button class="chip nav-toggle" aria-expanded="false" aria-controls="sidenav">Menü</button>
+    <a class="chip home-link" href="index.html" aria-label="Startseite" title="Startseite">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+        <path d="M3 10.5 12 3.5l9 7M5.5 9.2V20h13V9.2M10 20v-6h4v6" />
+      </svg>
+    </a>
+    <div class="brand">Wortschatz <span>Mein Deutsch Buddy</span></div>
+
+    <div class="topbar-controls">
+      <div class="ctrl-group">
+        <span class="ctrl-label">Sprache</span>
+        <button class="chip" data-lang-btn="de" aria-pressed="true">DE</button>
+        <button class="chip" data-lang-btn="en" aria-pressed="false">EN</button>
+        <button class="chip" data-lang-btn="both" aria-pressed="false">DE+EN</button>
+      </div>
+
+      <div class="ctrl-group">
+        <span class="ctrl-label">Fallfokus</span>
+        <button class="chip case-nom" data-case-btn="nom" aria-pressed="false">Nom</button>
+        <button class="chip case-akk" data-case-btn="akk" aria-pressed="false">Akk</button>
+        <button class="chip case-dat" data-case-btn="dat" aria-pressed="false">Dat</button>
+        <button class="chip case-gen" data-case-btn="gen" aria-pressed="false">Gen</button>
+      </div>
+    </div>
+
+    <a class="chip nav-page" href="grammatik.html">Grammatik</a>
+    <a class="chip nav-page" href="pruefung.html">Prüfung</a>
+    <button class="chip search-trigger" data-search-open type="button" aria-label="Suchen">
+      <svg class="search-icon" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" focusable="false">
+        <circle cx="11" cy="11" r="6.5" />
+        <line x1="15.8" y1="15.8" x2="21" y2="21" />
+      </svg>
+      <span class="search-trigger-label">Suchen</span>
+      <kbd class="search-kbd">/</kbd>
+    </button>
+    <button class="chip theme-toggle" data-theme-btn type="button"
+      aria-label="Dunkelmodus einschalten" title="Dunkelmodus einschalten">
+      <svg class="theme-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+        <mask id="crescent-wort">
+          <rect x="0" y="0" width="24" height="24" fill="#fff" />
+          <circle class="cut" cx="30" cy="-6" r="6" fill="#000" />
+        </mask>
+        <circle class="orb" cx="12" cy="12" r="5.2" mask="url(#crescent-wort)" />
+        <g class="rays" stroke-linecap="round">
+          <line x1="12" y1="0.8" x2="12" y2="3.2" />
+          <line x1="12" y1="20.8" x2="12" y2="23.2" />
+          <line x1="0.8" y1="12" x2="3.2" y2="12" />
+          <line x1="20.8" y1="12" x2="23.2" y2="12" />
+          <line x1="4.1" y1="4.1" x2="5.8" y2="5.8" />
+          <line x1="18.2" y1="18.2" x2="19.9" y2="19.9" />
+          <line x1="4.1" y1="19.9" x2="5.8" y2="18.2" />
+          <line x1="18.2" y1="5.8" x2="19.9" y2="4.1" />
+        </g>
+      </svg>
+    </button>
+  </header>
+
+  <div class="shell">
+  <nav class="sidenav" id="sidenav" aria-label="Inhalt">
+  <h4><span class="de">Themen</span><span class="en">Themes</span></h4>
+  <a href="#familie"><span class="de">Familie</span><span class="en">Family</span></a>
+  <a href="#beruf"><span class="de">Beruf</span><span class="en">Jobs</span></a>
+  <a href="#wohnung"><span class="de">Wohnung</span><span class="en">Home</span></a>
+  <a href="#farben"><span class="de">Farben und Materialien</span><span class="en">Colours and materials</span></a>
+  <a href="#eigenschaften"><span class="de">Eigenschaften</span><span class="en">Adjectives</span></a>
+  <a href="#koerper"><span class="de">Körper und Gesundheit</span><span class="en">Body and health</span></a>
+  <a href="#kleidung"><span class="de">Kleidung</span><span class="en">Clothes</span></a>
+  <a href="#tag"><span class="de">Mein Tag: Perfekt im Text</span><span class="en">A day described in the perfect tense</span></a>
+</nav>
+
+    <main>
+    <div class="hero">
+      <h1>Wörter mit<br>Geschlecht.</h1>
+      <p class="sub">Jedes Nomen lernst du mit seinem Artikel, sonst ist es halb gelernt. Die Farbe zeigt das Geschlecht: blau für der, rot für die, grün für das.</p>
+    </div>
+
+    <p class="gender-key"><b class="g-m">■ der</b> &nbsp; <b class="g-f">■ die</b> &nbsp; <b class="g-n">■ das</b> &nbsp; — <span
+        class="de">Fahr mit der Maus über ein Wort mit gepunkteter Linie, dann siehst du ein Bild.</span><span class="en">Hover a word with a dotted underline to see a picture.</span></p>
+
+      <section class="topic" id="familie">
+        <h2>Familie</h2>
+        <p class="gloss">Family</p>
+
+        <div class="vocab">
+          <dl>
+            <div>
+              <dt class="g-m">der Vater</dt>
+              <dd>father</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Mutter</dt>
+              <dd>mother</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Eltern <span class="pl">Pl.</span></dt>
+              <dd>parents</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Sohn</dt>
+              <dd>son</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Tochter</dt>
+              <dd>daughter</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Bruder</dt>
+              <dd>brother</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Schwester</dt>
+              <dd>sister</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Geschwister <span class="pl">Pl.</span></dt>
+              <dd>siblings</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Großvater / Opa</dt>
+              <dd>grandfather</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Großmutter / Oma</dt>
+              <dd>grandmother</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Großeltern <span class="pl">Pl.</span></dt>
+              <dd>grandparents</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Enkel</dt>
+              <dd>grandson</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Enkelin</dt>
+              <dd>granddaughter</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Onkel</dt>
+              <dd>uncle</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Tante</dt>
+              <dd>aunt</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Cousin</dt>
+              <dd>cousin (m)</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Cousine</dt>
+              <dd>cousin (f)</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Neffe</dt>
+              <dd>nephew</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Nichte</dt>
+              <dd>niece</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Ehemann</dt>
+              <dd>husband</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Ehefrau</dt>
+              <dd>wife</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Stiefmutter</dt>
+              <dd>stepmother</dd>
+            </div>
+            <div>
+              <dt class="g-n">das Kind</dt>
+              <dd>child</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Familie</dt>
+              <dd>family</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="topic" id="beruf">
+        <h2>Beruf</h2>
+        <p class="gloss">Jobs</p>
+
+        <div class="note">
+          <p class="de">Die feminine Form bekommt meist <b>-in</b>: der Ingenieur → die Ingenieurin, der Arzt → die
+            Ärztin (mit Umlaut). Fragen: <em>Was bist du von Beruf? / Was machst du beruflich?</em> Antwort: <em>Ich bin
+              Ingenieur</em> oder <em>Ich arbeite als Ingenieur bei Qestit in Zamalek</em>. <b>als</b> = die Rolle,
+            <b>bei</b> = die Firma, <b>in</b> = der Ort.
+          </p>
+          <p class="en">The feminine form usually adds <b>-in</b>: der Ingenieur → die Ingenieurin, der Arzt → die
+            Ärztin (with umlaut). Questions: <em>Was bist du von Beruf? / Was machst du beruflich?</em> Answer: <em>Ich
+              bin Ingenieur</em> or <em>Ich arbeite als Ingenieur bei Qestit in Zamalek</em>. <b>als</b> = the role,
+            <b>bei</b> = the company, <b>in</b> = the location. Note there is no article after <em>Ich bin</em>.
+          </p>
+        </div>
+        <div class="vocab">
+          <dl>
+            <div>
+              <dt class="g-m">der Ingenieur</dt>
+              <dd>engineer</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Arzt</dt>
+              <dd>doctor</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Ärztin</dt>
+              <dd>doctor (f)</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Lehrer</dt>
+              <dd>teacher</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Student</dt>
+              <dd>student</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Journalistin</dt>
+              <dd>journalist</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Friseurin</dt>
+              <dd>hairdresser</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Architektin</dt>
+              <dd>architect</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Sekretärin</dt>
+              <dd>secretary</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Verkäufer</dt>
+              <dd>salesperson</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Kellnerin</dt>
+              <dd>waitress</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Koch</dt>
+              <dd>cook</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Krankenpfleger</dt>
+              <dd>male nurse</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Krankenschwester</dt>
+              <dd>nurse</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Hausfrau</dt>
+              <dd>homemaker</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Schauspieler</dt>
+              <dd>actor</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Firma</dt>
+              <dd>company</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Arbeit</dt>
+              <dd>work</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="topic" id="wohnung">
+        <h2>Wohnung</h2>
+        <p class="gloss">Home</p>
+
+        <div class="vocab">
+          <dl>
+            <div>
+              <dt class="g-f">die Wohnung</dt>
+              <dd>apartment</dd>
+            </div>
+            <div>
+              <dt class="g-n">das Haus</dt>
+              <dd>house</dd>
+            </div>
+            <div>
+              <dt class="g-n">das Zimmer</dt>
+              <dd>room</dd>
+            </div>
+            <div>
+              <dt class="g-n">das Wohnzimmer</dt>
+              <dd>living room</dd>
+            </div>
+            <div>
+              <dt class="g-n">das Schlafzimmer</dt>
+              <dd>bedroom</dd>
+            </div>
+            <div>
+              <dt class="g-n">das Arbeitszimmer</dt>
+              <dd>study</dd>
+            </div>
+            <div>
+              <dt class="g-n">das Badezimmer</dt>
+              <dd>bathroom</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Küche</dt>
+              <dd>kitchen</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Balkon</dt>
+              <dd>balcony</dd>
+            </div>
+            <div>
+              <dt class="g-n">das Erdgeschoss</dt>
+              <dd>ground floor</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Stock</dt>
+              <dd>storey, floor</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Keller</dt>
+              <dd>cellar</dd>
+            </div>
+            <div>
+              <dt class="g-n">das Sofa</dt>
+              <dd>sofa</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Sessel</dt>
+              <dd>armchair</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Tisch</dt>
+              <dd>table</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Esstisch</dt>
+              <dd>dining table</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Schreibtisch</dt>
+              <dd>desk</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Stuhl</dt>
+              <dd>chair</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Fernseher</dt>
+              <dd>TV set</dd>
+            </div>
+            <div>
+              <dt class="g-n">das Bett</dt>
+              <dd>bed</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Kleiderschrank</dt>
+              <dd>wardrobe</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Herd</dt>
+              <dd>stove</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Kühlschrank</dt>
+              <dd>fridge</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Geschirrspülmaschine</dt>
+              <dd>dishwasher</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Dusche</dt>
+              <dd>shower</dd>
+            </div>
+            <div>
+              <dt class="g-n">das Waschbecken</dt>
+              <dd>sink</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Toilette</dt>
+              <dd>toilet</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Teppich</dt>
+              <dd>carpet</dd>
+            </div>
+            <div>
+              <dt class="g-n">das Fenster</dt>
+              <dd>window</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Tür</dt>
+              <dd>door</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Wand</dt>
+              <dd>wall</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Quadratmeter</dt>
+              <dd>square metre</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="topic" id="farben">
+        <h2>Farben und Materialien</h2>
+        <p class="gloss">Colours and materials</p>
+
+        <div class="grid2">
+          <div class="vocab" style="columns:1">
+            <dl>
+              <div>
+                <dt>rot</dt>
+                <dd>red</dd>
+              </div>
+              <div>
+                <dt>blau</dt>
+                <dd>blue</dd>
+              </div>
+              <div>
+                <dt>gelb</dt>
+                <dd>yellow</dd>
+              </div>
+              <div>
+                <dt>grün</dt>
+                <dd>green</dd>
+              </div>
+              <div>
+                <dt>schwarz</dt>
+                <dd>black</dd>
+              </div>
+              <div>
+                <dt>weiß</dt>
+                <dd>white</dd>
+              </div>
+              <div>
+                <dt>grau</dt>
+                <dd>grey</dd>
+              </div>
+              <div>
+                <dt>braun</dt>
+                <dd>brown</dd>
+              </div>
+              <div>
+                <dt>dunkelbraun</dt>
+                <dd>dark brown</dd>
+              </div>
+              <div>
+                <dt>lila</dt>
+                <dd>purple</dd>
+              </div>
+              <div>
+                <dt>orange</dt>
+                <dd>orange</dd>
+              </div>
+              <div>
+                <dt>rosa</dt>
+                <dd>pink</dd>
+              </div>
+              <div>
+                <dt>silber</dt>
+                <dd>silver</dd>
+              </div>
+              <div>
+                <dt>gold</dt>
+                <dd>gold</dd>
+              </div>
+              <div>
+                <dt>hell / dunkel</dt>
+                <dd>light / dark</dd>
+              </div>
+            </dl>
+          </div>
+          <div class="vocab" style="columns:1">
+            <dl>
+              <div>
+                <dt class="g-n">das Metall</dt>
+                <dd>metal</dd>
+              </div>
+              <div>
+                <dt class="g-n">das Holz</dt>
+                <dd>wood</dd>
+              </div>
+              <div>
+                <dt class="g-n">das Plastik</dt>
+                <dd>plastic</dd>
+              </div>
+              <div>
+                <dt class="g-m">der Kunststoff</dt>
+                <dd>synthetic material</dd>
+              </div>
+              <div>
+                <dt class="g-n">das Papier</dt>
+                <dd>paper</dd>
+              </div>
+              <div>
+                <dt class="g-n">das Glas</dt>
+                <dd>glass</dd>
+              </div>
+              <div>
+                <dt class="g-m">der Stein</dt>
+                <dd>stone</dd>
+              </div>
+              <div>
+                <dt class="g-n">das Leder</dt>
+                <dd>leather</dd>
+              </div>
+              <div>
+                <dt class="g-f">die Baumwolle</dt>
+                <dd>cotton</dd>
+              </div>
+              <div>
+                <dt class="g-f">die Wolle</dt>
+                <dd>wool</dd>
+              </div>
+              <div>
+                <dt class="g-f">die Seide</dt>
+                <dd>silk</dd>
+              </div>
+              <div>
+                <dt class="g-m">der Gummi</dt>
+                <dd>rubber</dd>
+              </div>
+              <div>
+                <dt class="g-n">das Kupfer</dt>
+                <dd>copper</dd>
+              </div>
+              <div>
+                <dt class="g-n">das Eisen</dt>
+                <dd>iron</dd>
+              </div>
+              <div>
+                <dt class="g-n">das Aluminium</dt>
+                <dd>aluminium</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+        <p class="ex"><span class="de">Material mit <b>aus</b> + Dativ:</span><span class="en">Material takes <b>aus</b>
+            + dative:</span> <em>Der Tisch ist aus Holz. Er ist groß, schwer und braun. Er ist nicht billig. Er ist
+            rund.</em></p>
+      </section>
+
+      <section class="topic" id="eigenschaften">
+        <h2>Eigenschaften</h2>
+        <p class="gloss">Adjectives</p>
+
+        <div class="vocab">
+          <dl>
+            <div>
+              <dt>groß / klein</dt>
+              <dd>big / small</dd>
+            </div>
+            <div>
+              <dt>schwer / leicht</dt>
+              <dd>heavy / light</dd>
+            </div>
+            <div>
+              <dt>teuer / billig</dt>
+              <dd>expensive / cheap</dd>
+            </div>
+            <div>
+              <dt>weich / hart</dt>
+              <dd>soft / hard</dd>
+            </div>
+            <div>
+              <dt>neu / alt</dt>
+              <dd>new / old</dd>
+            </div>
+            <div>
+              <dt>lang / kurz</dt>
+              <dd>long / short</dd>
+            </div>
+            <div>
+              <dt>dünn / dick</dt>
+              <dd>thin / thick</dd>
+            </div>
+            <div>
+              <dt>glatt / rau</dt>
+              <dd>smooth / rough</dd>
+            </div>
+            <div>
+              <dt>rund / eckig</dt>
+              <dd>round / angular</dd>
+            </div>
+            <div>
+              <dt>hell / dunkel</dt>
+              <dd>bright / dark</dd>
+            </div>
+            <div>
+              <dt>schön</dt>
+              <dd>beautiful</dd>
+            </div>
+            <div>
+              <dt>gemütlich</dt>
+              <dd>cosy</dd>
+            </div>
+            <div>
+              <dt>bequem</dt>
+              <dd>comfortable</dd>
+            </div>
+            <div>
+              <dt>ruhig</dt>
+              <dd>quiet</dd>
+            </div>
+            <div>
+              <dt>sauber / schmutzig</dt>
+              <dd>clean / dirty</dd>
+            </div>
+            <div>
+              <dt>modern</dt>
+              <dd>modern</dd>
+            </div>
+            <div>
+              <dt>nett</dt>
+              <dd>nice (person)</dd>
+            </div>
+            <div>
+              <dt>müde</dt>
+              <dd>tired</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="topic" id="koerper">
+        <h2>Körper und Gesundheit</h2>
+        <p class="gloss">Body and health</p>
+
+
+        <div class="note">
+          <p class="de">Fahr mit der Maus über einen Namen, dann leuchtet das Körperteil auf. Auf dem
+            Handy tippst du auf einen Namen unter der Zeichnung.</p>
+          <p class="en">Hover a name and the body part lights up. On a phone, tap a name below the
+            drawing instead.</p>
+        </div>
+
+        <figure class="body-figure">
+          <svg viewBox="0 0 760 660" role="img"
+            aria-label="Beschriftete Zeichnung des menschlichen Körpers">
+
+            <g class="bd-body">
+              <!-- 8-head canon: crown 60 · chin 126 · nipple 192 · navel 258
+                   crotch 324 · knee 456 · sole 588 · centre line x=380 -->
+
+              <!-- neck sits behind the shoulders -->
+              <path class="bd-form bd-under" d="M367 112h26v34h-26Z" />
+
+              <g class="bd-part" data-part="kopf">
+                <path class="bd-form" d="M380 59c13.5 0 24 11.5 24 26.5 0 9-1 17.5-3.2 24.5
+                  -2.2 8-6.2 13.8-11.3 16.8-2.9 1.7-6 2.5-9.5 2.5s-6.6-.8-9.5-2.5
+                  c-5.1-3-9.1-8.8-11.3-16.8-2.2-7-3.2-15.5-3.2-24.5C356 70.5 366.5 59 380 59Z" />
+              </g>
+
+              <!-- torso: shoulders 2 heads across, waist at 3H, hips flaring to 4H -->
+              <path class="bd-form" d="M363 143c-12 6-30 14-42 28 8 10 12 20 14 30
+                4 18 6 36 8 54-2 18-8 34-12 48 6 14 30 26 49 27 19-1 43-13 49-27
+                -4-14-10-30-12-48 2-18 4-36 8-54 2-10 6-20 14-30-12-14-30-22-42-28Z" />
+
+              <g class="bd-part" data-part="schulter">
+                <path class="bd-line" d="M321 171c-8 4-14 10-18 17" />
+                <path class="bd-line" d="M321 171c-8 4-14 10-18 17" transform="translate(760,0) scale(-1,1)" />
+              </g>
+
+              <!-- deltoid, biceps, forearm, tapering to the wrist at the 4H line -->
+              <g class="bd-part" data-part="arm">
+                <path class="bd-form" d="M321 171c-12 8-18 20-17 34 2 18 5 36 7 52-3 14-6 32-4 48 2 10 4 17 6 24l24 2c1-16 2-34 3-50 1-18-1-40-3-60 -1-10-2-16-2-20-2-10-6-20-14-30Z" />
+                <path class="bd-form" d="M321 171c-12 8-18 20-17 34 2 18 5 36 7 52-3 14-6 32-4 48 2 10 4 17 6 24l24 2c1-16 2-34 3-50 1-18-1-40-3-60 -1-10-2-16-2-20-2-10-6-20-14-30Z" transform="translate(760,0) scale(-1,1)" />
+              </g>
+
+              <g class="bd-part" data-part="hand">
+                <path class="bd-form" d="M313 329c-6 12-10 26-9 40 1 10 6 17 13 17 8 0 15-7 16-19 1-14 2-26 3-38Z" />
+                <path class="bd-form" d="M313 329c-6 12-10 26-9 40 1 10 6 17 13 17 8 0 15-7 16-19 1-14 2-26 3-38Z" transform="translate(760,0) scale(-1,1)" />
+                <path class="bd-line" d="M319 342v26M326 340v26" />
+                <path class="bd-line" d="M319 342v26M326 340v26" transform="translate(760,0) scale(-1,1)" />
+              </g>
+
+              <!-- thigh mass, knee at 6H, calf swell, ankle narrowing at 7.5H -->
+              <g class="bd-part" data-part="bein">
+                <path class="bd-form" d="M331 303c-2 18-3 38-2 58 2 26 6 54 10 80 3 10 5 16 6 22 -4 16-7 34-6 50 2 18 10 36 16 50h14c-2-16-4-34-4-52 0-18 2-36 4-52 2-28 6-78 8-126-15 0-33-11-46-30Z" />
+                <path class="bd-form" d="M331 303c-2 18-3 38-2 58 2 26 6 54 10 80 3 10 5 16 6 22 -4 16-7 34-6 50 2 18 10 36 16 50h14c-2-16-4-34-4-52 0-18 2-36 4-52 2-28 6-78 8-126-15 0-33-11-46-30Z" transform="translate(760,0) scale(-1,1)" />
+              </g>
+
+              <g class="bd-part" data-part="fuss">
+                <path class="bd-form" d="M355 563c-2 10-10 18-22 22-6 2-7 8-1 8h41c3 0 4-3 4-7l-1-23Z" />
+                <path class="bd-form" d="M355 563c-2 10-10 18-22 22-6 2-7 8-1 8h41c3 0 4-3 4-7l-1-23Z" transform="translate(760,0) scale(-1,1)" />
+              </g>
+
+              <!-- interior contour: what turns an outline into a figure -->
+              <path class="bd-line" d="M356 157c7 5 16 8 24 8" />
+                <path class="bd-line" d="M356 157c7 5 16 8 24 8" transform="translate(760,0) scale(-1,1)" />
+              <path class="bd-line" d="M349 179c6 16 18 24 31 24" />
+                <path class="bd-line" d="M349 179c6 16 18 24 31 24" transform="translate(760,0) scale(-1,1)" />
+              <path class="bd-line" d="M380 165v38" />
+              <path class="bd-line" d="M350 292c9 8 20 12 30 13" />
+                <path class="bd-line" d="M350 292c9 8 20 12 30 13" transform="translate(760,0) scale(-1,1)" />
+              <path class="bd-line" d="M340 444c5 6 12 9 19 8" />
+                <path class="bd-line" d="M340 444c5 6 12 9 19 8" transform="translate(760,0) scale(-1,1)" />
+
+              <g class="bd-part bd-behind" data-part="ruecken">
+                <path d="M380 150v170M371 180h18M371 208h18M371 236h18M371 264h18M371 292h18" />
+              </g>
+
+              <g class="bd-part" data-part="bauch">
+                <path d="M356 228c8 12 40 12 48 0" />
+                <path d="M380 218v66" />
+                <circle class="bd-solid" cx="380" cy="258" r="2.4" />
+              </g>
+
+              <!-- face: eyes on the midline of the skull, nose base and mouth below -->
+              <g class="bd-part" data-part="gesicht">
+                <path d="M361 100c2 10 6 18 11 22 2.6 1.7 5.4 2.5 8 2.5s5.4-.8 8-2.5
+                  c5-4 9-12 11-22" />
+              </g>
+              <g class="bd-part" data-part="ohr">
+                <path class="bd-line" d="M356 88c-5 0-7 5-6 10 1 5 4 8 8 8" />
+                <path class="bd-line" d="M356 88c-5 0-7 5-6 10 1 5 4 8 8 8" transform="translate(760,0) scale(-1,1)" />
+              </g>
+              <g class="bd-part" data-part="auge">
+                <path class="bd-line" d="M364 93c2-3 5-4 7.5-4s5.5 1 7.5 4c-2 3-5 4-7.5 4s-5.5-1-7.5-4Z" />
+                <path class="bd-line" d="M364 93c2-3 5-4 7.5-4s5.5 1 7.5 4c-2 3-5 4-7.5 4s-5.5-1-7.5-4Z" transform="translate(760,0) scale(-1,1)" />
+                <circle class="bd-solid" cx="371.5" cy="93" r="1.5" />
+                <circle class="bd-solid" cx="388.5" cy="93" r="1.5" />
+              </g>
+              <g class="bd-part" data-part="nase">
+                <path d="M380 88v14M374 104q6 4 12 0" />
+              </g>
+              <g class="bd-part" data-part="mund">
+                <path d="M372 113q8 6 16 0" />
+              </g>
+              <g class="bd-part" data-part="zahn">
+                <path d="M373.5 113h13M380 113v4.5" />
+              </g>
+            </g>
+
+        <g class="bd-label g-m" data-part="kopf" tabindex="0" role="button"
+          aria-label="der Kopf, head">
+          <polyline class="bd-lead" points="262,65 268,65 363,76" />
+          <circle class="bd-dot" cx="363" cy="76" r="3" />
+          <text class="bd-name de" x="250" y="70" text-anchor="end">der Kopf</text>
+          <text class="bd-name en" x="250" y="70" text-anchor="end">head</text>
+        </g>
+        <g class="bd-label g-n" data-part="auge" tabindex="0" role="button"
+          aria-label="das Auge, eye">
+          <polyline class="bd-lead" points="262,113 268,113 366,93" />
+          <circle class="bd-dot" cx="366" cy="93" r="3" />
+          <text class="bd-name de" x="250" y="118" text-anchor="end">das Auge</text>
+          <text class="bd-name en" x="250" y="118" text-anchor="end">eye</text>
+        </g>
+        <g class="bd-label g-f" data-part="nase" tabindex="0" role="button"
+          aria-label="die Nase, nose">
+          <polyline class="bd-lead" points="262,161 268,161 377,100" />
+          <circle class="bd-dot" cx="377" cy="100" r="3" />
+          <text class="bd-name de" x="250" y="166" text-anchor="end">die Nase</text>
+          <text class="bd-name en" x="250" y="166" text-anchor="end">nose</text>
+        </g>
+        <g class="bd-label g-m" data-part="mund" tabindex="0" role="button"
+          aria-label="der Mund, mouth">
+          <polyline class="bd-lead" points="262,209 268,209 374,113" />
+          <circle class="bd-dot" cx="374" cy="113" r="3" />
+          <text class="bd-name de" x="250" y="214" text-anchor="end">der Mund</text>
+          <text class="bd-name en" x="250" y="214" text-anchor="end">mouth</text>
+        </g>
+        <g class="bd-label g-m" data-part="arm" tabindex="0" role="button"
+          aria-label="der Arm, arm">
+          <polyline class="bd-lead" points="262,297 268,297 306,238" />
+          <circle class="bd-dot" cx="306" cy="238" r="3" />
+          <text class="bd-name de" x="250" y="302" text-anchor="end">der Arm</text>
+          <text class="bd-name en" x="250" y="302" text-anchor="end">arm</text>
+        </g>
+        <g class="bd-label g-f" data-part="hand" tabindex="0" role="button"
+          aria-label="die Hand, hand">
+          <polyline class="bd-lead" points="262,369 268,369 306,356" />
+          <circle class="bd-dot" cx="306" cy="356" r="3" />
+          <text class="bd-name de" x="250" y="374" text-anchor="end">die Hand</text>
+          <text class="bd-name en" x="250" y="374" text-anchor="end">hand</text>
+        </g>
+        <g class="bd-label g-n" data-part="bein" tabindex="0" role="button"
+          aria-label="das Bein, leg">
+          <polyline class="bd-lead" points="262,441 268,441 337,408" />
+          <circle class="bd-dot" cx="337" cy="408" r="3" />
+          <text class="bd-name de" x="250" y="446" text-anchor="end">das Bein</text>
+          <text class="bd-name en" x="250" y="446" text-anchor="end">leg</text>
+        </g>
+        <g class="bd-label g-n" data-part="gesicht" tabindex="0" role="button"
+          aria-label="das Gesicht, face">
+          <polyline class="bd-lead" points="498,91 492,91 396,115" />
+          <circle class="bd-dot" cx="396" cy="115" r="3" />
+          <text class="bd-name de" x="510" y="96" text-anchor="start">das Gesicht</text>
+          <text class="bd-name en" x="510" y="96" text-anchor="start">face</text>
+        </g>
+        <g class="bd-label g-n" data-part="ohr" tabindex="0" role="button"
+          aria-label="das Ohr, ear">
+          <polyline class="bd-lead" points="498,139 492,139 402,96" />
+          <circle class="bd-dot" cx="402" cy="96" r="3" />
+          <text class="bd-name de" x="510" y="144" text-anchor="start">das Ohr</text>
+          <text class="bd-name en" x="510" y="144" text-anchor="start">ear</text>
+        </g>
+        <g class="bd-label g-m" data-part="zahn" tabindex="0" role="button"
+          aria-label="der Zahn, tooth">
+          <polyline class="bd-lead" points="498,187 492,187 385,116" />
+          <circle class="bd-dot" cx="385" cy="116" r="3" />
+          <text class="bd-name de" x="510" y="192" text-anchor="start">der Zahn</text>
+          <text class="bd-name en" x="510" y="192" text-anchor="start">tooth</text>
+        </g>
+        <g class="bd-label g-f" data-part="schulter" tabindex="0" role="button"
+          aria-label="die Schulter, shoulder">
+          <polyline class="bd-lead" points="498,235 492,235 441,180" />
+          <circle class="bd-dot" cx="441" cy="180" r="3" />
+          <text class="bd-name de" x="510" y="240" text-anchor="start">die Schulter</text>
+          <text class="bd-name en" x="510" y="240" text-anchor="start">shoulder</text>
+        </g>
+        <g class="bd-label g-m" data-part="ruecken" tabindex="0" role="button"
+          aria-label="der Rücken, back">
+          <polyline class="bd-lead" points="498,283 492,283 385,236" />
+          <circle class="bd-dot" cx="385" cy="236" r="3" />
+          <text class="bd-name de" x="510" y="288" text-anchor="start">der Rücken</text>
+          <text class="bd-name en" x="510" y="288" text-anchor="start">back</text>
+        </g>
+        <g class="bd-label g-m" data-part="bauch" tabindex="0" role="button"
+          aria-label="der Bauch, belly">
+          <polyline class="bd-lead" points="498,331 492,331 389,258" />
+          <circle class="bd-dot" cx="389" cy="258" r="3" />
+          <text class="bd-name de" x="510" y="336" text-anchor="start">der Bauch</text>
+          <text class="bd-name en" x="510" y="336" text-anchor="start">belly</text>
+        </g>
+        <g class="bd-label g-m" data-part="fuss" tabindex="0" role="button"
+          aria-label="der Fuß, foot">
+          <polyline class="bd-lead" points="498,579 492,579 404,585" />
+          <circle class="bd-dot" cx="404" cy="585" r="3" />
+          <text class="bd-name de" x="510" y="584" text-anchor="start">der Fuß</text>
+          <text class="bd-name en" x="510" y="584" text-anchor="start">foot</text>
+        </g>
+          </svg>
+
+          <div class="bd-chips">
+          <button type="button" class="bd-chip g-m" data-part="kopf">
+            <span class="de">der Kopf</span><span class="en">head</span>
+          </button>
+          <button type="button" class="bd-chip g-n" data-part="auge">
+            <span class="de">das Auge</span><span class="en">eye</span>
+          </button>
+          <button type="button" class="bd-chip g-f" data-part="nase">
+            <span class="de">die Nase</span><span class="en">nose</span>
+          </button>
+          <button type="button" class="bd-chip g-m" data-part="mund">
+            <span class="de">der Mund</span><span class="en">mouth</span>
+          </button>
+          <button type="button" class="bd-chip g-m" data-part="arm">
+            <span class="de">der Arm</span><span class="en">arm</span>
+          </button>
+          <button type="button" class="bd-chip g-f" data-part="hand">
+            <span class="de">die Hand</span><span class="en">hand</span>
+          </button>
+          <button type="button" class="bd-chip g-n" data-part="bein">
+            <span class="de">das Bein</span><span class="en">leg</span>
+          </button>
+          <button type="button" class="bd-chip g-n" data-part="gesicht">
+            <span class="de">das Gesicht</span><span class="en">face</span>
+          </button>
+          <button type="button" class="bd-chip g-n" data-part="ohr">
+            <span class="de">das Ohr</span><span class="en">ear</span>
+          </button>
+          <button type="button" class="bd-chip g-m" data-part="zahn">
+            <span class="de">der Zahn</span><span class="en">tooth</span>
+          </button>
+          <button type="button" class="bd-chip g-f" data-part="schulter">
+            <span class="de">die Schulter</span><span class="en">shoulder</span>
+          </button>
+          <button type="button" class="bd-chip g-m" data-part="ruecken">
+            <span class="de">der Rücken</span><span class="en">back</span>
+          </button>
+          <button type="button" class="bd-chip g-m" data-part="bauch">
+            <span class="de">der Bauch</span><span class="en">belly</span>
+          </button>
+          <button type="button" class="bd-chip g-m" data-part="fuss">
+            <span class="de">der Fuß</span><span class="en">foot</span>
+          </button>
+          </div>
+        </figure>
+
+        <div class="rule">
+          <span class="tag">Krank sein</span>
+          <div class="vocab" style="columns:2">
+            <dl>
+              <div><dt class="g-m">der Husten</dt><dd>cough</dd></div>
+              <div><dt class="g-n">das Fieber</dt><dd>fever</dd></div>
+              <div><dt class="g-m">der Schnupfen</dt><dd>runny nose</dd></div>
+              <div><dt class="g-f">die Schmerzen <span class="pl">Pl.</span></dt><dd>pain</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="rule">
+          <span class="tag">Beim Arzt</span>
+          <p class="ex" style="margin:0">Was tut dir weh? → <em>Mein Kopf tut mir weh.</em> / <em>Meine Zähne tun mir
+              weh.</em> / <em>Ich habe Kopfschmerzen.</em> · Ich bin krank. · Ich bin müde. · Ich habe Fieber.<span
+              class="tr">What hurts? → My head hurts. / My teeth hurt. / I have a headache. · I'm ill. · I'm tired. · I
+              have a fever.</span></p>
+          <p style="margin:.5rem 0 0"><span class="de"><b>wehtun</b> ist trennbar und nimmt Dativ: <em>tut mir weh</em>,
+              Plural <em>tun mir weh</em>.</span><span class="en"><b>wehtun</b> is separable and takes the dative:
+              <em>tut mir weh</em>, plural <em>tun mir weh</em>.</span></p>
+        </div>
+      </section>
+
+      <section class="topic" id="kleidung">
+        <h2>Kleidung</h2>
+        <p class="gloss">Clothes</p>
+
+        <div class="vocab">
+          <dl>
+            <div>
+              <dt class="g-f">die Hose</dt>
+              <dd>trousers</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Mantel</dt>
+              <dd>coat</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Jacke</dt>
+              <dd>jacket</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Bluse</dt>
+              <dd>blouse</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Gürtel</dt>
+              <dd>belt</dd>
+            </div>
+            <div>
+              <dt class="g-n">das Hemd</dt>
+              <dd>shirt</dd>
+            </div>
+            <div>
+              <dt class="g-n">das T-Shirt</dt>
+              <dd>t-shirt</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Pullover</dt>
+              <dd>sweater</dd>
+            </div>
+            <div>
+              <dt class="g-n">das Kleid</dt>
+              <dd>dress</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Rock</dt>
+              <dd>skirt</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Schuh</dt>
+              <dd>shoe</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Socke</dt>
+              <dd>sock</dd>
+            </div>
+          </dl>
+        </div>
+        <p class="ex"><b>tragen</b> <span class="pl">to wear</span> + Akkusativ: <em>Ich trage einen Mantel.</em> · du
+          trägst, er trägt</p>
+      </section>
+
+      <section class="topic" id="tag">
+        <h2>Mein Tag: Perfekt im Text</h2>
+        <p class="gloss">A day described in the perfect tense</p>
+
+        <div class="note">
+          <p class="de">Dieser Text kombiniert fast alles: Perfekt mit haben und sein, trennbare Verben,
+            Reflexivpronomen, Zeitangaben und Präpositionen. Lies ihn laut und markiere jedes Partizip II.</p>
+          <p class="en">This text combines almost everything: perfect with haben and sein, separable verbs, reflexive
+            pronouns, time expressions and prepositions. Read it aloud and mark every past participle.</p>
+        </div>
+        <div class="rule">
+          <span class="tag">Mein Tag gestern</span>
+          <p class="ex" style="margin:0">Ich <b>bin</b> um sieben Uhr <b>aufgewacht</b>. Ich <b>habe</b> mein Gesicht
+            <b>gewaschen</b> und meine Zähne <b>geputzt</b>. Dann <b>habe</b> ich <b>gefrühstückt</b>. Ich <b>habe</b>
+            Brot und Käse <b>gegessen</b> und Tee <b>getrunken</b>. Danach <b>bin</b> ich zur Arbeit <b>gegangen</b>.
+            Ich <b>habe</b> von acht bis zwei Uhr <b>gearbeitet</b>. In der Pause <b>habe</b> ich einen Kaffee
+            <b>getrunken</b>. Am Nachmittag <b>bin</b> ich nach Hause <b>gekommen</b>. Ich <b>habe</b> zu Mittag
+            <b>gegessen</b> und mich <b>ausgeruht</b>. Am Abend <b>habe</b> ich <b>ferngesehen</b> und Musik
+            <b>gehört</b>. Später <b>habe</b> ich zu Abend <b>gegessen</b>. Ich <b>habe</b> mein Handy <b>benutzt</b>
+            und mit meinen Freunden <b>gesprochen</b>. Um elf Uhr <b>bin</b> ich schlafen <b>gegangen</b>.<span
+              class="tr">I woke up at seven o'clock. I washed my face and brushed my teeth. Then I had breakfast. I ate
+              bread and cheese and drank tea. After that I went to work. I worked from eight until two o'clock. In the
+              break I drank a coffee. In the afternoon I came home. I had lunch and rested. In the evening I watched TV
+              and listened to music. Later I had dinner. I used my phone and talked with my friends. At eleven o'clock I
+              went to sleep.</span>
+          </p>
+        </div>
+      
+      </section>
+
+    </main>
+  </div>
+
+  <footer>
+    <p>Mein Deutsch Buddy · <span class="de">Wortschatz nach Themen. Neue Listen kommen dazu, wenn du sie brauchst.</span><span
+        class="en">Vocabulary by theme. New lists get added as you need them.</span></p>
+  </footer>
+
+</body>
+
+</html>

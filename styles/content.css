@@ -1,0 +1,482 @@
+/* Mein Deutsch Buddy · content.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Note: the bilingual, click-to-flip block
+   No box. An indent and a hairline mark it as an aside; a quiet pill carries
+   the affordance that hover used to hide.
+   ========================================================================== */
+
+.note {
+  position: relative;
+  margin: 0 0 2rem;
+  padding: 0 0 0 1.5rem;
+  max-width: var(--measure);
+  border: 0;
+  border-left: 2px solid var(--line-strong);
+  border-radius: 0;
+  background: none;
+  cursor: pointer;
+  transition: border-color 0.22s var(--ease);
+}
+
+.note:hover {
+  border-left-color: var(--akk);
+}
+
+.note:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 6px;
+  border-radius: 2px;
+}
+
+.note p {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.62;
+  color: var(--ink);
+}
+
+[data-lang="both"] .note p + p {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.note .de {
+  font-weight: 400;
+}
+
+/* Same principle: muted only when it sits beneath the German. */
+.note .en {
+  color: var(--ink);
+}
+
+[data-lang="both"] .note .en {
+  color: var(--ink-2);
+}
+
+.note::after {
+  content: attr(data-hint);
+  position: static;
+  display: inline-block;
+  margin-top: 0.7rem;
+  font-family: var(--f-body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--ink-4);
+  background: var(--raised);
+  border-radius: 999px;
+  padding: 0.16rem 0.62rem;
+  opacity: 0;
+  transform: translateY(-2px);
+  transition: opacity 0.22s var(--ease), transform 0.22s var(--ease);
+  pointer-events: none;
+}
+
+.note:hover::after,
+.note:focus-visible::after {
+  opacity: 1;
+  transform: none;
+}
+
+/* language visibility, driven by data-lang on <html> */
+[data-lang="de"] .en {
+  display: none;
+}
+
+[data-lang="en"] .de {
+  display: none;
+}
+
+[data-lang="de"] .note.flipped .en {
+  display: block;
+}
+
+[data-lang="de"] .note.flipped .de {
+  display: none;
+}
+
+[data-lang="en"] .note.flipped .de {
+  display: block;
+}
+
+[data-lang="en"] .note.flipped .en {
+  display: none;
+}
+
+[data-lang="both"] .note {
+  cursor: default;
+}
+
+[data-lang="both"] .note::after {
+  content: "";
+  display: none;
+}
+
+/* ==========================================================================
+   Tables
+   Hairlines only. No outer frame, no fill, no zebra.
+   ========================================================================== */
+
+.tw {
+  overflow-x: auto;
+  margin: 0 0 2.25rem;
+  scrollbar-width: thin;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 480px;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  font-size: 0.94rem;
+  font-variant-numeric: tabular-nums;
+}
+
+caption {
+  caption-side: top;
+  text-align: left;
+  font-family: var(--f-body);
+  font-size: 0.85rem;
+  color: var(--ink-3);
+  letter-spacing: -0.005em;
+  text-transform: none;
+  padding: 0 0 0.75rem;
+}
+
+th,
+td {
+  padding: 0.62rem 1.1rem 0.62rem 0;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+
+thead th {
+  background: none;
+  font-family: var(--f-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink-4);
+  border-bottom: 1px solid var(--line-strong);
+  white-space: nowrap;
+  padding-bottom: 0.5rem;
+}
+
+tbody th {
+  font-weight: 500;
+  white-space: nowrap;
+  background: none;
+  border-right: 0;
+  color: var(--ink);
+}
+
+tbody tr:last-child td,
+tbody tr:last-child th {
+  border-bottom: 0;
+}
+
+tbody tr:hover td {
+  background: none;
+}
+
+td .m,
+th .m {
+  font-family: var(--f-mono);
+  font-size: 0.87em;
+}
+
+.pl {
+  color: var(--ink-3);
+}
+
+.hi {
+  font-weight: 600;
+}
+
+.ex {
+  color: var(--ink-2);
+  font-size: 0.96em;
+}
+
+/* A highlight wash instead of an underline: quieter, and it survives the
+   translation line sitting directly beneath. */
+.ex em {
+  font-style: normal;
+  color: var(--ink);
+  box-shadow: inset 0 -0.42em 0 var(--akk-bg);
+}
+
+.ar {
+  direction: rtl;
+}
+
+/* Case colouring: a coloured label and a short bar, never a filled cell. */
+tr[data-case] > th:first-child {
+  position: relative;
+  padding-left: 0.85rem;
+  box-shadow: none;
+}
+
+tr[data-case] > th:first-child::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72rem;
+  bottom: 0.72rem;
+  width: 3px;
+  border-radius: 2px;
+  background: currentColor;
+}
+
+tr[data-case="nom"] > th:first-child,
+td[data-case="nom"] {
+  color: var(--nom);
+}
+
+tr[data-case="akk"] > th:first-child,
+td[data-case="akk"] {
+  color: var(--akk);
+}
+
+tr[data-case="dat"] > th:first-child,
+td[data-case="dat"] {
+  color: var(--dat);
+}
+
+tr[data-case="gen"] > th:first-child,
+td[data-case="gen"] {
+  color: var(--gen);
+}
+
+/* case focus */
+[data-focus] tr[data-case] {
+  transition: opacity 0.24s var(--ease), background 0.24s var(--ease);
+}
+
+[data-focus="nom"] tr[data-case]:not([data-case="nom"]),
+[data-focus="akk"] tr[data-case]:not([data-case="akk"]),
+[data-focus="dat"] tr[data-case]:not([data-case="dat"]),
+[data-focus="gen"] tr[data-case]:not([data-case="gen"]) {
+  opacity: 0.24;
+}
+
+[data-focus="nom"] tr[data-case="nom"] > * {
+  background: var(--nom-bg);
+}
+
+[data-focus="akk"] tr[data-case="akk"] > * {
+  background: var(--akk-bg);
+}
+
+[data-focus="dat"] tr[data-case="dat"] > * {
+  background: var(--dat-bg);
+}
+
+[data-focus="gen"] tr[data-case="gen"] > * {
+  background: var(--gen-bg);
+}
+
+/* ==========================================================================
+   Translations under German examples
+   ========================================================================== */
+
+.tr {
+  display: none;
+}
+
+[data-lang="en"] .tr,
+[data-lang="both"] .tr {
+  display: block;
+  margin-top: 0.28rem;
+  font-size: 0.88em;
+  line-height: 1.45;
+  color: var(--ink-3);
+  font-style: normal;
+  font-weight: 400;
+  white-space: normal;
+}
+
+.hi .tr,
+b .tr {
+  font-weight: 400;
+}
+
+[data-lang="both"] td > .en,
+[data-lang="both"] th > .en,
+[data-lang="both"] dd > .en {
+  display: block;
+  margin-top: 0.22rem;
+  color: var(--ink-3);
+  font-size: 0.92em;
+  line-height: 1.45;
+}
+
+[data-lang="both"] .rule .en,
+[data-lang="both"] p > .en,
+[data-lang="both"] li > .en,
+[data-lang="both"] .k-role .en {
+  display: block;
+  color: var(--ink-3);
+  margin-top: 0.2rem;
+}
+
+/* ==========================================================================
+   Rule, formula, code, vocab
+   ========================================================================== */
+
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 2.5rem;
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 2.5rem;
+}
+
+/* A rule is a labelled aside, not a card. */
+.rule {
+  background: none;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  padding: 1.1rem 0 0;
+  margin: 0 0 2.25rem;
+  max-width: var(--measure);
+}
+
+.rule .tag {
+  display: block;
+  font-family: var(--f-body);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink-4);
+  margin-bottom: 0.6rem;
+}
+
+.rule ul,
+.plain ul {
+  margin: 0.3rem 0 0;
+  padding-left: 1.15rem;
+}
+
+.rule li,
+.plain li {
+  margin-bottom: 0.5rem;
+}
+
+.rule li::marker {
+  color: var(--ink-4);
+}
+
+/* The one place a filled surface earns its keep: a formula is a discrete
+   object you scan, not prose you read. */
+.formula {
+  font-family: var(--f-mono);
+  font-size: 0.92rem;
+  background: var(--raised);
+  border: 0;
+  border-radius: var(--radius);
+  padding: 0.95rem 1.15rem;
+  margin: 0 0 2rem;
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  max-width: var(--measure);
+}
+
+.formula b {
+  color: var(--akk);
+  font-weight: 500;
+}
+
+.formula .tr {
+  font-family: var(--f-body);
+  border-top: 1px solid var(--line-strong);
+  padding-top: 0.55rem;
+  margin-top: 0.6rem;
+  white-space: normal;
+}
+
+code {
+  font-family: var(--f-mono);
+  font-size: 0.86em;
+  background: var(--raised);
+  border: 0;
+  border-radius: 5px;
+  padding: 0.1em 0.38em;
+}
+
+.vocab {
+  columns: 250px;
+  column-gap: 3rem;
+  margin: 0 0 2rem;
+}
+
+.vocab dl {
+  margin: 0;
+}
+
+.vocab div {
+  break-inside: avoid;
+  display: flex;
+  gap: 0.6rem;
+  align-items: baseline;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.vocab dt {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.vocab dt.g-m {
+  color: var(--dat);
+}
+
+.vocab dt.g-f {
+  color: var(--akk);
+}
+
+.vocab dt.g-n {
+  color: var(--nom);
+}
+
+.vocab dd {
+  margin: 0 0 0 auto;
+  color: var(--ink-3);
+  font-size: 0.88rem;
+  text-align: right;
+}
+
+.gender-key {
+  font-family: var(--f-body);
+  font-size: 0.82rem;
+  color: var(--ink-3);
+  margin-bottom: 1rem;
+}
+
+.gender-key .g-m {
+  color: var(--dat);
+}
+
+.gender-key .g-f {
+  color: var(--akk);
+}
+
+.gender-key .g-n {
+  color: var(--nom);
+}
+

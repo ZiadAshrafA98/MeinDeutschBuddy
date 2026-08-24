@@ -1,10 +1,13 @@
 {
-  "name": "deutsch-buddy",
+  "name": "mein-deutsch-buddy",
   "scripts": {
     "build": "tsc",
-    "dev": "tsc --watch"
+    "dev": "tsc --watch",
+    "standalone": "tsc && node build-standalone.mjs",
+    "serve": "python3 -m http.server 8000"
   },
   "devDependencies": {
-    "typescript": "^7.0.2"
-  }
+    "typescript": "7.0.2"
+  },
+  "type": "module"
 }

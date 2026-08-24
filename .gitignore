@@ -1,11 +1,15 @@
 # Dependencies
 node_modules/
 
-# Generated JavaScript (remove unless static website)
-# dist/
+# Compiled output is committed on purpose: GitHub Pages serves it directly
 
 # TypeScript incremental build cache
 *.tsbuildinfo
 
 # Editor files
 .vscode/
+.DS_Store
+
+# Generated single-file builds. Uncomment to keep them out of the repo; they
+# are committed by default so the offline copies are downloadable from GitHub.
+# standalone/

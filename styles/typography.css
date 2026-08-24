@@ -1,0 +1,153 @@
+/* Mein Deutsch Buddy · typography.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+
+.hero {
+  margin-bottom: 7rem;
+}
+
+.hero h1 {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-stretch: 100%;
+  font-size: clamp(2.6rem, 5.5vw, 4.5rem);
+  line-height: 1.04;
+  letter-spacing: -0.032em;
+  margin: 0 0 1.1rem;
+}
+
+.hero .sub {
+  font-size: 1.16rem;
+  line-height: 1.55;
+  color: var(--ink-3);
+  max-width: 48ch;
+  margin: 0 0 3.5rem;
+  letter-spacing: -0.01em;
+}
+
+/* Case key: no cards, no boxes. A colour rule above each name binds the
+   label to its hue; whitespace does the separating. */
+.case-key {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 2.25rem 2.5rem;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  overflow: visible;
+}
+
+.case-key > div {
+  background: none;
+  padding: 0.9rem 0 0;
+  border-top: 2px solid var(--line-strong);
+}
+
+.case-key .c-nom {
+  border-top-color: var(--nom);
+}
+
+.case-key .c-akk {
+  border-top-color: var(--akk);
+}
+
+.case-key .c-dat {
+  border-top-color: var(--dat);
+}
+
+.case-key .c-gen {
+  border-top-color: var(--gen);
+}
+
+.case-key .k-name {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-stretch: 100%;
+  font-size: 1.12rem;
+  letter-spacing: -0.015em;
+}
+
+.case-key .c-nom .k-name {
+  color: var(--nom);
+}
+
+.case-key .c-akk .k-name {
+  color: var(--akk);
+}
+
+.case-key .c-dat .k-name {
+  color: var(--dat);
+}
+
+.case-key .c-gen .k-name {
+  color: var(--gen);
+}
+
+.case-key .k-q {
+  font-family: var(--f-body);
+  font-size: 0.83rem;
+  color: var(--ink-3);
+  letter-spacing: 0;
+  margin: 0.1rem 0 0.6rem;
+}
+
+.case-key .k-role {
+  font-size: 0.9rem;
+  color: var(--ink-2);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   Sections and headings
+   ========================================================================== */
+
+section.topic {
+  margin: 0 0 6.5rem;
+  scroll-margin-top: 5.5rem;
+}
+
+.topic > h2 {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-stretch: 100%;
+  font-size: clamp(1.75rem, 3.2vw, 2.3rem);
+  letter-spacing: -0.026em;
+  line-height: 1.12;
+  margin: 0 0 0.35rem;
+  padding: 0;
+  border: 0;
+}
+
+.topic > .gloss {
+  font-family: var(--f-body);
+  font-size: 0.95rem;
+  color: var(--ink-3);
+  letter-spacing: -0.005em;
+  text-transform: none;
+  margin: 0 0 2.75rem;
+}
+
+h3 {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-stretch: 100%;
+  font-size: 1.22rem;
+  letter-spacing: -0.018em;
+  margin: 3.5rem 0 1.1rem;
+}
+
+h4 {
+  font-family: var(--f-body);
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 2.2rem 0 0.65rem;
+}
+
+p {
+  margin: 0 0 1.1rem;
+  max-width: var(--measure);
+}
+

@@ -1,0 +1,4725 @@
+<!DOCTYPE html>
+<html lang="de" data-lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prüfungsmodus A1.1 — Mein Deutsch Buddy</title>
+  <meta name="description" content="Revision for the A1.1 exam: lesson recaps, drills with explanations, and spoken practice.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+/* Mein Deutsch Buddy · tokens.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Mein Deutsch Buddy
+
+   Type carries the hierarchy. Hairlines separate; boxes do not contain.
+   Colour appears only where it means something: the four cases, and the
+   three genders that borrow the same palette.
+   ========================================================================== */
+
+:root {
+  /* surfaces */
+  --paper: #ffffff;
+  --raised: #f5f5f7;
+  --sunken: #fafafc;
+  --line: #e3e3e6;
+  --line-strong: #c9c9ce;
+
+  /* text */
+  --ink: #1d1d1f;
+  --ink-2: #4b4b50;
+  --ink-3: #6e6e73;
+  --ink-4: #86868b;
+
+  /* the four cases */
+  --nom: #12705a;
+  --akk: #b03225;
+  --dat: #2a5cad;
+  --gen: #6f4a9c;
+  --nom-bg: #12705a0f;
+  --akk-bg: #b0322510;
+  --dat-bg: #2a5cad0f;
+  --gen-bg: #6f4a9c0f;
+
+  --radius: 10px;
+  --radius-sm: 7px;
+
+  --f-display: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --f-body: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --nav-w: 252px;
+  --measure: 68ch;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="dark"] {
+  --paper: #000000;
+  --raised: #1c1c1e;
+  --sunken: #121214;
+  --line: #2a2a2d;
+  --line-strong: #3f3f44;
+  --ink: #f5f5f7;
+  --ink-2: #c4c4c9;
+  --ink-3: #a1a1a6;
+  --ink-4: #86868b;
+  --nom: #4cc4a0;
+  --akk: #ff7a68;
+  --dat: #7cabff;
+  --gen: #c79bf0;
+  --nom-bg: #4cc4a014;
+  --akk-bg: #ff7a6814;
+  --dat-bg: #7cabff14;
+  --gen-bg: #c79bf014;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.65;
+  letter-spacing: -0.003em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* Mein Deutsch Buddy · typography.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+
+.hero {
+  margin-bottom: 7rem;
+}
+
+.hero h1 {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-stretch: 100%;
+  font-size: clamp(2.6rem, 5.5vw, 4.5rem);
+  line-height: 1.04;
+  letter-spacing: -0.032em;
+  margin: 0 0 1.1rem;
+}
+
+.hero .sub {
+  font-size: 1.16rem;
+  line-height: 1.55;
+  color: var(--ink-3);
+  max-width: 48ch;
+  margin: 0 0 3.5rem;
+  letter-spacing: -0.01em;
+}
+
+/* Case key: no cards, no boxes. A colour rule above each name binds the
+   label to its hue; whitespace does the separating. */
+.case-key {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 2.25rem 2.5rem;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  overflow: visible;
+}
+
+.case-key > div {
+  background: none;
+  padding: 0.9rem 0 0;
+  border-top: 2px solid var(--line-strong);
+}
+
+.case-key .c-nom {
+  border-top-color: var(--nom);
+}
+
+.case-key .c-akk {
+  border-top-color: var(--akk);
+}
+
+.case-key .c-dat {
+  border-top-color: var(--dat);
+}
+
+.case-key .c-gen {
+  border-top-color: var(--gen);
+}
+
+.case-key .k-name {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-stretch: 100%;
+  font-size: 1.12rem;
+  letter-spacing: -0.015em;
+}
+
+.case-key .c-nom .k-name {
+  color: var(--nom);
+}
+
+.case-key .c-akk .k-name {
+  color: var(--akk);
+}
+
+.case-key .c-dat .k-name {
+  color: var(--dat);
+}
+
+.case-key .c-gen .k-name {
+  color: var(--gen);
+}
+
+.case-key .k-q {
+  font-family: var(--f-body);
+  font-size: 0.83rem;
+  color: var(--ink-3);
+  letter-spacing: 0;
+  margin: 0.1rem 0 0.6rem;
+}
+
+.case-key .k-role {
+  font-size: 0.9rem;
+  color: var(--ink-2);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   Sections and headings
+   ========================================================================== */
+
+section.topic {
+  margin: 0 0 6.5rem;
+  scroll-margin-top: 5.5rem;
+}
+
+.topic > h2 {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-stretch: 100%;
+  font-size: clamp(1.75rem, 3.2vw, 2.3rem);
+  letter-spacing: -0.026em;
+  line-height: 1.12;
+  margin: 0 0 0.35rem;
+  padding: 0;
+  border: 0;
+}
+
+.topic > .gloss {
+  font-family: var(--f-body);
+  font-size: 0.95rem;
+  color: var(--ink-3);
+  letter-spacing: -0.005em;
+  text-transform: none;
+  margin: 0 0 2.75rem;
+}
+
+h3 {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-stretch: 100%;
+  font-size: 1.22rem;
+  letter-spacing: -0.018em;
+  margin: 3.5rem 0 1.1rem;
+}
+
+h4 {
+  font-family: var(--f-body);
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 2.2rem 0 0.65rem;
+}
+
+p {
+  margin: 0 0 1.1rem;
+  max-width: var(--measure);
+}
+
+
+/* Mein Deutsch Buddy · layout.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+.shell {
+  display: grid;
+  grid-template-columns: var(--nav-w) minmax(0, 1fr);
+  align-items: start;
+}
+
+.sidenav {
+  position: sticky;
+  top: 3.6rem;
+  height: calc(100vh - 3.6rem);
+  overflow-y: auto;
+  padding: 2rem 1.25rem 5rem 2rem;
+  font-size: 0.86rem;
+  scrollbar-width: thin;
+}
+
+.sidenav h4 {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ink-4);
+  margin: 1.9rem 0 0.45rem;
+  text-transform: none;
+}
+
+.sidenav h4:first-child {
+  margin-top: 0;
+}
+
+.sidenav a {
+  display: block;
+  padding: 0.28rem 0.7rem;
+  margin-left: -0.7rem;
+  color: var(--ink-2);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  border-left: 0;
+  transition: background 0.16s var(--ease), color 0.16s var(--ease);
+}
+
+.sidenav a:hover {
+  color: var(--ink);
+  background: var(--raised);
+}
+
+.sidenav a.active {
+  color: var(--ink);
+  font-weight: 600;
+  background: var(--raised);
+  border-left: 0;
+}
+
+/* In DE+EN the English is a secondary line under the German. In EN-only it
+   is the label itself, so it inherits the link's own size, weight and
+   colour rather than staying demoted. */
+/* In DE+EN the two languages would otherwise run together as
+   "GrundlagenBasics". Links stack; the group headings take a middot so they
+   stay on one compact line. */
+[data-lang="both"] .sidenav h4 .en::before {
+  content: " · ";
+  color: var(--line-strong);
+}
+
+[data-lang="both"] .sidenav a .en {
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 400;
+  color: var(--ink-4);
+  line-height: 1.35;
+}
+
+main {
+  padding: 4rem 4rem 10rem;
+  max-width: 1120px;
+  min-width: 0;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 3rem 4rem 4rem;
+  color: var(--ink-4);
+  font-size: 0.85rem;
+}
+
+footer p {
+  max-width: var(--measure);
+}
+
+
+/* Mein Deutsch Buddy · chrome.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Top bar
+   ========================================================================== */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.7rem 2rem;
+  background: color-mix(in srgb, var(--paper) 82%, transparent);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+  margin-right: auto;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.brand span {
+  font-family: var(--f-body);
+  font-weight: 400;
+  font-size: 0.8rem;
+  letter-spacing: 0;
+  color: var(--ink-3);
+}
+
+.topbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.ctrl-label {
+  font-size: 0.74rem;
+  color: var(--ink-3);
+  letter-spacing: 0;
+}
+
+/* Segmented control. The group reads as one object; the pressed segment is
+   a raised pill inside it rather than a differently-coloured button. */
+.ctrl-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.ctrl-group:has(.chip) {
+  position: relative;
+  background: var(--raised);
+  border-radius: 999px;
+  padding: 2px;
+  gap: 0;
+}
+
+.ctrl-group:has(.chip) > .ctrl-label {
+  padding: 0 0.5rem 0 0.7rem;
+}
+
+.chip {
+  font-family: var(--f-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  padding: 0.34rem 0.78rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-2);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.18s var(--ease), color 0.18s var(--ease);
+}
+
+.chip:hover {
+  color: var(--ink);
+}
+
+.chip[aria-pressed="true"] {
+  color: var(--ink);
+}
+
+/* Inside a segmented group the pill is a separate sliding element, so the
+   chip itself stays transparent. */
+.ctrl-group .chip {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  box-shadow: none;
+}
+
+.seg-indicator {
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: 0;
+  width: 0;
+  z-index: 0;
+  border-radius: 999px;
+  background: var(--paper);
+  box-shadow: 0 1px 3px #0000001f, 0 0 0 0.5px #0000000f;
+  opacity: 0;
+  pointer-events: none;
+}
+
+[data-theme="dark"] .seg-indicator {
+  background: #3a3a3d;
+  box-shadow: none;
+}
+
+.ctrl-group.has-active .seg-indicator {
+  opacity: 1;
+}
+
+/* Applied one frame after the first measurement so the pill does not slide
+   in from the left on load. A slight overshoot gives the movement weight. */
+.ctrl-group.seg-ready .seg-indicator {
+  transition:
+    transform 0.34s cubic-bezier(0.34, 1.25, 0.4, 1),
+    width 0.34s cubic-bezier(0.34, 1.25, 0.4, 1),
+    opacity 0.2s var(--ease),
+    background 0.2s var(--ease);
+}
+
+.chip.case-nom[aria-pressed="true"] {
+  color: var(--nom);
+}
+
+.chip.case-akk[aria-pressed="true"] {
+  color: var(--akk);
+}
+
+.chip.case-dat[aria-pressed="true"] {
+  color: var(--dat);
+}
+
+.chip.case-gen[aria-pressed="true"] {
+  color: var(--gen);
+}
+
+/* ---------- theme morph -------------------------------------------------
+   The swap used to stagger: the page background has no transition and
+   snapped instantly, while chips, nav links and table rows animated their
+   own colours over 160-240ms, so pale controls briefly sat on a dark page.
+
+   The fix is to swap where it cannot be seen. A fixed overlay with a
+   backdrop-filter blurs everything currently on screen, including the top
+   bar, the sidebar and the drawer, without touching layout: no transforms,
+   no filters on flow elements, so position: sticky and page scroll are
+   untouched.
+
+   An earlier version scaled main instead. That was wrong. main is the whole
+   55,000px document, and a transform scales about the element's own centre,
+   so the further down the page you were the further the content slid.
+   ------------------------------------------------------------------------ */
+
+.theme-veil {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  opacity: 0;
+  backdrop-filter: blur(9px) saturate(0.9);
+  -webkit-backdrop-filter: blur(9px) saturate(0.9);
+}
+
+.theme-morph .theme-veil {
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity;
+}
+
+.theme-morph-out .theme-veil {
+  opacity: 1;
+}
+
+/* During the hidden swap every transition is suppressed so nothing animates
+   its colour out of step behind the blur. */
+[data-theme-instant] *,
+[data-theme-instant] *::before,
+[data-theme-instant] *::after {
+  transition: none !important;
+}
+
+/* The toggle is the exception. Suppressing it made the sun snap to a moon
+   rather than become one, so its transitions are restated here. */
+[data-theme-instant] .theme-icon {
+  transition: transform 0.6s cubic-bezier(0.5, 1.5, 0.5, 1) !important;
+}
+
+[data-theme-instant] .theme-icon .orb,
+[data-theme-instant] .theme-icon .cut {
+  transition: transform 0.5s var(--ease) !important;
+}
+
+[data-theme-instant] .theme-icon .rays {
+  transition: transform 0.5s var(--ease), opacity 0.3s var(--ease) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .theme-veil {
+    display: none;
+  }
+}
+
+/* ---------- theme toggle ------------------------------------------------
+   One shape does the work. The orb is masked by a second circle that lives
+   off-canvas in light mode and slides across it in dark mode, carving the
+   crescent. The rays retract into the orb as it arrives, so the sun does not
+   simply cross-fade into a moon: it becomes one.
+   ------------------------------------------------------------------------ */
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  flex: none;
+}
+
+.theme-icon {
+  display: block;
+  overflow: visible;
+  color: var(--ink-2);
+  transform: rotate(0deg);
+  transition: transform 0.6s cubic-bezier(0.5, 1.5, 0.5, 1);
+}
+
+.theme-toggle:hover .theme-icon {
+  color: var(--ink);
+}
+
+.theme-icon .orb {
+  fill: currentColor;
+  transform-origin: 12px 12px;
+  transform: scale(1);
+  transition: transform 0.5s var(--ease);
+}
+
+.theme-icon .cut {
+  transform: translate(0, 0);
+  transition: transform 0.5s var(--ease);
+}
+
+.theme-icon .rays {
+  stroke: currentColor;
+  stroke-width: 1.9;
+  transform-origin: 12px 12px;
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+  transition: transform 0.5s var(--ease), opacity 0.35s var(--ease);
+}
+
+/* dark: the cut slides in, the orb grows into a moon, the rays collapse */
+[data-theme="dark"] .theme-icon {
+  transform: rotate(-90deg);
+}
+
+[data-theme="dark"] .theme-icon .orb {
+  transform: scale(1.45);
+}
+
+[data-theme="dark"] .theme-icon .cut {
+  transform: translate(-13px, 13px);
+}
+
+[data-theme="dark"] .theme-icon .rays {
+  transform: rotate(45deg) scale(0.4);
+  opacity: 0;
+  transition: transform 0.5s var(--ease), opacity 0.2s var(--ease);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .theme-icon,
+  .theme-icon .orb,
+  .theme-icon .cut,
+  .theme-icon .rays {
+    transition: none;
+  }
+}
+
+/* Standalone buttons sit on a quiet fill so they still read as controls. */
+.nav-toggle,
+[data-theme-btn] {
+  background: var(--raised);
+  color: var(--ink-2);
+  padding: 0.38rem 0.85rem;
+}
+
+.nav-toggle:hover,
+[data-theme-btn]:hover {
+  background: var(--line);
+  color: var(--ink);
+}
+
+.chip:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+/* ==========================================================================
+   Scrollbars
+   The platform default is a wide, bright bar that reads as a system control
+   dropped onto the page, and it is worst in dark mode where it becomes the
+   lightest thing on screen.
+
+   Standard properties come first. Note that Chrome 121+ ignores the
+   ::-webkit-scrollbar pseudo-elements entirely once scrollbar-width is set,
+   so the two cannot be combined; the webkit block below is a fallback for
+   engines that lack scrollbar-color, not an enhancement on top.
+   ========================================================================== */
+
+.sidenav,
+.tw,
+.topbar-controls,
+.vocab,
+.formula {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+.sidenav:hover,
+.tw:hover,
+.vocab:hover,
+.formula:hover {
+  scrollbar-color: var(--ink-4) transparent;
+}
+
+/* Reserve the gutter so the bar appearing never nudges the nav contents. */
+.sidenav {
+  scrollbar-gutter: stable;
+}
+
+@supports not (scrollbar-color: auto) {
+
+  .sidenav::-webkit-scrollbar,
+  .tw::-webkit-scrollbar,
+  .topbar-controls::-webkit-scrollbar,
+  .vocab::-webkit-scrollbar,
+  .formula::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .sidenav::-webkit-scrollbar-track,
+  .tw::-webkit-scrollbar-track,
+  .topbar-controls::-webkit-scrollbar-track,
+  .vocab::-webkit-scrollbar-track,
+  .formula::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* A transparent border plus content-box clipping insets the thumb so it
+     floats in the gutter instead of butting against the edge. */
+  .sidenav::-webkit-scrollbar-thumb,
+  .tw::-webkit-scrollbar-thumb,
+  .topbar-controls::-webkit-scrollbar-thumb,
+  .vocab::-webkit-scrollbar-thumb,
+  .formula::-webkit-scrollbar-thumb {
+    background: var(--line-strong);
+    background-clip: content-box;
+    border: 2px solid transparent;
+    border-radius: 999px;
+  }
+
+  .sidenav::-webkit-scrollbar-thumb:hover,
+  .tw::-webkit-scrollbar-thumb:hover,
+  .vocab::-webkit-scrollbar-thumb:hover,
+  .formula::-webkit-scrollbar-thumb:hover {
+    background: var(--ink-4);
+    background-clip: content-box;
+  }
+
+  .sidenav::-webkit-scrollbar-corner,
+  .tw::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}
+
+/* The horizontal strip of controls in the mobile top bar scrolls by drag;
+   a visible bar there is noise. */
+.topbar-controls {
+  scrollbar-width: none;
+}
+
+.topbar-controls::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* Mein Deutsch Buddy · content.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Note: the bilingual, click-to-flip block
+   No box. An indent and a hairline mark it as an aside; a quiet pill carries
+   the affordance that hover used to hide.
+   ========================================================================== */
+
+.note {
+  position: relative;
+  margin: 0 0 2rem;
+  padding: 0 0 0 1.5rem;
+  max-width: var(--measure);
+  border: 0;
+  border-left: 2px solid var(--line-strong);
+  border-radius: 0;
+  background: none;
+  cursor: pointer;
+  transition: border-color 0.22s var(--ease);
+}
+
+.note:hover {
+  border-left-color: var(--akk);
+}
+
+.note:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 6px;
+  border-radius: 2px;
+}
+
+.note p {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.62;
+  color: var(--ink);
+}
+
+[data-lang="both"] .note p + p {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.note .de {
+  font-weight: 400;
+}
+
+/* Same principle: muted only when it sits beneath the German. */
+.note .en {
+  color: var(--ink);
+}
+
+[data-lang="both"] .note .en {
+  color: var(--ink-2);
+}
+
+.note::after {
+  content: attr(data-hint);
+  position: static;
+  display: inline-block;
+  margin-top: 0.7rem;
+  font-family: var(--f-body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--ink-4);
+  background: var(--raised);
+  border-radius: 999px;
+  padding: 0.16rem 0.62rem;
+  opacity: 0;
+  transform: translateY(-2px);
+  transition: opacity 0.22s var(--ease), transform 0.22s var(--ease);
+  pointer-events: none;
+}
+
+.note:hover::after,
+.note:focus-visible::after {
+  opacity: 1;
+  transform: none;
+}
+
+/* language visibility, driven by data-lang on <html> */
+[data-lang="de"] .en {
+  display: none;
+}
+
+[data-lang="en"] .de {
+  display: none;
+}
+
+[data-lang="de"] .note.flipped .en {
+  display: block;
+}
+
+[data-lang="de"] .note.flipped .de {
+  display: none;
+}
+
+[data-lang="en"] .note.flipped .de {
+  display: block;
+}
+
+[data-lang="en"] .note.flipped .en {
+  display: none;
+}
+
+[data-lang="both"] .note {
+  cursor: default;
+}
+
+[data-lang="both"] .note::after {
+  content: "";
+  display: none;
+}
+
+/* ==========================================================================
+   Tables
+   Hairlines only. No outer frame, no fill, no zebra.
+   ========================================================================== */
+
+.tw {
+  overflow-x: auto;
+  margin: 0 0 2.25rem;
+  scrollbar-width: thin;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 480px;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  font-size: 0.94rem;
+  font-variant-numeric: tabular-nums;
+}
+
+caption {
+  caption-side: top;
+  text-align: left;
+  font-family: var(--f-body);
+  font-size: 0.85rem;
+  color: var(--ink-3);
+  letter-spacing: -0.005em;
+  text-transform: none;
+  padding: 0 0 0.75rem;
+}
+
+th,
+td {
+  padding: 0.62rem 1.1rem 0.62rem 0;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+
+thead th {
+  background: none;
+  font-family: var(--f-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink-4);
+  border-bottom: 1px solid var(--line-strong);
+  white-space: nowrap;
+  padding-bottom: 0.5rem;
+}
+
+tbody th {
+  font-weight: 500;
+  white-space: nowrap;
+  background: none;
+  border-right: 0;
+  color: var(--ink);
+}
+
+tbody tr:last-child td,
+tbody tr:last-child th {
+  border-bottom: 0;
+}
+
+tbody tr:hover td {
+  background: none;
+}
+
+td .m,
+th .m {
+  font-family: var(--f-mono);
+  font-size: 0.87em;
+}
+
+.pl {
+  color: var(--ink-3);
+}
+
+.hi {
+  font-weight: 600;
+}
+
+.ex {
+  color: var(--ink-2);
+  font-size: 0.96em;
+}
+
+/* A highlight wash instead of an underline: quieter, and it survives the
+   translation line sitting directly beneath. */
+.ex em {
+  font-style: normal;
+  color: var(--ink);
+  box-shadow: inset 0 -0.42em 0 var(--akk-bg);
+}
+
+.ar {
+  direction: rtl;
+}
+
+/* Case colouring: a coloured label and a short bar, never a filled cell. */
+tr[data-case] > th:first-child {
+  position: relative;
+  padding-left: 0.85rem;
+  box-shadow: none;
+}
+
+tr[data-case] > th:first-child::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72rem;
+  bottom: 0.72rem;
+  width: 3px;
+  border-radius: 2px;
+  background: currentColor;
+}
+
+tr[data-case="nom"] > th:first-child,
+td[data-case="nom"] {
+  color: var(--nom);
+}
+
+tr[data-case="akk"] > th:first-child,
+td[data-case="akk"] {
+  color: var(--akk);
+}
+
+tr[data-case="dat"] > th:first-child,
+td[data-case="dat"] {
+  color: var(--dat);
+}
+
+tr[data-case="gen"] > th:first-child,
+td[data-case="gen"] {
+  color: var(--gen);
+}
+
+/* case focus */
+[data-focus] tr[data-case] {
+  transition: opacity 0.24s var(--ease), background 0.24s var(--ease);
+}
+
+[data-focus="nom"] tr[data-case]:not([data-case="nom"]),
+[data-focus="akk"] tr[data-case]:not([data-case="akk"]),
+[data-focus="dat"] tr[data-case]:not([data-case="dat"]),
+[data-focus="gen"] tr[data-case]:not([data-case="gen"]) {
+  opacity: 0.24;
+}
+
+[data-focus="nom"] tr[data-case="nom"] > * {
+  background: var(--nom-bg);
+}
+
+[data-focus="akk"] tr[data-case="akk"] > * {
+  background: var(--akk-bg);
+}
+
+[data-focus="dat"] tr[data-case="dat"] > * {
+  background: var(--dat-bg);
+}
+
+[data-focus="gen"] tr[data-case="gen"] > * {
+  background: var(--gen-bg);
+}
+
+/* ==========================================================================
+   Translations under German examples
+   ========================================================================== */
+
+.tr {
+  display: none;
+}
+
+[data-lang="en"] .tr,
+[data-lang="both"] .tr {
+  display: block;
+  margin-top: 0.28rem;
+  font-size: 0.88em;
+  line-height: 1.45;
+  color: var(--ink-3);
+  font-style: normal;
+  font-weight: 400;
+  white-space: normal;
+}
+
+.hi .tr,
+b .tr {
+  font-weight: 400;
+}
+
+[data-lang="both"] td > .en,
+[data-lang="both"] th > .en,
+[data-lang="both"] dd > .en {
+  display: block;
+  margin-top: 0.22rem;
+  color: var(--ink-3);
+  font-size: 0.92em;
+  line-height: 1.45;
+}
+
+[data-lang="both"] .rule .en,
+[data-lang="both"] p > .en,
+[data-lang="both"] li > .en,
+[data-lang="both"] .k-role .en {
+  display: block;
+  color: var(--ink-3);
+  margin-top: 0.2rem;
+}
+
+/* ==========================================================================
+   Rule, formula, code, vocab
+   ========================================================================== */
+
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 2.5rem;
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 2.5rem;
+}
+
+/* A rule is a labelled aside, not a card. */
+.rule {
+  background: none;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  padding: 1.1rem 0 0;
+  margin: 0 0 2.25rem;
+  max-width: var(--measure);
+}
+
+.rule .tag {
+  display: block;
+  font-family: var(--f-body);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink-4);
+  margin-bottom: 0.6rem;
+}
+
+.rule ul,
+.plain ul {
+  margin: 0.3rem 0 0;
+  padding-left: 1.15rem;
+}
+
+.rule li,
+.plain li {
+  margin-bottom: 0.5rem;
+}
+
+.rule li::marker {
+  color: var(--ink-4);
+}
+
+/* The one place a filled surface earns its keep: a formula is a discrete
+   object you scan, not prose you read. */
+.formula {
+  font-family: var(--f-mono);
+  font-size: 0.92rem;
+  background: var(--raised);
+  border: 0;
+  border-radius: var(--radius);
+  padding: 0.95rem 1.15rem;
+  margin: 0 0 2rem;
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  max-width: var(--measure);
+}
+
+.formula b {
+  color: var(--akk);
+  font-weight: 500;
+}
+
+.formula .tr {
+  font-family: var(--f-body);
+  border-top: 1px solid var(--line-strong);
+  padding-top: 0.55rem;
+  margin-top: 0.6rem;
+  white-space: normal;
+}
+
+code {
+  font-family: var(--f-mono);
+  font-size: 0.86em;
+  background: var(--raised);
+  border: 0;
+  border-radius: 5px;
+  padding: 0.1em 0.38em;
+}
+
+.vocab {
+  columns: 250px;
+  column-gap: 3rem;
+  margin: 0 0 2rem;
+}
+
+.vocab dl {
+  margin: 0;
+}
+
+.vocab div {
+  break-inside: avoid;
+  display: flex;
+  gap: 0.6rem;
+  align-items: baseline;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.vocab dt {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.vocab dt.g-m {
+  color: var(--dat);
+}
+
+.vocab dt.g-f {
+  color: var(--akk);
+}
+
+.vocab dt.g-n {
+  color: var(--nom);
+}
+
+.vocab dd {
+  margin: 0 0 0 auto;
+  color: var(--ink-3);
+  font-size: 0.88rem;
+  text-align: right;
+}
+
+.gender-key {
+  font-family: var(--f-body);
+  font-size: 0.82rem;
+  color: var(--ink-3);
+  margin-bottom: 1rem;
+}
+
+.gender-key .g-m {
+  color: var(--dat);
+}
+
+.gender-key .g-f {
+  color: var(--akk);
+}
+
+.gender-key .g-n {
+  color: var(--nom);
+}
+
+
+/* Mein Deutsch Buddy · figures.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Body figure
+   A labelled drawing beats a word list here: the words describe positions on
+   a body, so showing the body carries meaning the list cannot.
+   ========================================================================== */
+
+.body-figure {
+  --bd-fill: #f0f0f2;
+  --bd-fill-on: color-mix(in srgb, var(--akk) 14%, transparent);
+  margin: 0 0 2.5rem;
+  max-width: 780px;
+}
+
+[data-theme="dark"] .body-figure {
+  --bd-fill: #1a1a1c;
+}
+
+/* The neck tucks under the shoulders rather than crossing them. */
+.bd-under {
+  stroke: none;
+}
+
+.body-figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* Silhouette shapes carry a fill: an unfilled contour reads as a cookie
+   cutter no matter how correct its proportions are. The fill gives the figure
+   mass, and the interior lines give it form. */
+.bd-body .bd-form {
+  fill: var(--bd-fill);
+}
+
+.bd-body path,
+.bd-body ellipse,
+.bd-body circle,
+.bd-line {
+  fill: none;
+  stroke: var(--ink-3);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke 0.2s var(--ease), stroke-width 0.2s var(--ease);
+}
+
+.bd-body .bd-solid {
+  fill: var(--ink-3);
+  stroke: none;
+}
+
+/* The back is behind the reader on a front view, so it is dashed rather than
+   drawn as if it were visible. */
+.bd-behind path {
+  stroke-dasharray: 5 6;
+  opacity: 0.55;
+}
+
+.bd-label-hit {
+  fill: transparent;
+  stroke: none;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.bd-hit {
+  fill: none;
+  stroke: transparent;
+  stroke-width: 18;
+  pointer-events: stroke;
+  cursor: pointer;
+}
+
+/* The visible strokes stay out of hit testing so the fat twin above owns it. */
+.bd-body path,
+.bd-body ellipse,
+.bd-body circle {
+  pointer-events: none;
+}
+
+/* A filled silhouette can be hit on its whole area, which is far better than
+   an 18px band along the stroke. */
+.bd-part .bd-form {
+  pointer-events: fill;
+  cursor: pointer;
+}
+
+.bd-body .bd-label-hit {
+  fill: transparent;
+  stroke: none;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.bd-hit {
+  pointer-events: stroke;
+}
+
+.bd-lead {
+  fill: none;
+  stroke: var(--line-strong);
+  stroke-width: 1;
+  transition: stroke 0.2s var(--ease);
+}
+
+.bd-dot {
+  fill: var(--line-strong);
+  stroke: none;
+  transition: fill 0.2s var(--ease), r 0.2s var(--ease);
+}
+
+.bd-name {
+  font-family: var(--f-body);
+  font-size: 15px;
+  fill: var(--ink-2);
+  transition: fill 0.2s var(--ease);
+}
+
+.bd-label {
+  cursor: pointer;
+}
+
+[data-lang="both"] .bd-name.en {
+  transform: translateY(17px);
+  font-size: 13px;
+  fill: var(--ink-4);
+}
+
+/* ---- highlight, driven from either the label or the figure ---- */
+
+.bd-label.on .bd-name {
+  fill: var(--ink);
+  font-weight: 600;
+}
+
+.bd-label.on .bd-lead {
+  stroke: var(--akk);
+}
+
+.bd-label.on .bd-dot {
+  fill: var(--akk);
+}
+
+.bd-part.on path,
+.bd-part.on ellipse,
+.bd-part.on circle {
+  stroke: var(--akk);
+  stroke-width: 2.8;
+}
+
+.bd-body .bd-part.on .bd-form {
+  fill: var(--bd-fill-on);
+}
+
+.bd-part.on .bd-solid {
+  fill: var(--akk);
+  stroke: none;
+}
+
+.bd-part.on.bd-behind path {
+  opacity: 1;
+}
+
+/* Everything unrelated recedes so the named part reads unambiguously. */
+.body-figure.focused .bd-body > :not(.on) .bd-form,
+.body-figure.focused .bd-body :not(.on) > .bd-form {
+  fill: var(--bd-fill);
+  opacity: 0.55;
+}
+
+.body-figure.focused .bd-body > :not(.on) path,
+.body-figure.focused .bd-body > :not(.on) ellipse,
+.body-figure.focused .bd-body > :not(.on) circle,
+.body-figure.focused .bd-line:not(.on) {
+  stroke: var(--line-strong);
+}
+
+.body-figure.focused .bd-label:not(.on) .bd-name {
+  fill: var(--ink-4);
+}
+
+.body-figure.focused .bd-label:not(.on) .bd-lead,
+.body-figure.focused .bd-label:not(.on) .bd-dot {
+  opacity: 0.35;
+}
+
+.bd-label:focus-visible {
+  outline: none;
+}
+
+.bd-label:focus-visible .bd-name {
+  fill: var(--ink);
+  font-weight: 600;
+}
+
+/* ---- chips: the phone version of the labels ---- */
+
+.bd-chips {
+  display: none;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1.25rem;
+}
+
+.bd-chip {
+  font-family: var(--f-body);
+  font-size: 0.84rem;
+  padding: 0.45rem 0.75rem;
+  min-height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: background 0.18s var(--ease), color 0.18s var(--ease), border-color 0.18s var(--ease);
+}
+
+.bd-chip .en {
+  color: var(--ink-4);
+}
+
+[data-lang="both"] .bd-chip .en::before {
+  content: " · ";
+  color: var(--line-strong);
+}
+
+.bd-chip.on {
+  background: var(--akk);
+  border-color: var(--akk);
+  color: #fff;
+}
+
+.bd-chip.on .en {
+  color: #ffffffcc;
+}
+
+@media (max-width: 760px) {
+
+  /* Leader labels do not survive the shrink: at a 390px viewport the 15px
+     type would render near 7px. The figure keeps its scale and the labels
+     become tappable chips underneath. */
+  .bd-label {
+    display: none;
+  }
+
+  .body-figure svg {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .bd-chips {
+    display: flex;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .bd-body path,
+  .bd-body ellipse,
+  .bd-body circle,
+  .bd-lead,
+  .bd-dot,
+  .bd-name,
+  .bd-chip {
+    transition: none;
+  }
+}
+
+/* ==========================================================================
+   Vocabulary preview
+   Hovering a concrete noun raises a pictogram that tracks the cursor. Drawn
+   rather than photographed so the app stays one offline file, and stroked in
+   currentColor so it follows the theme.
+   ========================================================================== */
+
+.vocab div.has-preview dt {
+  cursor: help;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 3px;
+}
+
+@media (pointer: coarse) {
+
+  .vocab div.has-preview dt {
+    cursor: pointer;
+  }
+}
+
+.vp-card {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 130;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.7rem 0.95rem 0.7rem 0.75rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px #00000021, 0 1px 3px #0000001a;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transform-origin: top left;
+  transition:
+    opacity 0.16s var(--ease),
+    visibility 0.16s var(--ease);
+  /* Position is written every frame, so it must not be transitioned or the
+     card lags visibly behind the pointer. */
+  will-change: transform;
+}
+
+.vp-card.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Used for one frame to measure before the first reveal. */
+.vp-card.measuring {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.vp-art {
+  width: 52px;
+  height: 52px;
+  flex: none;
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.vp-swatch {
+  width: 46px;
+  height: 46px;
+  flex: none;
+  border-radius: 10px;
+  border: 1px solid var(--line-strong);
+}
+
+.vp-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.vp-term {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.vp-gloss {
+  font-size: 0.8rem;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .vp-card {
+    transition: none;
+  }
+}
+
+
+/* Mein Deutsch Buddy · search.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Search
+   An overlay rather than a docked bar: it behaves identically on phone and
+   desktop, costs no permanent space, and dismissing it returns you to exactly
+   where you were, which the primary job (checking a form mid-sentence)
+   depends on.
+   ========================================================================== */
+
+.exam-link {
+  text-decoration: none;
+  flex: none;
+}
+
+.search-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.34rem 0.6rem 0.34rem 0.55rem;
+  flex: none;
+}
+
+.search-trigger .search-icon {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  flex: none;
+}
+
+.search-kbd,
+.search-esc,
+.search-foot kbd {
+  font-family: var(--f-mono);
+  font-size: 0.66rem;
+  line-height: 1;
+  color: var(--ink-4);
+  background: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0.16rem 0.32rem;
+}
+
+.search-trigger .search-kbd {
+  background: var(--paper);
+}
+
+/* ---------- overlay ------------------------------------------------------ */
+
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: none;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 9vh 1rem 2rem;
+  background: color-mix(in srgb, var(--ink) 32%, transparent);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.search-overlay.open {
+  display: flex;
+}
+
+.search-panel {
+  width: min(680px, 100%);
+  max-height: 78vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 24px 60px #00000026, 0 2px 8px #0000001a;
+  overflow: hidden;
+  animation: search-in 0.22s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+
+@keyframes search-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.985);
+  }
+}
+
+/* ---------- field -------------------------------------------------------- */
+
+.search-field {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid var(--line);
+  flex: none;
+}
+
+.search-field .search-icon {
+  fill: none;
+  stroke: var(--ink-3);
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  width: 19px;
+  height: 19px;
+  flex: none;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: none;
+  font-family: var(--f-body);
+  font-size: 1.02rem;
+  color: var(--ink);
+  padding: 0;
+}
+
+.search-input::placeholder {
+  color: var(--ink-4);
+}
+
+.search-input::-webkit-search-cancel-button {
+  display: none;
+}
+
+/* ---------- field controls ---------------------------------------------- */
+
+.search-back,
+.search-clear,
+.search-close {
+  flex: none;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  color: var(--ink-3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  transition: background 0.16s var(--ease), color 0.16s var(--ease);
+}
+
+.search-back:hover,
+.search-clear:hover,
+.search-close:hover {
+  color: var(--ink);
+  background: var(--raised);
+}
+
+.search-back svg,
+.search-clear svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.search-back {
+  width: 36px;
+  height: 36px;
+  margin-left: -0.35rem;
+  display: none;
+}
+
+.search-clear {
+  width: 30px;
+  height: 30px;
+}
+
+.search-close {
+  font-family: var(--f-mono);
+  font-size: 0.68rem;
+  padding: 0.24rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--raised);
+}
+
+/* ---------- results ------------------------------------------------------ */
+
+.search-results {
+  list-style: none;
+  margin: 0;
+  padding: 0.3rem 0.35rem 0.5rem;
+  overflow-y: auto;
+  flex: 1;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+/* Grouping gives the list a rhythm to scan by; groups are ordered by their
+   strongest hit, so relevance still decides what leads. */
+.sr-group {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+  padding: 0.85rem 0.7rem 0.3rem;
+}
+
+.sr-group:first-child {
+  padding-top: 0.35rem;
+}
+
+.sr {
+  padding: 0.5rem 0.7rem 0.55rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.sr.active {
+  background: var(--raised);
+}
+
+/* Three tiers, three weights: where it lives, what it is, what it says. */
+.sr-crumb {
+  font-size: 0.71rem;
+  line-height: 1.3;
+  color: var(--ink-4);
+  margin-bottom: 0.1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sr-title {
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ink);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.sr-detail {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--ink-2);
+  margin-top: 0.1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.sr-title mark,
+.sr-detail mark {
+  background: none;
+  color: inherit;
+  font-weight: 700;
+  box-shadow: inset 0 -0.4em 0 var(--akk-bg);
+}
+
+/* The case colour marks the crumb rather than the row edge, so it reads as a
+   property of the content instead of a decorative stripe. */
+.sr[data-case="nom"] .sr-crumb { color: var(--nom); }
+.sr[data-case="akk"] .sr-crumb { color: var(--akk); }
+.sr[data-case="dat"] .sr-crumb { color: var(--dat); }
+.sr[data-case="gen"] .sr-crumb { color: var(--gen); }
+
+.sr-empty {
+  padding: 2rem 1.2rem;
+  text-align: center;
+  color: var(--ink-3);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+.sr-empty-q {
+  display: block;
+  font-size: 1rem;
+  color: var(--ink);
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.sr-empty b {
+  color: var(--ink-2);
+  font-weight: 500;
+}
+
+/* ---------- footer ------------------------------------------------------- */
+
+.search-foot {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 0.9rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.72rem;
+  color: var(--ink-4);
+  flex: none;
+}
+
+.search-foot kbd {
+  margin-right: 0.2rem;
+}
+
+.search-count {
+  margin-left: auto;
+}
+
+/* ---------- landing flash ------------------------------------------------ */
+
+/* After jumping, the exact row is washed briefly. Without it you arrive in
+   the middle of a table with no idea which line you came for. */
+.search-flash {
+  animation: search-flash 1.8s var(--ease);
+}
+
+.search-flash > * {
+  animation: search-flash 1.8s var(--ease);
+}
+
+@keyframes search-flash {
+  0%, 45% {
+    background-color: var(--akk-bg);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@media (max-width: 900px) {
+
+  .search-overlay {
+    padding: 0;
+  }
+
+  .search-panel {
+    width: 100%;
+    max-height: 100dvh;
+    height: 100dvh;
+    border: 0;
+    border-radius: 0;
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .search-trigger-label {
+    display: none;
+  }
+
+  .search-trigger .search-kbd {
+    display: none;
+  }
+
+  .search-trigger {
+    padding: 0.5rem;
+    width: 40px;
+    justify-content: center;
+  }
+
+  /* Arrow and Enter hints are meaningless without a keyboard, and the space
+     matters once the on-screen keyboard halves the viewport. */
+  .search-foot {
+    display: none;
+  }
+
+  /* No backdrop to tap on a full-screen panel, so the exit has to be visible.
+     A back chevron reads as "return" where a keyboard hint means nothing. */
+  .search-back {
+    display: inline-flex;
+  }
+
+  .search-field .search-icon,
+  .search-close {
+    display: none;
+  }
+
+  .search-field {
+    padding: 0.75rem 0.9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .search-panel,
+  .search-flash,
+  .search-flash > * {
+    animation: none;
+  }
+}
+
+
+/* Mein Deutsch Buddy · home.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Home
+   Three destinations, nothing else. The cards borrow the case palette so the
+   colour system introduced on the grammar page is already familiar by the
+   time you meet it.
+   ========================================================================== */
+
+.home-bar {
+  justify-content: space-between;
+}
+
+.home-main {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 6rem 2rem 6rem;
+}
+
+.home-hero {
+  margin-bottom: 4rem;
+}
+
+.home-hero h1 {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  margin: 0 0 0.9rem;
+}
+
+.home-hero .sub {
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--ink-3);
+  max-width: 46ch;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.home-grid {
+  display: grid;
+  gap: 1px;
+  background: var(--line);
+  border-block: 1px solid var(--line);
+}
+
+/* Hairline separators rather than three floating boxes: the page already has
+   one strong element in the heading, and boxes would compete with it. */
+.hcard {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1.6rem;
+  padding: 1.9rem 1rem 1.9rem 0.4rem;
+  background: var(--paper);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.18s var(--ease), padding-left 0.18s var(--ease);
+}
+
+.hcard:hover {
+  background: var(--raised);
+  padding-left: 1rem;
+}
+
+.hcard:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: -3px;
+}
+
+.hcard-art {
+  inline-size: 60px;
+  block-size: 60px;
+  flex: none;
+  display: grid;
+  place-items: center;
+}
+
+.hcard-art svg {
+  inline-size: 44px;
+  block-size: 44px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hcard[data-case="nom"] .hcard-art { color: var(--nom); }
+.hcard[data-case="akk"] .hcard-art { color: var(--akk); }
+.hcard[data-case="dat"] .hcard-art { color: var(--dat); }
+
+.hcard-body {
+  display: grid;
+  gap: 0.18rem;
+  min-width: 0;
+}
+
+.hcard-title {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: 1.55rem;
+  letter-spacing: -0.022em;
+  line-height: 1.15;
+}
+
+.hcard-sub {
+  font-size: 0.95rem;
+  color: var(--ink-2);
+  line-height: 1.45;
+}
+
+.hcard-meta {
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  color: var(--ink-4);
+  margin-top: 0.25rem;
+}
+
+.hcard-go {
+  inline-size: 26px;
+  block-size: 26px;
+  color: var(--ink-4);
+  transition: transform 0.22s var(--ease), color 0.18s var(--ease);
+}
+
+.hcard-go svg {
+  inline-size: 100%;
+  block-size: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hcard:hover .hcard-go {
+  transform: translateX(5px);
+  color: var(--ink);
+}
+
+.home-note {
+  margin-top: 3.5rem;
+  font-size: 0.88rem;
+  color: var(--ink-3);
+  max-width: 62ch;
+}
+
+.home-note p {
+  margin: 0;
+}
+
+.home-note kbd {
+  font-family: var(--f-mono);
+  font-size: 0.76em;
+  background: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0.1em 0.34em;
+}
+
+body.home footer {
+  max-width: 980px;
+  margin: 0 auto;
+  padding-inline: 2rem;
+}
+
+/* ---------- home icon on every other page ------------------------------- */
+
+.home-link,
+.nav-page {
+  text-decoration: none;
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-link {
+  inline-size: 34px;
+  block-size: 34px;
+  padding: 0;
+  border-radius: 999px;
+  background: var(--raised);
+  color: var(--ink-2);
+}
+
+.home-link:hover {
+  background: var(--line);
+  color: var(--ink);
+}
+
+.home-link svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 900px) {
+
+  .home-main {
+    padding: 3rem 1.25rem 4rem;
+  }
+
+  .home-hero {
+    margin-bottom: 2.5rem;
+  }
+
+  .hcard {
+    gap: 1.1rem;
+    padding: 1.4rem 0.5rem 1.4rem 0.2rem;
+  }
+
+  .hcard:hover {
+    padding-left: 0.2rem;
+  }
+
+  .hcard-art {
+    inline-size: 42px;
+    block-size: 42px;
+  }
+
+  .hcard-art svg {
+    inline-size: 32px;
+    block-size: 32px;
+  }
+
+  .hcard-title {
+    font-size: 1.25rem;
+  }
+
+  .hcard-sub {
+    font-size: 0.88rem;
+  }
+
+  .hcard-go {
+    display: none;
+  }
+
+  body.home footer {
+    padding-inline: 1.25rem;
+  }
+
+  /* The home icon replaces the menu button's slot partner; both sit on row 1. */
+  .home-link {
+    grid-area: 1 / 2;
+    inline-size: 40px;
+    block-size: 40px;
+  }
+
+  .topbar .brand {
+    grid-area: 1 / 3;
+  }
+
+  .nav-page {
+    flex: none;
+  }
+}
+
+
+/* Mein Deutsch Buddy · exam.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Prüfungsmodus
+   Drills and spoken practice. Feedback explains every option, so the layout
+   has to give each one room rather than just marking one green.
+   ========================================================================== */
+
+.dr-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 1.25rem;
+}
+
+.dr-filter .chip {
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.dr-filter .chip[aria-pressed="true"] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+
+.dr-score {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  padding: 0.7rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 1.75rem;
+  font-size: 0.88rem;
+  color: var(--ink-2);
+}
+
+.dr-reset {
+  margin-left: auto;
+  border: 1px solid var(--line);
+}
+
+.dr {
+  padding: 0 0 1.75rem;
+  margin: 0 0 1.75rem;
+  border-bottom: 1px solid var(--line);
+  max-width: 74ch;
+}
+
+.dr-part {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+  margin-bottom: 0.35rem;
+}
+
+.dr-q {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: -0.012em;
+  margin: 0 0 0.2rem;
+}
+
+.dr-hint {
+  font-size: 0.85rem;
+  color: var(--ink-3);
+  margin-bottom: 0.7rem;
+}
+
+.dr-opts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 0.7rem;
+}
+
+.dr-o {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.1rem 0.65rem;
+  align-items: baseline;
+  text-align: left;
+  font-family: var(--f-body);
+  font-size: 0.95rem;
+  color: var(--ink);
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--paper);
+  cursor: pointer;
+  transition: border-color 0.16s var(--ease), background 0.16s var(--ease);
+}
+
+.dr:not(.done) .dr-o:hover {
+  border-color: var(--ink-3);
+  background: var(--raised);
+}
+
+.dr-letter {
+  font-family: var(--f-mono);
+  font-size: 0.78rem;
+  color: var(--ink-4);
+}
+
+.dr.done .dr-o {
+  cursor: default;
+}
+
+/* Both the correct option and the ones you did not pick carry a reason. */
+.dr-why {
+  grid-column: 2;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--ink-2);
+  margin-top: 0.35rem;
+  padding-top: 0.35rem;
+  border-top: 1px dashed var(--line);
+}
+
+.dr-o.right {
+  border-color: var(--nom);
+  background: var(--nom-bg);
+}
+
+.dr-o.right .dr-letter,
+.dr-o.right .dr-t {
+  color: var(--nom);
+  font-weight: 600;
+}
+
+.dr-o.wrong {
+  opacity: 0.75;
+}
+
+.dr-o.wrong.chosen {
+  border-color: var(--akk);
+  background: var(--akk-bg);
+  opacity: 1;
+}
+
+.dr-o.wrong.chosen .dr-letter,
+.dr-o.wrong.chosen .dr-t {
+  color: var(--akk);
+  font-weight: 600;
+}
+
+.dr-fb {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
+}
+
+.dr-verdict {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  flex: none;
+}
+
+.dr-verdict.ok {
+  color: var(--nom);
+  background: var(--nom-bg);
+}
+
+.dr-verdict.no {
+  color: var(--akk);
+  background: var(--akk-bg);
+}
+
+.dr-rule {
+  font-family: var(--f-mono);
+  font-size: 0.8rem;
+  color: var(--ink-3);
+}
+
+/* ---------- spoken practice --------------------------------------------- */
+
+.sp-list {
+  max-width: 74ch;
+}
+
+.sp {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem 1rem;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.sp-q {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.sp-n {
+  font-family: var(--f-mono);
+  font-size: 0.75rem;
+  color: var(--ink-4);
+  margin-right: 0.6rem;
+}
+
+.sp-show {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  flex: none;
+}
+
+.sp-a {
+  grid-column: 1 / -1;
+  padding-left: 2.1rem;
+}
+
+.sp-model {
+  font-size: 1rem;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.sp-tip {
+  font-size: 0.85rem;
+  color: var(--ink-3);
+  margin-top: 0.2rem;
+}
+
+@media (max-width: 620px) {
+
+  .sp {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-show {
+    justify-self: start;
+  }
+
+  .sp-a {
+    padding-left: 0;
+  }
+
+  .dr-o {
+    font-size: 0.92rem;
+  }
+}
+
+
+/* Mein Deutsch Buddy · responsive.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Mobile and touch
+   ========================================================================== */
+
+@media (max-width: 900px) {
+
+  /* minmax(0, 1fr), never a bare 1fr: the auto minimum lets the column grow
+     to its content and pushes the page into horizontal scroll. */
+  .shell {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  main {
+    padding: 2.25rem 1.25rem 5rem;
+    padding-left: max(1.25rem, env(safe-area-inset-left));
+    padding-right: max(1.25rem, env(safe-area-inset-right));
+  }
+
+  footer {
+    padding: 2rem 1.25rem 3rem;
+    padding-bottom: max(3rem, env(safe-area-inset-bottom));
+  }
+
+  /* Four columns, not three. The search trigger had no placement and was
+     being auto-flowed onto a third row, which pushed the bar to 155px on a
+     phone. */
+  .topbar {
+    display: grid;
+    grid-template-columns: auto auto minmax(0, 1fr) auto auto;
+    gap: 0.45rem 0.5rem;
+    padding: 0.45rem 0.75rem;
+    padding-left: max(0.75rem, env(safe-area-inset-left));
+    padding-right: max(0.75rem, env(safe-area-inset-right));
+  }
+
+  /* Reclaim height while reading by collapsing the second row only. Tucking
+     the whole bar took the search and menu buttons off-screen, which made
+     search unreachable exactly when it was wanted. */
+  .topbar-controls {
+    max-height: 46px;
+    transition: max-height 0.26s var(--ease), opacity 0.2s var(--ease);
+  }
+
+  .topbar.tucked .topbar-controls {
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .nav-toggle {
+    grid-area: 1 / 1;
+    padding: 0.5rem;
+    width: 40px;
+    justify-content: center;
+  }
+
+  .brand {
+    grid-area: 1 / 3;
+    margin-right: 0;
+    font-size: 0.85rem;
+    align-self: center;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+  }
+
+  .brand span {
+    display: none;
+  }
+
+  .exam-link,
+  .search-trigger {
+    grid-area: 1 / 4;
+  }
+
+  [data-theme-btn] {
+    grid-area: 1 / 5;
+  }
+
+  /* Page links do not fit on row 1 next to everything else, so they join the
+     scrolling control strip on row 2. */
+  .nav-page {
+    grid-row: 2;
+  }
+
+  .topbar-controls {
+    grid-area: 2 / 1 / 2 / -1;
+    gap: 0.6rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 2px;
+  }
+
+  .topbar-controls::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ctrl-group {
+    flex: none;
+  }
+
+  .ctrl-label,
+  .ctrl-group:has(.chip) > .ctrl-label {
+    display: none;
+  }
+
+  .sidenav {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: min(82vw, 320px);
+    padding: 1.5rem 1.25rem 4rem;
+    padding-left: max(1.25rem, env(safe-area-inset-left));
+    padding-top: max(1.5rem, env(safe-area-inset-top));
+    height: 100%;
+    background: var(--paper);
+    border-right: 1px solid var(--line);
+    z-index: 60;
+    transform: translateX(-101%);
+    transition: transform 0.32s var(--ease);
+    box-shadow: 0 0 40px #00000026;
+    overscroll-behavior: contain;
+  }
+
+  .sidenav.open {
+    transform: none;
+  }
+
+  .nav-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 55;
+    background: #00000059;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.32s var(--ease);
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .nav-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .hero {
+    margin-bottom: 4rem;
+  }
+
+  .hero .sub {
+    font-size: 1.02rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .case-key {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem 1.5rem;
+  }
+
+  section.topic {
+    margin-bottom: 4.5rem;
+  }
+
+  h3 {
+    margin-top: 2.5rem;
+  }
+
+  .grid2,
+  .grid3 {
+    gap: 1.75rem;
+  }
+
+  .vocab {
+    columns: 1;
+  }
+
+  .tw {
+    max-width: 100%;
+    overscroll-behavior-x: contain;
+    background:
+      linear-gradient(to left, var(--paper), transparent) right / 28px 100% no-repeat,
+      radial-gradient(farthest-side at 100% 50%, #00000014, transparent) right / 14px 100% no-repeat;
+    background-attachment: local, scroll;
+  }
+
+  table {
+    min-width: 440px;
+  }
+
+  /* Keep the case label in view while the genders scroll past it. */
+  thead th:first-child,
+  tbody th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background: var(--paper);
+    padding-right: 0.9rem;
+  }
+
+  thead th:first-child {
+    z-index: 3;
+  }
+}
+
+@media (pointer: coarse) {
+
+  .chip {
+    min-height: 38px;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.82rem;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* The generic chip padding above would stretch the round toggle into a
+     pill, so restate it as a square. */
+  .theme-toggle {
+    width: 40px;
+    height: 40px;
+    min-height: 40px;
+    padding: 0;
+  }
+
+  .sidenav a {
+    padding: 0.55rem 0.7rem;
+    min-height: 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Hover never fires on touch, so the flip affordance has to be permanent. */
+  .note::after {
+    opacity: 1;
+    transform: none;
+  }
+
+  td,
+  th {
+    padding-top: 0.72rem;
+    padding-bottom: 0.72rem;
+  }
+}
+
+@media (max-width: 420px) {
+
+  .case-key {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .grid2,
+  .grid3 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+@media print {
+
+  .topbar,
+  .sidenav,
+  .nav-backdrop {
+    display: none;
+  }
+
+  .shell {
+    grid-template-columns: 1fr;
+  }
+
+  body {
+    background: #fff;
+    font-size: 10pt;
+  }
+
+  .en,
+  .de,
+  .tr {
+    display: block !important;
+  }
+
+  section.topic {
+    break-inside: avoid-page;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+
+  </style>
+  <script type="module">
+/**
+ * Mein Deutsch Buddy — shared types and storage keys
+ */
+const STORE = {
+    lang: 'de.lang',
+    theme: 'de.theme',
+};
+const root = document.documentElement;
+
+/**
+ * Mein Deutsch Buddy — language mode
+ * DE, EN and DE+EN, plus per-block flipping.
+ */
+
+/* -------------------------------------------------------------- language */
+const HINTS = {
+    de: 'CLICK FOR EN',
+    en: 'CLICK FOR DE',
+    both: '',
+};
+function setLang(mode) {
+    root.setAttribute('data-lang', mode);
+    document.querySelectorAll('.note').forEach((n) => {
+        n.classList.remove('flipped');
+        n.dataset.hint = HINTS[mode];
+    });
+    document.querySelectorAll('[data-lang-btn]').forEach((b) => {
+        b.setAttribute('aria-pressed', String(b.dataset.langBtn === mode));
+    });
+    try {
+        localStorage.setItem(STORE.lang, mode);
+    }
+    catch {
+        /* storage unavailable, mode still applies for this visit */
+    }
+}
+function initLang() {
+    let saved = 'de';
+    try {
+        const v = localStorage.getItem(STORE.lang);
+        if (v === 'de' || v === 'en' || v === 'both')
+            saved = v;
+    }
+    catch {
+        /* ignore */
+    }
+    setLang(saved);
+    document.querySelectorAll('[data-lang-btn]').forEach((btn) => {
+        btn.addEventListener('click', () => setLang(btn.dataset.langBtn));
+    });
+    // Click any note to flip that one block to the other language.
+    document.querySelectorAll('.note').forEach((note) => {
+        note.tabIndex = 0;
+        note.setAttribute('role', 'button');
+        const flip = () => {
+            if (root.getAttribute('data-lang') === 'both')
+                return;
+            note.classList.toggle('flipped');
+        };
+        note.addEventListener('click', flip);
+        note.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                flip();
+            }
+        });
+    });
+}
+
+/**
+ * Mein Deutsch Buddy — case focus
+ * Dims every row outside the selected case.
+ */
+
+/* ------------------------------------------------------------ case focus */
+function setFocus(c) {
+    if (c)
+        root.setAttribute('data-focus', c);
+    else
+        root.removeAttribute('data-focus');
+    document.querySelectorAll('[data-case-btn]').forEach((b) => {
+        b.setAttribute('aria-pressed', String(b.dataset.caseBtn === c));
+    });
+}
+function initFocus() {
+    document.querySelectorAll('[data-case-btn]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const id = btn.dataset.caseBtn;
+            setFocus(root.getAttribute('data-focus') === id ? null : id);
+        });
+    });
+}
+
+/**
+ * Mein Deutsch Buddy — theme
+ * Light and dark, swapped behind a blur so the change is never seen mid-flight.
+ */
+
+/* ----------------------------------------------------------------- theme */
+function setTheme(t) {
+    root.setAttribute('data-theme', t);
+    const btn = document.querySelector('[data-theme-btn]');
+    if (btn) {
+        /* The button holds an SVG, so its label lives on aria-label and title.
+           Writing textContent here would delete the icon. */
+        const label = t === 'dark' ? 'Hellmodus einschalten' : 'Dunkelmodus einschalten';
+        btn.setAttribute('aria-label', label);
+        btn.setAttribute('title', label);
+    }
+    try {
+        localStorage.setItem(STORE.theme, t);
+    }
+    catch {
+        /* ignore */
+    }
+}
+function initTheme() {
+    let t = window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light';
+    try {
+        const v = localStorage.getItem(STORE.theme);
+        if (v === 'light' || v === 'dark')
+            t = v;
+    }
+    catch {
+        /* ignore */
+    }
+    setTheme(t);
+    getVeil();
+    document
+        .querySelector('[data-theme-btn]')
+        ?.addEventListener('click', () => {
+        morphTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
+}
+/* Timings are duplicated from the CSS by necessity: the swap has to land at
+   peak blur, so JS and CSS must agree on when that is. */
+const MORPH_OUT = 300;
+const MORPH_IN = 300;
+let morphing = false;
+let veil = null;
+function getVeil() {
+    if (!veil) {
+        veil = document.createElement('div');
+        veil.className = 'theme-veil';
+        veil.setAttribute('aria-hidden', 'true');
+        document.body.appendChild(veil);
+    }
+    return veil;
+}
+function morphTheme(next) {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced) {
+        setTheme(next);
+        return;
+    }
+    /* A second click mid-flight would strand the page blurred. */
+    if (morphing)
+        return;
+    morphing = true;
+    const body = document.body;
+    getVeil();
+    body.classList.add('theme-morph');
+    requestAnimationFrame(() => {
+        body.classList.add('theme-morph-out');
+        window.setTimeout(() => {
+            /* Swap with other transitions suppressed, then force a reflow so the
+               browser commits the new colours before animation resumes. The theme
+               toggle is exempt in CSS so its icon still morphs. */
+            root.setAttribute('data-theme-instant', '');
+            setTheme(next);
+            void body.offsetWidth;
+            root.removeAttribute('data-theme-instant');
+            body.classList.remove('theme-morph-out');
+            window.setTimeout(() => {
+                body.classList.remove('theme-morph');
+                morphing = false;
+            }, MORPH_IN + 40);
+        }, MORPH_OUT);
+    });
+}
+
+/**
+ * Mein Deutsch Buddy — segmented control
+ * A single pill that slides to the pressed chip.
+ */
+/* ------------------------------------------------------- segmented control */
+/* The pressed pill used to appear on one chip and vanish from another. A
+   single indicator element per group slides and resizes to the pressed chip
+   instead, so DE to DE+EN reads as one object moving. It watches aria-pressed
+   rather than being called from setLang and setFocus, so it stays correct no
+   matter what changes the state. */
+function initSegments() {
+    document.querySelectorAll('.ctrl-group').forEach((group) => {
+        const chips = Array.from(group.querySelectorAll('.chip'));
+        if (!chips.length)
+            return;
+        const indicator = document.createElement('span');
+        indicator.className = 'seg-indicator';
+        indicator.setAttribute('aria-hidden', 'true');
+        group.prepend(indicator);
+        const sync = () => {
+            const on = group.querySelector('.chip[aria-pressed="true"]');
+            /* The case group has no pressed chip when no case is focused. */
+            group.classList.toggle('has-active', !!on);
+            if (!on)
+                return;
+            indicator.style.width = `${on.offsetWidth}px`;
+            indicator.style.transform = `translateX(${on.offsetLeft}px)`;
+        };
+        const observer = new MutationObserver(sync);
+        chips.forEach((c) => observer.observe(c, { attributes: true, attributeFilter: ['aria-pressed'] }));
+        window.addEventListener('resize', sync);
+        /* Web fonts change chip widths after load. */
+        if (document.fonts?.ready)
+            void document.fonts.ready.then(sync);
+        sync();
+        /* Position first, animate after, or the pill slides in from the left on
+           page load. */
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => group.classList.add('seg-ready'));
+        });
+    });
+}
+
+/**
+ * Mein Deutsch Buddy — navigation
+ * Mobile drawer, sticky bar and section tracking.
+ */
+/* ------------------------------------------------------------------- nav */
+/* The bar carries two rows on a phone. Tucking it away while the reader is
+   moving down the page gives that height back, and any upward scroll returns
+   it immediately. */
+function initStickyBar() {
+    const bar = document.querySelector('.topbar');
+    if (!bar)
+        return;
+    let last = window.scrollY;
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (ticking)
+            return;
+        ticking = true;
+        requestAnimationFrame(() => {
+            ticking = false;
+            const y = window.scrollY;
+            const delta = y - last;
+            last = y;
+            if (window.innerWidth > 900) {
+                bar.classList.remove('tucked');
+                return;
+            }
+            /* Ignore jitter, and never hide it near the top of the page. */
+            if (Math.abs(delta) < 6 || y < 140) {
+                if (y < 140)
+                    bar.classList.remove('tucked');
+                return;
+            }
+            bar.classList.toggle('tucked', delta > 0);
+        });
+    }, { passive: true });
+}
+function initNav() {
+    const nav = document.querySelector('.sidenav');
+    const toggle = document.querySelector('.nav-toggle');
+    /* Backdrop for the mobile drawer. Built here rather than in the markup so
+       the two pages that share this script do not both have to declare it. */
+    let backdrop = null;
+    if (nav) {
+        backdrop = document.createElement('button');
+        backdrop.className = 'nav-backdrop';
+        backdrop.setAttribute('aria-label', 'Menü schließen');
+        backdrop.tabIndex = -1;
+        document.body.appendChild(backdrop);
+    }
+    function setNav(open) {
+        if (!nav)
+            return;
+        nav.classList.toggle('open', open);
+        backdrop?.classList.toggle('open', open);
+        toggle?.setAttribute('aria-expanded', String(open));
+        if (backdrop)
+            backdrop.tabIndex = open ? 0 : -1;
+        /* Stop the page behind the drawer from scrolling under the finger. */
+        document.body.style.overflow = open && window.innerWidth <= 900 ? 'hidden' : '';
+        if (open) {
+            /* preventScroll, or focusing the first link yanks the nav to the top
+               and undoes the reveal below. */
+            nav.querySelector('a')?.focus({ preventScroll: true });
+            /* The active link only gets revealed when the section changes, so a
+               drawer opened mid-page would show the top of the list instead. */
+            const current = nav.querySelector('a.active');
+            if (current)
+                requestAnimationFrame(() => keepLinkVisible(current));
+        }
+    }
+    toggle?.addEventListener('click', () => {
+        setNav(!(nav?.classList.contains('open') ?? false));
+    });
+    backdrop?.addEventListener('click', () => {
+        setNav(false);
+        toggle?.focus();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && nav?.classList.contains('open')) {
+            setNav(false);
+            toggle?.focus();
+        }
+    });
+    /* A drawer left open while the viewport grows back to desktop would keep
+       the body scroll-locked, so reset on resize. */
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 900)
+            setNav(false);
+    });
+    nav?.querySelectorAll('a').forEach((a) => {
+        a.addEventListener('click', () => {
+            if (window.innerWidth <= 900)
+                setNav(false);
+        });
+    });
+    // Highlight the section currently in view.
+    const links = Array.from(nav?.querySelectorAll('a') ?? []);
+    const byId = new Map();
+    links.forEach((l) => byId.set(l.hash.slice(1), l));
+    const sections = Array.from(document.querySelectorAll('section.topic'));
+    if (!sections.length || !nav)
+        return;
+    /* An IntersectionObserver watching a thin band near the top of the viewport
+       leaves nothing active whenever that band falls in the 104px gap between
+       two sections. Resolving against an anchor line instead always yields
+       exactly one section: the last one that has started above the line. */
+    const ANCHOR = 140;
+    let activeId = '';
+    function keepLinkVisible(link) {
+        if (!nav)
+            return;
+        /* Skip while the mobile drawer is shut, otherwise the nav silently
+           scrolls behind a closed panel. */
+        if (window.innerWidth <= 900 && !nav.classList.contains('open'))
+            return;
+        const nr = nav.getBoundingClientRect();
+        const lr = link.getBoundingClientRect();
+        const pad = 56;
+        let delta = 0;
+        if (lr.top < nr.top + pad)
+            delta = lr.top - (nr.top + pad);
+        else if (lr.bottom > nr.bottom - pad)
+            delta = lr.bottom - (nr.bottom - pad);
+        if (!delta)
+            return;
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        nav.scrollTo({ top: nav.scrollTop + delta, behavior: reduced ? 'auto' : 'smooth' });
+    }
+    function syncActive() {
+        let current = sections[0];
+        for (const s of sections) {
+            if (s.getBoundingClientRect().top <= ANCHOR)
+                current = s;
+            else
+                break;
+        }
+        /* At the very bottom the last section may never cross the line, so claim
+           it explicitly. */
+        if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
+            current = sections[sections.length - 1];
+        }
+        if (!current || current.id === activeId)
+            return;
+        activeId = current.id;
+        links.forEach((l) => l.classList.remove('active'));
+        const link = byId.get(activeId);
+        if (link) {
+            link.classList.add('active');
+            keepLinkVisible(link);
+        }
+    }
+    let ticking = false;
+    function onScroll() {
+        if (ticking)
+            return;
+        ticking = true;
+        requestAnimationFrame(() => {
+            syncActive();
+            ticking = false;
+        });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    syncActive();
+}
+
+/**
+ * Mein Deutsch Buddy — page chrome
+ *
+ * Every page shares the same shell: language modes, case focus, theme and
+ * navigation. Pages differ only in what they add on top, so this is the one
+ * import an entry point always needs.
+ */
+
+
+
+
+
+function initChrome() {
+    initTheme();
+    initLang();
+    initFocus();
+    initSegments();
+    initStickyBar();
+    initNav();
+}
+
+/**
+ * Mein Deutsch Buddy — Prüfungsmodus
+ *
+ * Built for the night before an exam. Two principles shape it.
+ *
+ * First, testing beats rereading. Rereading feels productive because the
+ * material looks familiar, but familiarity is not retrieval. Every section
+ * here ends in questions.
+ *
+ * Second, feedback has to explain the distractors. Being told an answer is
+ * wrong teaches almost nothing; being told *why the option you picked* was
+ * tempting and what it would have been right for is what transfers. So every
+ * option carries its own explanation, not just the correct one.
+ */
+const DRILLS = [
+    /* ---------------------------------------------------- Teil 1: Verbformen */
+    {
+        id: 'v1',
+        part: 'Verben',
+        prompt: 'Ich ___ jeden Tag Deutsch.',
+        options: [
+            { t: 'lernen', why: 'Das ist der Infinitiv. Der steht nur nach einem Modalverb (ich will lernen) oder am Satzende.' },
+            { t: 'lernt', why: 'Das ist die Form für er, sie, es und für ihr. Bei ich passt sie nicht.' },
+            { t: 'lerne', ok: true, why: 'ich + Stamm + e. lernen → lern → lerne.' },
+        ],
+        rule: 'Präsens: ich -e, du -st, er/sie/es -t, wir -en, ihr -t, sie/Sie -en',
+    },
+    {
+        id: 'v2',
+        part: 'Verben',
+        prompt: 'Du ___ heute nicht arbeiten.',
+        hint: 'müssen',
+        options: [
+            { t: 'musst', ok: true, why: 'du + Modalverb = Stamm + st. muss + st = musst, mit einem s.' },
+            { t: 'müsst', why: 'Das ist die ihr-Form. Achtung: Modalverben verlieren den Umlaut im Singular. Genau diesen Fehler hattest du in der Probeprüfung.' },
+            { t: 'müssen', why: 'Infinitiv, also wir- oder sie-Form.' },
+        ],
+        rule: 'Modalverben im Singular ohne Umlaut: ich muss, du musst, er muss',
+    },
+    {
+        id: 'v3',
+        part: 'Verben',
+        prompt: 'Er ___ um 6 Uhr ___ .',
+        hint: 'aufstehen',
+        options: [
+            { t: 'steht … auf', ok: true, why: 'Trennbares Verb: das Präfix geht ans Satzende, das konjugierte Verb bleibt auf Position 2.' },
+            { t: 'aufsteht … —', why: 'Im Hauptsatz bleibt ein trennbares Verb nie zusammen. Zusammen bleibt es nur nach einem Modalverb: Er muss aufstehen.' },
+            { t: 'auf … steht', why: 'Umgekehrt. Das konjugierte Verb steht auf Position 2, nie das Präfix.' },
+        ],
+        rule: 'Trennbar: ab-, an-, auf-, aus-, ein-, mit-, vor-, zu-, zurück-',
+    },
+    {
+        id: 'v4',
+        part: 'Verben',
+        prompt: 'Sie (Plural) ___ sehr gut Deutsch sprechen.',
+        hint: 'können',
+        options: [
+            { t: 'könnt', why: 'Das ist ihr. Ihr könnt, aber sie können.' },
+            { t: 'können', ok: true, why: 'sie im Plural und höfliches Sie nehmen immer die Infinitivform.' },
+            { t: 'kann', why: 'Das ist ich oder er/sie/es im Singular.' },
+        ],
+        rule: 'wir, sie, Sie nehmen immer die -en Form',
+    },
+    {
+        id: 'v5',
+        part: 'Verben',
+        prompt: 'Du ___ sehr schnell.',
+        hint: 'sprechen',
+        options: [
+            { t: 'sprechst', why: 'Der Stamm stimmt nicht. sprechen wechselt bei du und er den Vokal.' },
+            { t: 'sprichst', ok: true, why: 'e → i bei du und er/sie/es. Nur dort, sonst bleibt der Vokal.' },
+            { t: 'spricht', why: 'Das ist er/sie/es. Bei du fehlt das s.' },
+        ],
+        rule: 'Vokalwechsel nur bei du und er/sie/es: e→i, e→ie, a→ä',
+    },
+    /* ------------------------------------------------------ Teil 2: Artikel */
+    {
+        id: 'a1',
+        part: 'Artikel und Fälle',
+        prompt: 'Ich kaufe ___ Apfel.',
+        options: [
+            { t: 'ein', why: 'Das wäre Nominativ. Richtig bei: Das ist ein Apfel.' },
+            { t: 'einen', ok: true, why: 'kaufen nimmt Akkusativ, der Apfel ist maskulin, und nur maskulin ändert sich: ein → einen.' },
+            { t: 'eine', why: 'eine ist feminin. Der Apfel ist maskulin.' },
+        ],
+        rule: 'Akkusativ: nur maskulin ändert sich. der→den, ein→einen',
+    },
+    {
+        id: 'a2',
+        part: 'Artikel und Fälle',
+        prompt: 'Ich helfe ___ Mann.',
+        options: [
+            { t: 'den', why: 'Akkusativ. Aber helfen gehört zu der kleinen Gruppe, die Dativ verlangt.' },
+            { t: 'dem', ok: true, why: 'helfen ist ein Dativverb, wie danken, gehören, gefallen, passen.' },
+            { t: 'der', why: 'Nominativ maskulin, oder Dativ feminin. Hier ist der Mann maskulin und braucht dem.' },
+        ],
+        rule: 'Dativverben: helfen, danken, gehören, gefallen, passen, schmecken, antworten',
+    },
+    {
+        id: 'a3',
+        part: 'Artikel und Fälle',
+        prompt: 'Das Auto gehört ___ Frau.',
+        options: [
+            { t: 'die', why: 'Nominativ oder Akkusativ. gehören verlangt Dativ.' },
+            { t: 'der', ok: true, why: 'gehören + Dativ, feminin: die → der. Feminin sieht im Dativ aus wie maskulin im Nominativ, das verwirrt oft.' },
+            { t: 'dem', why: 'Dativ maskulin oder neutral. Die Frau ist feminin.' },
+        ],
+        rule: 'Dativ: der→dem (m), die→der (f), das→dem (n), die→den (Pl)',
+    },
+    {
+        id: 'a4',
+        part: 'Artikel und Fälle',
+        prompt: 'Ich habe ___ Hund. (Verneinung)',
+        options: [
+            { t: 'nicht einen', why: 'Das sagt man nicht. Bei ein + Nomen wird die Verneinung zu kein.' },
+            { t: 'keinen', ok: true, why: 'kein ersetzt ein und nimmt dieselben Endungen. Akkusativ maskulin: keinen.' },
+            { t: 'kein', why: 'Das wäre Nominativ oder neutral. haben verlangt Akkusativ, also keinen.' },
+        ],
+        rule: 'kein bei Nomen mit ein oder ohne Artikel, nicht bei allem anderen',
+    },
+    /* ------------------------------------------------------ Teil 3: Pronomen */
+    {
+        id: 'p1',
+        part: 'Pronomen',
+        prompt: 'Ich sehe den Lehrer. → Ich sehe ___ .',
+        options: [
+            { t: 'er', why: 'Nominativ. Richtig nur, wenn er das Subjekt ist: Er kommt.' },
+            { t: 'ihn', ok: true, why: 'den Lehrer steht im Akkusativ, also wird daraus ihn. Der Fall bleibt beim Ersetzen gleich.' },
+            { t: 'ihm', why: 'Dativ. Das bräuchtest du nach helfen: Ich helfe ihm.' },
+        ],
+        rule: 'er → ihn (Akk) → ihm (Dat)',
+    },
+    {
+        id: 'p2',
+        part: 'Pronomen',
+        prompt: 'Er hilft ___ .',
+        hint: 'ich',
+        options: [
+            { t: 'mich', why: 'Akkusativ. Richtig bei: Er sieht mich.' },
+            { t: 'mir', ok: true, why: 'helfen verlangt Dativ, und ich wird im Dativ zu mir.' },
+            { t: 'ich', why: 'Nominativ. Nach einem Verb kann ich nicht als Objekt stehen.' },
+        ],
+        rule: 'ich → mich (Akk) → mir (Dat)',
+    },
+    {
+        id: 'p3',
+        part: 'Pronomen',
+        prompt: 'Das T-Shirt gefällt ___ .',
+        hint: 'sie, Singular',
+        options: [
+            { t: 'sie', why: 'Nominativ oder Akkusativ. gefallen verlangt Dativ.' },
+            { t: 'ihr', ok: true, why: 'gefallen + Dativ. sie im Singular wird zu ihr. Achtung: das T-Shirt ist das Subjekt, nicht sie.' },
+            { t: 'ihnen', why: 'Das ist Dativ Plural, also für mehrere Personen.' },
+        ],
+        rule: 'gefallen dreht die Logik um: die Sache gefällt der Person',
+    },
+    {
+        id: 'p4',
+        part: 'Pronomen',
+        prompt: '___ Mutter ist Lehrerin.',
+        hint: 'ich',
+        options: [
+            { t: 'Mein', why: 'Das wäre maskulin oder neutral. Die Mutter ist feminin.' },
+            { t: 'Meine', ok: true, why: 'Der Besitzer wählt den Stamm (mein-), das besessene Nomen wählt die Endung. Feminin Nominativ: -e.' },
+            { t: 'Meiner', why: 'Das ist Dativ feminin: mit meiner Mutter.' },
+        ],
+        rule: 'Possessiv: Stamm vom Besitzer, Endung vom Nomen',
+    },
+    /* ------------------------------------------- Teil 4: Präpositionen */
+    {
+        id: 'pr1',
+        part: 'Präpositionen',
+        prompt: 'Ich fahre ___ Bus zur Arbeit.',
+        options: [
+            { t: 'mit dem', ok: true, why: 'mit verlangt immer Dativ, und für Verkehrsmittel benutzt man mit.' },
+            { t: 'mit den', why: 'den wäre Akkusativ maskulin oder Dativ Plural. Der Bus ist maskulin Singular, also dem.' },
+            { t: 'in dem', why: 'Grammatisch möglich, aber für Verkehrsmittel sagt man mit dem Bus.' },
+        ],
+        rule: 'Immer Dativ: aus, bei, mit, nach, seit, von, zu',
+    },
+    {
+        id: 'pr2',
+        part: 'Präpositionen',
+        prompt: 'Ich lege das Buch ___ Tisch.',
+        options: [
+            { t: 'auf den', ok: true, why: 'legen ist eine Bewegung. Wohin? → Akkusativ, maskulin den.' },
+            { t: 'auf dem', why: 'Das wäre Wo?, also die Position: Das Buch liegt auf dem Tisch.' },
+            { t: 'auf der', why: 'Der Tisch ist maskulin, nicht feminin.' },
+        ],
+        rule: 'Wechselpräposition: Wohin → Akkusativ, Wo → Dativ',
+    },
+    {
+        id: 'pr3',
+        part: 'Präpositionen',
+        prompt: 'Ich gehe ___ Arzt.',
+        options: [
+            { t: 'zum', ok: true, why: 'Bei Personen: zu + Dativ. zu dem verschmilzt zu zum.' },
+            { t: 'nach dem', why: 'nach benutzt man für Städte und Länder ohne Artikel: nach Berlin.' },
+            { t: 'in den', why: 'Das wäre ein Ort, kein Mensch: in den Park.' },
+        ],
+        rule: 'Wohin? Personen → zu, Orte → in, Städte → nach',
+    },
+    {
+        id: 'pr4',
+        part: 'Präpositionen',
+        prompt: 'Das Geschenk ist ___ mich.',
+        options: [
+            { t: 'für', ok: true, why: 'für verlangt immer Akkusativ, deshalb mich und nicht mir.' },
+            { t: 'mit', why: 'mit verlangt Dativ, also müsste es mit mir heißen.' },
+            { t: 'zu', why: 'zu verlangt Dativ: zu mir.' },
+        ],
+        rule: 'Immer Akkusativ: durch, für, gegen, ohne, um, bis',
+    },
+    /* ------------------------------------------------ Teil 5: Wortstellung */
+    {
+        id: 'w1',
+        part: 'Wortstellung',
+        prompt: 'am Samstag / Fußball / spielen / wir',
+        options: [
+            { t: 'Am Samstag spielen wir Fußball.', ok: true, why: 'Position 1 kann eine Zeitangabe sein. Dann rutscht das Subjekt hinter das Verb. Kein Komma.' },
+            { t: 'Am Samstag, spielen wir Fußball.', why: 'Fast richtig, aber im Deutschen steht hier kein Komma. Genau das hattest du in der Probeprüfung.' },
+            { t: 'Am Samstag wir spielen Fußball.', why: 'Das Verb muss auf Position 2. Hier steht es auf Position 3.' },
+        ],
+        rule: 'Das konjugierte Verb steht im Hauptsatz immer auf Position 2',
+    },
+    {
+        id: 'w2',
+        part: 'Wortstellung',
+        prompt: 'Deutsch / kann / gut / er / sprechen',
+        options: [
+            { t: 'Er kann gut Deutsch sprechen.', ok: true, why: 'Modalverb auf Position 2, Infinitiv ans Satzende. Das ist die Satzklammer.' },
+            { t: 'Er kann sprechen gut Deutsch.', why: 'Der Infinitiv muss ganz ans Ende, nach allen anderen Wörtern.' },
+            { t: 'Er gut Deutsch sprechen kann.', why: 'Das ist die Wortstellung eines Nebensatzes, nicht eines Hauptsatzes.' },
+        ],
+        rule: 'Satzklammer: Modalverb Position 2, Infinitiv am Ende',
+    },
+    {
+        id: 'w3',
+        part: 'Wortstellung',
+        prompt: 'ich / um / stehe / sieben Uhr / auf',
+        options: [
+            { t: 'Ich stehe um sieben Uhr auf.', ok: true, why: 'Konjugiertes Verb auf 2, Präfix ganz ans Ende.' },
+            { t: 'Ich aufstehe um sieben Uhr.', why: 'Trennbare Verben bleiben im Hauptsatz nie zusammen.' },
+            { t: 'Ich stehe auf um sieben Uhr.', why: 'Das Präfix gehört hinter die Zeitangabe, ans echte Satzende.' },
+        ],
+        rule: 'Trennbares Verb: Präfix ans Satzende',
+    },
+    {
+        id: 'w4',
+        part: 'Wortstellung',
+        prompt: 'Warum lernst du Deutsch?',
+        hint: 'weil / arbeiten / ich / in Deutschland / will',
+        options: [
+            { t: 'Weil ich in Deutschland arbeiten will.', ok: true, why: 'weil schickt das konjugierte Verb ans Ende. Der Infinitiv steht davor.' },
+            { t: 'Weil ich will in Deutschland arbeiten.', why: 'Nach weil steht das konjugierte Verb am Ende, nicht auf Position 2.' },
+            { t: 'Weil will ich in Deutschland arbeiten.', why: 'Das ist Fragestellung. weil ist keine normale Konjunktion wie und oder aber.' },
+        ],
+        rule: 'weil, dass, wenn schicken das Verb ans Ende. und, aber, oder, denn nicht',
+    },
+    /* --------------------------------------------------- Teil 6: Zahlen */
+    {
+        id: 'z1',
+        part: 'Zahlen',
+        prompt: '67 = ?',
+        options: [
+            { t: 'sieben und sechzig', why: 'Richtig gedacht, falsch geschrieben. Zahlen sind im Deutschen ein Wort. Genau das hattest du in der Probeprüfung.' },
+            { t: 'siebenundsechzig', ok: true, why: 'Einer + und + Zehner, alles zusammen als ein Wort.' },
+            { t: 'sechzigsieben', why: 'Deutsch spricht die Zahl rückwärts: erst der Einer, dann der Zehner.' },
+        ],
+        rule: 'Einer + und + Zehner, immer ein Wort',
+    },
+    {
+        id: 'z2',
+        part: 'Zahlen',
+        prompt: 'Der 45. Platz = der ___ Platz',
+        options: [
+            { t: 'fünf und vierzigster', why: 'Zwei Fehler: es muss ein Wort sein, und nach der heißt die Endung -e, nicht -er. Das hattest du in der Probeprüfung.' },
+            { t: 'fünfundvierzigste', ok: true, why: 'Ab 20 hängst du -ste an, und nach der ist die Adjektivendung -e.' },
+            { t: 'fünfundvierzigte', why: 'Bis 19 ist es -te, ab 20 ist es -ste. 45 liegt darüber.' },
+        ],
+        rule: '1 bis 19: -te. Ab 20: -ste',
+    },
+    {
+        id: 'z3',
+        part: 'Zahlen',
+        prompt: 'Ich habe am 3. März Geburtstag. → am ___ März',
+        options: [
+            { t: 'dritte', why: 'Nach am steht Dativ, also -en statt -e.' },
+            { t: 'dritten', ok: true, why: 'am = an dem = Dativ. Die Ordnungszahl bekommt dann -en. Und dritte ist unregelmäßig, nicht dreite.' },
+            { t: 'dreiten', why: 'Der Stamm ist unregelmäßig: 3 → dritt-, nicht dreit-.' },
+        ],
+        rule: 'am + Ordinalzahl + -en. Unregelmäßig: erste, dritte, siebte, achte',
+    },
+    {
+        id: 'z4',
+        part: 'Zahlen',
+        prompt: '09:15 Uhr, umgangssprachlich',
+        options: [
+            { t: 'Viertel nach neun', ok: true, why: '15 Minuten nach der vollen Stunde: Viertel nach.' },
+            { t: 'Viertel vor neun', why: 'Das wäre 08:45, also 15 Minuten vor neun.' },
+            { t: 'halb neun', why: 'Das wäre 08:30. Achtung: halb neun heißt 8:30, nicht 9:30.' },
+        ],
+        rule: 'halb drei = 2:30. Deutsch zählt zur nächsten Stunde',
+    },
+    /* --------------------------------------------------- Teil 7: Perfekt */
+    {
+        id: 'pf1',
+        part: 'Perfekt',
+        prompt: 'Gestern ___ ich Pizza ___ .',
+        hint: 'essen',
+        options: [
+            { t: 'habe … gegessen', ok: true, why: 'essen hat ein Akkusativobjekt, also haben. Partizip: gegessen.' },
+            { t: 'bin … gegessen', why: 'sein nimmt man nur bei Bewegung von A nach B oder bei Zustandswechsel.' },
+            { t: 'habe … geessen', why: 'Der Stamm ist unregelmäßig: essen → gegessen, mit doppeltem g-Laut.' },
+        ],
+        rule: 'haben bei Objekt, sein bei Bewegung und Zustandswechsel',
+    },
+    {
+        id: 'pf2',
+        part: 'Perfekt',
+        prompt: 'Ich ___ um sieben Uhr ___ .',
+        hint: 'aufwachen',
+        options: [
+            { t: 'habe … aufgewacht', why: 'aufwachen ist ein Zustandswechsel: von schlafen zu wach. Das nimmt sein.' },
+            { t: 'bin … aufgewacht', ok: true, why: 'Zustandswechsel → sein. Und beim trennbaren Verb steht ge- in der Mitte: auf-ge-wacht.' },
+            { t: 'bin … geaufwacht', why: 'Bei trennbaren Verben kommt ge- zwischen Präfix und Stamm, nicht davor.' },
+        ],
+        rule: 'Trennbar im Perfekt: Präfix + ge + Stamm. aufgestanden, eingekauft',
+    },
+    {
+        id: 'pf3',
+        part: 'Perfekt',
+        prompt: 'Wir ___ nach Berlin ___ .',
+        hint: 'fahren',
+        options: [
+            { t: 'sind … gefahren', ok: true, why: 'Bewegung von A nach B → sein.' },
+            { t: 'haben … gefahren', why: 'Nur mit Objekt: Ich habe das Auto gefahren. Ohne Objekt ist es sein.' },
+            { t: 'sind … gefahrt', why: 'fahren ist stark: der Vokal bleibt, aber die Endung ist -en, nicht -t.' },
+        ],
+        rule: 'Starke Verben: ge + Stamm + en. Schwache: ge + Stamm + t',
+    },
+    {
+        id: 'pf4',
+        part: 'Perfekt',
+        prompt: 'Ich ___ meine Familie ___ .',
+        hint: 'besuchen',
+        options: [
+            { t: 'habe … besucht', ok: true, why: 'be- ist nicht trennbar, deshalb kein ge-. Und es gibt ein Objekt, also haben.' },
+            { t: 'habe … gebesucht', why: 'Verben mit be-, ge-, er-, ver-, ent-, miss- bekommen nie ein ge-.' },
+            { t: 'bin … besucht', why: 'besuchen hat ein Akkusativobjekt, also haben.' },
+        ],
+        rule: 'Kein ge- bei be-, er-, ver-, ent-, miss- und bei -ieren',
+    },
+    /* ------------------------------------------------- Teil 8: Wortschatz */
+    {
+        id: 'ws1',
+        part: 'Wortschatz',
+        prompt: 'Was trinkt man?',
+        options: [
+            { t: 'Brot', why: 'Brot isst man. trinken braucht etwas Flüssiges.' },
+            { t: 'Milch', ok: true, why: 'Milch ist eine Flüssigkeit, also trinkt man sie.' },
+            { t: 'Reis', why: 'Reis isst man.' },
+        ],
+        rule: 'essen für Festes, trinken für Flüssiges',
+    },
+    {
+        id: 'ws2',
+        part: 'Wortschatz',
+        prompt: 'Welcher Monat kommt nach Juni?',
+        options: [
+            { t: 'August', why: 'August kommt nach Juli, also zwei Monate später.' },
+            { t: 'Juli', ok: true, why: 'Die Reihenfolge ist Mai, Juni, Juli, August.' },
+            { t: 'Mai', why: 'Mai kommt vor Juni, nicht danach.' },
+        ],
+        rule: 'Januar bis Dezember, alle maskulin: der Januar',
+    },
+    {
+        id: 'ws3',
+        part: 'Wortschatz',
+        prompt: 'Meine Mutter ist die Frau von meinem ___ .',
+        options: [
+            { t: 'Bruder', why: 'Die Frau deines Bruders wäre deine Schwägerin, nicht deine Mutter.' },
+            { t: 'Vater', ok: true, why: 'Mutter und Vater sind zusammen die Eltern.' },
+            { t: 'Sohn', why: 'Dein Sohn ist eine Generation unter dir.' },
+        ],
+        rule: 'die Eltern: der Vater und die Mutter. die Geschwister: Bruder und Schwester',
+    },
+    {
+        id: 'ws4',
+        part: 'Wortschatz',
+        prompt: 'Was tut dir weh? → Mein Kopf ___ mir weh.',
+        options: [
+            { t: 'tut', ok: true, why: 'Ein Körperteil im Singular: tut. wehtun ist trennbar, deshalb steht weh am Ende.' },
+            { t: 'tun', why: 'Das wäre Plural: Meine Zähne tun mir weh.' },
+            { t: 'tuen', why: 'Diese Form gibt es nicht. Der Infinitiv ist tun.' },
+        ],
+        rule: 'wehtun + Dativ: Der Kopf tut mir weh',
+    },
+    {
+        id: 'ws5',
+        part: 'Wortschatz',
+        prompt: 'Ich arbeite ___ Ingenieur ___ Qestit.',
+        options: [
+            { t: 'als … bei', ok: true, why: 'als für die Rolle, bei für die Firma. Nach als steht kein Artikel.' },
+            { t: 'wie … in', why: 'wie vergleicht (so groß wie), als benennt die Rolle.' },
+            { t: 'als ein … bei', why: 'Nach Ich bin oder Ich arbeite als steht der Beruf ohne Artikel.' },
+        ],
+        rule: 'Ich bin Ingenieur. Ich arbeite als Ingenieur bei X in Y',
+    },
+    {
+        id: 'ws6',
+        part: 'Wortschatz',
+        prompt: 'Der Tisch ist ___ Holz.',
+        options: [
+            { t: 'aus', ok: true, why: 'Material immer mit aus + Dativ.' },
+            { t: 'von', why: 'von zeigt Herkunft oder Besitz, nicht Material.' },
+            { t: 'mit', why: 'mit heißt zusammen mit, nicht bestehend aus.' },
+        ],
+        rule: 'Material: aus Holz, aus Metall, aus Plastik',
+    },
+];
+/* --------------------------------------------------------------------- ui */
+function initExam() {
+    const host = document.querySelector('[data-drills]');
+    if (!host)
+        return;
+    const parts = Array.from(new Set(DRILLS.map((d) => d.part)));
+    let filter = 'alle';
+    const answered = new Map();
+    const bar = document.createElement('div');
+    bar.className = 'dr-filter';
+    bar.innerHTML =
+        `<button class="chip" data-f="alle" aria-pressed="true">Alle ${DRILLS.length}</button>` +
+            parts
+                .map((p) => {
+                const n = DRILLS.filter((d) => d.part === p).length;
+                return `<button class="chip" data-f="${p}" aria-pressed="false">${p} ${n}</button>`;
+            })
+                .join('');
+    const score = document.createElement('div');
+    score.className = 'dr-score';
+    const list = document.createElement('div');
+    list.className = 'dr-list';
+    host.append(bar, score, list);
+    function card(d) {
+        return (`<article class="dr" data-id="${d.id}" data-part="${d.part}">` +
+            `<div class="dr-part">${d.part}</div>` +
+            `<h4 class="dr-q">${d.prompt}</h4>` +
+            (d.hint ? `<div class="dr-hint">${d.hint}</div>` : '') +
+            `<div class="dr-opts">` +
+            d.options
+                .map((o, i) => `<button class="dr-o" data-i="${i}" data-ok="${!!o.ok}">` +
+                `<span class="dr-letter">${'abc'[i]}</span><span class="dr-t">${o.t}</span></button>`)
+                .join('') +
+            `</div>` +
+            `<div class="dr-fb" hidden></div>` +
+            `</article>`);
+    }
+    function render() {
+        const shown = filter === 'alle' ? DRILLS : DRILLS.filter((d) => d.part === filter);
+        list.innerHTML = shown.map(card).join('');
+        updateScore();
+    }
+    function updateScore() {
+        const done = answered.size;
+        const right = Array.from(answered.values()).filter(Boolean).length;
+        if (!done) {
+            score.innerHTML = `<span class="dr-progress">Noch keine Aufgabe beantwortet</span>`;
+            return;
+        }
+        const pct = Math.round((right / done) * 100);
+        score.innerHTML =
+            `<span class="dr-progress">${done} von ${DRILLS.length} beantwortet · ` +
+                `${right} richtig (${pct}%)</span>` +
+                `<button class="chip dr-reset" type="button">Zurücksetzen</button>`;
+    }
+    list.addEventListener('click', (ev) => {
+        const btn = ev.target.closest('.dr-o');
+        if (!btn)
+            return;
+        const art = btn.closest('.dr');
+        if (art.classList.contains('done'))
+            return;
+        const drill = DRILLS.find((d) => d.id === art.dataset.id);
+        const chosen = Number(btn.dataset.i);
+        const correct = !!drill.options[chosen].ok;
+        answered.set(drill.id, correct);
+        art.classList.add('done');
+        /* Every option gets its explanation, not just the chosen one. Seeing why
+           the other two were wrong is where the learning is. */
+        art.querySelectorAll('.dr-o').forEach((b, i) => {
+            const o = drill.options[i];
+            b.classList.add(o.ok ? 'right' : 'wrong');
+            if (i === chosen)
+                b.classList.add('chosen');
+            b.insertAdjacentHTML('beforeend', `<span class="dr-why">${o.why}</span>`);
+        });
+        const fb = art.querySelector('.dr-fb');
+        fb.hidden = false;
+        fb.innerHTML =
+            `<div class="dr-verdict ${correct ? 'ok' : 'no'}">` +
+                (correct ? 'Richtig' : 'Noch nicht') +
+                `</div><div class="dr-rule">${drill.rule}</div>`;
+        updateScore();
+    });
+    bar.addEventListener('click', (ev) => {
+        const btn = ev.target.closest('[data-f]');
+        if (!btn)
+            return;
+        filter = btn.dataset.f;
+        bar.querySelectorAll('[data-f]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.f === filter)));
+        render();
+    });
+    score.addEventListener('click', (ev) => {
+        if (!ev.target.closest('.dr-reset'))
+            return;
+        answered.clear();
+        render();
+    });
+    render();
+}
+/* Self-check drill: reveal a model answer for the spoken exam. */
+function initSpeak() {
+    document.querySelectorAll('.sp').forEach((row) => {
+        const btn = row.querySelector('.sp-show');
+        const ans = row.querySelector('.sp-a');
+        if (!btn || !ans)
+            return;
+        btn.addEventListener('click', () => {
+            const open = row.classList.toggle('open');
+            btn.textContent = open ? 'Verbergen' : 'Antwort';
+            ans.hidden = !open;
+        });
+    });
+}
+
+/** Entry point: Prüfungsmodus */
+
+
+initChrome();
+initExam();
+initSpeak();
+
+  </script>
+</head>
+
+<body>
+  <header class="topbar">
+    <button class="chip nav-toggle" aria-expanded="false" aria-controls="sidenav">Menü</button>
+    <a class="chip home-link" href="index.html" aria-label="Startseite" title="Startseite">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+        <path d="M3 10.5 12 3.5l9 7M5.5 9.2V20h13V9.2M10 20v-6h4v6" />
+      </svg>
+    </a>
+    <div class="brand">Prüfungsmodus <span>A1.1</span></div>
+    <div class="topbar-controls">
+      <div class="ctrl-group">
+        <span class="ctrl-label">Sprache</span>
+        <button class="chip" data-lang-btn="de" aria-pressed="true">DE</button>
+        <button class="chip" data-lang-btn="en" aria-pressed="false">EN</button>
+        <button class="chip" data-lang-btn="both" aria-pressed="false">DE+EN</button>
+      </div>
+    </div>
+    <a class="chip" href="grammatik.html">Grammatik</a>
+    <button class="chip theme-toggle" data-theme-btn type="button" aria-label="Dunkelmodus einschalten" title="Dunkelmodus einschalten">
+      <svg class="theme-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+        <mask id="crescent-pruef">
+          <rect x="0" y="0" width="24" height="24" fill="#fff" />
+          <circle class="cut" cx="30" cy="-6" r="6" fill="#000" />
+        </mask>
+        <circle class="orb" cx="12" cy="12" r="5.2" mask="url(#crescent-pruef)" />
+        <g class="rays" stroke-linecap="round">
+          <line x1="12" y1="0.8" x2="12" y2="3.2" /><line x1="12" y1="20.8" x2="12" y2="23.2" />
+          <line x1="0.8" y1="12" x2="3.2" y2="12" /><line x1="20.8" y1="12" x2="23.2" y2="12" />
+          <line x1="4.1" y1="4.1" x2="5.8" y2="5.8" /><line x1="18.2" y1="18.2" x2="19.9" y2="19.9" />
+          <line x1="4.1" y1="19.9" x2="5.8" y2="18.2" /><line x1="18.2" y1="5.8" x2="19.9" y2="4.1" />
+        </g>
+      </svg>
+    </button>
+  </header>
+
+  <div class="shell">
+    <nav class="sidenav" id="sidenav" aria-label="Inhalt">
+      <h4><span class="de">Plan</span><span class="en">Plan</span></h4>
+      <a href="#plan"><span class="de">Acht Stunden</span><span class="en">Eight hours</span></a>
+      <a href="#format"><span class="de">Prüfungsformat</span><span class="en">Exam format</span></a>
+      <a href="#fehler"><span class="de">Deine Fehler</span><span class="en">Your own mistakes</span></a>
+
+      <h4><span class="de">Lektionen</span><span class="en">Lessons</span></h4>
+      <a href="#l1"><span class="de">L1 · Verben, sein, haben</span><span class="en">L1 · Verbs, sein, haben</span></a>
+      <a href="#l2"><span class="de">L2 · W-Fragen</span><span class="en">L2 · Question words</span></a>
+      <a href="#l3"><span class="de">L3 · Akkusativ, Beruf</span><span class="en">L3 · Accusative, jobs</span></a>
+      <a href="#l5"><span class="de">L5 · Familie, Modalverben</span><span class="en">L5 · Family, modals</span></a>
+      <a href="#l6"><span class="de">L6 · Trennbar, Ordinalzahlen</span><span class="en">L6 · Separable, ordinals</span></a>
+      <a href="#l7"><span class="de">L7 · Dativ, Imperativ, Wohin</span><span class="en">L7 · Dative, imperative</span></a>
+      <a href="#l8"><span class="de">L8 · Körper, Wechselpräp.</span><span class="en">L8 · Body, two-way prep.</span></a>
+      <a href="#l9"><span class="de">L9 · Wohnung, Eigenschaften</span><span class="en">L9 · Home, adjectives</span></a>
+      <a href="#l10"><span class="de">L10 · Perfekt</span><span class="en">L10 · Perfect tense</span></a>
+      <a href="#l11"><span class="de">L11 · Pronomen, Dativverben</span><span class="en">L11 · Pronouns, dative verbs</span></a>
+
+      <h4><span class="de">Üben</span><span class="en">Practise</span></h4>
+      <a href="#drills"><span class="de">Aufgaben</span><span class="en">Drills</span></a>
+      <a href="#sprechen"><span class="de">Mündliche Prüfung</span><span class="en">Spoken exam</span></a>
+      <a href="#lesen"><span class="de">Lesetext</span><span class="en">Reading</span></a>
+      <a href="#checkliste"><span class="de">Checkliste</span><span class="en">Checklist</span></a>
+    </nav>
+
+    <main>
+      <div class="hero">
+        <h1>Acht Stunden,<br>ein Plan.</h1>
+        <p class="sub">Alles, was in A1.1 geprüft wird, in der Reihenfolge der Prüfung. Erst verstehen, dann üben, dann sprechen.</p>
+      </div>
+
+      <section class="topic" id="plan">
+        <h2>Der Plan</h2>
+        <p class="gloss">How to spend the time</p>
+        <div class="note">
+          <p class="de">Nicht alles gleich lang lernen. Deine Probeprüfung zeigt genau, was drankommt: Verbformen, Artikel im Akkusativ, Pronomen, Wortstellung, Zahlen und Perfekt. Das sind sechs Themen, keine dreißig.</p>
+          <p class="en">Do not study everything for the same length of time. Your practice paper shows exactly what is tested: verb forms, accusative articles, pronouns, word order, numbers and the perfect tense. That is six topics, not thirty.</p>
+        </div>
+        <div class="tw">
+          <table>
+            <thead><tr><th>Zeit</th><th>Was</th><th>Warum</th></tr></thead>
+            <tbody>
+              <tr><th>1 Std</th><td>Lektionen 1 bis 6 lesen</td><td class="pl">Grundlagen auffrischen, nicht auswendig lernen</td></tr>
+              <tr><th>1 Std</th><td>Lektionen 7 bis 11 lesen</td><td class="pl">Dativ und Perfekt sind neu und wackelig</td></tr>
+              <tr><th>2 Std</th><td>Aufgaben lösen</td><td class="pl">Abrufen schlägt Wiederlesen. Hier lernst du am meisten</td></tr>
+              <tr><th>1 Std</th><td>Falsche Aufgaben wiederholen</td><td class="pl">Nur die, die du falsch hattest</td></tr>
+              <tr><th>1 Std</th><td>Mündlich üben, laut</td><td class="pl">Sprechen übt man nur durch Sprechen</td></tr>
+              <tr><th>1 Std</th><td>Checkliste durchgehen</td><td class="pl">Lücken finden, solange noch Zeit ist</td></tr>
+              <tr><th>1 Std</th><td>Pause und schlafen</td><td class="pl">Schlaf festigt das Gelernte. Die letzte Stunde bringt sonst nichts</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="topic" id="format">
+        <h2>Prüfungsformat</h2>
+        <p class="gloss">What the paper looks like</p>
+        <div class="tw">
+          <table>
+            <thead><tr><th>Teil</th><th>Aufgabe</th><th>Beispiel</th></tr></thead>
+            <tbody>
+              <tr><th>Teil 1</th><td>Wählen Sie die richtige Antwort</td><td class="ex">Ich ___ Deutsch. a) lernen b) lernt c) lerne<span class="tr">Multiple choice</span></td></tr>
+              <tr><th>Teil 2</th><td>Ergänzen Sie</td><td class="ex">Er ___ um 6 Uhr ___ . (aufstehen)<span class="tr">Fill the gap, verb given in brackets</span></td></tr>
+              <tr><th>Teil 3</th><td>Ordnen Sie die Wörter</td><td class="ex">heute / wir / Pizza / essen<span class="tr">Put the words in order</span></td></tr>
+              <tr><th>Teil 4</th><td>Schreiben Sie die Zahl</td><td class="ex">67 = ? · 45. = ?<span class="tr">Write out numbers and ordinals</span></td></tr>
+              <tr><th>Teil 5</th><td>Übersetzen Sie ins Deutsche</td><td class="ex">أنا أستطيع السباحة → Ich kann schwimmen.<span class="tr">Translate into German</span></td></tr>
+              <tr><th>Lesen</th><td>Text lesen, Fragen beantworten</td><td class="ex">Kurzer Text über eine Person, fünf Fragen<span class="tr">Short text about a person, five questions</span></td></tr>
+              <tr><th>Sprechen</th><td>Der Lehrer fragt, du antwortest</td><td class="ex">Wie heißt du? Woher kommst du?<span class="tr">Teacher asks, you answer aloud</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="topic" id="fehler">
+        <h2>Deine Fehler</h2>
+        <p class="gloss">From your own practice paper · fix these first</p>
+        <div class="note">
+          <p class="de">Diese fünf Fehler stehen in deiner Probeprüfung. Sie kosten dich in der echten Prüfung wieder Punkte, wenn du sie nicht heute korrigierst.</p>
+          <p class="en">These five mistakes are in your practice paper. They will cost you marks again unless you fix them today.</p>
+        </div>
+        <div class="tw">
+          <table>
+            <thead><tr><th>Du hattest</th><th>Richtig</th><th>Warum</th></tr></thead>
+            <tbody>
+              <tr data-case="akk"><th>sieben und sechzig</th><td class="hi">siebenundsechzig</td><td class="pl">Zahlen sind ein Wort, ohne Leerzeichen</td></tr>
+              <tr data-case="akk"><th>fünf und vierzigster</th><td class="hi">fünfundvierzigste</td><td class="pl">Ein Wort, und nach der heißt die Endung -e</td></tr>
+              <tr data-case="akk"><th>Du müsst</th><td class="hi">Du musst</td><td class="pl">Modalverben verlieren im Singular den Umlaut</td></tr>
+              <tr data-case="akk"><th>Am samstag, spielen Wir</th><td class="hi">Am Samstag spielen wir</td><td class="pl">Kein Komma, Wochentag groß, wir klein</td></tr>
+              <tr data-case="akk"><th>Artzt</th><td class="hi">Arzt</td><td class="pl">Kein t vor dem z</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="topic" id="l1">
+        <h2>L1 · Verben, sein, haben</h2>
+        <p class="gloss">Present tense · the machine everything else runs on</p>
+        <div class="note">
+          <p class="de">Warum das zuerst kommt: Fast jede Aufgabe der Prüfung enthält ein konjugiertes Verb. Wenn die Endung falsch ist, ist der Satz falsch, egal wie gut der Rest stimmt.</p>
+          <p class="en">Why this comes first: nearly every exam question contains a conjugated verb. If the ending is wrong the sentence is wrong, however good the rest is.</p>
+        </div>
+        <div class="formula">Infinitiv <b>wohnen</b> → Stamm <b>wohn</b> → wohn + <b>e / st / t / en / t / en</b></div>
+        <div class="tw">
+          <table>
+            <thead><tr><th>Person</th><th>Endung</th><th>wohnen</th><th>arbeiten</th><th>heißen</th><th>sein</th><th>haben</th></tr></thead>
+            <tbody>
+              <tr><th>ich</th><td class="m">-e</td><td>wohne</td><td>arbeite</td><td>heiße</td><td class="hi">bin</td><td class="hi">habe</td></tr>
+              <tr><th>du</th><td class="m">-st</td><td>wohnst</td><td class="hi">arbeitest</td><td class="hi">heißt</td><td class="hi">bist</td><td class="hi">hast</td></tr>
+              <tr><th>er / sie / es</th><td class="m">-t</td><td>wohnt</td><td class="hi">arbeitet</td><td>heißt</td><td class="hi">ist</td><td class="hi">hat</td></tr>
+              <tr><th>wir</th><td class="m">-en</td><td>wohnen</td><td>arbeiten</td><td>heißen</td><td class="hi">sind</td><td>haben</td></tr>
+              <tr><th>ihr</th><td class="m">-t</td><td>wohnt</td><td class="hi">arbeitet</td><td>heißt</td><td class="hi">seid</td><td>habt</td></tr>
+              <tr><th>sie / Sie</th><td class="m">-en</td><td>wohnen</td><td>arbeiten</td><td>heißen</td><td class="hi">sind</td><td>haben</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="rule">
+          <span class="tag">Die zwei Stolpersteine</span>
+          <ul>
+            <li><span class="de">Stamm endet auf <b>-t</b> oder <b>-d</b>: ein <b>e</b> einschieben. arbeit<b>e</b>st, arbeit<b>e</b>t. Sonst kann man es nicht aussprechen.</span><span class="en">Stem ends in <b>-t</b> or <b>-d</b>: insert an <b>e</b>. Otherwise it is unpronounceable.</span></li>
+            <li><span class="de">Stamm endet auf <b>-s, -ß, -z</b>: die du-Form hat nur ein s. du hei<b>ßt</b>, nicht heißst.</span><span class="en">Stem ends in <b>-s, -ß, -z</b>: the du form takes only one s.</span></li>
+          </ul>
+        </div>
+        <h3>Vokalwechsel, nur bei du und er</h3>
+        <div class="tw">
+          <table>
+            <thead><tr><th>Infinitiv</th><th>du</th><th>er / sie / es</th><th>wir</th></tr></thead>
+            <tbody>
+              <tr><th>sprechen</th><td class="hi">sprichst</td><td class="hi">spricht</td><td>sprechen</td></tr>
+              <tr><th>essen</th><td class="hi">isst</td><td class="hi">isst</td><td>essen</td></tr>
+              <tr><th>nehmen</th><td class="hi">nimmst</td><td class="hi">nimmt</td><td>nehmen</td></tr>
+              <tr><th>lesen</th><td class="hi">liest</td><td class="hi">liest</td><td>lesen</td></tr>
+              <tr><th>fahren</th><td class="hi">fährst</td><td class="hi">fährt</td><td>fahren</td></tr>
+              <tr><th>schlafen</th><td class="hi">schläfst</td><td class="hi">schläft</td><td>schlafen</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="topic" id="l2">
+        <h2>L2 · W-Fragen und Ja/Nein-Fragen</h2>
+        <p class="gloss">Questions · the whole spoken exam is built from these</p>
+        <div class="note">
+          <p class="de">Der Unterschied ist die Position des Verbs. Bei einer W-Frage steht das Verb auf Position 2, direkt nach dem Fragewort. Bei einer Ja/Nein-Frage steht es auf Position 1.</p>
+          <p class="en">The difference is where the verb sits. In a W-question it is in position 2, right after the question word. In a yes/no question it is in position 1.</p>
+        </div>
+        <div class="formula">W-Frage: <b>Wo</b> wohnst du? &nbsp;·&nbsp; Ja/Nein: <b>Wohnst</b> du in Kairo?</div>
+        <div class="tw">
+          <table>
+            <thead><tr><th>Frage</th><th>English</th><th>Antwort</th></tr></thead>
+            <tbody>
+              <tr><th>Wie heißt du?</th><td class="pl">What is your name?</td><td class="ex">Ich heiße Adham.<span class="tr">My name is Adham.</span></td></tr>
+              <tr><th>Woher kommst du?</th><td class="pl">Where are you from?</td><td class="ex">Ich komme aus Ägypten.<span class="tr">I come from Egypt.</span></td></tr>
+              <tr><th>Wo wohnst du?</th><td class="pl">Where do you live?</td><td class="ex">Ich wohne in Alexandria.<span class="tr">I live in Alexandria.</span></td></tr>
+              <tr><th>Wie alt bist du?</th><td class="pl">How old are you?</td><td class="ex">Ich bin 27 Jahre alt.<span class="tr">I am 27 years old.</span></td></tr>
+              <tr><th>Wie geht es dir?</th><td class="pl">How are you?</td><td class="ex">Danke, gut. Und dir?<span class="tr">Fine thanks. And you?</span></td></tr>
+              <tr><th>Was machst du beruflich?</th><td class="pl">What do you do for work?</td><td class="ex">Ich arbeite als Ingenieur.<span class="tr">I work as an engineer.</span></td></tr>
+              <tr><th>Wann stehst du auf?</th><td class="pl">When do you get up?</td><td class="ex">Um sieben Uhr.<span class="tr">At seven o'clock.</span></td></tr>
+              <tr><th>Warum lernst du Deutsch?</th><td class="pl">Why are you learning German?</td><td class="ex">Weil ich in Deutschland arbeiten will.<span class="tr">Because I want to work in Germany.</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="rule">
+          <span class="tag">doch</span>
+          <p style="margin:0"><span class="de">Auf eine <b>negative</b> Frage antwortest du mit <b>doch</b>, nicht mit ja. <em>Kommst du nicht?</em> → <em>Doch, ich komme.</em></span><span class="en">Answer a <b>negative</b> question with <b>doch</b>, not ja. <em>Kommst du nicht?</em> → <em>Doch, ich komme</em> (yes, I am coming).</span></p>
+        </div>
+      </section>
+
+      <section class="topic" id="l3">
+        <h2>L3 · Akkusativ und Beruf</h2>
+        <p class="gloss">Accusative · one column changes, three do not</p>
+        <div class="note">
+          <p class="de">Das ist die wichtigste Vereinfachung der ganzen Prüfung: Im Akkusativ ändert sich <b>nur maskulin</b>. Feminin, neutral und Plural bleiben genau gleich. Du musst also nur eine einzige Form lernen: der wird zu den, ein wird zu einen.</p>
+          <p class="en">This is the single most useful simplification in the exam: in the accusative <b>only masculine</b> changes. Feminine, neuter and plural stay identical. So there is really only one form to learn: der becomes den, ein becomes einen.</p>
+        </div>
+        <div class="tw">
+          <table>
+            <thead><tr><th>Fall</th><th>maskulin</th><th>feminin</th><th>neutral</th><th>Plural</th></tr></thead>
+            <tbody>
+              <tr data-case="nom"><th>Nominativ</th><td>der / ein</td><td>die / eine</td><td>das / ein</td><td>die / —</td></tr>
+              <tr data-case="akk"><th>Akkusativ</th><td class="hi">den / einen</td><td>die / eine</td><td>das / ein</td><td>die / —</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="rule">
+          <span class="tag">Verben mit Akkusativ</span>
+          <p class="m" style="margin:0">haben · sehen · kaufen · brauchen · essen · trinken · nehmen · lesen · lernen · suchen · besuchen · tragen · möchten</p>
+        </div>
+        <h3>Beruf</h3>
+        <div class="formula">Ich bin <b>Ingenieur</b>. · Ich arbeite <b>als</b> Ingenieur <b>bei</b> Qestit <b>in</b> Kairo.</div>
+        <div class="note">
+          <p class="de">Nach <em>Ich bin</em> und <em>als</em> steht der Beruf <b>ohne Artikel</b>. Die weibliche Form bekommt <b>-in</b>: der Lehrer, die Lehrerin. Manche mit Umlaut: der Arzt, die Ärztin.</p>
+          <p class="en">After <em>Ich bin</em> and <em>als</em> the job takes <b>no article</b>. The feminine adds <b>-in</b>: der Lehrer, die Lehrerin. Some add an umlaut: der Arzt, die Ärztin.</p>
+        </div>
+        <div class="vocab">
+          <dl>
+            <div><dt class="g-m">der Ingenieur</dt><dd>engineer</dd></div>
+            <div><dt class="g-m">der Arzt</dt><dd>doctor</dd></div>
+            <div><dt class="g-f">die Ärztin</dt><dd>doctor (f)</dd></div>
+            <div><dt class="g-m">der Lehrer</dt><dd>teacher</dd></div>
+            <div><dt class="g-m">der Student</dt><dd>student</dd></div>
+            <div><dt class="g-f">die Journalistin</dt><dd>journalist</dd></div>
+            <div><dt class="g-f">die Friseurin</dt><dd>hairdresser</dd></div>
+            <div><dt class="g-f">die Architektin</dt><dd>architect</dd></div>
+            <div><dt class="g-f">die Sekretärin</dt><dd>secretary</dd></div>
+            <div><dt class="g-m">der Schauspieler</dt><dd>actor</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="topic" id="l5">
+        <h2>L5 · Familie, Modalverben, Possessiv</h2>
+        <p class="gloss">Modals · the shape of half the exam sentences</p>
+        <div class="note">
+          <p class="de">Modalverben haben zwei Besonderheiten. Erstens: <b>ich</b> und <b>er/sie/es</b> haben <b>keine Endung</b> und sind identisch. Zweitens: das zweite Verb steht als <b>Infinitiv am Satzende</b>. Das nennt man Satzklammer, und sie kommt in der Prüfung sicher vor.</p>
+          <p class="en">Modals have two quirks. First, <b>ich</b> and <b>er/sie/es</b> take <b>no ending</b> and are identical. Second, the second verb goes to the <b>end as an infinitive</b>. That frame is called the Satzklammer and it will certainly appear in the exam.</p>
+        </div>
+        <div class="formula">Ich <b>kann</b> gut Deutsch <b>sprechen</b>. · Du <b>musst</b> heute <b>arbeiten</b>.</div>
+        <div class="tw">
+          <table>
+            <thead><tr><th>Person</th><th>können</th><th>müssen</th><th>wollen</th><th>dürfen</th><th>sollen</th><th>möchten</th></tr></thead>
+            <tbody>
+              <tr><th>ich</th><td class="hi">kann</td><td class="hi">muss</td><td class="hi">will</td><td class="hi">darf</td><td class="hi">soll</td><td class="hi">möchte</td></tr>
+              <tr><th>du</th><td>kannst</td><td class="hi">musst</td><td>willst</td><td>darfst</td><td>sollst</td><td>möchtest</td></tr>
+              <tr><th>er / sie / es</th><td class="hi">kann</td><td class="hi">muss</td><td class="hi">will</td><td class="hi">darf</td><td class="hi">soll</td><td class="hi">möchte</td></tr>
+              <tr><th>wir</th><td>können</td><td>müssen</td><td>wollen</td><td>dürfen</td><td>sollen</td><td>möchten</td></tr>
+              <tr><th>ihr</th><td>könnt</td><td class="hi">müsst</td><td>wollt</td><td>dürft</td><td>sollt</td><td>möchtet</td></tr>
+              <tr><th>sie / Sie</th><td>können</td><td>müssen</td><td>wollen</td><td>dürfen</td><td>sollen</td><td>möchten</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="rule">
+          <span class="tag">Achtung, Umlaut</span>
+          <p style="margin:0"><span class="de">Im Singular verschwindet der Umlaut: <b>du musst</b>, nicht du müsst. <b>Du müsst</b> ist die ihr-Form. Diesen Fehler hattest du in der Probeprüfung.</span><span class="en">The umlaut disappears in the singular: <b>du musst</b>, not du müsst. <b>Du müsst</b> is the ihr form. You made this mistake in the practice paper.</span></p>
+        </div>
+        <h3>Possessivpronomen</h3>
+        <div class="formula">Besitzer wählt den <b>Stamm</b> · besessenes Nomen wählt die <b>Endung</b></div>
+        <div class="tw">
+          <table>
+            <thead><tr><th>Besitzer</th><th>Stamm</th><th>+ maskulin</th><th>+ feminin</th><th>+ neutral</th></tr></thead>
+            <tbody>
+              <tr><th>ich</th><td>mein-</td><td>mein Vater</td><td>meine Mutter</td><td>mein Kind</td></tr>
+              <tr><th>du</th><td>dein-</td><td>dein Bruder</td><td>deine Schwester</td><td>dein Haus</td></tr>
+              <tr><th>er / es</th><td>sein-</td><td>sein Sohn</td><td>seine Frau</td><td>sein Auto</td></tr>
+              <tr><th>sie</th><td>ihr-</td><td>ihr Mann</td><td>ihre Tochter</td><td>ihr Zimmer</td></tr>
+              <tr><th>wir</th><td>unser-</td><td>unser Lehrer</td><td>unsere Klasse</td><td>unser Buch</td></tr>
+              <tr><th>ihr</th><td>euer- / eur-</td><td>euer Vater</td><td class="hi">eure Mutter</td><td>euer Kind</td></tr>
+              <tr><th>sie / Sie</th><td>ihr- / Ihr-</td><td>ihr Onkel</td><td>ihre Tante</td><td>Ihr Name</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="vocab">
+          <dl>
+            <div><dt class="g-m">der Vater</dt><dd>father</dd></div>
+            <div><dt class="g-f">die Mutter</dt><dd>mother</dd></div>
+            <div><dt class="g-f">die Eltern <span class="pl">Pl.</span></dt><dd>parents</dd></div>
+            <div><dt class="g-m">der Sohn</dt><dd>son</dd></div>
+            <div><dt class="g-f">die Tochter</dt><dd>daughter</dd></div>
+            <div><dt class="g-m">der Bruder</dt><dd>brother</dd></div>
+            <div><dt class="g-f">die Schwester</dt><dd>sister</dd></div>
+            <div><dt class="g-f">die Geschwister <span class="pl">Pl.</span></dt><dd>siblings</dd></div>
+            <div><dt class="g-m">der Großvater / Opa</dt><dd>grandfather</dd></div>
+            <div><dt class="g-f">die Großmutter / Oma</dt><dd>grandmother</dd></div>
+            <div><dt class="g-m">der Onkel</dt><dd>uncle</dd></div>
+            <div><dt class="g-f">die Tante</dt><dd>aunt</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="topic" id="l6">
+        <h2>L6 · Trennbare Verben, Akkusativpronomen, Ordinalzahlen</h2>
+        <p class="gloss">Separable verbs · the prefix leaves</p>
+        <div class="note">
+          <p class="de">Ein trennbares Verb besteht aus Präfix und Verb. Im Hauptsatz reißt es auseinander: das konjugierte Verb bleibt auf Position 2, das Präfix geht ganz ans Satzende. Der Ton liegt auf dem Präfix: <b>AUF</b>stehen.</p>
+          <p class="en">A separable verb has a prefix plus a verb. In a main clause it splits: the conjugated verb stays in position 2, the prefix goes right to the end. The stress falls on the prefix.</p>
+        </div>
+        <div class="formula">aufstehen → Ich <b>stehe</b> um sechs Uhr <b>auf</b>. · <s>Ich aufstehe</s></div>
+        <div class="tw">
+          <table>
+            <thead><tr><th>Verb</th><th>Bedeutung</th><th>Im Satz</th></tr></thead>
+            <tbody>
+              <tr><th>aufstehen</th><td class="pl">to get up</td><td class="ex">Ich <em>stehe</em> um 6 Uhr <em>auf</em>.<span class="tr">I get up at six.</span></td></tr>
+              <tr><th>anrufen</th><td class="pl">to phone</td><td class="ex">Er <em>ruft</em> seine Mutter <em>an</em>.<span class="tr">He calls his mother.</span></td></tr>
+              <tr><th>einkaufen</th><td class="pl">to shop</td><td class="ex">Wir <em>kaufen</em> im Supermarkt <em>ein</em>.<span class="tr">We shop at the supermarket.</span></td></tr>
+              <tr><th>fernsehen</th><td class="pl">to watch TV</td><td class="ex">Sie <em>sieht</em> abends <em>fern</em>.<span class="tr">She watches TV in the evening.</span></td></tr>
+              <tr><th>anfangen</th><td class="pl">to begin</td><td class="ex">Der Kurs <em>fängt</em> um neun <em>an</em>.<span class="tr">The course starts at nine.</span></td></tr>
+              <tr><th>mitkommen</th><td class="pl">to come along</td><td class="ex"><em>Kommst</em> du <em>mit</em>?<span class="tr">Are you coming along?</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="rule">
+          <span class="tag">Mit Modalverb bleibt es zusammen</span>
+          <p style="margin:0"><span class="de">Ich muss früh <b>aufstehen</b>. Nicht: <s>Ich muss früh stehen auf</s>. Nach einem Modalverb steht der ganze Infinitiv am Ende.</span><span class="en">After a modal the whole infinitive stays together at the end.</span></p>
+        </div>
+        <h3>Akkusativpronomen</h3>
+        <div class="tw">
+          <table>
+            <thead><tr><th>Nominativ</th><th>Akkusativ</th><th>Beispiel</th></tr></thead>
+            <tbody>
+              <tr data-case="akk"><th>ich</th><td>mich</td><td class="ex">Er sieht <em>mich</em>.<span class="tr">He sees me.</span></td></tr>
+              <tr data-case="akk"><th>du</th><td>dich</td><td class="ex">Ich rufe <em>dich</em> an.<span class="tr">I'll call you.</span></td></tr>
+              <tr data-case="akk"><th>er</th><td class="hi">ihn</td><td class="ex">Ich kaufe <em>ihn</em>. (den Kuchen)<span class="tr">I'll buy it.</span></td></tr>
+              <tr data-case="akk"><th>sie</th><td>sie</td><td class="ex">Ich liebe <em>sie</em>.<span class="tr">I love her.</span></td></tr>
+              <tr data-case="akk"><th>es</th><td>es</td><td class="ex">Ich lese <em>es</em>.<span class="tr">I'm reading it.</span></td></tr>
+              <tr data-case="akk"><th>wir</th><td>uns</td><td class="ex">Er besucht <em>uns</em>.<span class="tr">He visits us.</span></td></tr>
+              <tr data-case="akk"><th>ihr</th><td>euch</td><td class="ex">Ich sehe <em>euch</em>.<span class="tr">I see you.</span></td></tr>
+              <tr data-case="akk"><th>sie / Sie</th><td>sie / Sie</td><td class="ex">Wir besuchen <em>sie</em>.<span class="tr">We visit them.</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>Ordinalzahlen</h3>
+        <div class="formula">1 bis 19: Zahl + <b>-te</b> &nbsp;|&nbsp; ab 20: Zahl + <b>-ste</b></div>
+        <div class="tw">
+          <table>
+            <thead><tr><th>Zahl</th><th>Ordinalzahl</th><th>nach am</th><th>Notiz</th></tr></thead>
+            <tbody>
+              <tr><th>1.</th><td class="hi">der erste</td><td>am ersten</td><td class="pl">unregelmäßig</td></tr>
+              <tr><th>3.</th><td class="hi">der dritte</td><td>am dritten</td><td class="pl">unregelmäßig, nicht dreite</td></tr>
+              <tr><th>7.</th><td class="hi">der siebte</td><td>am siebten</td><td class="pl">ohne en</td></tr>
+              <tr><th>8.</th><td class="hi">der achte</td><td>am achten</td><td class="pl">nur ein t</td></tr>
+              <tr><th>20.</th><td class="hi">der zwanzigste</td><td>am zwanzigsten</td><td class="pl">ab hier -ste</td></tr>
+              <tr><th>45.</th><td class="hi">der fünfundvierzigste</td><td>am fünfundvierzigsten</td><td class="pl">ein Wort</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="topic" id="l7">
+        <h2>L7 · Dativ, Imperativ, Wohin / Wo / Woher</h2>
+        <p class="gloss">Dative · the case you cannot guess</p>
+        <div class="note">
+          <p class="de">Der Dativ kommt aus zwei Quellen: bestimmte Verben und bestimmte Präpositionen. Beides muss man auswendig können, es gibt keine Logik dahinter. Das ist die Liste, die sich heute Abend zu lernen lohnt.</p>
+          <p class="en">The dative comes from two sources: certain verbs and certain prepositions. Both have to be memorised, there is no logic to derive. This is the list worth learning tonight.</p>
+        </div>
+        <div class="tw">
+          <table>
+            <thead><tr><th>Fall</th><th>maskulin</th><th>feminin</th><th>neutral</th><th>Plural</th></tr></thead>
+            <tbody>
+              <tr data-case="nom"><th>Nominativ</th><td>der</td><td>die</td><td>das</td><td>die</td></tr>
+              <tr data-case="akk"><th>Akkusativ</th><td class="hi">den</td><td>die</td><td>das</td><td>die</td></tr>
+              <tr data-case="dat"><th>Dativ</th><td class="hi">dem</td><td class="hi">der</td><td class="hi">dem</td><td class="hi">den + Nomen-n</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="grid2">
+          <div class="rule">
+            <span class="tag">Verben mit Dativ</span>
+            <ul>
+              <li>helfen <span class="pl">Ich helfe dem Mann.</span></li>
+              <li>danken <span class="pl">Ich danke dem Lehrer.</span></li>
+              <li>gehören <span class="pl">Das Auto gehört der Frau.</span></li>
+              <li>gefallen <span class="pl">Der Film gefällt der Frau.</span></li>
+              <li>passen <span class="pl">Die Hose passt dem Mann.</span></li>
+              <li>schmecken <span class="pl">Die Suppe schmeckt mir.</span></li>
+              <li>wehtun <span class="pl">Der Kopf tut mir weh.</span></li>
+            </ul>
+          </div>
+          <div class="rule">
+            <span class="tag">Präpositionen mit Dativ</span>
+            <ul>
+              <li><b>aus</b> <span class="pl">aus Ägypten</span></li>
+              <li><b>bei</b> <span class="pl">bei Siemens</span></li>
+              <li><b>mit</b> <span class="pl">mit dem Bus</span></li>
+              <li><b>nach</b> <span class="pl">nach Berlin</span></li>
+              <li><b>seit</b> <span class="pl">seit einem Jahr</span></li>
+              <li><b>von</b> <span class="pl">vom Bahnhof</span></li>
+              <li><b>zu</b> <span class="pl">zum Arzt, zur Schule</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="rule">
+          <span class="tag">Verschmelzungen, die du kennen musst</span>
+          <p class="m" style="margin:0">zu dem → <b>zum</b> · zu der → <b>zur</b> · von dem → <b>vom</b> · bei dem → <b>beim</b> · in dem → <b>im</b> · in das → <b>ins</b> · an dem → <b>am</b></p>
+        </div>
+        <h3>Imperativ</h3>
+        <div class="tw">
+          <table>
+            <thead><tr><th>Verb</th><th>du</th><th>ihr</th><th>Sie</th><th>English</th></tr></thead>
+            <tbody>
+              <tr><th>gehen</th><td>Geh links!</td><td>Geht links!</td><td>Gehen Sie links!</td><td class="pl">Go left!</td></tr>
+              <tr><th>machen</th><td>Mach das!</td><td>Macht das!</td><td>Machen Sie das!</td><td class="pl">Do that!</td></tr>
+              <tr><th>sprechen</th><td class="hi">Sprich langsam!</td><td>Sprecht langsam!</td><td>Sprechen Sie langsam!</td><td class="pl">Speak slowly!</td></tr>
+              <tr><th>essen</th><td class="hi">Iss!</td><td>Esst!</td><td>Essen Sie!</td><td class="pl">Eat!</td></tr>
+              <tr><th>fahren</th><td class="hi">Fahr langsam!</td><td>Fahrt langsam!</td><td>Fahren Sie langsam!</td><td class="pl">Drive slowly!</td></tr>
+              <tr><th>sein</th><td class="hi">Sei ruhig!</td><td class="hi">Seid ruhig!</td><td class="hi">Seien Sie ruhig!</td><td class="pl">Be quiet!</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="rule">
+          <span class="tag">Die drei Regeln</span>
+          <ul>
+            <li><span class="de"><b>du</b>: du-Form nehmen, <b>-st</b> und das Pronomen streichen. du gehst → Geh!</span><span class="en"><b>du</b>: take the du form, drop <b>-st</b> and the pronoun.</span></li>
+            <li><span class="de"><b>ihr</b>: ihr-Form ohne Pronomen. ihr geht → Geht!</span><span class="en"><b>ihr</b>: the ihr form without the pronoun.</span></li>
+            <li><span class="de"><b>Sie</b>: Infinitiv + Sie. gehen Sie → Gehen Sie!</span><span class="en"><b>Sie</b>: infinitive + Sie.</span></li>
+            <li><span class="de">e → i bleibt (Sprich!), aber a → ä verschwindet (Fahr!, nicht Fähr).</span><span class="en">e → i stays, but a → ä disappears.</span></li>
+          </ul>
+        </div>
+        <h3>Wohin, Wo, Woher</h3>
+        <div class="tw">
+          <table>
+            <thead><tr><th></th><th data-case="akk">Wohin?</th><th data-case="dat">Wo?</th><th data-case="dat">Woher?</th></tr></thead>
+            <tbody>
+              <tr><th>Orte</th><td data-case="akk">ins Kino</td><td data-case="dat">im Kino</td><td data-case="dat">aus dem Kino</td></tr>
+              <tr><th>Personen</th><td data-case="dat">zu Ahmed</td><td data-case="dat">bei Ahmed</td><td data-case="dat">von Ahmed</td></tr>
+              <tr><th>Städte / Länder</th><td data-case="dat">nach Berlin</td><td data-case="dat">in Kairo</td><td data-case="dat">aus Ägypten</td></tr>
+              <tr><th>zuhause</th><td data-case="akk">nach Hause</td><td data-case="dat">zu Hause</td><td data-case="dat">von zu Hause</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="rule">
+          <span class="tag">Wegbeschreibung, kommt oft in Teil 5</span>
+          <p class="ex" style="margin:0">Gehen Sie geradeaus. · Gehen Sie links / rechts. · Biegen Sie rechts ab. · an der Kreuzung · die erste Straße rechts · bis zur Ampel · gegenüber der Bank<span class="tr">Go straight on · go left / right · turn right · at the crossing · first street on the right · as far as the traffic light · opposite the bank</span></p>
+        </div>
+      </section>
+
+      <section class="topic" id="l8">
+        <h2>L8 · Körper und Wechselpräpositionen</h2>
+        <p class="gloss">Two-way prepositions · the question decides the case</p>
+        <div class="note">
+          <p class="de">Neun Präpositionen nehmen beide Fälle. Nicht raten: frage <b>Wohin?</b> oder <b>Wo?</b> Bewegung zu einem neuen Ort heißt Akkusativ. Position ohne Bewegung heißt Dativ.</p>
+          <p class="en">Nine prepositions take either case. Do not guess: ask <b>Wohin?</b> or <b>Wo?</b> Movement to a new place means accusative. Position without movement means dative.</p>
+        </div>
+        <div class="formula">Wohin? → <b>Akkusativ</b> &nbsp;&nbsp;|&nbsp;&nbsp; Wo? → <b>Dativ</b></div>
+        <div class="tw">
+          <table>
+            <thead><tr><th>Präposition</th><th>Bedeutung</th><th data-case="akk">Wohin? + Akk</th><th data-case="dat">Wo? + Dativ</th></tr></thead>
+            <tbody>
+              <tr><th>an</th><td class="pl">on, at (vertical)</td><td data-case="akk">an die Wand</td><td data-case="dat">an der Wand</td></tr>
+              <tr><th>auf</th><td class="pl">on (horizontal)</td><td data-case="akk">auf den Tisch</td><td data-case="dat">auf dem Tisch</td></tr>
+              <tr><th>hinter</th><td class="pl">behind</td><td data-case="akk">hinter das Haus</td><td data-case="dat">hinter dem Haus</td></tr>
+              <tr><th>in</th><td class="pl">in, into</td><td data-case="akk">in die Schule</td><td data-case="dat">in der Schule</td></tr>
+              <tr><th>neben</th><td class="pl">next to</td><td data-case="akk">neben den Stuhl</td><td data-case="dat">neben dem Stuhl</td></tr>
+              <tr><th>über</th><td class="pl">over, above</td><td data-case="akk">über die Brücke</td><td data-case="dat">über der Brücke</td></tr>
+              <tr><th>unter</th><td class="pl">under</td><td data-case="akk">unter den Tisch</td><td data-case="dat">unter dem Tisch</td></tr>
+              <tr><th>vor</th><td class="pl">in front of</td><td data-case="akk">vor die Tür</td><td data-case="dat">vor der Tür</td></tr>
+              <tr><th>zwischen</th><td class="pl">between</td><td data-case="akk">zwischen die Stühle</td><td data-case="dat">zwischen den Stühlen</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="rule">
+          <span class="tag">Körper und krank sein</span>
+          <p class="ex" style="margin:0">Was tut dir weh? → <em>Mein Kopf tut mir weh.</em> / <em>Meine Zähne tun mir weh.</em> / <em>Ich habe Kopfschmerzen.</em> · Ich bin krank. · Ich bin müde. · Ich habe Fieber.<span class="tr">What hurts? → My head hurts. / My teeth hurt. / I have a headache. · I am ill. · I am tired. · I have a fever.</span></p>
+        </div>
+        <div class="vocab">
+          <dl>
+            <div><dt class="g-m">der Kopf</dt><dd>head</dd></div>
+            <div><dt class="g-n">das Gesicht</dt><dd>face</dd></div>
+            <div><dt class="g-n">das Auge</dt><dd>eye</dd></div>
+            <div><dt class="g-n">das Ohr</dt><dd>ear</dd></div>
+            <div><dt class="g-f">die Nase</dt><dd>nose</dd></div>
+            <div><dt class="g-m">der Mund</dt><dd>mouth</dd></div>
+            <div><dt class="g-m">der Zahn</dt><dd>tooth</dd></div>
+            <div><dt class="g-f">die Schulter</dt><dd>shoulder</dd></div>
+            <div><dt class="g-m">der Husten</dt><dd>cough</dd></div>
+            <div><dt class="g-n">das Fieber</dt><dd>fever</dd></div>
+            <div><dt class="g-m">der Schnupfen</dt><dd>runny nose</dd></div>
+            <div><dt class="g-f">die Schmerzen <span class="pl">Pl.</span></dt><dd>pain</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="topic" id="l9">
+        <h2>L9 · Meine Wohnung und Eigenschaften</h2>
+        <p class="gloss">Home and adjectives · likely in the reading and spoken parts</p>
+        <div class="formula">Der Tisch ist <b>aus Holz</b>. Er ist groß, schwer und braun. Er ist nicht billig.</div>
+        <div class="grid2">
+          <div class="vocab" style="columns:1">
+            <dl>
+              <div><dt class="g-f">die Wohnung</dt><dd>apartment</dd></div>
+              <div><dt class="g-n">das Haus</dt><dd>house</dd></div>
+              <div><dt class="g-n">das Zimmer</dt><dd>room</dd></div>
+              <div><dt class="g-n">das Wohnzimmer</dt><dd>living room</dd></div>
+              <div><dt class="g-n">das Schlafzimmer</dt><dd>bedroom</dd></div>
+              <div><dt class="g-f">die Küche</dt><dd>kitchen</dd></div>
+              <div><dt class="g-n">das Badezimmer</dt><dd>bathroom</dd></div>
+              <div><dt class="g-m">der Balkon</dt><dd>balcony</dd></div>
+              <div><dt class="g-n">das Erdgeschoss</dt><dd>ground floor</dd></div>
+              <div><dt class="g-m">der Stock</dt><dd>floor, storey</dd></div>
+              <div><dt class="g-m">der Keller</dt><dd>cellar</dd></div>
+              <div><dt class="g-m">der Tisch</dt><dd>table</dd></div>
+              <div><dt class="g-m">der Stuhl</dt><dd>chair</dd></div>
+              <div><dt class="g-n">das Bett</dt><dd>bed</dd></div>
+              <div><dt class="g-m">der Kühlschrank</dt><dd>fridge</dd></div>
+              <div><dt class="g-n">das Fenster</dt><dd>window</dd></div>
+              <div><dt class="g-f">die Tür</dt><dd>door</dd></div>
+            </dl>
+          </div>
+          <div class="vocab" style="columns:1">
+            <dl>
+              <div><dt>groß / klein</dt><dd>big / small</dd></div>
+              <div><dt>schwer / leicht</dt><dd>heavy / light</dd></div>
+              <div><dt>teuer / billig</dt><dd>expensive / cheap</dd></div>
+              <div><dt>neu / alt</dt><dd>new / old</dd></div>
+              <div><dt>lang / kurz</dt><dd>long / short</dd></div>
+              <div><dt>hell / dunkel</dt><dd>bright / dark</dd></div>
+              <div><dt>weich / hart</dt><dd>soft / hard</dd></div>
+              <div><dt>rund / eckig</dt><dd>round / angular</dd></div>
+              <div><dt>schön</dt><dd>beautiful</dd></div>
+              <div><dt>gemütlich</dt><dd>cosy</dd></div>
+              <div><dt>bequem</dt><dd>comfortable</dd></div>
+              <div><dt>ruhig</dt><dd>quiet</dd></div>
+              <div><dt class="g-n">das Holz</dt><dd>wood</dd></div>
+              <div><dt class="g-n">das Metall</dt><dd>metal</dd></div>
+              <div><dt class="g-n">das Plastik</dt><dd>plastic</dd></div>
+              <div><dt class="g-n">das Glas</dt><dd>glass</dd></div>
+              <div><dt class="g-n">das Papier</dt><dd>paper</dd></div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic" id="l10">
+        <h2>L10 · Mein Tag gestern, das Perfekt</h2>
+        <p class="gloss">Perfect tense · the past you speak</p>
+        <div class="note">
+          <p class="de">Zwei Entscheidungen pro Satz. Erstens: <b>haben</b> oder <b>sein</b>? Zweitens: wie heißt das <b>Partizip II</b>? Das Hilfsverb steht auf Position 2, das Partizip ganz am Ende. Wieder die Satzklammer.</p>
+          <p class="en">Two decisions per sentence. First, <b>haben</b> or <b>sein</b>? Second, what is the <b>past participle</b>? The auxiliary sits in position 2, the participle right at the end. The Satzklammer again.</p>
+        </div>
+        <div class="formula">Ich <b>habe</b> gestern Pizza <b>gegessen</b>. · Ich <b>bin</b> nach Hause <b>gegangen</b>.</div>
+        <div class="grid2">
+          <div class="rule">
+            <span class="tag">sein bei</span>
+            <ul>
+              <li><span class="de">Bewegung von A nach B: gehen, kommen, fahren, fliegen, laufen, reisen</span><span class="en">movement from A to B</span></li>
+              <li><span class="de">Zustandswechsel: aufwachen, einschlafen, aufstehen, werden</span><span class="en">change of state</span></li>
+              <li><span class="de">Ausnahmen: sein, bleiben, passieren</span><span class="en">exceptions</span></li>
+            </ul>
+          </div>
+          <div class="rule">
+            <span class="tag">haben bei</span>
+            <ul>
+              <li><span class="de">Allem anderen, besonders bei Verben mit Akkusativobjekt</span><span class="en">everything else, especially verbs with an accusative object</span></li>
+              <li><span class="de">essen, trinken, machen, kaufen, lesen, sehen, hören, arbeiten</span><span class="en">the everyday verbs</span></li>
+            </ul>
+          </div>
+        </div>
+        <h3>Partizip II bilden</h3>
+        <div class="tw">
+          <table>
+            <thead><tr><th>Typ</th><th>Muster</th><th>Beispiel</th></tr></thead>
+            <tbody>
+              <tr><th>schwach</th><td class="m">ge + Stamm + t</td><td>machen → <b>ge</b>mach<b>t</b>, spielen → <b>ge</b>spiel<b>t</b></td></tr>
+              <tr><th>schwach, Stamm -t/-d</th><td class="m">ge + Stamm + et</td><td>arbeiten → <b>ge</b>arbeit<b>et</b></td></tr>
+              <tr><th>stark</th><td class="m">ge + Stamm + en</td><td>trinken → <b>ge</b>trunk<b>en</b>, essen → <b>ge</b>gess<b>en</b></td></tr>
+              <tr><th>trennbar</th><td class="m">Präfix + ge + …</td><td>aufstehen → auf<b>ge</b>standen, einkaufen → ein<b>ge</b>kauft</td></tr>
+              <tr><th>nicht trennbar</th><td class="m">kein ge-</td><td>besuchen → besucht, verstehen → verstanden</td></tr>
+              <tr><th>auf -ieren</th><td class="m">kein ge-</td><td>studieren → studiert, telefonieren → telefoniert</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tw">
+          <table>
+            <caption>Die Partizipien aus deinem Text</caption>
+            <thead><tr><th>Infinitiv</th><th>Perfekt</th><th>English</th></tr></thead>
+            <tbody>
+              <tr><th>aufwachen</th><td class="hi">ist aufgewacht</td><td class="pl">woke up</td></tr>
+              <tr><th>waschen</th><td>hat gewaschen</td><td class="pl">washed</td></tr>
+              <tr><th>putzen</th><td>hat geputzt</td><td class="pl">brushed, cleaned</td></tr>
+              <tr><th>frühstücken</th><td>hat gefrühstückt</td><td class="pl">had breakfast</td></tr>
+              <tr><th>essen</th><td>hat gegessen</td><td class="pl">ate</td></tr>
+              <tr><th>trinken</th><td>hat getrunken</td><td class="pl">drank</td></tr>
+              <tr><th>gehen</th><td class="hi">ist gegangen</td><td class="pl">went</td></tr>
+              <tr><th>arbeiten</th><td>hat gearbeitet</td><td class="pl">worked</td></tr>
+              <tr><th>kommen</th><td class="hi">ist gekommen</td><td class="pl">came</td></tr>
+              <tr><th>sich ausruhen</th><td>hat sich ausgeruht</td><td class="pl">rested</td></tr>
+              <tr><th>fernsehen</th><td>hat ferngesehen</td><td class="pl">watched TV</td></tr>
+              <tr><th>hören</th><td>hat gehört</td><td class="pl">listened</td></tr>
+              <tr><th>benutzen</th><td>hat benutzt</td><td class="pl">used</td></tr>
+              <tr><th>sprechen</th><td>hat gesprochen</td><td class="pl">spoke</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="rule">
+          <span class="tag">Dein Text, zum Laut-Lesen</span>
+          <p class="ex" style="margin:0">Ich <b>bin</b> um sieben Uhr <b>aufgewacht</b>. Ich <b>habe</b> mein Gesicht <b>gewaschen</b> und meine Zähne <b>geputzt</b>. Dann <b>habe</b> ich <b>gefrühstückt</b>. Ich <b>habe</b> Brot und Käse <b>gegessen</b> und Tee <b>getrunken</b>. Danach <b>bin</b> ich zur Arbeit <b>gegangen</b>. Ich <b>habe</b> von acht bis zwei Uhr <b>gearbeitet</b>. Am Nachmittag <b>bin</b> ich nach Hause <b>gekommen</b>. Ich <b>habe</b> zu Mittag <b>gegessen</b> und mich <b>ausgeruht</b>. Am Abend <b>habe</b> ich <b>ferngesehen</b> und Musik <b>gehört</b>. Um elf Uhr <b>bin</b> ich schlafen <b>gegangen</b>.</p>
+        </div>
+      </section>
+
+      <section class="topic" id="l11">
+        <h2>L11 · Personalpronomen und Verben mit Dativ</h2>
+        <p class="gloss">The newest material · most likely to be tested hard</p>
+        <div class="note">
+          <p class="de">Das ist die letzte Lektion, also frisch und prüfungsrelevant. Der Trick: Das Verb entscheidet den Fall. Sehen nimmt Akkusativ, helfen nimmt Dativ. Lerne die Tabelle als drei Spalten, nicht als einzelne Wörter.</p>
+          <p class="en">This is the most recent lesson, so it is fresh and very likely to be tested. The trick: the verb decides the case. sehen takes accusative, helfen takes dative. Learn the table as three columns, not as separate words.</p>
+        </div>
+        <div class="tw">
+          <table>
+            <thead><tr><th data-case="nom">Nominativ</th><th data-case="akk">Akkusativ</th><th data-case="dat">Dativ</th><th>Beispiel</th></tr></thead>
+            <tbody>
+              <tr><td data-case="nom">ich</td><td data-case="akk">mich</td><td data-case="dat">mir</td><td class="ex">Er sieht mich. Er hilft mir.<span class="tr">He sees me. He helps me.</span></td></tr>
+              <tr><td data-case="nom">du</td><td data-case="akk">dich</td><td data-case="dat">dir</td><td class="ex">Ich rufe dich an. Ich danke dir.<span class="tr">I call you. I thank you.</span></td></tr>
+              <tr><td data-case="nom">er</td><td data-case="akk">ihn</td><td data-case="dat">ihm</td><td class="ex">Wir besuchen ihn. Wir helfen ihm.<span class="tr">We visit him. We help him.</span></td></tr>
+              <tr><td data-case="nom">es</td><td data-case="akk">es</td><td data-case="dat">ihm</td><td class="ex">Ich lese es.<span class="tr">I read it.</span></td></tr>
+              <tr><td data-case="nom">sie</td><td data-case="akk">sie</td><td data-case="dat">ihr</td><td class="ex">Ich liebe sie. Das Kleid gefällt ihr.<span class="tr">I love her. She likes the dress.</span></td></tr>
+              <tr><td data-case="nom">wir</td><td data-case="akk">uns</td><td data-case="dat">uns</td><td class="ex">Er besucht uns.<span class="tr">He visits us.</span></td></tr>
+              <tr><td data-case="nom">ihr</td><td data-case="akk">euch</td><td data-case="dat">euch</td><td class="ex">Wir danken euch.<span class="tr">We thank you.</span></td></tr>
+              <tr><td data-case="nom">sie</td><td data-case="akk">sie</td><td data-case="dat">ihnen</td><td class="ex">Ich helfe ihnen.<span class="tr">I help them.</span></td></tr>
+              <tr><td data-case="nom">Sie</td><td data-case="akk">Sie</td><td data-case="dat">Ihnen</td><td class="ex">Ich danke Ihnen.<span class="tr">I thank you (formal).</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="rule">
+          <span class="tag">Die fünf Dativverben aus L11</span>
+          <ul>
+            <li><b>gehören</b> <span class="pl">Das Buch gehört dem Mann. Die Wohnung gehört dem Lehrer.</span></li>
+            <li><b>danken</b> <span class="pl">Ich danke dem Lehrer. Sie dankt der Mutter.</span></li>
+            <li><b>gefallen</b> <span class="pl">Der Film gefällt der Frau. Die Musik gefällt dem Kind.</span></li>
+            <li><b>helfen</b> <span class="pl">Ich helfe dem Mann. Sie hilft der Mutter.</span></li>
+            <li><b>passen</b> <span class="pl">Die Hose passt dem Mann. Das Kleid passt der Frau.</span></li>
+          </ul>
+        </div>
+        <div class="note">
+          <p class="de"><b>gefallen</b> dreht die Logik um. Im Arabischen und Englischen ist die Person das Subjekt, im Deutschen ist es die Sache: <em>Das Kleid gefällt mir</em>, wörtlich „das Kleid ist mir gefällig". Deshalb heißt es mir und nicht ich.</p>
+          <p class="en"><b>gefallen</b> inverts the logic. In English the person is the subject (I like the dress), in German the thing is: <em>Das Kleid gefällt mir</em>, literally "the dress is pleasing to me". That is why it is mir and not ich.</p>
+        </div>
+        <h3>Kleidung</h3>
+        <div class="vocab">
+          <dl>
+            <div><dt class="g-f">die Hose</dt><dd>trousers</dd></div>
+            <div><dt class="g-m">der Mantel</dt><dd>coat</dd></div>
+            <div><dt class="g-f">die Jacke</dt><dd>jacket</dd></div>
+            <div><dt class="g-f">die Bluse</dt><dd>blouse</dd></div>
+            <div><dt class="g-m">der Gürtel</dt><dd>belt</dd></div>
+            <div><dt class="g-n">das Hemd</dt><dd>shirt</dd></div>
+            <div><dt class="g-m">der Pullover</dt><dd>sweater</dd></div>
+            <div><dt class="g-n">das Kleid</dt><dd>dress</dd></div>
+            <div><dt class="g-m">der Rock</dt><dd>skirt</dd></div>
+            <div><dt class="g-m">der Schuh</dt><dd>shoe</dd></div>
+          </dl>
+        </div>
+        <p class="ex"><b>tragen</b> + Akkusativ: <em>Ich trage einen Mantel.</em> · du trägst, er trägt<span class="tr">to wear + accusative: I am wearing a coat.</span></p>
+      </section>
+
+      <section class="topic" id="drills">
+        <h2>Aufgaben</h2>
+        <p class="gloss">Drills · every option explained, not just the right one</p>
+        <div class="note">
+          <p class="de">Rate nicht. Wähle bewusst, auch wenn du unsicher bist, und lies danach <b>alle drei</b> Erklärungen. Zu wissen, warum die falsche Antwort verlockend war, ist mehr wert als die richtige Antwort allein.</p>
+          <p class="en">Do not guess randomly. Commit to an answer even when unsure, then read <b>all three</b> explanations. Knowing why the wrong option was tempting is worth more than the correct answer alone.</p>
+        </div>
+        <div data-drills></div>
+      </section>
+
+      <section class="topic" id="sprechen">
+        <h2>Mündliche Prüfung</h2>
+        <p class="gloss">Spoken exam · say every answer out loud, not in your head</p>
+        <div class="note">
+          <p class="de">Auf A1.1 sind die Fragen vorhersehbar. Der Lehrer fragt nach dir: Name, Herkunft, Alter, Wohnort, Familie, Beruf, Tagesablauf, Hobbys, Uhrzeit. Bereite eine eigene Antwort auf jede Frage vor und sprich sie laut. Lesen reicht nicht, der Mund muss die Sätze kennen.</p>
+          <p class="en">At A1.1 the questions are predictable. The teacher asks about you: name, origin, age, where you live, family, job, daily routine, hobbies, the time. Prepare your own answer to each and say it out loud. Reading is not enough, your mouth has to know the sentences.</p>
+        </div>
+
+        <div class="sp-list">
+        <div class="sp">
+          <div class="sp-q"><span class="sp-n">1</span>Wie heißt du?</div>
+          <button class="chip sp-show" type="button">Antwort</button>
+          <div class="sp-a" hidden><div class="sp-model">Ich heiße Adham.</div><div class="sp-tip">Or: Mein Name ist Adham.</div></div>
+        </div>
+        <div class="sp">
+          <div class="sp-q"><span class="sp-n">2</span>Wie ist dein Nachname?</div>
+          <button class="chip sp-show" type="button">Antwort</button>
+          <div class="sp-a" hidden><div class="sp-model">Mein Nachname ist Bashier.</div><div class="sp-tip">Nachname = surname, Vorname = first name.</div></div>
+        </div>
+        <div class="sp">
+          <div class="sp-q"><span class="sp-n">3</span>Woher kommst du?</div>
+          <button class="chip sp-show" type="button">Antwort</button>
+          <div class="sp-a" hidden><div class="sp-model">Ich komme aus Ägypten.</div><div class="sp-tip">aus + country. No article for Ägypten.</div></div>
+        </div>
+        <div class="sp">
+          <div class="sp-q"><span class="sp-n">4</span>Wo wohnst du?</div>
+          <button class="chip sp-show" type="button">Antwort</button>
+          <div class="sp-a" hidden><div class="sp-model">Ich wohne in Alexandria.</div><div class="sp-tip">in + city, dative but no visible change.</div></div>
+        </div>
+        <div class="sp">
+          <div class="sp-q"><span class="sp-n">5</span>Wie alt bist du?</div>
+          <button class="chip sp-show" type="button">Antwort</button>
+          <div class="sp-a" hidden><div class="sp-model">Ich bin siebenundzwanzig Jahre alt.</div><div class="sp-tip">Say the number as one word.</div></div>
+        </div>
+        <div class="sp">
+          <div class="sp-q"><span class="sp-n">6</span>Was machst du beruflich?</div>
+          <button class="chip sp-show" type="button">Antwort</button>
+          <div class="sp-a" hidden><div class="sp-model">Ich arbeite als Ingenieur.</div><div class="sp-tip">als + job, no article.</div></div>
+        </div>
+        <div class="sp">
+          <div class="sp-q"><span class="sp-n">7</span>Wo arbeitest du?</div>
+          <button class="chip sp-show" type="button">Antwort</button>
+          <div class="sp-a" hidden><div class="sp-model">Ich arbeite bei Qestit in Kairo.</div><div class="sp-tip">bei + company, in + place.</div></div>
+        </div>
+        <div class="sp">
+          <div class="sp-q"><span class="sp-n">8</span>Welche Sprachen sprichst du?</div>
+          <button class="chip sp-show" type="button">Antwort</button>
+          <div class="sp-a" hidden><div class="sp-model">Ich spreche Arabisch, Englisch und ein bisschen Deutsch.</div><div class="sp-tip">ein bisschen = a little.</div></div>
+        </div>
+        <div class="sp">
+          <div class="sp-q"><span class="sp-n">9</span>Warum lernst du Deutsch?</div>
+          <button class="chip sp-show" type="button">Antwort</button>
+          <div class="sp-a" hidden><div class="sp-model">Ich lerne Deutsch, weil ich in Deutschland arbeiten will.</div><div class="sp-tip">weil sends the verb to the end.</div></div>
+        </div>
+        <div class="sp">
+          <div class="sp-q"><span class="sp-n">10</span>Hast du Geschwister?</div>
+          <button class="chip sp-show" type="button">Antwort</button>
+          <div class="sp-a" hidden><div class="sp-model">Ja, ich habe eine Schwester und einen Bruder.</div><div class="sp-tip">einen for masculine accusative.</div></div>
+        </div>
+        <div class="sp">
+          <div class="sp-q"><span class="sp-n">11</span>Was macht dein Vater?</div>
+          <button class="chip sp-show" type="button">Antwort</button>
+          <div class="sp-a" hidden><div class="sp-model">Mein Vater ist Arzt.</div><div class="sp-tip">No article after ist.</div></div>
+        </div>
+        <div class="sp">
+          <div class="sp-q"><span class="sp-n">12</span>Wie ist deine Familie?</div>
+          <button class="chip sp-show" type="button">Antwort</button>
+          <div class="sp-a" hidden><div class="sp-model">Meine Familie ist klein. Wir sind vier Personen.</div><div class="sp-tip">Adjective after ist takes no ending.</div></div>
+        </div>
+        <div class="sp">
+          <div class="sp-q"><span class="sp-n">13</span>Wann stehst du auf?</div>
+          <button class="chip sp-show" type="button">Antwort</button>
+          <div class="sp-a" hidden><div class="sp-model">Ich stehe um sieben Uhr auf.</div><div class="sp-tip">Separable: auf goes to the end.</div></div>
+        </div>
+        <div class="sp">
+          <div class="sp-q"><span class="sp-n">14</span>Was machst du am Morgen?</div>
+          <button class="chip sp-show" type="button">Antwort</button>
+          <div class="sp-a" hidden><div class="sp-model">Ich frühstücke und dann gehe ich zur Arbeit.</div><div class="sp-tip">dann + verb + subject, verb stays in position 2.</div></div>
+        </div>
+        <div class="sp">
+          <div class="sp-q"><span class="sp-n">15</span>Wie kommst du zur Arbeit?</div>
+          <button class="chip sp-show" type="button">Antwort</button>
+          <div class="sp-a" hidden><div class="sp-model">Ich fahre mit dem Bus.</div><div class="sp-tip">mit + dative.</div></div>
+        </div>
+        <div class="sp">
+          <div class="sp-q"><span class="sp-n">16</span>Wie spät ist es?</div>
+          <button class="chip sp-show" type="button">Antwort</button>
+          <div class="sp-a" hidden><div class="sp-model">Es ist halb drei.</div><div class="sp-tip">halb drei = 2:30, not 3:30.</div></div>
+        </div>
+        <div class="sp">
+          <div class="sp-q"><span class="sp-n">17</span>Was machst du in deiner Freizeit?</div>
+          <button class="chip sp-show" type="button">Antwort</button>
+          <div class="sp-a" hidden><div class="sp-model">In meiner Freizeit lese ich gern Bücher und spiele Fußball.</div><div class="sp-tip">Position 1 is the time phrase, so verb then subject.</div></div>
+        </div>
+        <div class="sp">
+          <div class="sp-q"><span class="sp-n">18</span>Was ist dein Hobby?</div>
+          <button class="chip sp-show" type="button">Antwort</button>
+          <div class="sp-a" hidden><div class="sp-model">Mein Hobby ist Fußball. Ich spiele gern Fußball.</div><div class="sp-tip">gern after the verb = to like doing.</div></div>
+        </div>
+        <div class="sp">
+          <div class="sp-q"><span class="sp-n">19</span>Was isst du gern?</div>
+          <button class="chip sp-show" type="button">Antwort</button>
+          <div class="sp-a" hidden><div class="sp-model">Ich esse gern Fisch und Reis.</div><div class="sp-tip">du isst, ich esse.</div></div>
+        </div>
+        <div class="sp">
+          <div class="sp-q"><span class="sp-n">20</span>Was trinkst du am Morgen?</div>
+          <button class="chip sp-show" type="button">Antwort</button>
+          <div class="sp-a" hidden><div class="sp-model">Am Morgen trinke ich Tee.</div><div class="sp-tip">Time first, then verb, then subject.</div></div>
+        </div>
+        <div class="sp">
+          <div class="sp-q"><span class="sp-n">21</span>Wie geht es dir?</div>
+          <button class="chip sp-show" type="button">Antwort</button>
+          <div class="sp-a" hidden><div class="sp-model">Danke, gut. Und dir?</div><div class="sp-tip">Turning it back is natural and buys you time.</div></div>
+        </div>
+        <div class="sp">
+          <div class="sp-q"><span class="sp-n">22</span>Was hast du gestern gemacht?</div>
+          <button class="chip sp-show" type="button">Antwort</button>
+          <div class="sp-a" hidden><div class="sp-model">Gestern bin ich um sieben Uhr aufgewacht und habe gearbeitet.</div><div class="sp-tip">Perfect tense: bin for aufwachen, habe for arbeiten.</div></div>
+        </div>
+        <div class="sp">
+          <div class="sp-q"><span class="sp-n">23</span>Wo ist dein Buch?</div>
+          <button class="chip sp-show" type="button">Antwort</button>
+          <div class="sp-a" hidden><div class="sp-model">Mein Buch liegt auf dem Tisch.</div><div class="sp-tip">Wo? → dative.</div></div>
+        </div>
+        <div class="sp">
+          <div class="sp-q"><span class="sp-n">24</span>Wohin gehst du?</div>
+          <button class="chip sp-show" type="button">Antwort</button>
+          <div class="sp-a" hidden><div class="sp-model">Ich gehe ins Kino.</div><div class="sp-tip">Wohin? → accusative. in das = ins.</div></div>
+        </div>
+        <div class="sp">
+          <div class="sp-q"><span class="sp-n">25</span>Was trägst du heute?</div>
+          <button class="chip sp-show" type="button">Antwort</button>
+          <div class="sp-a" hidden><div class="sp-model">Ich trage ein Hemd und eine Hose.</div><div class="sp-tip">tragen + accusative. du trägst.</div></div>
+        </div>
+        <div class="sp">
+          <div class="sp-q"><span class="sp-n">26</span>Was tut dir weh?</div>
+          <button class="chip sp-show" type="button">Antwort</button>
+          <div class="sp-a" hidden><div class="sp-model">Mein Kopf tut mir weh.</div><div class="sp-tip">wehtun + dative.</div></div>
+        </div>
+        <div class="sp">
+          <div class="sp-q"><span class="sp-n">27</span>Kannst du schwimmen?</div>
+          <button class="chip sp-show" type="button">Antwort</button>
+          <div class="sp-a" hidden><div class="sp-model">Ja, ich kann schwimmen.</div><div class="sp-tip">Modal in position 2, infinitive at the end.</div></div>
+        </div>
+        <div class="sp">
+          <div class="sp-q"><span class="sp-n">28</span>Wann hast du Geburtstag?</div>
+          <button class="chip sp-show" type="button">Antwort</button>
+          <div class="sp-a" hidden><div class="sp-model">Ich habe am dritten März Geburtstag.</div><div class="sp-tip">am + ordinal + -en.</div></div>
+        </div>
+        </div>
+      </section>
+
+      <section class="topic" id="lesen">
+        <h2>Lesetext</h2>
+        <p class="gloss">Reading · the format from your practice paper</p>
+        <div class="rule">
+          <span class="tag">Text</span>
+          <p style="margin:0">Hallo! Ich heiße Omar und ich komme aus Ägypten. Ich bin 20 Jahre alt und wohne in Kairo. Ich habe eine kleine Familie: meine Mutter, meinen Vater und eine Schwester. Mein Vater ist Arzt und meine Mutter ist Lehrerin. Meine Schwester heißt Sara und sie studiert an der Universität. Ich spreche Arabisch und ein bisschen Deutsch. In meiner Freizeit lese ich gern Bücher und spiele Fußball mit meinen Freunden.</p>
+        </div>
+        <div class="tw">
+          <table>
+            <thead><tr><th>Frage</th><th>Antwort</th><th>Warum so</th></tr></thead>
+            <tbody>
+              <tr><th>Wie alt ist Omar?</th><td class="ex">Er ist zwanzig Jahre alt.<span class="tr">He is twenty years old.</span></td><td class="pl">Antworte im ganzen Satz, nicht nur mit der Zahl</td></tr>
+              <tr><th>Wo wohnt Omar?</th><td class="ex">Er wohnt in Kairo.<span class="tr">He lives in Cairo.</span></td><td class="pl">wohnen + in</td></tr>
+              <tr><th>Was ist sein Vater von Beruf?</th><td class="ex">Er ist Arzt.<span class="tr">He is a doctor.</span></td><td class="pl">Kein Artikel nach ist. Und Arzt, nicht Artzt</td></tr>
+              <tr><th>Wie heißt seine Schwester?</th><td class="ex">Sie heißt Sara.<span class="tr">Her name is Sara.</span></td><td class="pl">heißen, nicht Sein Name ist</td></tr>
+              <tr><th>Was macht Omar in seiner Freizeit?</th><td class="ex">In seiner Freizeit liest er gern Bücher und spielt Fußball.<span class="tr">In his free time he likes reading books and playing football.</span></td><td class="pl">Zeitangabe auf Position 1, dann Verb, dann Subjekt. Kein Komma</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="rule">
+          <span class="tag">Strategie</span>
+          <ul>
+            <li><span class="de">Lies zuerst die Fragen, dann den Text. Du weißt dann, wonach du suchst.</span><span class="en">Read the questions first, then the text. Then you know what to look for.</span></li>
+            <li><span class="de">Die Antwort steht fast immer wörtlich im Text. Du musst sie nur in einen ganzen Satz umbauen.</span><span class="en">The answer is almost always literally in the text. You only have to turn it into a full sentence.</span></li>
+            <li><span class="de">Wechsle die Perspektive: der Text sagt <em>ich</em>, deine Antwort sagt <em>er</em> oder <em>sie</em>. Also auch <em>mein</em> → <em>sein</em>.</span><span class="en">Shift the perspective: the text says <em>ich</em>, your answer says <em>er</em> or <em>sie</em>. So <em>mein</em> becomes <em>sein</em> too.</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="topic" id="checkliste">
+        <h2>Checkliste</h2>
+        <p class="gloss">Go through this last · if you can do all of it, you are ready</p>
+        <div class="note">
+          <p class="de">Sag jeden Punkt laut, ohne nachzuschauen. Was du nicht kannst, schlägst du oben nach. Das ist der letzte Durchgang vor dem Schlafen.</p>
+          <p class="en">Say each point out loud without looking. Whatever you cannot do, look up above. This is the final pass before sleeping.</p>
+        </div>
+        <div class="tw">
+          <table>
+            <thead><tr><th>Kannst du …</th><th>Prüfe dich</th></tr></thead>
+            <tbody>
+              <tr><td>alle sechs Präsensendungen aufsagen</td><td class="ex">e, st, t, en, t, en</td></tr>
+              <tr><td>sein und haben vollständig konjugieren</td><td class="ex">bin bist ist sind seid sind · habe hast hat haben habt haben</td></tr>
+              <tr><td>sagen, was sich im Akkusativ ändert</td><td class="ex">nur maskulin: der→den, ein→einen</td></tr>
+              <tr><td>die Dativformen der Artikel nennen</td><td class="ex">dem, der, dem, den + n</td></tr>
+              <tr><td>fünf Dativverben nennen</td><td class="ex">helfen, danken, gehören, gefallen, passen</td></tr>
+              <tr><td>die Dativpräpositionen aufzählen</td><td class="ex">aus, bei, mit, nach, seit, von, zu</td></tr>
+              <tr><td>die Akkusativpräpositionen aufzählen</td><td class="ex">durch, für, gegen, ohne, um, bis</td></tr>
+              <tr><td>sagen, wann Wechselpräpositionen Akkusativ nehmen</td><td class="ex">bei Wohin, also Bewegung</td></tr>
+              <tr><td>alle Modalverben in ich- und du-Form</td><td class="ex">kann kannst, muss musst, will willst, darf darfst</td></tr>
+              <tr><td>ein trennbares Verb im Satz benutzen</td><td class="ex">Ich stehe um sechs auf.</td></tr>
+              <tr><td>sagen, wo das Verb im Hauptsatz steht</td><td class="ex">immer Position 2</td></tr>
+              <tr><td>sagen, wo das Verb nach weil steht</td><td class="ex">am Ende</td></tr>
+              <tr><td>67 und 45. schreiben</td><td class="ex">siebenundsechzig · der fünfundvierzigste</td></tr>
+              <tr><td>halb drei und Viertel nach neun erklären</td><td class="ex">2:30 und 9:15</td></tr>
+              <tr><td>entscheiden zwischen haben und sein im Perfekt</td><td class="ex">Bewegung und Zustandswechsel → sein</td></tr>
+              <tr><td>fünf Partizipien nennen</td><td class="ex">gegessen, getrunken, gegangen, aufgestanden, gearbeitet</td></tr>
+              <tr><td>ich, du, er in allen drei Fällen</td><td class="ex">ich mich mir · du dich dir · er ihn ihm</td></tr>
+              <tr><td>zehn Berufe nennen</td><td class="ex">Ingenieur, Arzt, Lehrer, Student …</td></tr>
+              <tr><td>zehn Familienwörter mit Artikel nennen</td><td class="ex">der Vater, die Mutter, das Kind …</td></tr>
+              <tr><td>dich eine Minute lang vorstellen, laut</td><td class="ex">Name, Herkunft, Alter, Wohnort, Beruf, Familie, Hobbys</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note" style="margin-top:2rem">
+          <p class="de"><b>Vor der Prüfung.</b> Schlaf mindestens sechs Stunden. Schlaf festigt genau das, was du heute gelernt hast, und die letzte Stunde Wachbleiben bringt weniger als die verlorene Stunde Schlaf kostet. Iss etwas vorher. Wenn du in der Prüfung einen Satz nicht weißt, schreib den einfachsten Satz, den du sicher kannst: ein kurzer richtiger Satz bringt mehr Punkte als ein langer falscher.</p>
+          <p class="en"><b>Before the exam.</b> Sleep at least six hours. Sleep consolidates exactly what you learned today, and the last hour awake gains you less than the lost hour of sleep costs. Eat something first. If you get stuck in the exam, write the simplest sentence you are sure of: a short correct sentence scores better than a long wrong one.</p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <footer>
+    <p>Prüfungsmodus A1.1 · <span class="de">Aus deinem Kursmaterial, Lektion 1 bis 11, und deiner Probeprüfung.</span><span class="en">Built from your course material, lessons 1 to 11, and your practice paper.</span></p>
+  </footer>
+</body>
+
+</html>

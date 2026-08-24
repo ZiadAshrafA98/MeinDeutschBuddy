@@ -1,0 +1,377 @@
+/* Mein Deutsch Buddy · figures.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Body figure
+   A labelled drawing beats a word list here: the words describe positions on
+   a body, so showing the body carries meaning the list cannot.
+   ========================================================================== */
+
+.body-figure {
+  --bd-fill: #f0f0f2;
+  --bd-fill-on: color-mix(in srgb, var(--akk) 14%, transparent);
+  margin: 0 0 2.5rem;
+  max-width: 780px;
+}
+
+[data-theme="dark"] .body-figure {
+  --bd-fill: #1a1a1c;
+}
+
+/* The neck tucks under the shoulders rather than crossing them. */
+.bd-under {
+  stroke: none;
+}
+
+.body-figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* Silhouette shapes carry a fill: an unfilled contour reads as a cookie
+   cutter no matter how correct its proportions are. The fill gives the figure
+   mass, and the interior lines give it form. */
+.bd-body .bd-form {
+  fill: var(--bd-fill);
+}
+
+.bd-body path,
+.bd-body ellipse,
+.bd-body circle,
+.bd-line {
+  fill: none;
+  stroke: var(--ink-3);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke 0.2s var(--ease), stroke-width 0.2s var(--ease);
+}
+
+.bd-body .bd-solid {
+  fill: var(--ink-3);
+  stroke: none;
+}
+
+/* The back is behind the reader on a front view, so it is dashed rather than
+   drawn as if it were visible. */
+.bd-behind path {
+  stroke-dasharray: 5 6;
+  opacity: 0.55;
+}
+
+.bd-label-hit {
+  fill: transparent;
+  stroke: none;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.bd-hit {
+  fill: none;
+  stroke: transparent;
+  stroke-width: 18;
+  pointer-events: stroke;
+  cursor: pointer;
+}
+
+/* The visible strokes stay out of hit testing so the fat twin above owns it. */
+.bd-body path,
+.bd-body ellipse,
+.bd-body circle {
+  pointer-events: none;
+}
+
+/* A filled silhouette can be hit on its whole area, which is far better than
+   an 18px band along the stroke. */
+.bd-part .bd-form {
+  pointer-events: fill;
+  cursor: pointer;
+}
+
+.bd-body .bd-label-hit {
+  fill: transparent;
+  stroke: none;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.bd-hit {
+  pointer-events: stroke;
+}
+
+.bd-lead {
+  fill: none;
+  stroke: var(--line-strong);
+  stroke-width: 1;
+  transition: stroke 0.2s var(--ease);
+}
+
+.bd-dot {
+  fill: var(--line-strong);
+  stroke: none;
+  transition: fill 0.2s var(--ease), r 0.2s var(--ease);
+}
+
+.bd-name {
+  font-family: var(--f-body);
+  font-size: 15px;
+  fill: var(--ink-2);
+  transition: fill 0.2s var(--ease);
+}
+
+.bd-label {
+  cursor: pointer;
+}
+
+[data-lang="both"] .bd-name.en {
+  transform: translateY(17px);
+  font-size: 13px;
+  fill: var(--ink-4);
+}
+
+/* ---- highlight, driven from either the label or the figure ---- */
+
+.bd-label.on .bd-name {
+  fill: var(--ink);
+  font-weight: 600;
+}
+
+.bd-label.on .bd-lead {
+  stroke: var(--akk);
+}
+
+.bd-label.on .bd-dot {
+  fill: var(--akk);
+}
+
+.bd-part.on path,
+.bd-part.on ellipse,
+.bd-part.on circle {
+  stroke: var(--akk);
+  stroke-width: 2.8;
+}
+
+.bd-body .bd-part.on .bd-form {
+  fill: var(--bd-fill-on);
+}
+
+.bd-part.on .bd-solid {
+  fill: var(--akk);
+  stroke: none;
+}
+
+.bd-part.on.bd-behind path {
+  opacity: 1;
+}
+
+/* Everything unrelated recedes so the named part reads unambiguously. */
+.body-figure.focused .bd-body > :not(.on) .bd-form,
+.body-figure.focused .bd-body :not(.on) > .bd-form {
+  fill: var(--bd-fill);
+  opacity: 0.55;
+}
+
+.body-figure.focused .bd-body > :not(.on) path,
+.body-figure.focused .bd-body > :not(.on) ellipse,
+.body-figure.focused .bd-body > :not(.on) circle,
+.body-figure.focused .bd-line:not(.on) {
+  stroke: var(--line-strong);
+}
+
+.body-figure.focused .bd-label:not(.on) .bd-name {
+  fill: var(--ink-4);
+}
+
+.body-figure.focused .bd-label:not(.on) .bd-lead,
+.body-figure.focused .bd-label:not(.on) .bd-dot {
+  opacity: 0.35;
+}
+
+.bd-label:focus-visible {
+  outline: none;
+}
+
+.bd-label:focus-visible .bd-name {
+  fill: var(--ink);
+  font-weight: 600;
+}
+
+/* ---- chips: the phone version of the labels ---- */
+
+.bd-chips {
+  display: none;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1.25rem;
+}
+
+.bd-chip {
+  font-family: var(--f-body);
+  font-size: 0.84rem;
+  padding: 0.45rem 0.75rem;
+  min-height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: background 0.18s var(--ease), color 0.18s var(--ease), border-color 0.18s var(--ease);
+}
+
+.bd-chip .en {
+  color: var(--ink-4);
+}
+
+[data-lang="both"] .bd-chip .en::before {
+  content: " · ";
+  color: var(--line-strong);
+}
+
+.bd-chip.on {
+  background: var(--akk);
+  border-color: var(--akk);
+  color: #fff;
+}
+
+.bd-chip.on .en {
+  color: #ffffffcc;
+}
+
+@media (max-width: 760px) {
+
+  /* Leader labels do not survive the shrink: at a 390px viewport the 15px
+     type would render near 7px. The figure keeps its scale and the labels
+     become tappable chips underneath. */
+  .bd-label {
+    display: none;
+  }
+
+  .body-figure svg {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .bd-chips {
+    display: flex;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .bd-body path,
+  .bd-body ellipse,
+  .bd-body circle,
+  .bd-lead,
+  .bd-dot,
+  .bd-name,
+  .bd-chip {
+    transition: none;
+  }
+}
+
+/* ==========================================================================
+   Vocabulary preview
+   Hovering a concrete noun raises a pictogram that tracks the cursor. Drawn
+   rather than photographed so the app stays one offline file, and stroked in
+   currentColor so it follows the theme.
+   ========================================================================== */
+
+.vocab div.has-preview dt {
+  cursor: help;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 3px;
+}
+
+@media (pointer: coarse) {
+
+  .vocab div.has-preview dt {
+    cursor: pointer;
+  }
+}
+
+.vp-card {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 130;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.7rem 0.95rem 0.7rem 0.75rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px #00000021, 0 1px 3px #0000001a;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transform-origin: top left;
+  transition:
+    opacity 0.16s var(--ease),
+    visibility 0.16s var(--ease);
+  /* Position is written every frame, so it must not be transitioned or the
+     card lags visibly behind the pointer. */
+  will-change: transform;
+}
+
+.vp-card.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Used for one frame to measure before the first reveal. */
+.vp-card.measuring {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.vp-art {
+  width: 52px;
+  height: 52px;
+  flex: none;
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.vp-swatch {
+  width: 46px;
+  height: 46px;
+  flex: none;
+  border-radius: 10px;
+  border: 1px solid var(--line-strong);
+}
+
+.vp-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.vp-term {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.vp-gloss {
+  font-size: 0.8rem;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .vp-card {
+    transition: none;
+  }
+}
+

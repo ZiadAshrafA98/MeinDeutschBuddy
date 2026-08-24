@@ -1,0 +1,15 @@
+/* Mein Deutsch Buddy · stylesheet entry
+   One link tag per page pulls this in; @import keeps the source split without
+   asking every page to know the file list. Order is load-bearing: tokens
+   define the variables everything else reads, and responsive overrides last. */
+
+@import url("tokens.css");
+@import url("typography.css");
+@import url("layout.css");
+@import url("chrome.css");
+@import url("content.css");
+@import url("figures.css");
+@import url("search.css");
+@import url("home.css");
+@import url("exam.css");
+@import url("responsive.css");

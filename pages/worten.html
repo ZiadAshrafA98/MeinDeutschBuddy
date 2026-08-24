@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="de" data-lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wortschatz — Mein Deutsch Buddy</title>
+  <meta name="description" content="German vocabulary by theme: family, jobs, home, body, clothes, colours and materials.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../styles/index.css">
+  <script type="module" src="../dist/pages/worten.js"></script>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <button class="chip nav-toggle" aria-expanded="false" aria-controls="sidenav">Menü</button>
+    <a class="chip home-link" href="../index.html" aria-label="Startseite" title="Startseite">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+        <path d="M3 10.5 12 3.5l9 7M5.5 9.2V20h13V9.2M10 20v-6h4v6" />
+      </svg>
+    </a>
+    <div class="brand">Wortschatz <span>Mein Deutsch Buddy</span></div>
+
+    <div class="topbar-controls">
+      <div class="ctrl-group">
+        <span class="ctrl-label">Sprache</span>
+        <button class="chip" data-lang-btn="de" aria-pressed="true">DE</button>
+        <button class="chip" data-lang-btn="en" aria-pressed="false">EN</button>
+        <button class="chip" data-lang-btn="both" aria-pressed="false">DE+EN</button>
+      </div>
+
+      <div class="ctrl-group">
+        <span class="ctrl-label">Fallfokus</span>
+        <button class="chip case-nom" data-case-btn="nom" aria-pressed="false">Nom</button>
+        <button class="chip case-akk" data-case-btn="akk" aria-pressed="false">Akk</button>
+        <button class="chip case-dat" data-case-btn="dat" aria-pressed="false">Dat</button>
+        <button class="chip case-gen" data-case-btn="gen" aria-pressed="false">Gen</button>
+      </div>
+    </div>
+
+    <a class="chip nav-page" href="./grammatik.html">Grammatik</a>
+    <a class="chip nav-page" href="./pruefung.html">Prüfung</a>
+    <button class="chip search-trigger" data-search-open type="button" aria-label="Suchen">
+      <svg class="search-icon" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" focusable="false">
+        <circle cx="11" cy="11" r="6.5" />
+        <line x1="15.8" y1="15.8" x2="21" y2="21" />
+      </svg>
+      <span class="search-trigger-label">Suchen</span>
+      <kbd class="search-kbd">/</kbd>
+    </button>
+    <button class="chip theme-toggle" data-theme-btn type="button"
+      aria-label="Dunkelmodus einschalten" title="Dunkelmodus einschalten">
+      <svg class="theme-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+        <mask id="crescent-wort">
+          <rect x="0" y="0" width="24" height="24" fill="#fff" />
+          <circle class="cut" cx="30" cy="-6" r="6" fill="#000" />
+        </mask>
+        <circle class="orb" cx="12" cy="12" r="5.2" mask="url(#crescent-wort)" />
+        <g class="rays" stroke-linecap="round">
+          <line x1="12" y1="0.8" x2="12" y2="3.2" />
+          <line x1="12" y1="20.8" x2="12" y2="23.2" />
+          <line x1="0.8" y1="12" x2="3.2" y2="12" />
+          <line x1="20.8" y1="12" x2="23.2" y2="12" />
+          <line x1="4.1" y1="4.1" x2="5.8" y2="5.8" />
+          <line x1="18.2" y1="18.2" x2="19.9" y2="19.9" />
+          <line x1="4.1" y1="19.9" x2="5.8" y2="18.2" />
+          <line x1="18.2" y1="5.8" x2="19.9" y2="4.1" />
+        </g>
+      </svg>
+    </button>
+  </header>
+
+  <div class="shell">
+  <nav class="sidenav" id="sidenav" aria-label="Inhalt">
+  <h4><span class="de">Themen</span><span class="en">Themes</span></h4>
+  <a href="#familie"><span class="de">Familie</span><span class="en">Family</span></a>
+  <a href="#beruf"><span class="de">Beruf</span><span class="en">Jobs</span></a>
+  <a href="#wohnung"><span class="de">Wohnung</span><span class="en">Home</span></a>
+  <a href="#farben"><span class="de">Farben und Materialien</span><span class="en">Colours and materials</span></a>
+  <a href="#eigenschaften"><span class="de">Eigenschaften</span><span class="en">Adjectives</span></a>
+  <a href="#koerper"><span class="de">Körper und Gesundheit</span><span class="en">Body and health</span></a>
+  <a href="#kleidung"><span class="de">Kleidung</span><span class="en">Clothes</span></a>
+  <a href="#tag"><span class="de">Mein Tag: Perfekt im Text</span><span class="en">A day described in the perfect tense</span></a>
+</nav>
+
+    <main>
+    <div class="hero">
+      <h1>Wörter mit<br>Geschlecht.</h1>
+      <p class="sub">Jedes Nomen lernst du mit seinem Artikel, sonst ist es halb gelernt. Die Farbe zeigt das Geschlecht: blau für der, rot für die, grün für das.</p>
+    </div>
+
+    <p class="gender-key"><b class="g-m">■ der</b> &nbsp; <b class="g-f">■ die</b> &nbsp; <b class="g-n">■ das</b> &nbsp; — <span
+        class="de">Fahr mit der Maus über ein Wort mit gepunkteter Linie, dann siehst du ein Bild.</span><span class="en">Hover a word with a dotted underline to see a picture.</span></p>
+
+      <section class="topic" id="familie">
+        <h2>Familie</h2>
+        <p class="gloss">Family</p>
+
+        <div class="vocab">
+          <dl>
+            <div>
+              <dt class="g-m">der Vater</dt>
+              <dd>father</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Mutter</dt>
+              <dd>mother</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Eltern <span class="pl">Pl.</span></dt>
+              <dd>parents</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Sohn</dt>
+              <dd>son</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Tochter</dt>
+              <dd>daughter</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Bruder</dt>
+              <dd>brother</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Schwester</dt>
+              <dd>sister</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Geschwister <span class="pl">Pl.</span></dt>
+              <dd>siblings</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Großvater / Opa</dt>
+              <dd>grandfather</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Großmutter / Oma</dt>
+              <dd>grandmother</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Großeltern <span class="pl">Pl.</span></dt>
+              <dd>grandparents</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Enkel</dt>
+              <dd>grandson</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Enkelin</dt>
+              <dd>granddaughter</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Onkel</dt>
+              <dd>uncle</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Tante</dt>
+              <dd>aunt</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Cousin</dt>
+              <dd>cousin (m)</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Cousine</dt>
+              <dd>cousin (f)</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Neffe</dt>
+              <dd>nephew</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Nichte</dt>
+              <dd>niece</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Ehemann</dt>
+              <dd>husband</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Ehefrau</dt>
+              <dd>wife</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Stiefmutter</dt>
+              <dd>stepmother</dd>
+            </div>
+            <div>
+              <dt class="g-n">das Kind</dt>
+              <dd>child</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Familie</dt>
+              <dd>family</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="topic" id="beruf">
+        <h2>Beruf</h2>
+        <p class="gloss">Jobs</p>
+
+        <div class="note">
+          <p class="de">Die feminine Form bekommt meist <b>-in</b>: der Ingenieur → die Ingenieurin, der Arzt → die
+            Ärztin (mit Umlaut). Fragen: <em>Was bist du von Beruf? / Was machst du beruflich?</em> Antwort: <em>Ich bin
+              Ingenieur</em> oder <em>Ich arbeite als Ingenieur bei Qestit in Zamalek</em>. <b>als</b> = die Rolle,
+            <b>bei</b> = die Firma, <b>in</b> = der Ort.
+          </p>
+          <p class="en">The feminine form usually adds <b>-in</b>: der Ingenieur → die Ingenieurin, der Arzt → die
+            Ärztin (with umlaut). Questions: <em>Was bist du von Beruf? / Was machst du beruflich?</em> Answer: <em>Ich
+              bin Ingenieur</em> or <em>Ich arbeite als Ingenieur bei Qestit in Zamalek</em>. <b>als</b> = the role,
+            <b>bei</b> = the company, <b>in</b> = the location. Note there is no article after <em>Ich bin</em>.
+          </p>
+        </div>
+        <div class="vocab">
+          <dl>
+            <div>
+              <dt class="g-m">der Ingenieur</dt>
+              <dd>engineer</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Arzt</dt>
+              <dd>doctor</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Ärztin</dt>
+              <dd>doctor (f)</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Lehrer</dt>
+              <dd>teacher</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Student</dt>
+              <dd>student</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Journalistin</dt>
+              <dd>journalist</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Friseurin</dt>
+              <dd>hairdresser</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Architektin</dt>
+              <dd>architect</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Sekretärin</dt>
+              <dd>secretary</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Verkäufer</dt>
+              <dd>salesperson</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Kellnerin</dt>
+              <dd>waitress</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Koch</dt>
+              <dd>cook</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Krankenpfleger</dt>
+              <dd>male nurse</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Krankenschwester</dt>
+              <dd>nurse</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Hausfrau</dt>
+              <dd>homemaker</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Schauspieler</dt>
+              <dd>actor</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Firma</dt>
+              <dd>company</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Arbeit</dt>
+              <dd>work</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="topic" id="wohnung">
+        <h2>Wohnung</h2>
+        <p class="gloss">Home</p>
+
+        <div class="vocab">
+          <dl>
+            <div>
+              <dt class="g-f">die Wohnung</dt>
+              <dd>apartment</dd>
+            </div>
+            <div>
+              <dt class="g-n">das Haus</dt>
+              <dd>house</dd>
+            </div>
+            <div>
+              <dt class="g-n">das Zimmer</dt>
+              <dd>room</dd>
+            </div>
+            <div>
+              <dt class="g-n">das Wohnzimmer</dt>
+              <dd>living room</dd>
+            </div>
+            <div>
+              <dt class="g-n">das Schlafzimmer</dt>
+              <dd>bedroom</dd>
+            </div>
+            <div>
+              <dt class="g-n">das Arbeitszimmer</dt>
+              <dd>study</dd>
+            </div>
+            <div>
+              <dt class="g-n">das Badezimmer</dt>
+              <dd>bathroom</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Küche</dt>
+              <dd>kitchen</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Balkon</dt>
+              <dd>balcony</dd>
+            </div>
+            <div>
+              <dt class="g-n">das Erdgeschoss</dt>
+              <dd>ground floor</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Stock</dt>
+              <dd>storey, floor</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Keller</dt>
+              <dd>cellar</dd>
+            </div>
+            <div>
+              <dt class="g-n">das Sofa</dt>
+              <dd>sofa</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Sessel</dt>
+              <dd>armchair</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Tisch</dt>
+              <dd>table</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Esstisch</dt>
+              <dd>dining table</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Schreibtisch</dt>
+              <dd>desk</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Stuhl</dt>
+              <dd>chair</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Fernseher</dt>
+              <dd>TV set</dd>
+            </div>
+            <div>
+              <dt class="g-n">das Bett</dt>
+              <dd>bed</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Kleiderschrank</dt>
+              <dd>wardrobe</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Herd</dt>
+              <dd>stove</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Kühlschrank</dt>
+              <dd>fridge</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Geschirrspülmaschine</dt>
+              <dd>dishwasher</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Dusche</dt>
+              <dd>shower</dd>
+            </div>
+            <div>
+              <dt class="g-n">das Waschbecken</dt>
+              <dd>sink</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Toilette</dt>
+              <dd>toilet</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Teppich</dt>
+              <dd>carpet</dd>
+            </div>
+            <div>
+              <dt class="g-n">das Fenster</dt>
+              <dd>window</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Tür</dt>
+              <dd>door</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Wand</dt>
+              <dd>wall</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Quadratmeter</dt>
+              <dd>square metre</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="topic" id="farben">
+        <h2>Farben und Materialien</h2>
+        <p class="gloss">Colours and materials</p>
+
+        <div class="grid2">
+          <div class="vocab" style="columns:1">
+            <dl>
+              <div>
+                <dt>rot</dt>
+                <dd>red</dd>
+              </div>
+              <div>
+                <dt>blau</dt>
+                <dd>blue</dd>
+              </div>
+              <div>
+                <dt>gelb</dt>
+                <dd>yellow</dd>
+              </div>
+              <div>
+                <dt>grün</dt>
+                <dd>green</dd>
+              </div>
+              <div>
+                <dt>schwarz</dt>
+                <dd>black</dd>
+              </div>
+              <div>
+                <dt>weiß</dt>
+                <dd>white</dd>
+              </div>
+              <div>
+                <dt>grau</dt>
+                <dd>grey</dd>
+              </div>
+              <div>
+                <dt>braun</dt>
+                <dd>brown</dd>
+              </div>
+              <div>
+                <dt>dunkelbraun</dt>
+                <dd>dark brown</dd>
+              </div>
+              <div>
+                <dt>lila</dt>
+                <dd>purple</dd>
+              </div>
+              <div>
+                <dt>orange</dt>
+                <dd>orange</dd>
+              </div>
+              <div>
+                <dt>rosa</dt>
+                <dd>pink</dd>
+              </div>
+              <div>
+                <dt>silber</dt>
+                <dd>silver</dd>
+              </div>
+              <div>
+                <dt>gold</dt>
+                <dd>gold</dd>
+              </div>
+              <div>
+                <dt>hell / dunkel</dt>
+                <dd>light / dark</dd>
+              </div>
+            </dl>
+          </div>
+          <div class="vocab" style="columns:1">
+            <dl>
+              <div>
+                <dt class="g-n">das Metall</dt>
+                <dd>metal</dd>
+              </div>
+              <div>
+                <dt class="g-n">das Holz</dt>
+                <dd>wood</dd>
+              </div>
+              <div>
+                <dt class="g-n">das Plastik</dt>
+                <dd>plastic</dd>
+              </div>
+              <div>
+                <dt class="g-m">der Kunststoff</dt>
+                <dd>synthetic material</dd>
+              </div>
+              <div>
+                <dt class="g-n">das Papier</dt>
+                <dd>paper</dd>
+              </div>
+              <div>
+                <dt class="g-n">das Glas</dt>
+                <dd>glass</dd>
+              </div>
+              <div>
+                <dt class="g-m">der Stein</dt>
+                <dd>stone</dd>
+              </div>
+              <div>
+                <dt class="g-n">das Leder</dt>
+                <dd>leather</dd>
+              </div>
+              <div>
+                <dt class="g-f">die Baumwolle</dt>
+                <dd>cotton</dd>
+              </div>
+              <div>
+                <dt class="g-f">die Wolle</dt>
+                <dd>wool</dd>
+              </div>
+              <div>
+                <dt class="g-f">die Seide</dt>
+                <dd>silk</dd>
+              </div>
+              <div>
+                <dt class="g-m">der Gummi</dt>
+                <dd>rubber</dd>
+              </div>
+              <div>
+                <dt class="g-n">das Kupfer</dt>
+                <dd>copper</dd>
+              </div>
+              <div>
+                <dt class="g-n">das Eisen</dt>
+                <dd>iron</dd>
+              </div>
+              <div>
+                <dt class="g-n">das Aluminium</dt>
+                <dd>aluminium</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+        <p class="ex"><span class="de">Material mit <b>aus</b> + Dativ:</span><span class="en">Material takes <b>aus</b>
+            + dative:</span> <em>Der Tisch ist aus Holz. Er ist groß, schwer und braun. Er ist nicht billig. Er ist
+            rund.</em></p>
+      </section>
+
+      <section class="topic" id="eigenschaften">
+        <h2>Eigenschaften</h2>
+        <p class="gloss">Adjectives</p>
+
+        <div class="vocab">
+          <dl>
+            <div>
+              <dt>groß / klein</dt>
+              <dd>big / small</dd>
+            </div>
+            <div>
+              <dt>schwer / leicht</dt>
+              <dd>heavy / light</dd>
+            </div>
+            <div>
+              <dt>teuer / billig</dt>
+              <dd>expensive / cheap</dd>
+            </div>
+            <div>
+              <dt>weich / hart</dt>
+              <dd>soft / hard</dd>
+            </div>
+            <div>
+              <dt>neu / alt</dt>
+              <dd>new / old</dd>
+            </div>
+            <div>
+              <dt>lang / kurz</dt>
+              <dd>long / short</dd>
+            </div>
+            <div>
+              <dt>dünn / dick</dt>
+              <dd>thin / thick</dd>
+            </div>
+            <div>
+              <dt>glatt / rau</dt>
+              <dd>smooth / rough</dd>
+            </div>
+            <div>
+              <dt>rund / eckig</dt>
+              <dd>round / angular</dd>
+            </div>
+            <div>
+              <dt>hell / dunkel</dt>
+              <dd>bright / dark</dd>
+            </div>
+            <div>
+              <dt>schön</dt>
+              <dd>beautiful</dd>
+            </div>
+            <div>
+              <dt>gemütlich</dt>
+              <dd>cosy</dd>
+            </div>
+            <div>
+              <dt>bequem</dt>
+              <dd>comfortable</dd>
+            </div>
+            <div>
+              <dt>ruhig</dt>
+              <dd>quiet</dd>
+            </div>
+            <div>
+              <dt>sauber / schmutzig</dt>
+              <dd>clean / dirty</dd>
+            </div>
+            <div>
+              <dt>modern</dt>
+              <dd>modern</dd>
+            </div>
+            <div>
+              <dt>nett</dt>
+              <dd>nice (person)</dd>
+            </div>
+            <div>
+              <dt>müde</dt>
+              <dd>tired</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="topic" id="koerper">
+        <h2>Körper und Gesundheit</h2>
+        <p class="gloss">Body and health</p>
+
+
+        <div class="note">
+          <p class="de">Fahr mit der Maus über einen Namen, dann leuchtet das Körperteil auf. Auf dem
+            Handy tippst du auf einen Namen unter der Zeichnung.</p>
+          <p class="en">Hover a name and the body part lights up. On a phone, tap a name below the
+            drawing instead.</p>
+        </div>
+
+        <figure class="body-figure">
+          <svg viewBox="0 0 760 660" role="img"
+            aria-label="Beschriftete Zeichnung des menschlichen Körpers">
+
+            <g class="bd-body">
+              <!-- 8-head canon: crown 60 · chin 126 · nipple 192 · navel 258
+                   crotch 324 · knee 456 · sole 588 · centre line x=380 -->
+
+              <!-- neck sits behind the shoulders -->
+              <path class="bd-form bd-under" d="M367 112h26v34h-26Z" />
+
+              <g class="bd-part" data-part="kopf">
+                <path class="bd-form" d="M380 59c13.5 0 24 11.5 24 26.5 0 9-1 17.5-3.2 24.5
+                  -2.2 8-6.2 13.8-11.3 16.8-2.9 1.7-6 2.5-9.5 2.5s-6.6-.8-9.5-2.5
+                  c-5.1-3-9.1-8.8-11.3-16.8-2.2-7-3.2-15.5-3.2-24.5C356 70.5 366.5 59 380 59Z" />
+              </g>
+
+              <!-- torso: shoulders 2 heads across, waist at 3H, hips flaring to 4H -->
+              <path class="bd-form" d="M363 143c-12 6-30 14-42 28 8 10 12 20 14 30
+                4 18 6 36 8 54-2 18-8 34-12 48 6 14 30 26 49 27 19-1 43-13 49-27
+                -4-14-10-30-12-48 2-18 4-36 8-54 2-10 6-20 14-30-12-14-30-22-42-28Z" />
+
+              <g class="bd-part" data-part="schulter">
+                <path class="bd-line" d="M321 171c-8 4-14 10-18 17" />
+                <path class="bd-line" d="M321 171c-8 4-14 10-18 17" transform="translate(760,0) scale(-1,1)" />
+              </g>
+
+              <!-- deltoid, biceps, forearm, tapering to the wrist at the 4H line -->
+              <g class="bd-part" data-part="arm">
+                <path class="bd-form" d="M321 171c-12 8-18 20-17 34 2 18 5 36 7 52-3 14-6 32-4 48 2 10 4 17 6 24l24 2c1-16 2-34 3-50 1-18-1-40-3-60 -1-10-2-16-2-20-2-10-6-20-14-30Z" />
+                <path class="bd-form" d="M321 171c-12 8-18 20-17 34 2 18 5 36 7 52-3 14-6 32-4 48 2 10 4 17 6 24l24 2c1-16 2-34 3-50 1-18-1-40-3-60 -1-10-2-16-2-20-2-10-6-20-14-30Z" transform="translate(760,0) scale(-1,1)" />
+              </g>
+
+              <g class="bd-part" data-part="hand">
+                <path class="bd-form" d="M313 329c-6 12-10 26-9 40 1 10 6 17 13 17 8 0 15-7 16-19 1-14 2-26 3-38Z" />
+                <path class="bd-form" d="M313 329c-6 12-10 26-9 40 1 10 6 17 13 17 8 0 15-7 16-19 1-14 2-26 3-38Z" transform="translate(760,0) scale(-1,1)" />
+                <path class="bd-line" d="M319 342v26M326 340v26" />
+                <path class="bd-line" d="M319 342v26M326 340v26" transform="translate(760,0) scale(-1,1)" />
+              </g>
+
+              <!-- thigh mass, knee at 6H, calf swell, ankle narrowing at 7.5H -->
+              <g class="bd-part" data-part="bein">
+                <path class="bd-form" d="M331 303c-2 18-3 38-2 58 2 26 6 54 10 80 3 10 5 16 6 22 -4 16-7 34-6 50 2 18 10 36 16 50h14c-2-16-4-34-4-52 0-18 2-36 4-52 2-28 6-78 8-126-15 0-33-11-46-30Z" />
+                <path class="bd-form" d="M331 303c-2 18-3 38-2 58 2 26 6 54 10 80 3 10 5 16 6 22 -4 16-7 34-6 50 2 18 10 36 16 50h14c-2-16-4-34-4-52 0-18 2-36 4-52 2-28 6-78 8-126-15 0-33-11-46-30Z" transform="translate(760,0) scale(-1,1)" />
+              </g>
+
+              <g class="bd-part" data-part="fuss">
+                <path class="bd-form" d="M355 563c-2 10-10 18-22 22-6 2-7 8-1 8h41c3 0 4-3 4-7l-1-23Z" />
+                <path class="bd-form" d="M355 563c-2 10-10 18-22 22-6 2-7 8-1 8h41c3 0 4-3 4-7l-1-23Z" transform="translate(760,0) scale(-1,1)" />
+              </g>
+
+              <!-- interior contour: what turns an outline into a figure -->
+              <path class="bd-line" d="M356 157c7 5 16 8 24 8" />
+                <path class="bd-line" d="M356 157c7 5 16 8 24 8" transform="translate(760,0) scale(-1,1)" />
+              <path class="bd-line" d="M349 179c6 16 18 24 31 24" />
+                <path class="bd-line" d="M349 179c6 16 18 24 31 24" transform="translate(760,0) scale(-1,1)" />
+              <path class="bd-line" d="M380 165v38" />
+              <path class="bd-line" d="M350 292c9 8 20 12 30 13" />
+                <path class="bd-line" d="M350 292c9 8 20 12 30 13" transform="translate(760,0) scale(-1,1)" />
+              <path class="bd-line" d="M340 444c5 6 12 9 19 8" />
+                <path class="bd-line" d="M340 444c5 6 12 9 19 8" transform="translate(760,0) scale(-1,1)" />
+
+              <g class="bd-part bd-behind" data-part="ruecken">
+                <path d="M380 150v170M371 180h18M371 208h18M371 236h18M371 264h18M371 292h18" />
+              </g>
+
+              <g class="bd-part" data-part="bauch">
+                <path d="M356 228c8 12 40 12 48 0" />
+                <path d="M380 218v66" />
+                <circle class="bd-solid" cx="380" cy="258" r="2.4" />
+              </g>
+
+              <!-- face: eyes on the midline of the skull, nose base and mouth below -->
+              <g class="bd-part" data-part="gesicht">
+                <path d="M361 100c2 10 6 18 11 22 2.6 1.7 5.4 2.5 8 2.5s5.4-.8 8-2.5
+                  c5-4 9-12 11-22" />
+              </g>
+              <g class="bd-part" data-part="ohr">
+                <path class="bd-line" d="M356 88c-5 0-7 5-6 10 1 5 4 8 8 8" />
+                <path class="bd-line" d="M356 88c-5 0-7 5-6 10 1 5 4 8 8 8" transform="translate(760,0) scale(-1,1)" />
+              </g>
+              <g class="bd-part" data-part="auge">
+                <path class="bd-line" d="M364 93c2-3 5-4 7.5-4s5.5 1 7.5 4c-2 3-5 4-7.5 4s-5.5-1-7.5-4Z" />
+                <path class="bd-line" d="M364 93c2-3 5-4 7.5-4s5.5 1 7.5 4c-2 3-5 4-7.5 4s-5.5-1-7.5-4Z" transform="translate(760,0) scale(-1,1)" />
+                <circle class="bd-solid" cx="371.5" cy="93" r="1.5" />
+                <circle class="bd-solid" cx="388.5" cy="93" r="1.5" />
+              </g>
+              <g class="bd-part" data-part="nase">
+                <path d="M380 88v14M374 104q6 4 12 0" />
+              </g>
+              <g class="bd-part" data-part="mund">
+                <path d="M372 113q8 6 16 0" />
+              </g>
+              <g class="bd-part" data-part="zahn">
+                <path d="M373.5 113h13M380 113v4.5" />
+              </g>
+            </g>
+
+        <g class="bd-label g-m" data-part="kopf" tabindex="0" role="button"
+          aria-label="der Kopf, head">
+          <polyline class="bd-lead" points="262,65 268,65 363,76" />
+          <circle class="bd-dot" cx="363" cy="76" r="3" />
+          <text class="bd-name de" x="250" y="70" text-anchor="end">der Kopf</text>
+          <text class="bd-name en" x="250" y="70" text-anchor="end">head</text>
+        </g>
+        <g class="bd-label g-n" data-part="auge" tabindex="0" role="button"
+          aria-label="das Auge, eye">
+          <polyline class="bd-lead" points="262,113 268,113 366,93" />
+          <circle class="bd-dot" cx="366" cy="93" r="3" />
+          <text class="bd-name de" x="250" y="118" text-anchor="end">das Auge</text>
+          <text class="bd-name en" x="250" y="118" text-anchor="end">eye</text>
+        </g>
+        <g class="bd-label g-f" data-part="nase" tabindex="0" role="button"
+          aria-label="die Nase, nose">
+          <polyline class="bd-lead" points="262,161 268,161 377,100" />
+          <circle class="bd-dot" cx="377" cy="100" r="3" />
+          <text class="bd-name de" x="250" y="166" text-anchor="end">die Nase</text>
+          <text class="bd-name en" x="250" y="166" text-anchor="end">nose</text>
+        </g>
+        <g class="bd-label g-m" data-part="mund" tabindex="0" role="button"
+          aria-label="der Mund, mouth">
+          <polyline class="bd-lead" points="262,209 268,209 374,113" />
+          <circle class="bd-dot" cx="374" cy="113" r="3" />
+          <text class="bd-name de" x="250" y="214" text-anchor="end">der Mund</text>
+          <text class="bd-name en" x="250" y="214" text-anchor="end">mouth</text>
+        </g>
+        <g class="bd-label g-m" data-part="arm" tabindex="0" role="button"
+          aria-label="der Arm, arm">
+          <polyline class="bd-lead" points="262,297 268,297 306,238" />
+          <circle class="bd-dot" cx="306" cy="238" r="3" />
+          <text class="bd-name de" x="250" y="302" text-anchor="end">der Arm</text>
+          <text class="bd-name en" x="250" y="302" text-anchor="end">arm</text>
+        </g>
+        <g class="bd-label g-f" data-part="hand" tabindex="0" role="button"
+          aria-label="die Hand, hand">
+          <polyline class="bd-lead" points="262,369 268,369 306,356" />
+          <circle class="bd-dot" cx="306" cy="356" r="3" />
+          <text class="bd-name de" x="250" y="374" text-anchor="end">die Hand</text>
+          <text class="bd-name en" x="250" y="374" text-anchor="end">hand</text>
+        </g>
+        <g class="bd-label g-n" data-part="bein" tabindex="0" role="button"
+          aria-label="das Bein, leg">
+          <polyline class="bd-lead" points="262,441 268,441 337,408" />
+          <circle class="bd-dot" cx="337" cy="408" r="3" />
+          <text class="bd-name de" x="250" y="446" text-anchor="end">das Bein</text>
+          <text class="bd-name en" x="250" y="446" text-anchor="end">leg</text>
+        </g>
+        <g class="bd-label g-n" data-part="gesicht" tabindex="0" role="button"
+          aria-label="das Gesicht, face">
+          <polyline class="bd-lead" points="498,91 492,91 396,115" />
+          <circle class="bd-dot" cx="396" cy="115" r="3" />
+          <text class="bd-name de" x="510" y="96" text-anchor="start">das Gesicht</text>
+          <text class="bd-name en" x="510" y="96" text-anchor="start">face</text>
+        </g>
+        <g class="bd-label g-n" data-part="ohr" tabindex="0" role="button"
+          aria-label="das Ohr, ear">
+          <polyline class="bd-lead" points="498,139 492,139 402,96" />
+          <circle class="bd-dot" cx="402" cy="96" r="3" />
+          <text class="bd-name de" x="510" y="144" text-anchor="start">das Ohr</text>
+          <text class="bd-name en" x="510" y="144" text-anchor="start">ear</text>
+        </g>
+        <g class="bd-label g-m" data-part="zahn" tabindex="0" role="button"
+          aria-label="der Zahn, tooth">
+          <polyline class="bd-lead" points="498,187 492,187 385,116" />
+          <circle class="bd-dot" cx="385" cy="116" r="3" />
+          <text class="bd-name de" x="510" y="192" text-anchor="start">der Zahn</text>
+          <text class="bd-name en" x="510" y="192" text-anchor="start">tooth</text>
+        </g>
+        <g class="bd-label g-f" data-part="schulter" tabindex="0" role="button"
+          aria-label="die Schulter, shoulder">
+          <polyline class="bd-lead" points="498,235 492,235 441,180" />
+          <circle class="bd-dot" cx="441" cy="180" r="3" />
+          <text class="bd-name de" x="510" y="240" text-anchor="start">die Schulter</text>
+          <text class="bd-name en" x="510" y="240" text-anchor="start">shoulder</text>
+        </g>
+        <g class="bd-label g-m" data-part="ruecken" tabindex="0" role="button"
+          aria-label="der Rücken, back">
+          <polyline class="bd-lead" points="498,283 492,283 385,236" />
+          <circle class="bd-dot" cx="385" cy="236" r="3" />
+          <text class="bd-name de" x="510" y="288" text-anchor="start">der Rücken</text>
+          <text class="bd-name en" x="510" y="288" text-anchor="start">back</text>
+        </g>
+        <g class="bd-label g-m" data-part="bauch" tabindex="0" role="button"
+          aria-label="der Bauch, belly">
+          <polyline class="bd-lead" points="498,331 492,331 389,258" />
+          <circle class="bd-dot" cx="389" cy="258" r="3" />
+          <text class="bd-name de" x="510" y="336" text-anchor="start">der Bauch</text>
+          <text class="bd-name en" x="510" y="336" text-anchor="start">belly</text>
+        </g>
+        <g class="bd-label g-m" data-part="fuss" tabindex="0" role="button"
+          aria-label="der Fuß, foot">
+          <polyline class="bd-lead" points="498,579 492,579 404,585" />
+          <circle class="bd-dot" cx="404" cy="585" r="3" />
+          <text class="bd-name de" x="510" y="584" text-anchor="start">der Fuß</text>
+          <text class="bd-name en" x="510" y="584" text-anchor="start">foot</text>
+        </g>
+          </svg>
+
+          <div class="bd-chips">
+          <button type="button" class="bd-chip g-m" data-part="kopf">
+            <span class="de">der Kopf</span><span class="en">head</span>
+          </button>
+          <button type="button" class="bd-chip g-n" data-part="auge">
+            <span class="de">das Auge</span><span class="en">eye</span>
+          </button>
+          <button type="button" class="bd-chip g-f" data-part="nase">
+            <span class="de">die Nase</span><span class="en">nose</span>
+          </button>
+          <button type="button" class="bd-chip g-m" data-part="mund">
+            <span class="de">der Mund</span><span class="en">mouth</span>
+          </button>
+          <button type="button" class="bd-chip g-m" data-part="arm">
+            <span class="de">der Arm</span><span class="en">arm</span>
+          </button>
+          <button type="button" class="bd-chip g-f" data-part="hand">
+            <span class="de">die Hand</span><span class="en">hand</span>
+          </button>
+          <button type="button" class="bd-chip g-n" data-part="bein">
+            <span class="de">das Bein</span><span class="en">leg</span>
+          </button>
+          <button type="button" class="bd-chip g-n" data-part="gesicht">
+            <span class="de">das Gesicht</span><span class="en">face</span>
+          </button>
+          <button type="button" class="bd-chip g-n" data-part="ohr">
+            <span class="de">das Ohr</span><span class="en">ear</span>
+          </button>
+          <button type="button" class="bd-chip g-m" data-part="zahn">
+            <span class="de">der Zahn</span><span class="en">tooth</span>
+          </button>
+          <button type="button" class="bd-chip g-f" data-part="schulter">
+            <span class="de">die Schulter</span><span class="en">shoulder</span>
+          </button>
+          <button type="button" class="bd-chip g-m" data-part="ruecken">
+            <span class="de">der Rücken</span><span class="en">back</span>
+          </button>
+          <button type="button" class="bd-chip g-m" data-part="bauch">
+            <span class="de">der Bauch</span><span class="en">belly</span>
+          </button>
+          <button type="button" class="bd-chip g-m" data-part="fuss">
+            <span class="de">der Fuß</span><span class="en">foot</span>
+          </button>
+          </div>
+        </figure>
+
+        <div class="rule">
+          <span class="tag">Krank sein</span>
+          <div class="vocab" style="columns:2">
+            <dl>
+              <div><dt class="g-m">der Husten</dt><dd>cough</dd></div>
+              <div><dt class="g-n">das Fieber</dt><dd>fever</dd></div>
+              <div><dt class="g-m">der Schnupfen</dt><dd>runny nose</dd></div>
+              <div><dt class="g-f">die Schmerzen <span class="pl">Pl.</span></dt><dd>pain</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="rule">
+          <span class="tag">Beim Arzt</span>
+          <p class="ex" style="margin:0">Was tut dir weh? → <em>Mein Kopf tut mir weh.</em> / <em>Meine Zähne tun mir
+              weh.</em> / <em>Ich habe Kopfschmerzen.</em> · Ich bin krank. · Ich bin müde. · Ich habe Fieber.<span
+              class="tr">What hurts? → My head hurts. / My teeth hurt. / I have a headache. · I'm ill. · I'm tired. · I
+              have a fever.</span></p>
+          <p style="margin:.5rem 0 0"><span class="de"><b>wehtun</b> ist trennbar und nimmt Dativ: <em>tut mir weh</em>,
+              Plural <em>tun mir weh</em>.</span><span class="en"><b>wehtun</b> is separable and takes the dative:
+              <em>tut mir weh</em>, plural <em>tun mir weh</em>.</span></p>
+        </div>
+      </section>
+
+      <section class="topic" id="kleidung">
+        <h2>Kleidung</h2>
+        <p class="gloss">Clothes</p>
+
+        <div class="vocab">
+          <dl>
+            <div>
+              <dt class="g-f">die Hose</dt>
+              <dd>trousers</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Mantel</dt>
+              <dd>coat</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Jacke</dt>
+              <dd>jacket</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Bluse</dt>
+              <dd>blouse</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Gürtel</dt>
+              <dd>belt</dd>
+            </div>
+            <div>
+              <dt class="g-n">das Hemd</dt>
+              <dd>shirt</dd>
+            </div>
+            <div>
+              <dt class="g-n">das T-Shirt</dt>
+              <dd>t-shirt</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Pullover</dt>
+              <dd>sweater</dd>
+            </div>
+            <div>
+              <dt class="g-n">das Kleid</dt>
+              <dd>dress</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Rock</dt>
+              <dd>skirt</dd>
+            </div>
+            <div>
+              <dt class="g-m">der Schuh</dt>
+              <dd>shoe</dd>
+            </div>
+            <div>
+              <dt class="g-f">die Socke</dt>
+              <dd>sock</dd>
+            </div>
+          </dl>
+        </div>
+        <p class="ex"><b>tragen</b> <span class="pl">to wear</span> + Akkusativ: <em>Ich trage einen Mantel.</em> · du
+          trägst, er trägt</p>
+      </section>
+
+      <section class="topic" id="tag">
+        <h2>Mein Tag: Perfekt im Text</h2>
+        <p class="gloss">A day described in the perfect tense</p>
+
+        <div class="note">
+          <p class="de">Dieser Text kombiniert fast alles: Perfekt mit haben und sein, trennbare Verben,
+            Reflexivpronomen, Zeitangaben und Präpositionen. Lies ihn laut und markiere jedes Partizip II.</p>
+          <p class="en">This text combines almost everything: perfect with haben and sein, separable verbs, reflexive
+            pronouns, time expressions and prepositions. Read it aloud and mark every past participle.</p>
+        </div>
+        <div class="rule">
+          <span class="tag">Mein Tag gestern</span>
+          <p class="ex" style="margin:0">Ich <b>bin</b> um sieben Uhr <b>aufgewacht</b>. Ich <b>habe</b> mein Gesicht
+            <b>gewaschen</b> und meine Zähne <b>geputzt</b>. Dann <b>habe</b> ich <b>gefrühstückt</b>. Ich <b>habe</b>
+            Brot und Käse <b>gegessen</b> und Tee <b>getrunken</b>. Danach <b>bin</b> ich zur Arbeit <b>gegangen</b>.
+            Ich <b>habe</b> von acht bis zwei Uhr <b>gearbeitet</b>. In der Pause <b>habe</b> ich einen Kaffee
+            <b>getrunken</b>. Am Nachmittag <b>bin</b> ich nach Hause <b>gekommen</b>. Ich <b>habe</b> zu Mittag
+            <b>gegessen</b> und mich <b>ausgeruht</b>. Am Abend <b>habe</b> ich <b>ferngesehen</b> und Musik
+            <b>gehört</b>. Später <b>habe</b> ich zu Abend <b>gegessen</b>. Ich <b>habe</b> mein Handy <b>benutzt</b>
+            und mit meinen Freunden <b>gesprochen</b>. Um elf Uhr <b>bin</b> ich schlafen <b>gegangen</b>.<span
+              class="tr">I woke up at seven o'clock. I washed my face and brushed my teeth. Then I had breakfast. I ate
+              bread and cheese and drank tea. After that I went to work. I worked from eight until two o'clock. In the
+              break I drank a coffee. In the afternoon I came home. I had lunch and rested. In the evening I watched TV
+              and listened to music. Later I had dinner. I used my phone and talked with my friends. At eleven o'clock I
+              went to sleep.</span>
+          </p>
+        </div>
+      
+      </section>
+
+    </main>
+  </div>
+
+  <footer>
+    <p>Mein Deutsch Buddy · <span class="de">Wortschatz nach Themen. Neue Listen kommen dazu, wenn du sie brauchst.</span><span
+        class="en">Vocabulary by theme. New lists get added as you need them.</span></p>
+  </footer>
+
+</body>
+
+</html>

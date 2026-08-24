@@ -1,0 +1,95 @@
+/* Mein Deutsch Buddy · tokens.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Mein Deutsch Buddy
+
+   Type carries the hierarchy. Hairlines separate; boxes do not contain.
+   Colour appears only where it means something: the four cases, and the
+   three genders that borrow the same palette.
+   ========================================================================== */
+
+:root {
+  /* surfaces */
+  --paper: #ffffff;
+  --raised: #f5f5f7;
+  --sunken: #fafafc;
+  --line: #e3e3e6;
+  --line-strong: #c9c9ce;
+
+  /* text */
+  --ink: #1d1d1f;
+  --ink-2: #4b4b50;
+  --ink-3: #6e6e73;
+  --ink-4: #86868b;
+
+  /* the four cases */
+  --nom: #12705a;
+  --akk: #b03225;
+  --dat: #2a5cad;
+  --gen: #6f4a9c;
+  --nom-bg: #12705a0f;
+  --akk-bg: #b0322510;
+  --dat-bg: #2a5cad0f;
+  --gen-bg: #6f4a9c0f;
+
+  --radius: 10px;
+  --radius-sm: 7px;
+
+  --f-display: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --f-body: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --nav-w: 252px;
+  --measure: 68ch;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="dark"] {
+  --paper: #000000;
+  --raised: #1c1c1e;
+  --sunken: #121214;
+  --line: #2a2a2d;
+  --line-strong: #3f3f44;
+  --ink: #f5f5f7;
+  --ink-2: #c4c4c9;
+  --ink-3: #a1a1a6;
+  --ink-4: #86868b;
+  --nom: #4cc4a0;
+  --akk: #ff7a68;
+  --dat: #7cabff;
+  --gen: #c79bf0;
+  --nom-bg: #4cc4a014;
+  --akk-bg: #ff7a6814;
+  --dat-bg: #7cabff14;
+  --gen-bg: #c79bf014;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.65;
+  letter-spacing: -0.003em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+

@@ -1,0 +1,253 @@
+/* Mein Deutsch Buddy · exam.css
+   Loaded from styles/index.css. Order matters: tokens first, responsive last. */
+
+/* ==========================================================================
+   Prüfungsmodus
+   Drills and spoken practice. Feedback explains every option, so the layout
+   has to give each one room rather than just marking one green.
+   ========================================================================== */
+
+.dr-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 1.25rem;
+}
+
+.dr-filter .chip {
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.dr-filter .chip[aria-pressed="true"] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+
+.dr-score {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  padding: 0.7rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 1.75rem;
+  font-size: 0.88rem;
+  color: var(--ink-2);
+}
+
+.dr-reset {
+  margin-left: auto;
+  border: 1px solid var(--line);
+}
+
+.dr {
+  padding: 0 0 1.75rem;
+  margin: 0 0 1.75rem;
+  border-bottom: 1px solid var(--line);
+  max-width: 74ch;
+}
+
+.dr-part {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+  margin-bottom: 0.35rem;
+}
+
+.dr-q {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: -0.012em;
+  margin: 0 0 0.2rem;
+}
+
+.dr-hint {
+  font-size: 0.85rem;
+  color: var(--ink-3);
+  margin-bottom: 0.7rem;
+}
+
+.dr-opts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 0.7rem;
+}
+
+.dr-o {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.1rem 0.65rem;
+  align-items: baseline;
+  text-align: left;
+  font-family: var(--f-body);
+  font-size: 0.95rem;
+  color: var(--ink);
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--paper);
+  cursor: pointer;
+  transition: border-color 0.16s var(--ease), background 0.16s var(--ease);
+}
+
+.dr:not(.done) .dr-o:hover {
+  border-color: var(--ink-3);
+  background: var(--raised);
+}
+
+.dr-letter {
+  font-family: var(--f-mono);
+  font-size: 0.78rem;
+  color: var(--ink-4);
+}
+
+.dr.done .dr-o {
+  cursor: default;
+}
+
+/* Both the correct option and the ones you did not pick carry a reason. */
+.dr-why {
+  grid-column: 2;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--ink-2);
+  margin-top: 0.35rem;
+  padding-top: 0.35rem;
+  border-top: 1px dashed var(--line);
+}
+
+.dr-o.right {
+  border-color: var(--nom);
+  background: var(--nom-bg);
+}
+
+.dr-o.right .dr-letter,
+.dr-o.right .dr-t {
+  color: var(--nom);
+  font-weight: 600;
+}
+
+.dr-o.wrong {
+  opacity: 0.75;
+}
+
+.dr-o.wrong.chosen {
+  border-color: var(--akk);
+  background: var(--akk-bg);
+  opacity: 1;
+}
+
+.dr-o.wrong.chosen .dr-letter,
+.dr-o.wrong.chosen .dr-t {
+  color: var(--akk);
+  font-weight: 600;
+}
+
+.dr-fb {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
+}
+
+.dr-verdict {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  flex: none;
+}
+
+.dr-verdict.ok {
+  color: var(--nom);
+  background: var(--nom-bg);
+}
+
+.dr-verdict.no {
+  color: var(--akk);
+  background: var(--akk-bg);
+}
+
+.dr-rule {
+  font-family: var(--f-mono);
+  font-size: 0.8rem;
+  color: var(--ink-3);
+}
+
+/* ---------- spoken practice --------------------------------------------- */
+
+.sp-list {
+  max-width: 74ch;
+}
+
+.sp {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem 1rem;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.sp-q {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.sp-n {
+  font-family: var(--f-mono);
+  font-size: 0.75rem;
+  color: var(--ink-4);
+  margin-right: 0.6rem;
+}
+
+.sp-show {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  flex: none;
+}
+
+.sp-a {
+  grid-column: 1 / -1;
+  padding-left: 2.1rem;
+}
+
+.sp-model {
+  font-size: 1rem;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.sp-tip {
+  font-size: 0.85rem;
+  color: var(--ink-3);
+  margin-top: 0.2rem;
+}
+
+@media (max-width: 620px) {
+
+  .sp {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-show {
+    justify-self: start;
+  }
+
+  .sp-a {
+    padding-left: 0;
+  }
+
+  .dr-o {
+    font-size: 0.92rem;
+  }
+}
+
