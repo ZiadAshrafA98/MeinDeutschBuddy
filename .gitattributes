@@ -1,0 +1,17 @@
+# LF everywhere, in the repository and in the working tree.
+#
+# Without this a Windows checkout gets CRLF from core.autocrlf, and
+# build-standalone.mjs matches head patterns containing literal \n, so
+# `npm run standalone` fails with "Pattern not found". Pages builds on
+# Linux, so LF is the only ending the site is ever served with.
+* text=auto eol=lf
+
+# Binary, never converted.
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.webp binary
+*.ico  binary
+*.woff binary
+*.woff2 binary

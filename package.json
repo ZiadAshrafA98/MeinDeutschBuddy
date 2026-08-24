@@ -3,8 +3,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
-    "standalone": "tsc && node build-standalone.mjs",
-    "serve": "python3 -m http.server 8000"
+    "standalone": "tsc && node build-standalone.mjs"
   },
   "devDependencies": {
     "typescript": "7.0.2"

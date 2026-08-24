@@ -36,7 +36,7 @@ because of CORS. So it needs a server:
 ```bash
 npm install
 npm run build     # compile TypeScript to dist/
-npm run serve     # http://localhost:8000
+npx serve         # or any static server, e.g. python -m http.server
 ```
 
 `npm run dev` watches and recompiles on save.
