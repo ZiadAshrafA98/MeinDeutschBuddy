@@ -69,11 +69,11 @@ function inline(src, out, entry, cssHref, jsSrc, swaps) {
 /* Everything lands flat in standalone/, so cross-links lose their folders. */
 inline('index.html', 'standalone/index.html', 'home', 'styles/index.css', 'dist/pages/home.js', [
   ['href="pages/grammatik.html"', 'href="grammatik.html"'],
-  ['href="pages/worten.html"', 'href="worten.html"'],
+  ['href="pages/woerter.html"', 'href="woerter.html"'],
   ['href="pages/pruefung.html"', 'href="pruefung.html"'],
 ]);
 
-for (const page of ['grammatik', 'worten', 'pruefung']) {
+for (const page of ['grammatik', 'woerter', 'pruefung']) {
   inline(
     `pages/${page}.html`,
     `standalone/${page}.html`,
@@ -83,7 +83,7 @@ for (const page of ['grammatik', 'worten', 'pruefung']) {
     [
       ['href="../index.html"', 'href="index.html"'],
       ['href="./grammatik.html"', 'href="grammatik.html"'],
-      ['href="./worten.html"', 'href="worten.html"'],
+      ['href="./woerter.html"', 'href="woerter.html"'],
       ['href="./pruefung.html"', 'href="pruefung.html"'],
     ]
   );

@@ -7,4 +7,4 @@ initChrome();
 initSearch();
 initVocabPreview();
 initBodyFigure();
-//# sourceMappingURL=worten.js.map
+//# sourceMappingURL=woerter.js.map

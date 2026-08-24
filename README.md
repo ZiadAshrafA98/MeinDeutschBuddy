@@ -12,7 +12,7 @@ Live: https://ziadashrafa98.github.io/MeinDeutschBuddy/
 index.html            homepage, three destinations
 pages/
   grammatik.html      30 sections, 60 tables
-  worten.html         8 themes, vocabulary with gender colour
+  woerter.html        8 themes, vocabulary with gender colour
   pruefung.html       exam revision: plan, drills, spoken practice
 src/
   modules/            one module per concern
